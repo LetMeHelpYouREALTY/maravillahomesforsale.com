@@ -1,63 +1,69 @@
-import { MetadataRoute } from 'next';
+import type { MetadataRoute } from 'next';
+import { headers } from 'next/headers';
 
-/**
- * Robots.txt configuration (2025 Best Practice)
- * - Allows all content pages for crawling
- * - Allows /_next/static/ (CSS/JS) so Googlebot can render pages (mobile-first indexing)
- * - Blocks API routes and other internal Next.js paths
- * - References sitemap for efficient crawling
- */
-export default function robots(): MetadataRoute.Robots {
-  const baseUrl = (
-    process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
-  ).replace(/\/$/, '');
+export default async function robots(): Promise<MetadataRoute.Robots> {
+  const headersList = await headers();
+  const host = headersList.get('x-forwarded-host') || headersList.get('host') || 'localhost';
+  const baseUrl = `https://${host.split(':')[0]}`;
 
   return {
     rules: [
+      // Default: allow all crawlers
       {
         userAgent: '*',
-        allow: ['/', '/_next/static/'],
-        // Block non-content routes; allow wins over disallow for more specific paths (/_next/static/)
-        disallow: [
-          '/api/',
-          '/_next/',
-          '/private/',
-          '/admin/',
-          '/visit-api', // Legacy API route
-          '/message/', // Legacy message/share routes
-          '/tour', // Legacy tour route (redirects to /homes)
-          '/tour/mls', // Legacy MLS tour route (redirects to /homes)
-          '/mls', // Legacy MLS route (redirects to /homes)
-          '/lc', // Legacy route (redirects to /contact)
-          '/ub', // Legacy route (redirects to /homes)
-          '/ap', // Legacy route (redirects to /homes)
-        ],
+        allow: '/',
       },
-      // Googlebot: allow CSS/JS for rendering (mobile-first indexing)
+      // ── AI Retrieval Bots (power AI search results) ──
       {
-        userAgent: 'Googlebot',
-        allow: ['/', '/_next/static/'],
-        disallow: [
-          '/api/',
-          '/_next/',
-          '/private/',
-          '/admin/',
-        ],
+        userAgent: 'GPTBot',
+        allow: '/',
       },
-      // Bingbot
       {
-        userAgent: 'Bingbot',
-        allow: ['/', '/_next/static/'],
-        disallow: [
-          '/api/',
-          '/_next/',
-          '/private/',
-          '/admin/',
-        ],
+        userAgent: 'ChatGPT-User',
+        allow: '/',
+      },
+      {
+        userAgent: 'OAI-SearchBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'ClaudeBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Claude-Web',
+        allow: '/',
+      },
+      {
+        userAgent: 'PerplexityBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'Applebot-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'Bytespider',
+        allow: '/',
+      },
+      // ── AI Training Bots (maximizes visibility in AI models) ──
+      {
+        userAgent: 'Google-Extended',
+        allow: '/',
+      },
+      {
+        userAgent: 'CCBot',
+        allow: '/',
+      },
+      {
+        userAgent: 'cohere-ai',
+        allow: '/',
+      },
+      {
+        userAgent: 'Meta-ExternalAgent',
+        allow: '/',
       },
     ],
     sitemap: `${baseUrl}/sitemap.xml`,
-    // 2025 Best Practice: Add host directive for canonical domain
-    host: baseUrl,
   };
 }

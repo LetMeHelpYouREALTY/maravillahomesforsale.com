@@ -306,7 +306,7 @@ export default function RootLayout({
                 '@type': 'LocalBusiness',
                 name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
                 url: siteUrl,
-                telephone: '+1-702-500-1953',
+                telephone: BUSINESS_INFO.phone.schema,
               },
               areaServed: [
                 {

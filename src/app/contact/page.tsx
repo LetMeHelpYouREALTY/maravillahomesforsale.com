@@ -134,10 +134,10 @@ export default function ContactPage() {
                 </CardHeader>
                 <CardContent>
                   <a
-                    href='mailto:DrDuffy@MaravillaHomesForSale.com'
+                    href={`mailto:${BUSINESS_INFO.email}`}
                     className='text-lg font-semibold text-[#0A2540] hover:text-[#16B286] transition-colors'
                   >
-                    DrDuffy@MaravillaHomesForSale.com
+                    {BUSINESS_INFO.email}
                   </a>
                   <p className='text-gray-600 text-sm mt-1'>
                     We typically respond within 24 hours

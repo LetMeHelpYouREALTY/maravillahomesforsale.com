@@ -94,12 +94,12 @@ const CONTACT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, email DrDuffy@MaravillaHomesForSale.com, or use the contact form on this page. You can also schedule a consultation via the Calendly widget.',
+      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact form on this page. Office: 5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031. You can also schedule a consultation via the Calendly widget.',
   },
   {
     question: 'What are your office hours?',
     answer:
-      'Dr. Jan Duffy is available by appointment. Schedule a call or meeting through the contact page or Calendly. Same-day and next-day consultations are often available.',
+      'Open 6:00 AM–9:00 PM, Sunday through Saturday. Closed Easter (Apr 5, 2026), Memorial Day (May 25, 2026), and 4th of July observed (Jul 3, 2026). Schedule a call or meeting through the contact page or Calendly.',
   },
   {
     question: 'Do you serve buyers outside Maravilla?',
@@ -270,7 +270,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031.',
+      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031.',
   },
 ];
 

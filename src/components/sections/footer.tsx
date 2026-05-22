@@ -151,10 +151,10 @@ export default function Footer() {
               <li className='flex items-center'>
                 <span className='mr-2'>✉️</span>
                 <a
-                  href='mailto:DrDuffy@MaravillaHomesForSale.com'
+                  href={`mailto:${BUSINESS_INFO.email}`}
                   className='hover:text-white transition-colors'
                 >
-                  DrDuffy@MaravillaHomesForSale.com
+                  {BUSINESS_INFO.email}
                 </a>
               </li>
               <li className='flex items-center'>

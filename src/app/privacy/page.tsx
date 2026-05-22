@@ -123,15 +123,18 @@ export default function PrivacyPage() {
                 </p>
                 <p>{BUSINESS_INFO.address.full}</p>
                 <p>
-                  Phone: <a href='tel:7025001953' className='text-[#3A8DDE] hover:underline'>(702) 500-1953</a>
+                  Phone:{' '}
+                  <a href={BUSINESS_INFO.phone.href} className='text-[#3A8DDE] hover:underline'>
+                    {BUSINESS_INFO.phone.display}
+                  </a>
                 </p>
                 <p>
                   Email:{' '}
                   <a
-                    href='mailto:DrDuffy@MaravillaHomesForSale.com'
+                    href={`mailto:${BUSINESS_INFO.email}`}
                     className='text-[#3A8DDE] hover:underline'
                   >
-                    DrDuffy@MaravillaHomesForSale.com
+                    {BUSINESS_INFO.email}
                   </a>
                 </p>
               </div>

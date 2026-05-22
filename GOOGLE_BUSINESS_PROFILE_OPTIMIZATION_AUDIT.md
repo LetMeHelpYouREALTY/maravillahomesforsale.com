@@ -21,7 +21,7 @@ The site has excellent foundational GBP optimization with LocalBusiness schema, 
 
 - ✅ **Centralized Configuration:** All business info in `src/lib/config/business-info.ts`
 - ✅ **Consistent Name:** "North Las Vegas Family Homes | Homes by Dr. Jan Duffy"
-- ✅ **Consistent Address:** "5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031"
+- ✅ **Consistent Address:** "5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031"
 - ✅ **Consistent Phone:** "(702) 500-1953" / "+1-702-500-1953"
 - ✅ **Used Across All Pages:** Footer, contact page, schema markup, headers
 - ✅ **Format Consistency:** Phone number formatted consistently (display vs schema format)

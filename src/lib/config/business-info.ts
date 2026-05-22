@@ -27,14 +27,14 @@ export const BUSINESS_INFO = {
     schema: '+1-702-500-1953', // For structured data
   },
 
-  // Business Address (GBP office location)
+  // Business Address (GBP office location — single source for site NAP)
   address: {
-    streetAddress: '5135 W Washburn Rd, Suite 201',
+    streetAddress: '5135 W Washburn Rd Suite 201',
     addressLocality: 'North Las Vegas',
     addressRegion: 'NV',
     postalCode: '89031',
     addressCountry: 'US',
-    full: '5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031',
+    full: '5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031',
   },
 
   // Community Address (Maravilla Community)
@@ -132,4 +132,14 @@ export const BUSINESS_INFO = {
 
   license: 'S.0197614',
   brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
+} as const;
+
+/** Canonical NAP string bundle for GBP parity checks and visible copy */
+export const GBP_NAP = {
+  name: BUSINESS_INFO.name,
+  phone: BUSINESS_INFO.phone.display,
+  phoneTel: BUSINESS_INFO.phone.href,
+  email: BUSINESS_INFO.email,
+  address: BUSINESS_INFO.address.full,
+  website: 'https://www.maravillahomesforsale.com/',
 } as const;

@@ -47,10 +47,10 @@ export const BUSINESS_INFO = {
     country: 'US',
   },
 
-  // Business Coordinates (office — 5135 W Washburn Rd)
+  // Business Coordinates (GBP office — 5135 W Washburn Rd, Suite 201; geocoded to building pin)
   geo: {
-    latitude: 36.2542,
-    longitude: -115.132,
+    latitude: 36.253563,
+    longitude: -115.153998,
   },
 
   // Community Coordinates (Maravilla Location)

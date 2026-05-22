@@ -41,9 +41,21 @@ export default function AgentSchema() {
       },
     ],
     sameAs: [
+      BUSINESS_INFO.googleBusinessProfile,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.youtube,
+    ],
+    knowsAbout: [
+      BUSINESS_INFO.categories.primary,
+      ...BUSINESS_INFO.categories.additional,
+      'North Las Vegas Real Estate',
+      'Maravilla Homes',
+      'First-time Homebuyers',
+      'Home Selling',
+      'Property Valuation',
+      'VA Loans',
+      'FHA Loans',
     ],
     hasCredential: {
       '@type': 'EducationalOccupationalCredential',
@@ -58,15 +70,6 @@ export default function AgentSchema() {
       '@type': 'Organization',
       name: BUSINESS_INFO.brokerage,
     },
-    knowsAbout: [
-      'North Las Vegas Real Estate',
-      'Maravilla Homes',
-      'First-time Homebuyers',
-      'Home Selling',
-      'Property Valuation',
-      'VA Loans',
-      'FHA Loans',
-    ],
   };
 
   return (

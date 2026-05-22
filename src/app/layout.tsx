@@ -134,7 +134,7 @@ export const metadata: Metadata = {
   classification: 'Luxury Real Estate',
   other: {
     'geo.region': 'US-NV',
-    'geo.placename': 'North Las Vegas, Las Vegas',
+    'geo.placename': 'North Las Vegas',
     'geo.position': `${BUSINESS_INFO.geo.latitude};${BUSINESS_INFO.geo.longitude}`,
     ICBM: `${BUSINESS_INFO.geo.latitude}, ${BUSINESS_INFO.geo.longitude}`,
     'DC.title': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',

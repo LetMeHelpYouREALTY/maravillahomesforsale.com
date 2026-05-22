@@ -13,8 +13,7 @@ const businessAddress = {
   addressCountry: BUSINESS_INFO.address.addressCountry,
 } as const;
 
-// Approximate coordinates for the office location.
-// If you need exact GPS from GBP, replace these values.
+// Office coordinates from BUSINESS_INFO.geo (aligned with GBP location pin).
 const businessGeo = {
   latitude: BUSINESS_INFO.geo.latitude,
   longitude: BUSINESS_INFO.geo.longitude,
@@ -203,6 +202,11 @@ export function generateLocalBusinessSchema() {
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
+    knowsAbout: [
+      BUSINESS_INFO.categories.primary,
+      ...BUSINESS_INFO.categories.additional,
+      BUSINESS_INFO.serviceArea,
+    ],
     image: `${siteUrl}/photos/01-1 (2).jpg`,
     logo: `${siteUrl}/globe.svg`,
     address: {
@@ -215,6 +219,7 @@ export function generateLocalBusinessSchema() {
     },
     hasMap: BUSINESS_INFO.maps.business,
     sameAs: [
+      BUSINESS_INFO.googleBusinessProfile,
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,
@@ -272,15 +277,23 @@ export function generateOrganizationSchema() {
         availableLanguage: ['English'],
         hoursAvailable: {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          opens: '06:00',
-          closes: '21:00',
+          dayOfWeek: BUSINESS_INFO.hours.schema.dayOfWeek,
+          opens: BUSINESS_INFO.hours.schema.opens,
+          closes: BUSINESS_INFO.hours.schema.closes,
         },
       },
       {
         '@type': 'ContactPoint',
         telephone: businessPhone,
         contactType: 'sales',
+        areaServed: 'US',
+        availableLanguage: ['English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: businessPhone,
+        contactType: 'chat',
+        url: BUSINESS_INFO.sms.href,
         areaServed: 'US',
         availableLanguage: ['English'],
       },
@@ -293,6 +306,7 @@ export function generateOrganizationSchema() {
       },
     ],
     sameAs: [
+      BUSINESS_INFO.googleBusinessProfile,
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,
@@ -391,6 +405,10 @@ export function generateRealEstateAgentSchema() {
       '@type': 'PostalAddress',
       ...businessAddress,
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      ...businessGeo,
+    },
     areaServed: [
       {
         '@type': 'City',
@@ -430,15 +448,16 @@ export function generateRealEstateAgentSchema() {
         availableLanguage: ['English'],
         hoursAvailable: {
           '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          opens: '06:00',
-          closes: '21:00',
+          dayOfWeek: BUSINESS_INFO.hours.schema.dayOfWeek,
+          opens: BUSINESS_INFO.hours.schema.opens,
+          closes: BUSINESS_INFO.hours.schema.closes,
         },
       },
       {
         '@type': 'ContactPoint',
         telephone: businessPhone,
-        contactType: 'sms',
+        contactType: 'chat',
+        url: BUSINESS_INFO.sms.href,
         areaServed: 'US',
         availableLanguage: ['English'],
       },
@@ -463,6 +482,7 @@ export function generateRealEstateAgentSchema() {
       identifier: 'S.0197614',
     },
     sameAs: [
+      BUSINESS_INFO.googleBusinessProfile,
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,

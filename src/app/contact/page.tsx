@@ -260,12 +260,11 @@ export default function ContactPage() {
           <div className='relative'>
             <Suspense fallback={<MapSkeleton />}>
               <GoogleMap
-                address={BUSINESS_INFO.address.full}
                 latitude={BUSINESS_INFO.geo.latitude}
                 longitude={BUSINESS_INFO.geo.longitude}
-                zoom={14}
+                zoom={15}
                 height='500px'
-                title='North Las Vegas Family Homes | Homes by Dr. Jan Duffy Office Location'
+                title={`${BUSINESS_INFO.name} — ${BUSINESS_INFO.address.full}`}
               />
             </Suspense>
           </div>

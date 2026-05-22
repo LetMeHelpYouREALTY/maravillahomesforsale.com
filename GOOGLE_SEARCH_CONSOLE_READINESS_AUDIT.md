@@ -96,7 +96,7 @@ The site is well-optimized and ready for Google Search Console submission. All c
    - Member of organization
 
 2. **LocalBusiness** ✅
-   - Complete business address (4380 W Ann Rd Suite 201, North Las Vegas, NV 89031)
+   - Complete business address (5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031)
    - Business hours (6AM-9PM Daily)
    - Phone number (+1-702-500-1953)
    - Email (DrDuffy@MaravillaHomesForSale.com)

@@ -270,7 +270,7 @@ export default function ContactPage() {
           </div>
           <div className='mt-6 flex flex-col sm:flex-row gap-3 justify-center'>
             <Button asChild className='bg-[#16B286] hover:bg-[#15A276] text-white'>
-              <a href='tel:7025001953'>Call Now</a>
+              <a href={BUSINESS_INFO.phone.href}>Call Now</a>
             </Button>
             <Button asChild variant='outline'>
               <Link

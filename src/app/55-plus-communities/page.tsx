@@ -21,7 +21,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | 55+ Communities in North Las Vegas & Maravilla | Dr. Jan Duffy',
   description:
-    'Explore 55+ and active-adult communities in North Las Vegas and Maravilla. Find age-qualified homes, amenities, and lifestyle options. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+      `Explore 55+ and active-adult communities in North Las Vegas and Maravilla. Find age-qualified homes, amenities, and lifestyle options. Dr. Jan Duffy, REALTOR® ${BUSINESS_INFO.phone.display}.`,
   keywords:
     '55+ communities North Las Vegas, active adult Maravilla, age-qualified homes Las Vegas, 55 plus communities Nevada',
   path: '/55-plus-communities',

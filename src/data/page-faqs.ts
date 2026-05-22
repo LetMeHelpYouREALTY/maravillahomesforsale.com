@@ -1,4 +1,10 @@
 import { MARAVILLA_FAQS } from '@/lib/metadata';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
+
+const NAP_PHONE = BUSINESS_INFO.phone.display;
+const NAP_EMAIL = BUSINESS_INFO.email;
+const NAP_ADDRESS = BUSINESS_INFO.address.full;
+const NAP_SMS = BUSINESS_INFO.sms.href;
 
 export interface FAQItem {
   question: string;
@@ -71,7 +77,7 @@ const HOMES_FAQS: readonly FAQItem[] = [
   {
     question: 'How many homes are for sale in Maravilla?',
     answer:
-      'Inventory changes regularly. Dr. Jan Duffy lists current Maravilla homes for sale with photos, virtual tours, and key details. View the listings on this site or call (702) 500-1953 for the latest availability.',
+      `Inventory changes regularly. Dr. Jan Duffy lists current Maravilla homes for sale with photos, virtual tours, and key details. View the listings on this site or call ${NAP_PHONE} for the latest availability.`,
   },
   {
     question: 'What price range can I expect in Maravilla?',
@@ -81,7 +87,7 @@ const HOMES_FAQS: readonly FAQItem[] = [
   {
     question: 'Can I tour Maravilla homes in person?',
     answer:
-      'Yes. Schedule a tour with Dr. Jan Duffy by calling (702) 500-1953 or using the contact form. In-person and virtual options are available.',
+      `Yes. Schedule a tour with Dr. Jan Duffy by calling ${NAP_PHONE} or using the contact form. In-person and virtual options are available.`,
   },
   {
     question: 'Do you represent buyers in Maravilla?',
@@ -94,7 +100,7 @@ const CONTACT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact form on this page. Office: 5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031. You can also schedule a consultation via the Calendly widget.',
+      `Call ${NAP_PHONE}, text ${NAP_SMS}, email ${NAP_EMAIL}, or use the contact form on this page. Office: ${NAP_ADDRESS}. You can also schedule a consultation via the Calendly widget.`,
   },
   {
     question: 'What are your office hours?',
@@ -117,7 +123,7 @@ const NEIGHBORHOOD_FAQS: readonly FAQItem[] = [
   {
     question: 'What schools serve Maravilla?',
     answer:
-      'Maravilla is served by the Clark County School District. Specific schools and zones depend on the address. Contact Dr. Jan Duffy at (702) 500-1953 for current school information.',
+      `Maravilla is served by the Clark County School District. Specific schools and zones depend on the address. Contact Dr. Jan Duffy at ${NAP_PHONE} for current school information.`,
   },
   {
     question: 'Are there HOA fees in Maravilla?',
@@ -135,7 +141,7 @@ const NEIGHBORHOODS_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I compare Maravilla to other areas?',
     answer:
-      'We can compare schools, amenities, price ranges, and commute times. Use the neighborhood pages and market data on this site, or call (702) 500-1953 for a personalized comparison.',
+      `We can compare schools, amenities, price ranges, and commute times. Use the neighborhood pages and market data on this site, or call ${NAP_PHONE} for a personalized comparison.`,
   },
 ];
 
@@ -161,7 +167,7 @@ const AMENITIES_FAQS: readonly FAQItem[] = [
   {
     question: 'Are there fitness or pool facilities?',
     answer:
-      'Community amenities vary by section. Contact Dr. Jan Duffy at (702) 500-1953 for current amenity details for specific Maravilla neighborhoods.',
+      `Community amenities vary by section. Contact Dr. Jan Duffy at ${NAP_PHONE} for current amenity details for specific Maravilla neighborhoods.`,
   },
 ];
 
@@ -182,7 +188,7 @@ const MARKET_DATA_FAQS: readonly FAQItem[] = [
   {
     question: 'How often is Maravilla market data updated?',
     answer:
-      'We strive to keep market data current. Sales and listing statistics are updated regularly. For the latest numbers, call (702) 500-1953 or request a custom report.',
+      `We strive to keep market data current. Sales and listing statistics are updated regularly. For the latest numbers, call ${NAP_PHONE} or request a custom report.`,
   },
   {
     question: 'What does the market data include?',
@@ -213,7 +219,7 @@ const REAL_ESTATE_SERVICES_FAQS: readonly FAQItem[] = [
   {
     question: 'Do you work with first-time buyers?',
     answer:
-      'Yes. First-time buyers get guidance on financing, neighborhoods, and the buying process. Call (702) 500-1953 or schedule a consultation to get started.',
+      `Yes. First-time buyers get guidance on financing, neighborhoods, and the buying process. Call ${NAP_PHONE} or schedule a consultation to get started.`,
   },
 ];
 
@@ -239,7 +245,7 @@ const PRIVACY_FAQS: readonly FAQItem[] = [
   {
     question: 'How can I contact you about privacy?',
     answer:
-      'For privacy questions or requests, contact Dr. Jan Duffy at DrDuffy@MaravillaHomesForSale.com or (702) 500-1953.',
+      `For privacy questions or requests, contact Dr. Jan Duffy at ${NAP_EMAIL} or ${NAP_PHONE}.`,
   },
 ];
 
@@ -247,7 +253,7 @@ const SEARCH_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I search for Maravilla homes?',
     answer:
-      'Use the search tools on this site to filter by price, beds, baths, and features. You can also browse the homes page or contact Dr. Jan Duffy at (702) 500-1953 for a personalized search.',
+      `Use the search tools on this site to filter by price, beds, baths, and features. You can also browse the homes page or contact Dr. Jan Duffy at ${NAP_PHONE} for a personalized search.`,
   },
   {
     question: 'Are listings updated in real time?',
@@ -270,7 +276,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031.',
+      `Call ${NAP_PHONE}, text ${NAP_SMS}, email ${NAP_EMAIL}, or use the contact page to schedule a consultation. Office address: ${NAP_ADDRESS}.`,
   },
 ];
 
@@ -301,7 +307,7 @@ const SCHOOLS_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I find which schools serve a specific Maravilla address?',
     answer:
-      'CCSD publishes boundary maps and school finder tools. Dr. Jan Duffy can also help you confirm assigned schools when you\'re considering a particular property. Call (702) 500-1953 or use the contact page.',
+      `CCSD publishes boundary maps and school finder tools. Dr. Jan Duffy can also help you confirm assigned schools when you're considering a particular property. Call ${NAP_PHONE} or use the contact page.`,
   },
   {
     question: 'Are there private or charter schools near Maravilla?',
@@ -319,7 +325,7 @@ const RESOURCES_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I get a home valuation for a Maravilla property?',
     answer:
-      'Visit the Home Valuation page or contact Dr. Jan Duffy at (702) 500-1953. She provides practical value ranges and pricing context based on recent sales and current market conditions.',
+      `Visit the Home Valuation page or contact Dr. Jan Duffy at ${NAP_PHONE}. She provides practical value ranges and pricing context based on recent sales and current market conditions.`,
   },
 ];
 
@@ -327,7 +333,7 @@ const FIFTY_FIVE_PLUS_FAQS: readonly FAQItem[] = [
   {
     question: 'What are 55+ or age-qualified communities near Maravilla?',
     answer:
-      'North Las Vegas and the greater Las Vegas area include age-qualified (55+) and active-adult communities. Dr. Jan Duffy can help you compare options, rules, and locations. Call (702) 500-1953 or use the contact page.',
+      `North Las Vegas and the greater Las Vegas area include age-qualified (55+) and active-adult communities. Dr. Jan Duffy can help you compare options, rules, and locations. Call ${NAP_PHONE} or use the contact page.`,
   },
   {
     question: 'How do age restrictions work in 55+ communities?',
@@ -337,7 +343,7 @@ const FIFTY_FIVE_PLUS_FAQS: readonly FAQItem[] = [
   {
     question: 'Are there 55+ homes for sale in North Las Vegas?',
     answer:
-      'Yes. Inventory in 55+ and active-adult areas changes regularly. Browse our listings and filter by area, or contact Dr. Jan Duffy at (702) 500-1953 for a tailored search in North Las Vegas and Maravilla-area communities.',
+      `Yes. Inventory in 55+ and active-adult areas changes regularly. Browse our listings and filter by area, or contact Dr. Jan Duffy at ${NAP_PHONE} for a tailored search in North Las Vegas and Maravilla-area communities.`,
   },
   {
     question: 'Can Dr. Jan Duffy help me buy in a 55+ community?',
@@ -365,7 +371,7 @@ const FIRST_TIME_BUYERS_FAQS: readonly FAQItem[] = [
   {
     question: 'Can Dr. Jan Duffy help first-time buyers in Maravilla?',
     answer:
-      'Yes. Dr. Duffy works with first-time buyers throughout Maravilla and North Las Vegas, from pre-approval to closing. Call (702) 500-1953 or use the contact page to get started.',
+      `Yes. Dr. Duffy works with first-time buyers throughout Maravilla and North Las Vegas, from pre-approval to closing. Call ${NAP_PHONE} or use the contact page to get started.`,
   },
 ];
 
@@ -496,12 +502,12 @@ const GUIDES_FAQS: readonly FAQItem[] = [
   {
     question: 'Where can I find more buying and selling guides?',
     answer:
-      'Visit the Guides page for winter 2026 buying and selling considerations and the First-Time Homebuyer Guide. For step-by-step buying help, see the Buyer\'s Guide. Call (702) 500-1953 or use the contact page for personalized advice.',
+      `Visit the Guides page for winter 2026 buying and selling considerations and the First-Time Homebuyer Guide. For step-by-step buying help, see the Buyer's Guide. Call ${NAP_PHONE} or use the contact page for personalized advice.`,
   },
   {
     question: 'How do I get help with buying or selling in North Las Vegas?',
     answer:
-      'Dr. Jan Duffy helps buyers and sellers in North Las Vegas and Maravilla. Schedule a consultation via the contact page or call (702) 500-1953. She can walk you through pre-approval, listings, pricing, and closing.',
+      `Dr. Jan Duffy helps buyers and sellers in North Las Vegas and Maravilla. Schedule a consultation via the contact page or call ${NAP_PHONE}. She can walk you through pre-approval, listings, pricing, and closing.`,
   },
 ];
 

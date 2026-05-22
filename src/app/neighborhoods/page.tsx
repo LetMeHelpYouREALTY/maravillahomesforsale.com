@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import PageLayout from '@/components/layout/page-layout';
 import GoogleMap from '@/components/sections/google-map';
 import MapSkeleton from '@/components/skeletons/map-skeleton';
@@ -40,7 +41,7 @@ export const metadata = genMetadata({
   title:
     'North Las Vegas Family Homes | Maravilla Neighborhoods & Communities',
   description:
-    'Explore Maravilla and surrounding neighborhoods in Las Vegas. Find your perfect community with luxury homes and excellent amenities. Call (702) 500-1953.',
+      `Explore Maravilla and surrounding neighborhoods in Las Vegas. Find your perfect community with luxury homes and excellent amenities. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'Maravilla neighborhoods, Las Vegas communities, luxury neighborhoods, Las Vegas real estate communities',
   path: '/neighborhoods',

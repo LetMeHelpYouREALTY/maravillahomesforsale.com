@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import PageLayout from '@/components/layout/page-layout';
@@ -81,7 +82,7 @@ export const revalidate = 3600; // 1 hour
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
   description:
-    'North Las Vegas Family Homes: find your dream home in Maravilla and North Las Vegas. Family-friendly community, top schools, parks, amenities. Dr. Jan Duffy, REALTOR® Berkshire Hathaway Nevada. Browse homes, get a valuation, or contact (702) 500-1953.',
+      `North Las Vegas Family Homes: find your dream home in Maravilla and North Las Vegas. Family-friendly community, top schools, parks, amenities. Dr. Jan Duffy, REALTOR® Berkshire Hathaway Nevada. Browse homes, get a valuation, or contact ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',

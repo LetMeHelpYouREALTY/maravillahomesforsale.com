@@ -1,9 +1,8 @@
 import type { Metadata } from 'next';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from './config/business-info';
+import { SITE_URL } from './config/nap-copy';
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
-).replace(/\/$/, '');
+const siteUrl = SITE_URL;
 
 const businessAddress = {
   streetAddress: BUSINESS_INFO.address.streetAddress,
@@ -20,6 +19,7 @@ const businessGeo = {
 } as const;
 
 const businessName = BUSINESS_INFO.name;
+const businessShortName = 'North Las Vegas Family Homes';
 const businessPhone = BUSINESS_INFO.phone.schema;
 const businessEmail = BUSINESS_INFO.email;
 
@@ -625,9 +625,9 @@ export function generateWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'North Las Vegas Family Homes',
+    name: businessShortName,
     alternateName: [
-      'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+      BUSINESS_INFO.name,
       'Maravilla Homes',
       'www.maravillahomesforsale.com',
       'maravillahomesforsale.com',

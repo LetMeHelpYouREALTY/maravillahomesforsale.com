@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import {
@@ -26,8 +27,7 @@ const baseUrl = (
 
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Resources, Guides & Tools | Dr. Jan Duffy',
-  description:
-    'Resources for Maravilla home buyers and sellers: buyer\'s guide, home valuation, market data, neighborhood info, and contact. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+  description: `Resources for Maravilla home buyers and sellers: buyer's guide, home valuation, market data, neighborhood info, and contact. Dr. Jan Duffy, REALTOR® ${BUSINESS_INFO.phone.display}. Office: ${BUSINESS_INFO.address.full}.`,
   keywords:
     'Maravilla resources, real estate guides, Maravilla market data, North Las Vegas real estate tools',
   path: '/resources',

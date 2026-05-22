@@ -1,7 +1,8 @@
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+import { SITE_URL } from '@/lib/config/nap-copy';
 
 export default function AgentSchema() {
-  const siteUrl = 'https://www.maravillahomesforsale.com';
+  const siteUrl = SITE_URL;
 
   const jsonLd = {
     '@context': 'https://schema.org',

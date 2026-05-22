@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { RSSImage } from '@/components/ui/rss-image';
 import PageLayout from '@/components/layout/page-layout';
 import { Badge } from '@/components/ui/badge';
@@ -27,7 +28,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Blog & Market Updates | Dr. Jan Duffy',
   description:
-    'Real estate blog and market updates for Maravilla and North Las Vegas. Trends, buying and selling tips, and local insights. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+      `Real estate blog and market updates for Maravilla and North Las Vegas. Trends, buying and selling tips, and local insights. Dr. Jan Duffy, REALTOR® ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'Maravilla blog, North Las Vegas real estate news, Maravilla market updates, Las Vegas real estate trends',
   path: '/blog',

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { RSSImage } from '@/components/ui/rss-image';
 import PageLayout from '@/components/layout/page-layout';
 import { Badge } from '@/components/ui/badge';
@@ -31,7 +32,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Maravilla Market Insights | Dr. Jan Duffy',
   description:
-    'Read the latest real estate market insights and trends for Maravilla, Las Vegas, Nevada. Expert analysis on home prices, market conditions, and buying/selling strategies. Updated articles from Simplifying the Market. Call (702) 500-1953.',
+      `Read the latest real estate market insights and trends for Maravilla, Las Vegas, Nevada. Expert analysis on home prices, market conditions, and buying/selling strategies. Updated articles from Simplifying the Market. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'Maravilla market insights, Maravilla real estate news, Las Vegas market insights, Las Vegas real estate trends',
   path: '/market-insights',

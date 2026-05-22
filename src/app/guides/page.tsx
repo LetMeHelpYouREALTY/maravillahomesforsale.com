@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
@@ -18,7 +19,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'Guides for Clients | Buying & Selling | Dr. Jan Duffy',
   description:
-    'Client guides: buying a home winter 2026, selling your house winter 2026, and first-time homebuyer. North Las Vegas and Maravilla. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+      `Client guides: buying a home winter 2026, selling your house winter 2026, and first-time homebuyer. North Las Vegas and Maravilla. Dr. Jan Duffy, REALTOR® ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'buying home guide, selling house guide, first-time homebuyer guide, North Las Vegas real estate, Maravilla guides',
   path: '/guides',

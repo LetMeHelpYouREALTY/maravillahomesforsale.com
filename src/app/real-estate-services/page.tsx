@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
@@ -470,8 +471,8 @@ export default function RealEstateServicesPage() {
                 <Phone className='h-8 w-8 mx-auto mb-4' />
                 <h3 className='text-xl font-semibold mb-2'>Phone</h3>
                 <p className='text-gray-200'>
-                  <a href='tel:7025001953' className='hover:underline'>
-                    (702) 500-1953
+                  <a href={BUSINESS_INFO.phone.href} className='hover:underline'>
+                    {BUSINESS_INFO.phone.display}
                   </a>
                 </p>
               </div>

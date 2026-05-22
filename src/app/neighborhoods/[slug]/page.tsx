@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!neighborhood) return {};
   return genMetadata({
     title: `Homes for Sale in ${neighborhood.name} | North Las Vegas | Dr. Jan Duffy`,
-    description: `${neighborhood.shortDescription} Browse ${neighborhood.name} listings and connect with Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.`,
+    description: `${neighborhood.shortDescription} Browse ${neighborhood.name} listings and connect with Dr. Jan Duffy, REALTOR®. Call ${BUSINESS_INFO.phone.display}.`,
     keywords: `${neighborhood.name} homes for sale, ${neighborhood.name} North Las Vegas real estate, homes in ${neighborhood.name}, Maravilla area`,
     path: `/neighborhoods/${slug}`,
   });

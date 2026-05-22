@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import dynamic from 'next/dynamic';
 import PageLayout from '@/components/layout/page-layout';
 import RealEstateListings from '@/components/sections/real-estate-listings';
@@ -46,7 +47,7 @@ export const revalidate = 1800; // 30 minutes
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Homes for Sale in Maravilla | Dr. Jan Duffy',
   description:
-    'Browse luxury homes for sale in Maravilla, Las Vegas. View current listings with detailed photos, virtual tours, and market data. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Call (702) 500-1953.',
+      `Browse luxury homes for sale in Maravilla, Las Vegas. View current listings with detailed photos, virtual tours, and market data. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'homes for sale Maravilla, Las Vegas homes, luxury homes for sale, Maravilla real estate, Las Vegas homes, property listings, real estate agent Las Vegas',
   path: '/homes',
@@ -120,10 +121,10 @@ export default function HomesPage() {
                   <p className='text-gray-700'>
                     <strong>Phone:</strong>{' '}
                     <a
-                      href='tel:7025001953'
+                      href={BUSINESS_INFO.phone.href}
                       className='text-[#3A8DDE] hover:underline'
                     >
-                      (702) 500-1953
+                      {BUSINESS_INFO.phone.display}
                     </a>
                   </p>
                 </CardContent>

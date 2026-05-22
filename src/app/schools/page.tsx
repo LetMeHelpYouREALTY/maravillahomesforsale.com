@@ -20,7 +20,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Schools in Maravilla & North Las Vegas | Dr. Jan Duffy',
   description:
-    'Schools serving Maravilla, North Las Vegas. Clark County School District, school zones, and education options for Maravilla families. Call (702) 500-1953 for zone info.',
+      `Schools serving Maravilla, North Las Vegas. Clark County School District, school zones, and education options for Maravilla families. Call ${BUSINESS_INFO.phone.display} for zone info.`,
   keywords:
     'Maravilla schools, North Las Vegas schools, Clark County School District, Maravilla school zones, schools near Maravilla',
   path: '/schools',

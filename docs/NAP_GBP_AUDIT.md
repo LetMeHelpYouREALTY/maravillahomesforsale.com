@@ -27,7 +27,9 @@
 |----------|--------|-------|
 | `src/lib/config/business-info.ts` | Pass | Single source of truth |
 | `src/lib/siteConfig.ts` | Pass | Re-exports address from `BUSINESS_INFO` |
+| `src/components/shared/BusinessNapStrip.tsx` | Pass | Full office NAP on every page (via `PageLayout`) |
 | `src/components/sections/footer.tsx` | Pass | Phone, SMS, email, address, GBP links |
+| `src/components/StickyContactBar.tsx` | Pass | Mobile call/text uses `BUSINESS_INFO` |
 | `src/app/contact/page.tsx` | Pass | Visible address + map at office geo |
 | `src/app/about/page.tsx` | Pass | `BUSINESS_INFO.address.full` |
 | `src/app/privacy/page.tsx` | Pass | Full NAP block |

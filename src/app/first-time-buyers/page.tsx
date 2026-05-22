@@ -21,7 +21,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | First-Time Home Buyers | North Las Vegas & Maravilla | Dr. Jan Duffy',
   description:
-    'First-time home buyer guide for North Las Vegas and Maravilla. Pre-approval, down payment, and step-by-step help. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+      `First-time home buyer guide for North Las Vegas and Maravilla. Pre-approval, down payment, and step-by-step help. Dr. Jan Duffy, REALTOR® ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'first-time home buyer North Las Vegas, first-time buyer Maravilla, first time buyer Las Vegas, FHA VA loans Maravilla',
   path: '/first-time-buyers',

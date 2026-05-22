@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import {
   Card,
   CardContent,
@@ -39,7 +40,7 @@ export const metadata = genMetadata({
   title:
     'North Las Vegas Family Homes | Maravilla Community Guide: Schools, Amenities & Lifestyle',
   description:
-    'Discover Maravilla community: excellent schools, parks, shopping centers, and family-friendly amenities. Premier master-planned community in Las Vegas. Learn about schools, parks, and lifestyle. Call (702) 500-1953.',
+      `Discover Maravilla community: excellent schools, parks, shopping centers, and family-friendly amenities. Premier master-planned community in Las Vegas. Learn about schools, parks, and lifestyle. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'Maravilla community, Las Vegas schools, Maravilla amenities, community guide, Las Vegas lifestyle, Las Vegas community, Maravilla parks, Maravilla shopping',
   path: '/community',

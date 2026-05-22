@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import MarketDataSection from '@/components/sections/market-data';
 import Link from 'next/link';
 import {
@@ -37,7 +38,7 @@ export const revalidate = 900; // 15 minutes
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Market Data & Trends | Maravilla & North Las Vegas',
   description:
-    'Latest Maravilla real estate market data: Track pricing trends, sales volume, and market conditions. Updated regularly. Call (702) 500-1953 for market insights.',
+      `Latest Maravilla real estate market data: Track pricing trends, sales volume, and market conditions. Updated regularly. Call ${BUSINESS_INFO.phone.display} for market insights.`,
   keywords:
     'Maravilla market data, Las Vegas real estate trends, market statistics, home prices, days on market, real estate market analysis, Las Vegas housing market',
   path: '/market-data',

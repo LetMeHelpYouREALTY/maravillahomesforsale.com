@@ -9,15 +9,14 @@ import {
   generateRealEstateAgentSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+import { SITE_URL } from '@/lib/config/nap-copy';
 import './globals.css';
 
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
   process.env.GOOGLE_SITE_VERIFICATION;
 
-const siteUrl = (
-  process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
-).replace(/\/$/, '');
+const siteUrl = SITE_URL;
 
 const gtmId = process.env.NEXT_PUBLIC_GTM_ID;
 const gaMeasurementId = process.env.NEXT_PUBLIC_GA_ID ?? 'G-ZG0VF199TR';
@@ -69,15 +68,13 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  description: `Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in Maravilla and North Las Vegas. Call ${BUSINESS_INFO.phone.display}.`,
+  title: BUSINESS_INFO.name,
+  description: `Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in Maravilla and North Las Vegas. Office: ${BUSINESS_INFO.address.full}. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, Maravilla community, North Las Vegas neighborhoods, homes for sale Maravilla, Nevada real estate',
-  authors: [
-    { name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy', url: siteUrl },
-  ],
-  creator: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  publisher: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+  authors: [{ name: BUSINESS_INFO.name, url: siteUrl }],
+  creator: BUSINESS_INFO.name,
+  publisher: BUSINESS_INFO.name,
   formatDetection: {
     email: false,
     address: false,
@@ -88,11 +85,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    description:
-      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Family-friendly community, top schools. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
+    title: BUSINESS_INFO.name,
+    description: `North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. ${BUSINESS_INFO.address.full}. Call ${BUSINESS_INFO.phone.display}.`,
     url: siteUrl,
-    siteName: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+    siteName: BUSINESS_INFO.name,
     locale: 'en_US',
     type: 'website',
       images: [
@@ -108,9 +104,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    description:
-      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
+    title: BUSINESS_INFO.name,
+    description: `North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. Call ${BUSINESS_INFO.phone.display}.`,
     images: ['/photos/01-1 (2).jpg'],
     // 2025 Best Practice: Add Twitter site handle if available
     creator: '@maravillahomes',

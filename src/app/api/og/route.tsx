@@ -4,6 +4,7 @@
  */
 
 import { ImageResponse } from 'next/og';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { NextRequest } from 'next/server';
 
 export const runtime = 'edge';
@@ -13,7 +14,7 @@ export async function GET(request: NextRequest) {
   try {
     // Get parameters from URL using NextRequest's nextUrl
     const title =
-      request.nextUrl.searchParams.get('title') || 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy';
+      request.nextUrl.searchParams.get('title') || BUSINESS_INFO.name;
     const subtitle = request.nextUrl.searchParams.get('subtitle') || 'Luxury Real Estate in Las Vegas';
     const price = request.nextUrl.searchParams.get('price');
     const address = request.nextUrl.searchParams.get('address');
@@ -129,7 +130,7 @@ export async function GET(request: NextRequest) {
                 opacity: 0.9,
               }}
             >
-              (702) 500-1953
+              {BUSINESS_INFO.phone.display}
             </div>
           </div>
         </div>

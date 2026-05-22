@@ -1,6 +1,8 @@
 'use client';
 
 import { useState } from 'react';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { NAP_SHORT_NAME } from '@/lib/config/nap-copy';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
@@ -28,8 +30,7 @@ export default function Navigation() {
         <div className='flex justify-between items-center h-16'>
           {/* Logo/Brand */}
           <Link href='/' className='flex items-center'>
-            <h1 className='text-2xl font-bold text-[#0A2540]'>
-              North Las Vegas Family Homes
+            <h1 className='text-2xl font-bold text-[#0A2540]'>{NAP_SHORT_NAME}
             </h1>
           </Link>
 
@@ -73,7 +74,7 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
               <div className='flex flex-col space-y-4 mt-8'>
-                <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>North Las Vegas Family Homes – Menu</h2>
+                <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>{NAP_SHORT_NAME} – Menu</h2>
                 {navLinks.map(link => (
                   <Link
                     key={link.href}

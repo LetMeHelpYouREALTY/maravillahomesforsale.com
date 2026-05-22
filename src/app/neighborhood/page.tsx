@@ -1,4 +1,5 @@
 import { Suspense } from 'react';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import dynamic from 'next/dynamic';
 import PageLayout from '@/components/layout/page-layout';
 import FeaturedCommunities from '@/components/sections/featured-communities';
@@ -64,7 +65,7 @@ export const revalidate = 604800; // 1 week
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Maravilla Community Guide',
   description:
-    'Maravilla is a premier master-planned community in Las Vegas featuring luxury homes, excellent schools, parks, and convenient amenities. Discover why families choose Maravilla. Call (702) 500-1953.',
+      `Maravilla is a premier master-planned community in Las Vegas featuring luxury homes, excellent schools, parks, and convenient amenities. Discover why families choose Maravilla. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'Maravilla, Las Vegas homes, luxury homes, Las Vegas real estate, family neighborhood, master-planned community, Maravilla schools, Maravilla amenities, Las Vegas properties',
   path: '/neighborhood',

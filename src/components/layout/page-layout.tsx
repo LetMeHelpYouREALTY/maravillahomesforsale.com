@@ -3,6 +3,8 @@ import Navigation from '@/components/sections/navigation';
 import Footer from '@/components/sections/footer';
 import Breadcrumbs from '@/components/Breadcrumbs';
 import PageFAQSection from '@/components/PageFAQSection';
+import BusinessNapStrip from '@/components/shared/BusinessNapStrip';
+import StickyContactBar from '@/components/StickyContactBar';
 import RealScoutOfficeWidget from '@/components/sections/realscout-office-widget';
 import ListingsSkeleton from '@/components/skeletons/listings-skeleton';
 
@@ -60,8 +62,10 @@ export default function PageLayout({ children }: PageLayoutProps) {
           </div>
         </section>
         <PageFAQSection />
+        <BusinessNapStrip />
       </main>
       <Footer />
+      <StickyContactBar />
     </div>
   );
 }

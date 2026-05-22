@@ -8,7 +8,7 @@ import {
   generatePersonSchema,
   generateRealEstateAgentSchema,
 } from '@/lib/metadata';
-import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import './globals.css';
 
 const googleSiteVerification =
@@ -70,8 +70,7 @@ const openSans = Open_Sans({
 
 export const metadata: Metadata = {
   title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  description:
-    'North Las Vegas Family Homes: find your dream home in Maravilla & North Las Vegas. Family-friendly community, top schools, parks. Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.',
+  description: `Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in Maravilla and North Las Vegas. Call ${BUSINESS_INFO.phone.display}.`,
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, Maravilla community, North Las Vegas neighborhoods, homes for sale Maravilla, Nevada real estate',
   authors: [
@@ -136,8 +135,8 @@ export const metadata: Metadata = {
   other: {
     'geo.region': 'US-NV',
     'geo.placename': 'North Las Vegas, Las Vegas',
-    'geo.position': '36.2465;-115.1475',
-    ICBM: '36.2465, -115.1475',
+    'geo.position': `${BUSINESS_INFO.geo.latitude};${BUSINESS_INFO.geo.longitude}`,
+    ICBM: `${BUSINESS_INFO.geo.latitude}, ${BUSINESS_INFO.geo.longitude}`,
     'DC.title': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     'DC.creator': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     'DC.subject': 'Luxury Real Estate, North Las Vegas, Maravilla',

@@ -1,68 +1,72 @@
+import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+
 export default function AgentSchema() {
+  const siteUrl = 'https://www.maravillahomesforsale.com';
+
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': ['RealEstateAgent', 'LocalBusiness'],
-    '@id': 'https://www.maravillahomesforsale.com/#organization',
-    'name': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    'image': 'https://www.maravillahomesforsale.com/dr-jan-duffy.jpg',
-    'description': 'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, family-friendly amenities, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. Women-owned business. LGBTQ+ friendly. Offers online appointments.',
-    'url': 'https://www.maravillahomesforsale.com',
-    'telephone': '+1-702-500-1953',
-    'email': 'DrJanSells@MaravillaHomesForSale.com',
-    'foundingDate': '2009-09-20',
-    'address': {
+    '@id': `${siteUrl}#organization`,
+    name: BUSINESS_INFO.name,
+    image: `${siteUrl}/photos/Dr. Duffy Blue_Headshot.jpg`,
+    description: `${GBP_DESCRIPTION} Women-owned business. LGBTQ+ friendly. Offers online appointments.`,
+    url: siteUrl,
+    telephone: BUSINESS_INFO.phone.schema,
+    email: BUSINESS_INFO.email,
+    foundingDate: BUSINESS_INFO.foundingDate,
+    address: {
       '@type': 'PostalAddress',
-      'streetAddress': '4380 W Ann Rd Suite 201',
-      'addressLocality': 'North Las Vegas',
-      'addressRegion': 'NV',
-      'postalCode': '89031',
-      'addressCountry': 'US'
+      streetAddress: BUSINESS_INFO.address.streetAddress,
+      addressLocality: BUSINESS_INFO.address.addressLocality,
+      addressRegion: BUSINESS_INFO.address.addressRegion,
+      postalCode: BUSINESS_INFO.address.postalCode,
+      addressCountry: BUSINESS_INFO.address.addressCountry,
     },
-    'geo': {
+    geo: {
       '@type': 'GeoCoordinates',
-      'latitude': 36.2719,
-      'longitude': -115.1678
+      latitude: BUSINESS_INFO.geo.latitude,
+      longitude: BUSINESS_INFO.geo.longitude,
     },
-    'areaServed': {
+    areaServed: {
       '@type': 'Place',
-      'name': 'North Las Vegas, NV, USA'
+      name: BUSINESS_INFO.serviceArea,
     },
-    'priceRange': '$400,000 - $600,000',
-    'openingHoursSpecification': [
+    priceRange: '$$',
+    openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        'opens': '06:00',
-        'closes': '21:00'
-      }
-    ],
-    'sameAs': [
-      'https://www.linkedin.com/company/maravilla-homes-for-sale/',
-      'https://www.facebook.com/maravillahomesforsale',
-      'https://www.youtube.com/@DrDuffy'
-    ],
-    'hasCredential': {
-      '@type': 'EducationalOccupationalCredential',
-      'credentialCategory': 'Real Estate License',
-      'recognizedBy': {
-        '@type': 'Organization',
-        'name': 'Nevada Real Estate Division'
+        dayOfWeek: BUSINESS_INFO.hours.schema.dayOfWeek,
+        opens: BUSINESS_INFO.hours.schema.opens,
+        closes: BUSINESS_INFO.hours.schema.closes,
       },
-      'identifier': 'S.0197614'
+    ],
+    sameAs: [
+      BUSINESS_INFO.social.linkedin,
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.youtube,
+    ],
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Real Estate License',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Nevada Real Estate Division',
+      },
+      identifier: BUSINESS_INFO.license,
     },
-    'memberOf': {
+    memberOf: {
       '@type': 'Organization',
-      'name': 'Berkshire Hathaway HomeServices Nevada Properties'
+      name: BUSINESS_INFO.brokerage,
     },
-    'knowsAbout': [
+    knowsAbout: [
       'North Las Vegas Real Estate',
       'Maravilla Homes',
       'First-time Homebuyers',
       'Home Selling',
       'Property Valuation',
       'VA Loans',
-      'FHA Loans'
-    ]
+      'FHA Loans',
+    ],
   };
 
   return (

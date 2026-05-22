@@ -1,31 +1,33 @@
+import { BUSINESS_INFO } from '@/lib/config/business-info';
+
 export const siteConfig = {
-  name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+  name: BUSINESS_INFO.name,
   shortName: 'North Las Vegas Family Homes',
   url: 'https://www.maravillahomesforsale.com',
-  phone: '(702) 500-1953',
-  phoneRaw: '+17025001953',
-  phoneTel: 'tel:7025001953',
-  phoneSms: 'sms:+17025001953',
-  email: 'DrJanSells@MaravillaHomesForSale.com',
+  phone: BUSINESS_INFO.phone.display,
+  phoneRaw: BUSINESS_INFO.phone.schema,
+  phoneTel: BUSINESS_INFO.phone.href,
+  phoneSms: BUSINESS_INFO.sms.href,
+  email: BUSINESS_INFO.email,
   address: {
-    street: '4380 W Ann Rd Suite 201',
-    city: 'North Las Vegas',
-    state: 'NV',
-    zip: '89031',
-    full: '4380 W Ann Rd Suite 201, North Las Vegas, NV 89031'
+    street: BUSINESS_INFO.address.streetAddress,
+    city: BUSINESS_INFO.address.addressLocality,
+    state: BUSINESS_INFO.address.addressRegion,
+    zip: BUSINESS_INFO.address.postalCode,
+    full: BUSINESS_INFO.address.full,
   },
-  social: {
-    linkedin: 'https://www.linkedin.com/company/maravilla-homes-for-sale/',
-    facebook: 'https://www.facebook.com/maravillahomesforsale',
-    youtube: 'https://www.youtube.com/@DrDuffy'
-  },
-  license: 'S.0197614',
-  brokerage: 'Berkshire Hathaway HomeServices Nevada Properties',
+  social: BUSINESS_INFO.social,
+  license: BUSINESS_INFO.license,
+  brokerage: BUSINESS_INFO.brokerage,
   realscout: 'http://drjanduffy.realscout.com/onboarding',
-  googleBusiness: 'https://share.google/jwKcbkiXP5lxFx8Kf',
+  googleBusiness: BUSINESS_INFO.googleBusinessProfile,
+  googleReview: BUSINESS_INFO.googleReviewUrl,
   hours: {
     open: '6:00 AM',
     close: '9:00 PM',
-    days: 'Sunday - Saturday'
-  }
+    days: 'Sunday – Saturday',
+  },
+  description: BUSINESS_INFO.description,
+  serviceArea: BUSINESS_INFO.serviceArea,
+  foundingDate: BUSINESS_INFO.foundingDate,
 };

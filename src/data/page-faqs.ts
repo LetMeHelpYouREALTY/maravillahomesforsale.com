@@ -94,7 +94,7 @@ const CONTACT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, email DrJanSells@MaravillaHomesForSale.com, or use the contact form on this page. You can also schedule a consultation via the Calendly widget.',
+      'Call (702) 500-1953, email DrDuffy@MaravillaHomesForSale.com, or use the contact form on this page. You can also schedule a consultation via the Calendly widget.',
   },
   {
     question: 'What are your office hours?',
@@ -239,7 +239,7 @@ const PRIVACY_FAQS: readonly FAQItem[] = [
   {
     question: 'How can I contact you about privacy?',
     answer:
-      'For privacy questions or requests, contact Dr. Jan Duffy at DrJanSells@MaravillaHomesForSale.com or (702) 500-1953.',
+      'For privacy questions or requests, contact Dr. Jan Duffy at DrDuffy@MaravillaHomesForSale.com or (702) 500-1953.',
   },
 ];
 
@@ -270,7 +270,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, email DrJanSells@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 4380 W Ann Rd Suite 201, North Las Vegas, NV 89031.',
+      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031.',
   },
 ];
 

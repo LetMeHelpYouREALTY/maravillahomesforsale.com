@@ -13,7 +13,12 @@ export default function Footer() {
               North Las Vegas Family Homes | Homes by Dr. Jan Duffy
             </h3>
             <p className='text-gray-300 leading-relaxed'>
-              Your trusted partner in finding the perfect home in Maravilla.
+              Your trusted partner in finding the perfect home in Maravilla and
+              North Las Vegas.
+            </p>
+            <p className='text-gray-400 text-sm mt-3'>{BUSINESS_INFO.hours.display}</p>
+            <p className='text-gray-400 text-xs mt-2'>
+              Women-owned · LGBTQ+ friendly · Online appointments available
             </p>
           </div>
 
@@ -212,7 +217,7 @@ export default function Footer() {
             </p>
             <div className='flex flex-wrap gap-4'>
               <Link
-                href='https://www.facebook.com/maravillahomesforsale'
+                href={BUSINESS_INFO.social.facebook}
                 target='_blank'
                 rel='noopener noreferrer'
                 prefetch={false}
@@ -228,7 +233,7 @@ export default function Footer() {
                 </svg>
               </Link>
               <Link
-                href='https://www.youtube.com/@DrDuffy'
+                href={BUSINESS_INFO.social.youtube}
                 target='_blank'
                 rel='noopener noreferrer'
                 prefetch={false}
@@ -244,7 +249,7 @@ export default function Footer() {
                 </svg>
               </Link>
               <Link
-                href='https://www.linkedin.com/company/maravilla-homes-for-sale/'
+                href={BUSINESS_INFO.social.linkedin}
                 target='_blank'
                 rel='noopener noreferrer'
                 prefetch={false}
@@ -266,7 +271,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className='border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 space-y-2 text-sm'>
           <p>
-            &copy; 2007-2025 North Las Vegas Family Homes | Homes by Dr. Jan Duffy. All rights
+            &copy; 2009-2026 North Las Vegas Family Homes | Homes by Dr. Jan Duffy. All rights
             reserved.
           </p>
           <p>&copy; 2025 BHH Affiliates, LLC.</p>

@@ -4,27 +4,41 @@
  * @see https://llmstxt.org
  */
 
+import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+
 export const dynamic = 'force-dynamic';
 
 export async function GET() {
   const baseUrl = 'https://www.maravillahomesforsale.com';
 
-  const content = `# Maravilla Homes for Sale — Dr. Jan Duffy
+  const content = `# ${BUSINESS_INFO.name}
 
-> North Las Vegas family homes in the Maravilla community.
-> Expert neighborhood guide and real estate services by Dr. Jan Duffy.
+> ${GBP_DESCRIPTION}
 
 ## About
 
-Dr. Jan Duffy is a licensed Nevada real estate agent (S.0197614) and the leading specialist for Maravilla community homes in North Las Vegas. With 30+ years of Las Vegas real estate experience, she provides expert guidance for buyers and sellers in this popular family-friendly community.
+Dr. Jan Duffy is a licensed Nevada real estate agent (${BUSINESS_INFO.license}) and the leading specialist for Maravilla community homes in North Las Vegas. In business since September 20, 2009.
 
-- **Brokerage:** Berkshire Hathaway HomeServices Nevada Properties
-- **License:** Nevada S.0197614.LLC
-- **Office:** 4380 W Ann Rd Suite 201, North Las Vegas, NV 89031
-- **Phone:** (702) 500-1953
-- **Email:** DrDuffy@MaravillaHomesForSale.com
-- **Hours:** 6AM-9PM Daily
+- **Business name:** ${BUSINESS_INFO.name}
+- **Categories:** ${BUSINESS_INFO.categories.primary}; ${BUSINESS_INFO.categories.additional.join('; ')}
+- **Brokerage:** ${BUSINESS_INFO.brokerage}
+- **License:** Nevada ${BUSINESS_INFO.license}
+- **Office:** ${BUSINESS_INFO.address.full}
+- **Service area:** ${BUSINESS_INFO.serviceArea}
+- **Phone:** ${BUSINESS_INFO.phone.display}
+- **Text/Chat:** ${BUSINESS_INFO.sms.href}
+- **Email:** ${BUSINESS_INFO.email}
+- **Hours:** ${BUSINESS_INFO.hours.display}
 - **Website:** ${baseUrl}
+- **Women-owned:** Yes
+- **LGBTQ+ friendly:** Yes
+- **Online appointments:** Yes
+
+## Social
+
+- YouTube: ${BUSINESS_INFO.social.youtube}
+- LinkedIn: ${BUSINESS_INFO.social.linkedin}
+- Facebook: ${BUSINESS_INFO.social.facebook}
 
 ## Services
 
@@ -41,31 +55,33 @@ Dr. Jan Duffy is a licensed Nevada real estate agent (S.0197614) and the leading
 
 **Maravilla** is a master-planned community in North Las Vegas, NV 89031. It features:
 - Family-friendly neighborhood with parks and walking trails
-- Close proximity to schools and shopping
+- Close proximity to schools and shopping (including Aliante)
 - Modern floor plans from top builders
 - Community amenities including pools and recreation areas
-- Easy access to I-15 and US-95 freeways
+- Easy access to I-215 and I-15 freeways
 - Competitive pricing for Las Vegas Valley families
 
 ## Coverage Area
 
-North Las Vegas, Las Vegas, Henderson, Aliante, Craig Ranch, Tule Springs, El Dorado, Centennial Hills, Skye Canyon
+${BUSINESS_INFO.serviceArea}
 
 ## Key Pages
 
 - [Home](${baseUrl}/)
-- [Homes for Sale](${baseUrl}/homes-for-sale)
-- [About Maravilla](${baseUrl}/about)
+- [Homes for Sale](${baseUrl}/homes)
+- [About](${baseUrl}/about)
 - [Community Guide](${baseUrl}/community)
 - [Contact](${baseUrl}/contact)
-- [Home Values](${baseUrl}/home-values)
+- [Home Valuation](${baseUrl}/home-valuation)
 
 ## Contact
 
-For Maravilla real estate questions:
-- **Call/Text:** (702) 500-1953
-- **Email:** DrDuffy@MaravillaHomesForSale.com
-- **Google Business:** https://share.google/jwKcbkiXP5lxFx8Kf
+For Maravilla and North Las Vegas real estate questions:
+- **Call:** ${BUSINESS_INFO.phone.display}
+- **Text:** ${BUSINESS_INFO.sms.href}
+- **Email:** ${BUSINESS_INFO.email}
+- **Google Business:** ${BUSINESS_INFO.googleBusinessProfile}
+- **Leave a review:** ${BUSINESS_INFO.googleReviewUrl}
 - **Website:** ${baseUrl}
 `;
 

@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { BUSINESS_INFO } from './config/business-info';
+import { BUSINESS_INFO, GBP_DESCRIPTION } from './config/business-info';
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -85,11 +85,18 @@ export const MARAVILLA_FAQS = [
 // Keep CRAIG_RANCH_FAQS for backward compatibility during migration
 export const CRAIG_RANCH_FAQS = MARAVILLA_FAQS;
 
+const schemaAttributeNote = [
+  BUSINESS_INFO.attributes.womenOwned ? 'Women-owned business' : null,
+  BUSINESS_INFO.attributes.lgbtqFriendly ? 'LGBTQ+ friendly' : null,
+  BUSINESS_INFO.attributes.offersOnlineAppointments ? 'Offers online appointments' : null,
+]
+  .filter(Boolean)
+  .join('. ');
+
 const siteConfig = {
   name: businessName,
   url: siteUrl,
-    description:
-      'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, family-friendly amenities, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. With nearby Aliante shopping, top-rated schools, and great neighborhoods, it\'s no wonder buyers are flocking to this area. For sellers, Dr. Duffy offers proven pricing strategies and expert marketing to help you get the best value for your property. Whether you\'re searching for your dream home or selling your house, Dr. Duffy provides personalized tours, market insights, and full support to make the process easy and stress-free.',
+  description: GBP_DESCRIPTION,
   ogImage: '/photos/01-1 (2).jpg',
   twitterHandle: '@maravillahomes',
   locale: 'en_US',
@@ -177,14 +184,22 @@ export function generateMetadata({
 /**
  * Generate LocalBusiness schema for contact pages
  */
+function generateSpecialOpeningHoursSchema() {
+  return BUSINESS_INFO.specialHours.map((holiday) => ({
+    '@type': 'OpeningHoursSpecification' as const,
+    validFrom: holiday.date,
+    validThrough: holiday.date,
+    description: `Closed — ${holiday.label}`,
+  }));
+}
+
 export function generateLocalBusinessSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'LocalBusiness',
+    '@type': ['LocalBusiness', 'RealEstateAgent'],
     '@id': `${siteUrl}#localbusiness`,
     name: businessName,
-    description:
-      'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, family-friendly amenities, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. With nearby Aliante shopping, top-rated schools, and great neighborhoods, it\'s no wonder buyers are flocking to this area. For sellers, Dr. Duffy offers proven pricing strategies and expert marketing to help you get the best value for your property. Whether you\'re searching for your dream home or selling your house, Dr. Duffy provides personalized tours, market insights, and full support to make the process easy and stress-free. Women-owned business. LGBTQ+ friendly. Offers online appointments.',
+    description: `${GBP_DESCRIPTION} ${schemaAttributeNote}.`,
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
@@ -199,29 +214,24 @@ export function generateLocalBusinessSchema() {
       ...businessGeo,
     },
     hasMap: BUSINESS_INFO.maps.business,
+    sameAs: [
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.linkedin,
+      BUSINESS_INFO.social.youtube,
+    ],
     areaServed: [
       { '@type': 'Place', name: BUSINESS_INFO.serviceArea },
       { '@type': 'City', name: 'North Las Vegas', addressRegion: 'NV' },
-      { '@type': 'City', name: 'Las Vegas', addressRegion: 'NV' },
-      { '@type': 'City', name: 'Henderson', addressRegion: 'NV' },
     ],
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
-        dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-        opens: '06:00',
-        closes: '21:00',
+        dayOfWeek: BUSINESS_INFO.hours.schema.dayOfWeek,
+        opens: BUSINESS_INFO.hours.schema.opens,
+        closes: BUSINESS_INFO.hours.schema.closes,
       },
     ],
-    specialOpeningHoursSpecification: [
-      {
-        '@type': 'OpeningHoursSpecification',
-        opens: '10:00',
-        closes: '18:00',
-        validFrom: '2026-02-16',
-        validThrough: '2026-02-16',
-      },
-    ],
+    specialOpeningHoursSpecification: generateSpecialOpeningHoursSchema(),
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     priceRange: '$$$',
     currenciesAccepted: 'USD',
@@ -248,8 +258,7 @@ export function generateOrganizationSchema() {
       height: 512,
     },
     image: `${siteUrl}/photos/01-1 (2).jpg`,
-    description:
-      'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, family-friendly amenities, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. With nearby Aliante shopping, top-rated schools, and great neighborhoods, it&apos;s no wonder buyers are flocking to this area. For sellers, Dr. Duffy offers proven pricing strategies and expert marketing to help you get the best value for your property. Whether you&apos;re searching for your dream home or selling your house, Dr. Duffy provides personalized tours, market insights, and full support to make the process easy and stress-free.',
+    description: GBP_DESCRIPTION,
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -284,9 +293,9 @@ export function generateOrganizationSchema() {
       },
     ],
     sameAs: [
-      'https://www.facebook.com/maravillahomesforsale',
-      'https://www.linkedin.com/company/maravilla-homes-for-sale/',
-      'https://www.youtube.com/@DrDuffy',
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.linkedin,
+      BUSINESS_INFO.social.youtube,
     ],
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
@@ -346,9 +355,9 @@ export function generatePersonSchema() {
       name: 'Real Estate Education',
     },
     sameAs: [
-      'https://www.facebook.com/maravillahomesforsale',
-      'https://www.youtube.com/@DrDuffy',
-      'https://www.linkedin.com/company/maravilla-homes-for-sale/',
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.youtube,
+      BUSINESS_INFO.social.linkedin,
     ],
   };
 }
@@ -362,8 +371,7 @@ export function generateRealEstateAgentSchema() {
     '@type': 'RealEstateAgent',
     '@id': `${siteUrl}#realestateagent`,
     name: 'Dr. Jan Duffy',
-    description:
-      'REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla, Las Vegas, North Las Vegas, and Henderson. Over 15 years of experience, 500+ homes sold. Women-owned. LGBTQ+ friendly. Offers online appointments.',
+    description: `REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla and ${BUSINESS_INFO.serviceArea}. ${schemaAttributeNote}.`,
     jobTitle: 'REALTOR®',
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     worksFor: {
@@ -455,9 +463,9 @@ export function generateRealEstateAgentSchema() {
       identifier: 'S.0197614',
     },
     sameAs: [
-      'https://www.facebook.com/maravillahomesforsale',
-      'https://www.linkedin.com/company/maravilla-homes-for-sale/',
-      'https://www.youtube.com/@DrDuffy',
+      BUSINESS_INFO.social.facebook,
+      BUSINESS_INFO.social.linkedin,
+      BUSINESS_INFO.social.youtube,
     ],
   };
 }
@@ -605,8 +613,7 @@ export function generateWebSiteSchema() {
       'maravillahomesforsale.com',
     ],
     url: siteUrl,
-    description:
-      'North Las Vegas Family Homes: real estate in Maravilla and North Las Vegas. Find your dream home with Dr. Jan Duffy, REALTOR®. Family homes, schools, and community in North Las Vegas.',
+    description: GBP_DESCRIPTION,
     publisher: {
       '@type': 'Organization',
       '@id': `${siteUrl}#organization`,

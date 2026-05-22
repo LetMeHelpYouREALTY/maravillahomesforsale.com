@@ -21,7 +21,7 @@ export const maravillaFAQs = [
   },
   {
     question: "Can I schedule a property tour?",
-    answer: "Absolutely! Dr. Jan Duffy offers personalized tours of available properties in Maravilla. You can schedule a tour by calling (702) 500-1953, emailing DrJanSells@MaravillaHomesForSale.com, or texting the same number. Tours are available 7 days a week from 6:00 AM to 9:00 PM."
+    answer: "Absolutely! Dr. Jan Duffy offers personalized tours of available properties in Maravilla. You can schedule a tour by calling (702) 500-1953, emailing DrDuffy@MaravillaHomesForSale.com, or texting the same number. Tours are available 7 days a week from 6:00 AM to 9:00 PM."
   },
   {
     question: "What schools serve the Maravilla community?",
@@ -29,7 +29,7 @@ export const maravillaFAQs = [
   },
   {
     question: "What are the HOA fees in Maravilla?",
-    answer: "Maravilla has a homeowners association that maintains community amenities including parks, trails, and common areas. HOA fees vary by neighborhood within the community. Contact Dr. Jan Duffy at (702) 500-1953 or email DrJanSells@MaravillaHomesForSale.com for current HOA fee information on specific properties."
+    answer: "Maravilla has a homeowners association that maintains community amenities including parks, trails, and common areas. HOA fees vary by neighborhood within the community. Contact Dr. Jan Duffy at (702) 500-1953 or email DrDuffy@MaravillaHomesForSale.com for current HOA fee information on specific properties."
   },
   {
     question: "Is Maravilla a good investment?",
@@ -37,6 +37,6 @@ export const maravillaFAQs = [
   },
   {
     question: "How can Dr. Jan Duffy help me sell my home?",
-    answer: "Dr. Duffy offers proven pricing strategies and expert marketing to help sellers get the best value for their property. Services include professional photography, comprehensive market analysis, MLS listing, online marketing, and full support throughout the transaction. Contact her at (702) 500-1953 or DrJanSells@MaravillaHomesForSale.com for a free home valuation."
+    answer: "Dr. Duffy offers proven pricing strategies and expert marketing to help sellers get the best value for their property. Services include professional photography, comprehensive market analysis, MLS listing, online marketing, and full support throughout the transaction. Contact her at (702) 500-1953 or DrDuffy@MaravillaHomesForSale.com for a free home valuation."
   }
 ];

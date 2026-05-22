@@ -24,7 +24,7 @@ import {
   generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
-import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -99,20 +99,28 @@ export default function ContactPage() {
                 <CardHeader>
                   <CardTitle className='flex items-center gap-2'>
                     <Phone className='h-5 w-5 text-[#3A8DDE]' />
-                    Phone Numbers
+                    Phone & Text
                   </CardTitle>
                 </CardHeader>
                 <CardContent className='space-y-3'>
                   <div>
                     <a
-                      href='tel:7025001953'
+                      href={BUSINESS_INFO.phone.href}
                       className='text-lg font-semibold text-[#0A2540] hover:text-[#3A8DDE] transition-colors'
                     >
-                      (702) 500-1953
+                      {BUSINESS_INFO.phone.display}
+                    </a>
+                  </div>
+                  <div>
+                    <a
+                      href={BUSINESS_INFO.sms.href}
+                      className='text-sm font-medium text-[#3A8DDE] hover:underline'
+                    >
+                      {BUSINESS_INFO.sms.display}
                     </a>
                   </div>
                   <p className='text-gray-600 text-sm mt-2'>
-                    Available 6AM - 9PM Daily
+                    {BUSINESS_INFO.hours.display}
                   </p>
                 </CardContent>
               </Card>
@@ -152,7 +160,10 @@ export default function ContactPage() {
                     {BUSINESS_INFO.address.addressLocality}, {BUSINESS_INFO.address.addressRegion} {BUSINESS_INFO.address.postalCode}
                   </p>
                   <p className='text-gray-600 text-sm mt-2'>
-                    Serving Las Vegas, Henderson, and surrounding communities
+                    Service area: {BUSINESS_INFO.serviceArea}
+                  </p>
+                  <p className='text-gray-600 text-xs mt-2'>
+                    In business since September 20, 2009
                   </p>
                 </CardContent>
               </Card>
@@ -165,23 +176,25 @@ export default function ContactPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <div className='space-y-2 text-sm'>
-                    <div className='flex justify-between'>
-                      <span className='text-gray-600'>Monday - Friday:</span>
-                      <span className='font-semibold'>9:00 AM - 6:00 PM</span>
-                    </div>
-                    <div className='flex justify-between'>
-                      <span className='text-gray-600'>Saturday:</span>
-                      <span className='font-semibold'>10:00 AM - 4:00 PM</span>
-                    </div>
-                    <div className='flex justify-between'>
-                      <span className='text-gray-600'>Sunday:</span>
-                      <span className='font-semibold'>By Appointment</span>
-                    </div>
-                  </div>
+                  <p className='font-semibold text-[#0A2540]'>{BUSINESS_INFO.hours.display}</p>
+                  <p className='text-gray-600 text-sm mt-3'>
+                    Closed: Easter (Apr 5, 2026), Memorial Day (May 25, 2026), and
+                    4th of July observed (Jul 3, 2026).
+                  </p>
+                  <ul className='text-gray-600 text-xs mt-2 space-y-1 list-disc list-inside'>
+                    {BUSINESS_INFO.attributes.womenOwned && <li>Women-owned business</li>}
+                    {BUSINESS_INFO.attributes.lgbtqFriendly && <li>LGBTQ+ friendly</li>}
+                    {BUSINESS_INFO.attributes.offersOnlineAppointments && (
+                      <li>Offers online appointments</li>
+                    )}
+                  </ul>
                 </CardContent>
             </Card>
           </div>
+
+          <p className='text-gray-700 leading-relaxed max-w-4xl mx-auto text-center mb-6'>
+            {GBP_DESCRIPTION}
+          </p>
 
           {/* About Dr. Jan Duffy - Full Width Card */}
           <Card className='border-0 shadow-lg bg-white mt-6'>
@@ -262,13 +275,16 @@ export default function ContactPage() {
             </Button>
             <Button asChild variant='outline'>
               <Link
-                href={BUSINESS_INFO.maps.business}
+                href={BUSINESS_INFO.maps.directions}
                 target='_blank'
                 rel='noopener noreferrer'
                 prefetch={false}
               >
                 Get Directions
               </Link>
+            </Button>
+            <Button asChild variant='outline'>
+              <a href={BUSINESS_INFO.sms.href}>Text / Chat</a>
             </Button>
             <Button asChild variant='outline'>
               <Link

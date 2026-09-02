@@ -130,6 +130,22 @@ export const metadata: Metadata = {
   ...(googleSiteVerification
     ? { verification: { google: googleSiteVerification } }
     : {}),
+  icons: {
+    icon: [
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
+      { url: '/icon-192x192.png', sizes: '192x192', type: 'image/png' },
+      { url: '/icon-512x512.png', sizes: '512x512', type: 'image/png' },
+    ],
+    apple: [
+      {
+        url: '/apple-touch-icon.png',
+        sizes: '180x180',
+        type: 'image/png',
+      },
+    ],
+    shortcut: '/favicon.ico',
+  },
   category: 'Real Estate',
   classification: 'Luxury Real Estate',
   other: {
@@ -167,11 +183,6 @@ export default function RootLayout({
         <meta name='theme-color' content='#0A2540' />
         {/* 2025 Best Practice: Color scheme for dark mode support */}
         <meta name='color-scheme' content='light dark' />
-        {/* Favicon for Google Search results - SVG primary, ICO fallback */}
-        <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
-        <link rel='icon' href='/favicon.ico' sizes='any' />
-        {/* Apple Touch Icon for iOS devices */}
-        <link rel='apple-touch-icon' href='/favicon.svg' />
         {/* Preconnect to critical third-party origins for faster resource loading */}
         {/* RealScout: Preconnect for widget (310ms LCP savings per Lighthouse) */}
         <link rel='preconnect' href='https://em.realscout.com' crossOrigin='anonymous' />

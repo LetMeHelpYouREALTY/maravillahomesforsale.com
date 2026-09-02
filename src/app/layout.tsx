@@ -9,7 +9,7 @@ import {
   generateRealEstateAgentSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
-import { AGENT_PHOTO } from '@/lib/config/agent';
+import { AGENT_PHOTO, HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
 import {
   isCloudflareImagesEnabled,
   toAbsoluteImageUrl,
@@ -55,7 +55,7 @@ function isValidFacebookPixelId(value: string | undefined): value is string {
 }
 
 // Ensure these assets exist in /public to avoid 404s for crawlers.
-const ogImageUrl = toAbsoluteImageUrl(AGENT_PHOTO.srcSchema, siteUrl);
+const ogImageUrl = toAbsoluteImageUrl(HOMEPAGE_OG_IMAGE.src, siteUrl);
 
 // Optimize fonts with next/font
 const sourceSansPro = Source_Sans_3({
@@ -102,9 +102,9 @@ export const metadata: Metadata = {
       images: [
         {
           url: ogImageUrl,
-          width: 512,
-          height: 512,
-          alt: AGENT_PHOTO.alt,
+          width: HOMEPAGE_OG_IMAGE.width,
+          height: HOMEPAGE_OG_IMAGE.height,
+          alt: HOMEPAGE_OG_IMAGE.alt,
           secureUrl: ogImageUrl,
         },
       ],

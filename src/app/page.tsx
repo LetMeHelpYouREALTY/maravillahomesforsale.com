@@ -3,10 +3,6 @@ import dynamic from 'next/dynamic';
 import Script from 'next/script';
 import PageLayout from '@/components/layout/page-layout';
 import Hero from '@/components/sections/hero';
-import HomeEvaluationSection from '@/components/sections/home-evaluation';
-import PropertyCategories from '@/components/sections/property-categories';
-import FeaturedCommunities from '@/components/sections/featured-communities';
-import BlogPosts from '@/components/sections/blog-posts';
 import KcmVideosSection from '@/components/sections/kcm-videos-section';
 import RecentSales from '@/components/sections/recent-sales';
 import MarketSnapshot from '@/components/sections/market-snapshot';
@@ -24,6 +20,7 @@ import {
   generateRealEstateAgentSchema,
   generateVideoGallerySchema,
 } from '@/lib/metadata';
+import { HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
 import { KCM_VIDEO_ENTRIES } from '@/data/kcm-videos';
 
 const baseUrl = (
@@ -85,6 +82,7 @@ export const metadata = genMetadata({
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',
+  image: HOMEPAGE_OG_IMAGE.src,
 });
 
 export default function Home() {

@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from './config/business-info';
-import { AGENT_PHOTO } from './config/agent';
+import { AGENT_PHOTO, HOMEPAGE_OG_IMAGE } from './config/agent';
 import {
   toAbsoluteImageUrl,
   withCloudflareVariant,
@@ -105,7 +105,7 @@ function agentImageUrl(): string {
 function pageImageUrl(image?: string): string {
   const resolved = image
     ? withCloudflareVariant(image, 'og')
-    : AGENT_PHOTO.srcSchema;
+    : HOMEPAGE_OG_IMAGE.src;
   return toAbsoluteImageUrl(resolved, siteUrl);
 }
 
@@ -113,7 +113,7 @@ const siteConfig = {
   name: businessName,
   url: siteUrl,
   description: GBP_DESCRIPTION,
-  ogImage: AGENT_PHOTO.srcSchema,
+  ogImage: HOMEPAGE_OG_IMAGE.src,
   twitterHandle: '@maravillahomes',
   locale: 'en_US',
   type: 'website',

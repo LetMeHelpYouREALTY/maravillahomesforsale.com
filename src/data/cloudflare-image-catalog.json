@@ -50,6 +50,11 @@
       "role": "agent"
     },
     {
+      "id": "maravilla/og-home",
+      "file": "public/images/og-home.jpg",
+      "role": "og"
+    },
+    {
       "id": "maravilla/neighborhoods-hero",
       "file": "public/images/pages/neighborhoods-hero.jpg",
       "role": "hero"

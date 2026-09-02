@@ -1,162 +1,131 @@
-# Vercel Deploy Audit – Git Push Not Triggering Deployment
+# Vercel Deploy Audit – Git Push Did Not Auto-Deploy Production
 
-**Audit date:** May 22, 2026  
-**Repository:** `LetMeHelpYouREALTY/maravillahomesforsale.com`  
-**Latest GBP commit:** `f24a40e` on branch `cursor/gbp-profile-update-b0bb`  
-**Production branch on GitHub (`origin/main`):** `9f354ef` (does **not** include GBP changes)
+**Audit date:** September 2, 2026  
+**Repository (this agent):** `LetMeHelpYouREALTY/maravillahomesforsale.com`  
+**Vercel project:** `maravillahomesforsale.com` (`prj_qNbmEbpEf2HedmMTS2NSqtoo4Pph`)  
+**Team:** Janet Duffy's projects (`team_EIbjFXaDDtGMTweb5Hvo3CG3`)
 
 ---
 
 ## Executive summary
 
-The git push **succeeded** to GitHub. Vercel did not deploy your GBP work to production because:
+`git add` / `git commit` / `git push` **succeeded**. Vercel **did not** ship a new production build because of two independent failures:
 
-1. **You pushed a feature branch, not `main`** — Vercel production almost always tracks `main` only.
-2. **The connected Vercel project may not be on the MCP-linked team** — `maravillahomesforsale.com` was **not found** under team `Janet Duffy's projects` (404 via API).
-3. **Docs reference the wrong GitHub org** — older notes say `DrJanDuffy/maravillahomesforsale.com`; this repo is `LetMeHelpYouREALTY/maravillahomesforsale.com`.
+1. **Git integration is stale after the GitHub org transfer.** The live Vercel project still records the GitHub owner as `DrJanDuffy`, while all current pushes go to `LetMeHelpYouREALTY`. Same GitHub repo id (`1115596353`), different owner string. Webhooks stopped creating deployments for new SHAs.
+2. **This session pushed a feature branch, not `main`.** Even with a healthy Git link, Vercel production only builds the production branch (`main`). `cursor/add-jan-duffy-favicon-9a68` would be a **preview**, not `www.maravillahomesforsale.com`.
+
+Live `https://www.maravillahomesforsale.com` still serves the March 5, 2026 commit `9f354ef` (old house `favicon.svg`, no Dr. Jan Duffy portrait files). GBP commits already on `origin/main` (`f24a40e`, `05a81b5`) also never reached production.
 
 ---
 
-## Verified facts (this environment)
+## Verified facts
 
 | Check | Result |
-|-------|--------|
-| `git push` to `cursor/gbp-profile-update-b0bb` | OK — remote has `f24a40e` |
-| `origin/main` includes GBP commit | **No** — main still at `9f354ef` |
-| Commits only on feature branch | `f24a40e` (1 commit ahead of main) |
-| `.vercel/project.json` in repo | **Missing** — CLI not linked here |
-| `.github/workflows` | **None** — no CI fallback deploy |
-| Vercel project `maravillahomesforsale.com` on team | **404 Not Found** |
-| `list_projects` (50 projects) | No `maravillahomesforsale` entry |
+| --- | --- |
+| Last `git push` from this agent | OK — `70b4864` on `origin/cursor/add-jan-duffy-favicon-9a68` |
+| `origin/main` | `05a81b5` (GBP + deploy-audit docs) — **does not** include favicon/portrait/Cloudflare Images |
+| Latest Vercel **production** deployment | `dpl_9QHLPDX5sdd7pGJMo9fLzViifVTi` — **READY** — **Aug 8, 2026** |
+| SHA on that deployment | `9f354ef` (`llms.txt`) |
+| How it was created | `meta.action = redeploy` (manual redeploy of an old git deploy, not a new push) |
+| Last **git-triggered** new SHA | `dpl_EgawL3yAhdQhj3iqjWemQFJ1tZUH` — **Mar 5, 2026** — `9f354ef` from `DrJanDuffy` |
+| Vercel `link.org` | **`DrJanDuffy`** |
+| GitHub `full_name` (same repo id) | **`LetMeHelpYouREALTY/maravillahomesforsale.com`** |
+| `DrJanDuffy/maravillahomesforsale.com` | Resolves to the LetMeHelpYouREALTY repo (transfer alias) |
+| Feature-branch deployments for `70b4864` / `5e087e7` / `7adf5bc` | **None** |
+| `main` deployments for `f24a40e` / `05a81b5` | **None** |
+| `.vercel/project.json` in this checkout | Missing (CLI not linked) |
+| `.github/workflows` | None — no Actions fallback |
+| `vercel.json` `git.deploymentEnabled` | Not set (defaults to enabled; **not** the blocker) |
+| `create_git_project` to relink | **409** — `Project "maravillahomesforsale.com" already exists` (API will not reconnect it) |
+| `VERCEL_TOKEN` in this environment | Not set — cannot `vercel --prod` from here |
+| Live HTML | Still contains `favicon.svg`; **no** `dr-jan-duffy` / `imagedelivery.net` |
+
+Inspector for the live production deploy:  
+https://vercel.com/janet-duffys-projects/maravillahomesforsale.com/9QHLPDX5sdd7pGJMo9fLzViifVTi
 
 ---
 
 ## Root causes (ranked)
 
-### 1. Production branch mismatch (most likely)
+### 1. Stale GitHub owner on the Vercel project (blocks auto-deploy)
 
-Vercel auto-deploys **production** when you push to the branch set under **Settings → Git → Production Branch** (default: `main`).
+Vercel Git still says:
 
-You pushed:
-
-```bash
-git push -u origin cursor/gbp-profile-update-b0bb
+```text
+org:  DrJanDuffy
+repo: maravillahomesforsale.com
 ```
 
-That triggers a **preview** deployment only if:
+GitHub transferred that repository to `LetMeHelpYouREALTY`. Repo id `1115596353` is unchanged. After a transfer, the Vercel GitHub App webhook often keeps the old owner and **stops firing on new pushes**.
 
-- Git integration is connected to this repo, and
-- Preview deployments are enabled, and
-- The branch is not in **Ignored Build Step** / **Ignored Branches**
+That matches the timeline:
 
-It does **not** update `https://www.maravillahomesforsale.com` until changes are on `main` (or you promote a preview).
+- Mar 5, 2026 — last git deploy of a **new** SHA (`9f354ef`)
+- Jun 25 and Aug 8, 2026 — **redeploys** of that same SHA
+- May–Sep 2026 — `f24a40e`, `05a81b5`, and this PR’s commits never appear in Vercel
 
-**Fix (production):**
+Pushing `main` on LetMeHelpYouREALTY will **not** fix production until Git is disconnected and reconnected in the dashboard.
+
+**Fix (required, dashboard):**
+
+1. Open [Vercel → maravillahomesforsale.com → Settings → Git](https://vercel.com/janet-duffys-projects/maravillahomesforsale.com/settings/git).
+2. Confirm Connected Git Repository is `LetMeHelpYouREALTY/maravillahomesforsale.com` (not `DrJanDuffy/...`).
+3. If it still shows `DrJanDuffy`: **Disconnect**, then **Connect Git Repository** → `LetMeHelpYouREALTY/maravillahomesforsale.com`.
+4. Production Branch = `main`.
+5. Confirm the GitHub App for Vercel can access the `LetMeHelpYouREALTY` org (GitHub → Settings → Applications → Vercel → Organization access).
+
+### 2. Feature branch is not the production branch
+
+This agent pushed:
+
+```bash
+git push -u origin cursor/add-jan-duffy-favicon-9a68
+```
+
+Vercel production tracks **`main`**. A healthy Git link would create a **preview** URL for `cursor/*`, not update `www.maravillahomesforsale.com`.
+
+Draft PR: https://github.com/LetMeHelpYouREALTY/maravillahomesforsale.com/pull/3 (`MERGEABLE`).
+
+**Fix (after Git is reconnected):** merge PR #3 into `main`, or:
 
 ```bash
 git checkout main
 git pull origin main
-git merge cursor/gbp-profile-update-b0bb
+git merge cursor/add-jan-duffy-favicon-9a68
 git push origin main
 ```
 
-Or merge [PR #1](https://github.com/LetMeHelpYouREALTY/maravillahomesforsale.com/pull/1) on GitHub.
+Do not force-push `main`.
+
+### 3. No CI fallback
+
+There is no GitHub Action calling `vercel deploy --prod`. If the GitHub App webhook is dead, **nothing else deploys**.
 
 ---
 
-### 2. Vercel Git repo / org mismatch
+## What did *not* cause this
 
-`VERCEL_DEPLOY_AUDIT.md` (older) referenced:
-
-- `DrJanDuffy/maravillahomesforsale.com`
-
-Actual remote:
-
-- `LetMeHelpYouREALTY/maravillahomesforsale.com`
-
-If the Vercel project is still linked to the old org/repo, pushes to `LetMeHelpYouREALTY/...` will **never** trigger a build.
-
-**Fix:** Vercel Dashboard → Project → **Settings → Git** → confirm repository is `LetMeHelpYouREALTY/maravillahomesforsale.com` and reconnect if needed.
+- Failed `git push` — remote has `70b4864`.
+- Uncommitted work — portrait + Cloudflare Images commits are on the feature branch.
+- A failed Vercel **build** of this PR — no deployment was created, so there are no build logs to fix.
+- `vercel.json` disabling Git deploys.
+- Cloudflare orange-cloud — live HTML is served by Vercel (`x-vercel-cache: HIT`). DNS is not the auto-deploy trigger.
 
 ---
 
-### 3. Project not on expected Vercel team (or disconnected)
+## Checklist
 
-API lookup for project slug `maravillahomesforsale.com` on team `team_EIbjFXaDDtGMTweb5Hvo3CG3` returned **404**. The site may live under:
-
-- Another Vercel team / personal account
-- A renamed project (e.g. `maravillahomesforsale` without `.com`)
-- A disconnected or deleted Git link
-
-**Fix:** In [Vercel Dashboard](https://vercel.com/dashboard), search **maravilla** → open project → **Deployments** tab → confirm latest commit SHA matches your push.
-
----
-
-### 4. Preview deployments disabled or branch ignored
-
-If you expected a **preview URL** from the feature-branch push, check:
-
-- **Settings → Git** → “Automatically expose Preview Deployments”
-- **Settings → Git** → “Ignored Build Step” (e.g. only build `main`)
-- **Settings → Git** → branch patterns that skip `cursor/*`
+1. [ ] Vercel → Settings → Git → reconnect `LetMeHelpYouREALTY/maravillahomesforsale.com`.
+2. [ ] GitHub App org access includes `LetMeHelpYouREALTY`.
+3. [ ] Merge PR #3 (or merge the feature branch) to `main` and push.
+4. [ ] Deployments tab: new deployment within 1–2 minutes; SHA = `70b4864` or the merge commit.
+5. [ ] Live check: `https://www.maravillahomesforsale.com/favicon.ico` is the portrait, HTML includes `dr-jan-duffy`.
+6. [ ] Optional: add a `main`-only GitHub Action `vercel deploy --prebuilt --prod` so a webhook outage cannot stall production again.
 
 ---
 
-### 5. Build failure (secondary — check after trigger works)
+## What this agent cannot do from here
 
-If a deployment **starts** but fails, production stays on the last good deploy.
-
-**Local check (this repo):**
-
-```bash
-npm ci
-npm run lint    # passed in audit
-npm run build   # run before merging to main
-```
-
-**Vercel:** Deployments → latest → **Building** / **Error** → read build logs.
-
----
-
-## Cloudflare note (separate from Vercel trigger)
-
-`www.maravillahomesforsale.com` sits behind **Cloudflare** (challenge/403 for automated curl). That affects bots and CLI curls, not whether Vercel receives the Git webhook. Keep DNS **DNS only (gray cloud)** on the Vercel target per project rules to avoid SSL/proxy issues.
-
----
-
-## Checklist — do these in order
-
-1. [ ] **Merge GBP work to `main`** (merge PR #1 or merge branch locally and push).
-2. [ ] **Vercel → Project → Deployments** — new deployment appears within ~1–2 min of `main` push.
-3. [ ] **Vercel → Settings → Git** — repo = `LetMeHelpYouREALTY/maravillahomesforsale.com`, production branch = `main`.
-4. [ ] **Compare commit SHA** on latest deployment vs `git rev-parse origin/main`.
-5. [ ] If no deployment appears — **Disconnect and reconnect** Git integration; confirm GitHub App has access to `LetMeHelpYouREALTY`.
-6. [ ] If deployment **errors** — fix build from logs; re-push `main`.
-
----
-
-## Quick commands
-
-```bash
-# See what production is missing
-git log origin/main..origin/cursor/gbp-profile-update-b0bb --oneline
-
-# Deploy to production (after review)
-git checkout main
-git pull origin main
-git merge cursor/gbp-profile-update-b0bb
-git push origin main
-```
-
----
-
-## What did *not* cause the issue
-
-- Empty working tree / failed push — push to `cursor/gbp-profile-update-b0bb` completed successfully.
-- Uncommitted GBP changes — commit `f24a40e` is on the remote feature branch.
-
----
-
-## Recommended next step
-
-**Merge PR #1 to `main` and push** — that is the standard path to trigger a production Vercel deploy for this setup. Then confirm in the Vercel dashboard that the new deployment’s Git commit is `f24a40e` (or the merge commit on `main`).
+- Reconnect Git (Vercel API 409 on the existing project name).
+- `vercel --prod` (no `VERCEL_TOKEN` in this environment).
+- Promote a preview that does not exist (no preview was created for `70b4864`).

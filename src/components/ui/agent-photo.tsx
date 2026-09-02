@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { AGENT_PHOTO } from '@/lib/config/agent';
 
 type AgentPhotoVariant = 'card' | 'portrait';
@@ -23,7 +23,7 @@ export default function AgentPhoto({
   if (variant === 'portrait') {
     return (
       <div className={`relative mx-auto ${className}`.trim()}>
-        <Image
+        <SiteImage
           src={src}
           alt={alt}
           width={AGENT_PHOTO.width}
@@ -40,7 +40,7 @@ export default function AgentPhoto({
     <div
       className={`relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#0A2540] ${className}`}
     >
-      <Image
+      <SiteImage
         src={src}
         alt={alt}
         fill

@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from './config/business-info';
 import { AGENT_PHOTO } from './config/agent';
+import {
+  toAbsoluteImageUrl,
+  withCloudflareVariant,
+} from './config/cloudflare-images';
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -94,6 +98,17 @@ const schemaAttributeNote = [
   .filter(Boolean)
   .join('. ');
 
+function agentImageUrl(): string {
+  return toAbsoluteImageUrl(AGENT_PHOTO.srcSchema, siteUrl);
+}
+
+function pageImageUrl(image?: string): string {
+  const resolved = image
+    ? withCloudflareVariant(image, 'og')
+    : AGENT_PHOTO.srcSchema;
+  return toAbsoluteImageUrl(resolved, siteUrl);
+}
+
 const siteConfig = {
   name: businessName,
   url: siteUrl,
@@ -123,10 +138,10 @@ export function generateMetadata({
   type?: 'website' | 'article';
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const ogImage = image || siteConfig.ogImage;
-  const fullImageUrl = ogImage.startsWith('http')
-    ? ogImage
-    : `${siteConfig.url}${ogImage}`;
+  const ogImage = image
+    ? withCloudflareVariant(image, 'og')
+    : siteConfig.ogImage;
+  const fullImageUrl = toAbsoluteImageUrl(ogImage, siteConfig.url);
 
   return {
     title,
@@ -204,8 +219,8 @@ export function generateLocalBusinessSchema() {
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
-    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
-    logo: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: agentImageUrl(),
+    logo: agentImageUrl(),
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -254,11 +269,11 @@ export function generateOrganizationSchema() {
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+      url: agentImageUrl(),
       width: 512,
       height: 512,
     },
-    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: agentImageUrl(),
     description: GBP_DESCRIPTION,
     address: {
       '@type': 'PostalAddress',
@@ -317,7 +332,7 @@ export function generatePersonSchema() {
     jobTitle: 'REALTOR®',
     description:
       'Dr. Jan Duffy is a highly experienced REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla, Las Vegas, North Las Vegas, and Henderson. Expert, data-driven advice and personalized consultations.',
-    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: agentImageUrl(),
     url: siteUrl,
     email: businessEmail,
     telephone: businessPhone,
@@ -383,11 +398,11 @@ export function generateRealEstateAgentSchema() {
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+      url: agentImageUrl(),
       width: 512,
       height: 512,
     },
-    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: agentImageUrl(),
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -531,11 +546,7 @@ export function generateWebPageSchema({
   image?: string;
   pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'FAQPage';
 }) {
-  const imageUrl = image
-    ? image.startsWith('http')
-      ? image
-      : `${siteUrl}${image}`
-    : `${siteUrl}${AGENT_PHOTO.srcSchema}`;
+  const imageUrl = pageImageUrl(image);
 
   return {
     '@context': 'https://schema.org',
@@ -589,7 +600,7 @@ export function generatePlaceSchema({
     name,
     description,
     url,
-    image: image ?? `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: pageImageUrl(image),
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'North Las Vegas',
@@ -760,7 +771,7 @@ export function generateArticleSchema({
     ...(image && {
       image: {
         '@type': 'ImageObject',
-        url: image.startsWith('http') ? image : `${siteUrl}${image}`,
+        url: toAbsoluteImageUrl(image, siteUrl),
       },
     }),
     datePublished,
@@ -779,7 +790,7 @@ export function generateArticleSchema({
         ...(publisher.logo && {
           logo: {
             '@type': 'ImageObject',
-            url: publisher.logo.startsWith('http') ? publisher.logo : `${siteUrl}${publisher.logo}`,
+            url: toAbsoluteImageUrl(publisher.logo, siteUrl),
             width: 512,
             height: 512,
           },
@@ -957,7 +968,7 @@ export function generateVideoObjectSchema({
     ...(description && { description }),
     url,
     ...(thumbnailUrl && {
-      thumbnailUrl: thumbnailUrl.startsWith('http') ? thumbnailUrl : `${siteUrl}${thumbnailUrl}`,
+      thumbnailUrl: toAbsoluteImageUrl(thumbnailUrl, siteUrl),
     }),
     ...(uploadDate && { uploadDate }),
     ...(duration && { duration }),
@@ -969,7 +980,7 @@ export function generateVideoObjectSchema({
         ...(publisher.logo && {
           logo: {
             '@type': 'ImageObject',
-            url: publisher.logo.startsWith('http') ? publisher.logo : `${siteUrl}${publisher.logo}`,
+            url: toAbsoluteImageUrl(publisher.logo, siteUrl),
           },
         }),
       },

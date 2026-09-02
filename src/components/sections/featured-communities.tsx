@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
+import { resolveSiteImage } from '@/lib/config/cloudflare-images';
 import {
   Card,
   CardContent,
@@ -66,8 +67,8 @@ export default function FeaturedCommunities() {
               className='bg-[#F7F9FC] hover:shadow-lg transition-all duration-300 border-0'
             >
               <div className='relative h-40 w-full overflow-hidden rounded-t-xl'>
-                <Image
-                  src={community.image}
+                <SiteImage
+                  src={resolveSiteImage(community.image, 'hero')}
                   alt={community.imageAlt}
                   fill
                   className='object-cover'

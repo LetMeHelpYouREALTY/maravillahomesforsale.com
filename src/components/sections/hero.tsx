@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
 export default function Hero() {
@@ -17,7 +17,7 @@ export default function Hero() {
 
         {/* Hero Background Image - No fade-in for immediate LCP visibility */}
         <div className='absolute inset-0 w-full h-full'>
-          <Image
+          <SiteImage
             src={backgroundImage}
             alt='Maravilla community and neighborhood area view, North Las Vegas'
             fill
@@ -62,7 +62,7 @@ export default function Hero() {
         </p>
 
         <div className='flex justify-center mb-8 animate-fade-in-delay-2'>
-          <Image
+          <SiteImage
             src={AGENT_PHOTO.src}
             alt={AGENT_PHOTO.alt}
             width={160}

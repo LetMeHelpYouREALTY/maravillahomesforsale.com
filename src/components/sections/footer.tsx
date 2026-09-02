@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
@@ -12,7 +12,7 @@ export default function Footer() {
           {/* Company Info */}
           <div>
             <div className='flex items-center gap-3 mb-4'>
-              <Image
+              <SiteImage
                 src={AGENT_PHOTO.srcNav}
                 alt={AGENT_PHOTO.alt}
                 width={72}

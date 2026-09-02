@@ -12,7 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import {
   Home,
   TreePine,
@@ -149,7 +149,7 @@ export default function NeighborhoodsPage() {
                 <>
                   {sectionImage ? (
                     <div className='relative h-44 w-full overflow-hidden rounded-t-xl'>
-                      <Image
+                      <SiteImage
                         src={sectionImage.src}
                         alt={sectionImage.alt}
                         fill

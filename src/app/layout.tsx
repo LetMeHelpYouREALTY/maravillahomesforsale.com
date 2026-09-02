@@ -10,6 +10,10 @@ import {
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import { AGENT_PHOTO } from '@/lib/config/agent';
+import {
+  isCloudflareImagesEnabled,
+  toAbsoluteImageUrl,
+} from '@/lib/config/cloudflare-images';
 import './globals.css';
 
 const googleSiteVerification =
@@ -51,7 +55,7 @@ function isValidFacebookPixelId(value: string | undefined): value is string {
 }
 
 // Ensure these assets exist in /public to avoid 404s for crawlers.
-const ogImageUrl = `${siteUrl}${AGENT_PHOTO.srcSchema}`;
+const ogImageUrl = toAbsoluteImageUrl(AGENT_PHOTO.srcSchema, siteUrl);
 
 // Optimize fonts with next/font
 const sourceSansPro = Source_Sans_3({
@@ -97,7 +101,7 @@ export const metadata: Metadata = {
     type: 'website',
       images: [
         {
-          url: AGENT_PHOTO.srcSchema,
+          url: ogImageUrl,
           width: 512,
           height: 512,
           alt: AGENT_PHOTO.alt,
@@ -110,7 +114,7 @@ export const metadata: Metadata = {
     title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     description:
       "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
-    images: [AGENT_PHOTO.srcSchema],
+    images: [ogImageUrl],
     // 2025 Best Practice: Add Twitter site handle if available
     creator: '@maravillahomes',
   },
@@ -191,10 +195,13 @@ export default function RootLayout({
         <link rel='dns-prefetch' href='https://www.google-analytics.com' />
         {/* Facebook Pixel: DNS prefetch only (loaded lazily) */}
         <link rel='dns-prefetch' href='https://connect.facebook.net' />
+        {isCloudflareImagesEnabled() ? (
+          <link rel='preconnect' href='https://imagedelivery.net' />
+        ) : null}
         {/* Preload critical hero image for LCP optimization */}
         <link
           rel='preload'
-          href={AGENT_PHOTO.srcSchema}
+          href={AGENT_PHOTO.src}
           as='image'
           fetchPriority='high'
         />

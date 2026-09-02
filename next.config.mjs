@@ -159,6 +159,11 @@ const nextConfig = {
         hostname: '**.cloudinary.com',
         pathname: '/**',
       },
+      {
+        protocol: 'https',
+        hostname: 'imagedelivery.net',
+        pathname: '/**',
+      },
     ],
     // Allow unoptimized images for external sources that might have issues
     unoptimized: false,

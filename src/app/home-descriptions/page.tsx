@@ -12,7 +12,6 @@ import {
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, MapPin, DollarSign, TrendingUp, CheckCircle2 } from 'lucide-react';
-import Image from 'next/image';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'

@@ -1,5 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
@@ -31,7 +31,7 @@ export default function PrivacyPage() {
             North Las Vegas Family Homes: Privacy Policy
           </h1>
           <div className='flex items-center gap-4 mb-8'>
-            <Image
+            <SiteImage
               src={AGENT_PHOTO.srcNav}
               alt={AGENT_PHOTO.alt}
               width={80}

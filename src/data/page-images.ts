@@ -1,3 +1,5 @@
+import { resolveSiteImage } from '@/lib/config/cloudflare-images';
+
 export type PageImage = {
   src: string;
   alt: string;
@@ -204,6 +206,10 @@ const FALLBACK: PageMedia = {
   },
 };
 
+function withCloudflareSrc(image: PageImage): PageImage {
+  return { ...image, src: resolveSiteImage(image.src, 'hero') };
+}
+
 export function getPageMedia(pathname: string): PageMedia {
   const normalized = pathname.replace(/\/$/, '') || '/';
   if (normalized === '/') {
@@ -214,7 +220,18 @@ export function getPageMedia(pathname: string): PageMedia {
       },
     };
   }
-  return PAGES[normalized] ?? FALLBACK;
+  const media = PAGES[normalized] ?? FALLBACK;
+  return {
+    hero: withCloudflareSrc(media.hero),
+    sections: media.sections
+      ? Object.fromEntries(
+          Object.entries(media.sections).map(([key, image]) => [
+            key,
+            withCloudflareSrc(image),
+          ])
+        )
+      : undefined,
+  };
 }
 
 export function getPageHeroImage(pathname: string): PageImage {

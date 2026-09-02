@@ -1,0 +1,118 @@
+{
+  "variants": [
+    {
+      "id": "thumbnail",
+      "fit": "cover",
+      "width": 128,
+      "height": 128,
+      "metadata": "none"
+    },
+    {
+      "id": "nav",
+      "fit": "contain",
+      "width": 256,
+      "height": 256,
+      "metadata": "none"
+    },
+    {
+      "id": "portrait",
+      "fit": "contain",
+      "width": 800,
+      "height": 800,
+      "metadata": "none"
+    },
+    {
+      "id": "schema",
+      "fit": "contain",
+      "width": 512,
+      "height": 512,
+      "metadata": "none"
+    },
+    {
+      "id": "hero",
+      "fit": "cover",
+      "width": 1920,
+      "height": 1080,
+      "metadata": "none"
+    },
+    {
+      "id": "og",
+      "fit": "cover",
+      "width": 1200,
+      "height": 630,
+      "metadata": "none"
+    }
+  ],
+  "images": [
+    {
+      "id": "maravilla/dr-jan-duffy",
+      "file": "public/images/dr-jan-duffy-800.png",
+      "role": "agent"
+    },
+    {
+      "id": "maravilla/neighborhoods-hero",
+      "file": "public/images/pages/neighborhoods-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/aliante-hero",
+      "file": "public/images/pages/aliante-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/homes-hero",
+      "file": "public/images/pages/homes-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/services-contact-hero",
+      "file": "public/images/pages/services-contact-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/market-data-hero",
+      "file": "public/images/pages/market-data-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/amenities-community-hero",
+      "file": "public/images/pages/amenities-community-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/fifty-five-plus-hero",
+      "file": "public/images/pages/fifty-five-plus-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/schools-hero",
+      "file": "public/images/pages/schools-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/buyers-guide-hero",
+      "file": "public/images/pages/buyers-guide-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/jasmine-ranch-hero",
+      "file": "public/images/pages/jasmine-ranch-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/seabreeze-hero",
+      "file": "public/images/pages/seabreeze-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/home-descriptions-hero",
+      "file": "public/images/pages/home-descriptions-hero.jpg",
+      "role": "hero"
+    },
+    {
+      "id": "maravilla/privacy-hero",
+      "file": "public/images/pages/privacy-hero.jpg",
+      "role": "hero"
+    }
+  ]
+}

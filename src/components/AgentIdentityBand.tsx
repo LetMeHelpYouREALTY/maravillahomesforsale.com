@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import Link from 'next/link';
 import { AGENT_JOB_TITLE, AGENT_LICENSE, AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -16,7 +16,7 @@ export default function AgentIdentityBand() {
     >
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='grid md:grid-cols-[auto_1fr] gap-8 items-center'>
-          <Image
+          <SiteImage
             src={AGENT_PHOTO.src}
             alt={AGENT_PHOTO.alt}
             width={200}

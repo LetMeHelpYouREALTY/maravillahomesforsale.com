@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation';
 import PageLayout from '@/components/layout/page-layout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { Phone } from 'lucide-react';
 import Script from 'next/script';
 import type { Metadata } from 'next';
@@ -16,7 +16,6 @@ import { BUSINESS_INFO } from '@/lib/config/business-info';
 import {
   NEIGHBORHOOD_SLUGS,
   getNeighborhoodBySlug,
-  type NeighborhoodSlug,
 } from '@/data/neighborhoods';
 import { getPageHeroImage } from '@/data/page-images';
 import PageFAQSection from '@/components/PageFAQSection';
@@ -81,7 +80,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
               name: `${neighborhood.name}, North Las Vegas`,
               description: neighborhood.description,
               url: `${baseUrl}/neighborhoods/${slug}`,
-              image: `${baseUrl}${getPageHeroImage(`/neighborhoods/${slug}`).src}`,
+              image: getPageHeroImage(`/neighborhoods/${slug}`).src,
             })
           ),
         }}
@@ -126,7 +125,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
               </p>
             </div>
             <div className='relative h-72 md:h-96 w-full overflow-hidden rounded-xl shadow-lg'>
-              <Image
+              <SiteImage
                 src={getPageHeroImage(`/neighborhoods/${slug}`).src}
                 alt={getPageHeroImage(`/neighborhoods/${slug}`).alt}
                 fill

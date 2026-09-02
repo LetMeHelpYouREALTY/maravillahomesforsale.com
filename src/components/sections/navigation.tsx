@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
@@ -30,7 +30,7 @@ export default function Navigation() {
         <div className='flex justify-between items-center h-16'>
           {/* Logo/Brand */}
           <Link href='/' className='flex items-center gap-3'>
-            <Image
+            <SiteImage
               src={AGENT_PHOTO.srcThumb}
               alt={AGENT_PHOTO.alt}
               width={40}

@@ -1,5 +1,6 @@
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import { AGENT_PHOTO } from '@/lib/config/agent';
+import { toAbsoluteImageUrl } from '@/lib/config/cloudflare-images';
 
 export default function AgentSchema() {
   const siteUrl = 'https://www.maravillahomesforsale.com';
@@ -9,7 +10,7 @@ export default function AgentSchema() {
     '@type': ['RealEstateAgent', 'LocalBusiness'],
     '@id': `${siteUrl}#organization`,
     name: BUSINESS_INFO.name,
-    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    image: toAbsoluteImageUrl(AGENT_PHOTO.srcSchema, siteUrl),
     description: `${GBP_DESCRIPTION} Women-owned business. LGBTQ+ friendly. Offers online appointments.`,
     url: siteUrl,
     telephone: BUSINESS_INFO.phone.schema,

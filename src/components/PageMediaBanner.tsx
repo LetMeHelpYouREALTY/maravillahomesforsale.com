@@ -1,6 +1,6 @@
 'use client';
 
-import Image from 'next/image';
+import SiteImage from '@/components/ui/site-image';
 import { usePathname } from 'next/navigation';
 import { AGENT_PHOTO } from '@/lib/config/agent';
 import { getPageHeroImage } from '@/data/page-images';
@@ -16,7 +16,7 @@ export default function PageMediaBanner() {
 
   return (
     <figure className='relative h-40 md:h-56 w-full overflow-hidden bg-[#0A2540]'>
-      <Image
+      <SiteImage
         src={hero.src}
         alt={hero.alt}
         fill
@@ -26,7 +26,7 @@ export default function PageMediaBanner() {
       />
       <div className='absolute inset-0 bg-[#0A2540]/35' aria-hidden />
       <div className='absolute right-4 bottom-4 md:right-10 md:bottom-5 flex items-end gap-3'>
-        <Image
+        <SiteImage
           src={AGENT_PHOTO.srcNav}
           alt={AGENT_PHOTO.alt}
           width={112}

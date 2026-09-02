@@ -1,11 +1,9 @@
 import Link from 'next/link';
-import { RSSImage } from '@/components/ui/rss-image';
 import PageLayout from '@/components/layout/page-layout';
 import { Badge } from '@/components/ui/badge';
 import Script from 'next/script';
 import {
   Card,
-  CardContent,
   CardDescription,
   CardFooter,
   CardHeader,
@@ -18,7 +16,8 @@ import {
   generateWebPageSchema,
   generateBlogSchema,
 } from '@/lib/metadata';
-import { parseRSSFeed } from '@/lib/utils/rss-parser';
+import SiteImage from '@/components/ui/site-image';
+import { getMarketInsightPosts } from '@/data/market-insight-posts';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -27,76 +26,16 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Blog & Market Updates | Dr. Jan Duffy',
   description:
-    'Real estate blog and market updates for Maravilla and North Las Vegas. Trends, buying and selling tips, and local insights. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
+    'Real estate guides and market updates for Maravilla and North Las Vegas. Buying, selling, and first-time buyer next steps. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
   keywords:
     'Maravilla blog, North Las Vegas real estate news, Maravilla market updates, Las Vegas real estate trends',
   path: '/blog',
 });
 
-type BlogPost = {
-  imageUrl: string;
-  category: string;
-  categoryLink: string;
-  title: string;
-  postLink: string;
-  author: string;
-  date: string;
-  dateISO: string;
-  description?: string;
-};
-
 export const revalidate = 3600;
 
-async function getBlogPosts(limit: number): Promise<BlogPost[]> {
-  try {
-    const RSS_FEED_URL =
-      'https://www.simplifyingthemarket.com/en/feed?a=956758-ef2edda2f940e018328655620ea05f18';
-    const response = await fetch(RSS_FEED_URL, {
-      next: { revalidate: 3600 },
-      headers: { 'User-Agent': 'Mozilla/5.0 (compatible; RSS Reader)' },
-    });
-    if (!response.ok) return [];
-    const xmlString = await response.text();
-    const feed = parseRSSFeed(xmlString);
-    return feed.items.slice(0, limit).map((item) => {
-      const categorySlug =
-        item.categories[0]?.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '') || 'market-insights';
-      const categoryLink = `https://www.simplifyingthemarket.com/en/category/${categorySlug}/?a=956758-ef2edda2f940e018328655620ea05f18`;
-      return {
-        title: item.title,
-        postLink: item.link,
-        description: item.description,
-        category: item.categories[0] || 'Market Insights',
-        categoryLink,
-        author: item.creator,
-        date: (() => {
-          try {
-            return new Date(item.pubDate).toLocaleDateString('en-US', {
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            });
-          } catch {
-            return item.pubDate;
-          }
-        })(),
-        dateISO: (() => {
-          try {
-            return new Date(item.pubDate).toISOString();
-          } catch {
-            return new Date().toISOString();
-          }
-        })(),
-        imageUrl: item.imageUrl || '/photos/01-1 (2).jpg',
-      };
-    });
-  } catch {
-    return [];
-  }
-}
-
-export default async function BlogPage() {
-  const posts = await getBlogPosts(9);
+export default function BlogPage() {
+  const posts = getMarketInsightPosts();
 
   return (
     <PageLayout>
@@ -106,7 +45,7 @@ export default async function BlogPage() {
             North Las Vegas Family Homes: Blog & Market Updates
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
-            Real estate trends, buying and selling tips, and local insights for Maravilla and North Las Vegas. Updated regularly from our market insights feed.
+            Buyer and seller guides for Maravilla and North Las Vegas from Dr. Jan Duffy.
           </p>
         </div>
       </div>
@@ -115,7 +54,7 @@ export default async function BlogPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8'>
             <p className='text-gray-600'>
-              Latest articles from our partner feed. For the full archive and more insights, visit Market Insights.
+              On-site guides and tools. For the full set, visit Market Insights.
             </p>
             <Button asChild variant='outline' className='shrink-0'>
               <Link href='/market-insights'>View all Market Insights</Link>
@@ -123,47 +62,35 @@ export default async function BlogPage() {
           </div>
 
           <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
-            {posts.map((post, index) => (
+            {posts.map((post) => (
               <Card
-                key={`${post.postLink}-${index}`}
+                key={post.href}
                 className='group overflow-hidden h-full hover:shadow-xl transition-all duration-300'
               >
                 <Link
-                  href={post.postLink}
-                  target='_blank'
-                  rel='noopener noreferrer'
-                  prefetch={false}
+                  href={post.href}
                   className='block relative w-full h-[200px] overflow-hidden'
                   aria-label={`Read: ${post.title}`}
                 >
-                  <RSSImage
+                  <SiteImage
                     src={post.imageUrl}
-                    alt={post.title}
+                    alt={`${post.title} — North Las Vegas and Maravilla`}
                     fill
                     sizes='(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw'
-                    className='object-contain transition-transform duration-300 ease-in-out group-hover:scale-105'
+                    className='object-cover transition-transform duration-300 ease-in-out group-hover:scale-105'
                   />
                 </Link>
                 <CardHeader>
-                  <Badge variant='outline' className='w-fit mb-2 text-[#3A8DDE] border-[#3A8DDE]/30'>
-                    <Link
-                      href={post.categoryLink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      prefetch={false}
-                      className='hover:underline'
-                    >
+                  <Badge
+                    variant='outline'
+                    className='w-fit mb-2 text-[#3A8DDE] border-[#3A8DDE]/30'
+                  >
+                    <Link href={post.categoryHref} className='hover:underline'>
                       {post.category}
                     </Link>
                   </Badge>
                   <CardTitle className='group-hover:text-[#3A8DDE] transition-colors'>
-                    <Link
-                      href={post.postLink}
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      prefetch={false}
-                      className='line-clamp-2'
-                    >
+                    <Link href={post.href} className='line-clamp-2'>
                       {post.title}
                     </Link>
                   </CardTitle>
@@ -200,7 +127,8 @@ export default async function BlogPage() {
           __html: JSON.stringify([
             generateWebPageSchema({
               name: 'North Las Vegas Family Homes | Blog & Market Updates',
-              description: 'North Las Vegas Family Homes: blog and market updates for North Las Vegas and Maravilla.',
+              description:
+                'North Las Vegas Family Homes: blog and market updates for North Las Vegas and Maravilla.',
               url: `${baseUrl}/blog`,
               breadcrumb: [
                 { name: 'Home', url: baseUrl },
@@ -209,7 +137,8 @@ export default async function BlogPage() {
             }),
             generateBlogSchema({
               name: 'Blog & Market Updates',
-              description: 'North Las Vegas Family Homes: real estate trends and local insights for North Las Vegas and Maravilla.',
+              description:
+                'North Las Vegas Family Homes: real estate guides and local insights for North Las Vegas and Maravilla.',
               url: `${baseUrl}/blog`,
               author: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
               publisher: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',

@@ -2,9 +2,11 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Menu } from 'lucide-react';
+import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
 export default function Navigation() {
   const [open, setOpen] = useState(false);
@@ -27,10 +29,21 @@ export default function Navigation() {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex justify-between items-center h-16'>
           {/* Logo/Brand */}
-          <Link href='/' className='flex items-center'>
-            <h1 className='text-2xl font-bold text-[#0A2540]'>
+          <Link href='/' className='flex items-center gap-3'>
+            <Image
+              src={AGENT_PHOTO.srcThumb}
+              alt={AGENT_PHOTO.alt}
+              width={40}
+              height={40}
+              className='h-10 w-10 rounded-full bg-white object-contain'
+              priority
+            />
+            <span className='text-xl md:text-2xl font-bold text-[#0A2540] leading-tight'>
               North Las Vegas Family Homes
-            </h1>
+              <span className='block text-xs font-medium text-[#3A8DDE]'>
+                {AGENT_NAME}, REALTOR®
+              </span>
+            </span>
           </Link>
 
           {/* Desktop Navigation Links */}

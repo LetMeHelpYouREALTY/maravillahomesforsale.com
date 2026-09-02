@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from './config/business-info';
+import { AGENT_PHOTO } from './config/agent';
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -97,7 +98,7 @@ const siteConfig = {
   name: businessName,
   url: siteUrl,
   description: GBP_DESCRIPTION,
-  ogImage: '/photos/01-1 (2).jpg',
+  ogImage: AGENT_PHOTO.srcSchema,
   twitterHandle: '@maravillahomes',
   locale: 'en_US',
   type: 'website',
@@ -136,7 +137,7 @@ export function generateMetadata({
     publisher: siteConfig.name,
     metadataBase: new URL(siteConfig.url),
     alternates: {
-      canonical: path,
+      canonical: url,
     },
     openGraph: {
       title,
@@ -203,8 +204,8 @@ export function generateLocalBusinessSchema() {
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
-    image: `${siteUrl}/photos/01-1 (2).jpg`,
-    logo: `${siteUrl}/globe.svg`,
+    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    logo: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -253,11 +254,11 @@ export function generateOrganizationSchema() {
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}/globe.svg`,
+      url: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
       width: 512,
       height: 512,
     },
-    image: `${siteUrl}/photos/01-1 (2).jpg`,
+    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
     description: GBP_DESCRIPTION,
     address: {
       '@type': 'PostalAddress',
@@ -316,7 +317,7 @@ export function generatePersonSchema() {
     jobTitle: 'REALTOR®',
     description:
       'Dr. Jan Duffy is a highly experienced REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla, Las Vegas, North Las Vegas, and Henderson. Expert, data-driven advice and personalized consultations.',
-    image: `${siteUrl}/photos/Dr. Duffy Blue_Headshot.jpg`,
+    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
     url: siteUrl,
     email: businessEmail,
     telephone: businessPhone,
@@ -382,11 +383,11 @@ export function generateRealEstateAgentSchema() {
     url: siteUrl,
     logo: {
       '@type': 'ImageObject',
-      url: `${siteUrl}/globe.svg`,
+      url: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
       width: 512,
       height: 512,
     },
-    image: `${siteUrl}/photos/Dr. Duffy Blue_Headshot.jpg`,
+    image: `${siteUrl}${AGENT_PHOTO.srcSchema}`,
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -520,18 +521,43 @@ export function generateWebPageSchema({
   description,
   url,
   breadcrumb,
+  image,
+  pageType = 'WebPage',
 }: {
   name: string;
   description: string;
   url: string;
   breadcrumb?: Array<{ name: string; url: string }>;
+  image?: string;
+  pageType?: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage' | 'FAQPage';
 }) {
+  const imageUrl = image
+    ? image.startsWith('http')
+      ? image
+      : `${siteUrl}${image}`
+    : `${siteUrl}${AGENT_PHOTO.srcSchema}`;
+
   return {
     '@context': 'https://schema.org',
-    '@type': 'WebPage',
+    '@type': pageType,
     name,
     description,
     url,
+    inLanguage: 'en-US',
+    isPartOf: { '@id': `${siteUrl}#website` },
+    about: { '@id': `${siteUrl}#person` },
+    author: { '@id': `${siteUrl}#person` },
+    publisher: { '@id': `${siteUrl}#organization` },
+    primaryImageOfPage: {
+      '@type': 'ImageObject',
+      url: imageUrl,
+      caption: name,
+    },
+    image: imageUrl,
+    speakable: {
+      '@type': 'SpeakableSpecification',
+      cssSelector: ['h1', '.speakable'],
+    },
     ...(breadcrumb && {
       breadcrumb: {
         '@type': 'BreadcrumbList',
@@ -543,6 +569,39 @@ export function generateWebPageSchema({
         })),
       },
     }),
+  };
+}
+
+export function generatePlaceSchema({
+  name,
+  description,
+  url,
+  image,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  image?: string;
+}) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Place',
+    name,
+    description,
+    url,
+    image: image ?? `${siteUrl}${AGENT_PHOTO.srcSchema}`,
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'North Las Vegas',
+      addressRegion: 'NV',
+      postalCode: BUSINESS_INFO.community.postalCode,
+      addressCountry: 'US',
+    },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: BUSINESS_INFO.communityGeo.latitude,
+      longitude: BUSINESS_INFO.communityGeo.longitude,
+    },
   };
 }
 

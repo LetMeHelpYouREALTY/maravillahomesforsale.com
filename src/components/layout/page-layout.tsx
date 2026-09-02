@@ -5,6 +5,8 @@ import Breadcrumbs from '@/components/Breadcrumbs';
 import PageFAQSection from '@/components/PageFAQSection';
 import RealScoutOfficeWidget from '@/components/sections/realscout-office-widget';
 import ListingsSkeleton from '@/components/skeletons/listings-skeleton';
+import PageMediaBanner from '@/components/PageMediaBanner';
+import AgentIdentityBand from '@/components/AgentIdentityBand';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -36,7 +38,9 @@ export default function PageLayout({ children }: PageLayoutProps) {
       </Suspense>
       <main className='flex-grow'>
         <Breadcrumbs />
+        <PageMediaBanner />
         {children}
+        <AgentIdentityBand />
         {/* Office RealScout widget on every page for SEO and engagement */}
         <section className='py-16 bg-white border-t' aria-labelledby='office-listings-heading'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>

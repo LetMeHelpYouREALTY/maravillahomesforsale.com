@@ -16,18 +16,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   // 2025 Best Practice: Use consistent timestamp for better caching
   // Google prefers stable sitemaps that don't change unnecessarily
-  const now = new Date().toISOString();
+  // 2025 Best Practice: Use a stable lastmod so Google does not recrawl unchanged URLs
+  const lastModified = new Date('2026-09-02T00:00:00.000Z');
 
   const neighborhoodUrls: MetadataRoute.Sitemap = NEIGHBORHOOD_SLUGS.map((slug) => ({
     url: `${baseUrl}/neighborhoods/${slug}`,
-    lastModified: now,
+    lastModified,
     changeFrequency: 'weekly' as const,
     priority: 0.8,
   }));
 
   const guideUrls: MetadataRoute.Sitemap = GUIDE_SLUGS.map((slug) => ({
     url: `${baseUrl}/guides/${slug}`,
-    lastModified: now,
+    lastModified,
     changeFrequency: 'monthly' as const,
     priority: 0.7,
   }));
@@ -35,145 +36,139 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: baseUrl,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'daily',
       priority: 1,
     },
     {
       url: `${baseUrl}/homes`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'daily',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/neighborhood`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/neighborhoods`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/community`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/market-data`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/market-insights`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'daily',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/contact`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/search`,
-      lastModified: now,
-      changeFrequency: 'daily',
-      priority: 0.6,
-    },
-    {
       url: `${baseUrl}/home-valuation`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/sell`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.9,
     },
     {
       url: `${baseUrl}/home-descriptions`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/amenities`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/real-estate-services`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/map-and-nearby-places`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/about`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/buyers-guide`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/schools`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/resources`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/blog`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'daily',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/55-plus-communities`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/first-time-buyers`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'monthly',
       priority: 0.7,
     },
     {
       url: `${baseUrl}/guides`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'weekly',
       priority: 0.8,
     },
     {
       url: `${baseUrl}/privacy`,
-      lastModified: now,
+      lastModified,
       changeFrequency: 'yearly',
       priority: 0.3,
     },

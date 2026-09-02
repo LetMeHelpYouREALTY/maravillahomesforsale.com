@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Card,
   CardContent,
@@ -20,6 +21,8 @@ export default function FeaturedCommunities() {
       avgPrice: '17 Floor Plans',
       homesAvailable: '1,519-2,947 sq.ft.',
       amenities: ['Single Story', 'Two Story', 'Up to 5 Bedrooms'],
+      image: '/images/pages/neighborhoods-hero.jpg',
+      imageAlt: 'North Las Vegas Family Homes: Featured Communities — six Maravilla neighborhood streetscapes',
     },
     {
       name: 'Parks & Recreation',
@@ -28,6 +31,8 @@ export default function FeaturedCommunities() {
       avgPrice: 'Regional Park',
       homesAvailable: 'Nearby Access',
       amenities: ['Walking Trails', 'Playgrounds', 'Open Spaces'],
+      image: '/images/pages/amenities-community-hero.jpg',
+      imageAlt: 'North Las Vegas Family Homes: Parks & Recreation — community pool and ramada',
     },
     {
       name: 'Prime Location',
@@ -35,6 +40,8 @@ export default function FeaturedCommunities() {
       avgPrice: 'Easy Access',
       homesAvailable: 'I-15 & 215',
       amenities: ['Nellis AFB', 'VA Hospital', 'Shopping'],
+      image: '/images/pages/market-data-hero.jpg',
+      imageAlt: 'North Las Vegas Family Homes: Prime Location — valley access near I-15 and I-215',
     },
   ];
 
@@ -58,6 +65,15 @@ export default function FeaturedCommunities() {
               key={index}
               className='bg-[#F7F9FC] hover:shadow-lg transition-all duration-300 border-0'
             >
+              <div className='relative h-40 w-full overflow-hidden rounded-t-xl'>
+                <Image
+                  src={community.image}
+                  alt={community.imageAlt}
+                  fill
+                  className='object-cover'
+                  sizes='(max-width: 768px) 100vw, 33vw'
+                />
+              </div>
               <CardHeader>
                 <CardTitle className='text-2xl text-[#0A2540]'>
                   {community.name}

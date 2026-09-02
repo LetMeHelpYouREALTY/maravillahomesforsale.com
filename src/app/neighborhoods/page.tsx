@@ -12,6 +12,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   Home,
   TreePine,
@@ -28,6 +29,7 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { NEIGHBORHOODS, NEIGHBORHOOD_SLUGS } from '@/data/neighborhoods';
+import { getPageMedia } from '@/data/page-images';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -43,6 +45,7 @@ export const metadata = genMetadata({
     'Explore Maravilla and surrounding neighborhoods in Las Vegas. Find your perfect community with luxury homes and excellent amenities. Call (702) 500-1953.',
   keywords:
     'Maravilla neighborhoods, Las Vegas communities, luxury neighborhoods, Las Vegas real estate communities',
+  image: '/images/pages/neighborhoods-hero.jpg',
   path: '/neighborhoods',
 });
 
@@ -141,8 +144,20 @@ export default function NeighborhoodsPage() {
                 'Seabreeze': 'seabreeze',
               };
               const slug = slugMap[neighborhood.name];
+              const sectionImage = getPageMedia('/neighborhoods').sections?.[neighborhood.name];
               const cardContent = (
                 <>
+                  {sectionImage ? (
+                    <div className='relative h-44 w-full overflow-hidden rounded-t-xl'>
+                      <Image
+                        src={sectionImage.src}
+                        alt={sectionImage.alt}
+                        fill
+                        className='object-cover'
+                        sizes='(max-width: 768px) 100vw, 33vw'
+                      />
+                    </div>
+                  ) : null}
                   <CardHeader>
                     <div
                       className={`w-12 h-12 ${neighborhood.bgColor} rounded-lg flex items-center justify-center mb-4`}
@@ -528,6 +543,7 @@ export default function NeighborhoodsPage() {
               description:
                 'Explore the distinct neighborhoods in Maravilla, North Las Vegas. Luxury homes with premium amenities and distinctive floor plans.',
               url: `${baseUrl}/neighborhoods`,
+              image: '/images/pages/neighborhoods-hero.jpg',
               breadcrumb: [
                 { name: 'Home', url: baseUrl },
                 { name: 'Neighborhoods', url: `${baseUrl}/neighborhoods` },

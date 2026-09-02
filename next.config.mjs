@@ -63,6 +63,10 @@ const nextConfig = {
             key: 'Cache-Control',
             value: 'public, max-age=31536000, immutable',
           },
+          {
+            key: 'X-Robots-Tag',
+            value: 'noindex, nofollow',
+          },
         ],
       },
       // Cache CSS files for better repeat visit performance
@@ -158,6 +162,20 @@ const nextConfig = {
     ],
     // Allow unoptimized images for external sources that might have issues
     unoptimized: false,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/cdn-cgi/l/email-protection',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/cdn-cgi/:path*',
+        destination: '/contact',
+        permanent: true,
+      },
+    ];
   },
   // Optimize rendering performance
   experimental: {

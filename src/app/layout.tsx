@@ -9,6 +9,7 @@ import {
   generateRealEstateAgentSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+import { AGENT_PHOTO } from '@/lib/config/agent';
 import './globals.css';
 
 const googleSiteVerification =
@@ -50,8 +51,7 @@ function isValidFacebookPixelId(value: string | undefined): value is string {
 }
 
 // Ensure these assets exist in /public to avoid 404s for crawlers.
-const ogImageUrl = `${siteUrl}/photos/01-1 (2).jpg`;
-const logoUrl = `${siteUrl}/globe.svg`;
+const ogImageUrl = `${siteUrl}${AGENT_PHOTO.srcSchema}`;
 
 // Optimize fonts with next/font
 const sourceSansPro = Source_Sans_3({
@@ -97,12 +97,11 @@ export const metadata: Metadata = {
     type: 'website',
       images: [
         {
-          url: '/photos/01-1 (2).jpg',
-          width: 1200,
-          height: 630,
-          alt: 'Maravilla community and neighborhood area view, North Las Vegas',
-          // 2025 Best Practice: Add secure URL for OG images
-          secureUrl: `${siteUrl}/photos/01-1 (2).jpg`,
+          url: AGENT_PHOTO.srcSchema,
+          width: 512,
+          height: 512,
+          alt: AGENT_PHOTO.alt,
+          secureUrl: ogImageUrl,
         },
       ],
   },
@@ -111,7 +110,7 @@ export const metadata: Metadata = {
     title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     description:
       "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
-    images: ['/photos/01-1 (2).jpg'],
+    images: [AGENT_PHOTO.srcSchema],
     // 2025 Best Practice: Add Twitter site handle if available
     creator: '@maravillahomes',
   },
@@ -195,7 +194,7 @@ export default function RootLayout({
         {/* Preload critical hero image for LCP optimization */}
         <link
           rel='preload'
-          href='/photos/01-1 (2).jpg'
+          href={AGENT_PHOTO.srcSchema}
           as='image'
           fetchPriority='high'
         />

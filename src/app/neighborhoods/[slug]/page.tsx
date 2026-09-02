@@ -2,13 +2,15 @@ import { notFound } from 'next/navigation';
 import PageLayout from '@/components/layout/page-layout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { MapPin, Home, Phone } from 'lucide-react';
+import Image from 'next/image';
+import { Phone } from 'lucide-react';
 import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
   generateBreadcrumbSchema,
   generateWebPageSchema,
+  generatePlaceSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import {
@@ -16,6 +18,7 @@ import {
   getNeighborhoodBySlug,
   type NeighborhoodSlug,
 } from '@/data/neighborhoods';
+import { getPageHeroImage } from '@/data/page-images';
 import PageFAQSection from '@/components/PageFAQSection';
 
 const baseUrl = (
@@ -37,6 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: `${neighborhood.shortDescription} Browse ${neighborhood.name} listings and connect with Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.`,
     keywords: `${neighborhood.name} homes for sale, ${neighborhood.name} North Las Vegas real estate, homes in ${neighborhood.name}, Maravilla area`,
     path: `/neighborhoods/${slug}`,
+    image: getPageHeroImage(`/neighborhoods/${slug}`).src,
   });
 }
 
@@ -63,15 +67,23 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
               description: neighborhood.shortDescription,
               url: `${baseUrl}/neighborhoods/${slug}`,
               breadcrumb,
+              image: getPageHeroImage(`/neighborhoods/${slug}`).src,
             })
           ),
         }}
       />
       <Script
-        id='neighborhood-breadcrumb-schema'
+        id='neighborhood-place-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumb)),
+          __html: JSON.stringify(
+            generatePlaceSchema({
+              name: `${neighborhood.name}, North Las Vegas`,
+              description: neighborhood.description,
+              url: `${baseUrl}/neighborhoods/${slug}`,
+              image: `${baseUrl}${getPageHeroImage(`/neighborhoods/${slug}`).src}`,
+            })
+          ),
         }}
       />
 
@@ -96,15 +108,33 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
 
       <section id='about' className='py-16 bg-white' aria-labelledby='about-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <h2 id='about-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: About {neighborhood.name}
-          </h2>
-          <p className='text-gray-700 leading-relaxed mb-6 max-w-3xl'>
-            {neighborhood.description}
-          </p>
-          {neighborhood.accessNote && (
-            <p className='text-gray-600 text-sm'>{neighborhood.accessNote}</p>
-          )}
+          <div className='grid lg:grid-cols-2 gap-10 items-center'>
+            <div>
+              <h2 id='about-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
+                North Las Vegas Family Homes: About {neighborhood.name}
+              </h2>
+              <p className='speakable text-gray-700 leading-relaxed mb-6'>
+                {neighborhood.description}
+              </p>
+              {neighborhood.accessNote && (
+                <p className='text-gray-600 text-sm'>{neighborhood.accessNote}</p>
+              )}
+              <p className='text-gray-700 mt-4'>
+                Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties
+                (license S.0197614.LLC), helps buyers compare {neighborhood.name} listings with
+                other North Las Vegas inventory. Call {BUSINESS_INFO.phone.display}.
+              </p>
+            </div>
+            <div className='relative h-72 md:h-96 w-full overflow-hidden rounded-xl shadow-lg'>
+              <Image
+                src={getPageHeroImage(`/neighborhoods/${slug}`).src}
+                alt={getPageHeroImage(`/neighborhoods/${slug}`).alt}
+                fill
+                className='object-cover'
+                sizes='(max-width: 1024px) 100vw, 50vw'
+              />
+            </div>
+          </div>
         </div>
       </section>
 

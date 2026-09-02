@@ -1,69 +1,77 @@
 import type { MetadataRoute } from 'next';
-import { headers } from 'next/headers';
 
-export default async function robots(): Promise<MetadataRoute.Robots> {
-  const headersList = await headers();
-  const host = headersList.get('x-forwarded-host') || headersList.get('host') || 'localhost';
-  const baseUrl = `https://${host.split(':')[0]}`;
+const canonicalSite = 'https://www.maravillahomesforsale.com';
 
+export default function robots(): MetadataRoute.Robots {
   return {
     rules: [
-      // Default: allow all crawlers
       {
         userAgent: '*',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
-      // ── AI Retrieval Bots (power AI search results) ──
       {
         userAgent: 'GPTBot',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'ChatGPT-User',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'OAI-SearchBot',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'ClaudeBot',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'Claude-Web',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'PerplexityBot',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'Applebot-Extended',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'Bytespider',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
-      // ── AI Training Bots (maximizes visibility in AI models) ──
       {
         userAgent: 'Google-Extended',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'CCBot',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'cohere-ai',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
       {
         userAgent: 'Meta-ExternalAgent',
         allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
       },
     ],
-    sitemap: `${baseUrl}/sitemap.xml`,
+    sitemap: `${canonicalSite}/sitemap.xml`,
+    host: canonicalSite,
   };
 }

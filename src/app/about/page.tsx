@@ -12,6 +12,7 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { AGENT_PHOTO } from '@/lib/config/agent';
 import OnThisPage from '@/components/OnThisPage';
 
 const baseUrl = (
@@ -79,7 +80,7 @@ export default function AboutPage() {
             </div>
             <div className='flex justify-center'>
               <AgentPhoto
-                src='/photos/Dr. Duffy Blue_Headshot.jpg'
+                src={AGENT_PHOTO.src}
                 alt='Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties'
                 sizes='(max-width: 1024px) 100vw, 50vw'
                 className='shadow-xl rounded-lg'

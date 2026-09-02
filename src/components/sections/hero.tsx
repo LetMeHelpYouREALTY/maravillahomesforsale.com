@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
+import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
 export default function Hero() {
   // Best area photo for hero background - highest quality community/area shot
@@ -56,8 +57,22 @@ export default function Hero() {
           </span>
         </h1>
 
-        <p className='text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
+        <p className='speakable text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
           Find exceptional value and quality family homes in North Las Vegas and Maravilla
+        </p>
+
+        <div className='flex justify-center mb-8 animate-fade-in-delay-2'>
+          <Image
+            src={AGENT_PHOTO.src}
+            alt={AGENT_PHOTO.alt}
+            width={160}
+            height={160}
+            className='h-28 w-28 md:h-40 md:w-40 rounded-full bg-white/95 object-contain shadow-2xl ring-4 ring-white/70'
+            priority
+          />
+        </div>
+        <p className='text-sm md:text-base text-white/90 mb-6'>
+          {AGENT_NAME}, REALTOR® · Berkshire Hathaway HomeServices Nevada Properties
         </p>
 
         {/* Hero CTA Buttons */}

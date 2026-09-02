@@ -1,5 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
 export default function Footer() {
   return (
@@ -9,9 +11,18 @@ export default function Footer() {
         <div className='grid md:grid-cols-4 gap-8'>
           {/* Company Info */}
           <div>
-            <h3 className='text-2xl font-bold mb-4 text-white'>
-              North Las Vegas Family Homes | Homes by Dr. Jan Duffy
-            </h3>
+            <div className='flex items-center gap-3 mb-4'>
+              <Image
+                src={AGENT_PHOTO.srcNav}
+                alt={AGENT_PHOTO.alt}
+                width={72}
+                height={72}
+                className='h-16 w-16 rounded-full bg-white object-contain'
+              />
+              <h3 className='text-xl font-bold text-white'>
+                North Las Vegas Family Homes | Homes by {AGENT_NAME}
+              </h3>
+            </div>
             <p className='text-gray-300 leading-relaxed'>
               Your trusted partner in finding the perfect home in Maravilla and
               North Las Vegas.

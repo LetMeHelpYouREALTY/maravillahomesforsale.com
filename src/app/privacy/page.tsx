@@ -1,4 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
+import Image from 'next/image';
 import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
@@ -6,6 +7,7 @@ import {
 } from '@/lib/metadata';
 import Script from 'next/script';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
+import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -16,6 +18,7 @@ export const metadata = genMetadata({
   description:
     'Privacy Policy for North Las Vegas Family Homes | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
   keywords: 'privacy policy, data protection, personal information',
+  image: '/images/pages/privacy-hero.jpg',
   path: '/privacy',
 });
 
@@ -24,9 +27,23 @@ export default function PrivacyPage() {
     <PageLayout>
       <article className='py-16 bg-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
-          <h1 className='text-4xl font-bold text-[#0A2540] mb-8'>
+          <h1 className='text-4xl font-bold text-[#0A2540] mb-6'>
             North Las Vegas Family Homes: Privacy Policy
           </h1>
+          <div className='flex items-center gap-4 mb-8'>
+            <Image
+              src={AGENT_PHOTO.srcNav}
+              alt={AGENT_PHOTO.alt}
+              width={80}
+              height={80}
+              className='h-20 w-20 rounded-full bg-white object-contain shadow'
+            />
+            <p className='speakable text-gray-700'>
+              This policy is published by {AGENT_NAME}, REALTOR® with {BUSINESS_INFO.brokerage},
+              at {BUSINESS_INFO.address.full}. Phone {BUSINESS_INFO.phone.display}. Last reviewed
+              September 2, 2026.
+            </p>
+          </div>
 
           <div className='prose prose-lg max-w-none space-y-6 text-gray-700'>
             <section>
@@ -146,7 +163,7 @@ export default function PrivacyPage() {
                 version will always be posted on this page with an updated date.
               </p>
               <p className='mt-4 text-sm text-gray-500'>
-                Last updated: January 2025
+                Last updated: September 2, 2026
               </p>
             </section>
           </div>
@@ -163,6 +180,7 @@ export default function PrivacyPage() {
               description:
                 'Privacy Policy for North Las Vegas Family Homes | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
               url: `${baseUrl}/privacy`,
+              image: '/images/pages/privacy-hero.jpg',
               breadcrumb: [
                 { name: 'Home', url: baseUrl },
                 { name: 'Privacy Policy', url: `${baseUrl}/privacy` },

@@ -64,9 +64,9 @@ export const revalidate = 604800; // 1 week
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Maravilla Community Guide',
   description:
-    'Maravilla is a premier master-planned community in Las Vegas featuring luxury homes, excellent schools, parks, and convenient amenities. Discover why families choose Maravilla. Call (702) 500-1953.',
+    'Maravilla is a master-planned community in North Las Vegas with 1,519–2,947 sq ft homes, parks, trails, and I-15 / I-215 access. Call (702) 500-1953.',
   keywords:
-    'Maravilla, Las Vegas homes, luxury homes, Las Vegas real estate, family neighborhood, master-planned community, Maravilla schools, Maravilla amenities, Las Vegas properties',
+    'Maravilla, Las Vegas homes, North Las Vegas real estate, master-planned community, Maravilla schools, Maravilla amenities, Las Vegas properties',
   path: '/neighborhood',
 });
 
@@ -74,9 +74,9 @@ export default function NeighborhoodPage() {
   const highlights = [
     {
       icon: School,
-      title: 'Top-Rated Schools',
+      title: 'Clark County School District',
       description:
-        'Excellent public and private schools serving the Maravilla community',
+        'CCSD campuses assigned by address — confirm the current zone for any listing',
       color: 'text-[#3A8DDE]',
       bgColor: 'bg-[#3A8DDE]/10',
     },
@@ -128,7 +128,7 @@ export default function NeighborhoodPage() {
             North Las Vegas Family Homes: Welcome to Maravilla
           </h1>
             <p className='text-xl text-gray-200 max-w-3xl'>
-            A premier master-planned community in North Las Vegas featuring luxury homes, excellent schools, parks, and convenient access to shopping, dining, and major highways. Jump to <a href='#listings' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</a>, <a href='#about' className='text-white hover:text-gray-200 underline font-medium'>about Maravilla</a>, <a href='#search-listings' className='text-white hover:text-gray-200 underline font-medium'>search listings</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>.
+            A master-planned community in North Las Vegas with 1,519–2,947 sq ft homes, parks, trails, and access to shopping, dining, and I-15 / I-215. Jump to <a href='#listings' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</a>, <a href='#about' className='text-white hover:text-gray-200 underline font-medium'>about Maravilla</a>, <a href='#search-listings' className='text-white hover:text-gray-200 underline font-medium'>search listings</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>.
           </p>
         </div>
       </div>
@@ -201,7 +201,7 @@ export default function NeighborhoodPage() {
                   luxury modern homes. The community features beautiful parks,
                   recreational facilities, and a tight-knit atmosphere that
                   brings residents together. Whether you&apos;re looking for a
-                  family-friendly environment or a peaceful retreat, Maravilla
+                  a 1,519–2,947 sq ft floor plan or a quieter street, Maravilla
                   offers the perfect balance of convenience and lifestyle.
                 </p>
                 <p>
@@ -430,7 +430,7 @@ export default function NeighborhoodPage() {
               <ul className='space-y-2 text-gray-700'>
                 <li className='flex items-start'>
                   <UtensilsCrossed className='h-5 w-5 text-[#3A8DDE] mr-2 mt-0.5 flex-shrink-0' />
-                  <span>Applebee&apos;s - Family-friendly casual dining with American favorites</span>
+                  <span>Applebee&apos;s - Casual dining with American favorites</span>
                 </li>
                 <li className='flex items-start'>
                   <UtensilsCrossed className='h-5 w-5 text-[#3A8DDE] mr-2 mt-0.5 flex-shrink-0' />
@@ -1044,7 +1044,7 @@ export default function NeighborhoodPage() {
             '@type': 'ResidentialComplex',
             name: 'Maravilla',
             description:
-              'A premier master-planned community in Las Vegas, Nevada featuring luxury homes, excellent schools, parks, and convenient amenities.',
+              'A master-planned community in North Las Vegas, Nevada with 1,519–2,947 sq ft homes, parks, trails, and highway access.',
             address: {
               '@type': 'PostalAddress',
               addressLocality: 'Las Vegas',
@@ -1110,7 +1110,7 @@ export default function NeighborhoodPage() {
             generateWebPageSchema({
               name: 'North Las Vegas Family Homes | Maravilla Community Guide',
               description:
-                'Maravilla homes for sale in Las Vegas. Discover luxury homes in this premier master-planned community with excellent schools, parks, and convenient amenities.',
+                'Maravilla homes for sale in North Las Vegas. 1,519–2,947 sq ft floor plans, parks, trails, and I-15 / I-215 access.',
               url: `${baseUrl}/neighborhood`,
               breadcrumb: [
                 { name: 'Home', url: baseUrl },

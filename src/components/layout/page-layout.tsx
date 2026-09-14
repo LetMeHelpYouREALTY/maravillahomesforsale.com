@@ -7,6 +7,9 @@ import RealScoutOfficeWidget from '@/components/sections/realscout-office-widget
 import ListingsSkeleton from '@/components/skeletons/listings-skeleton';
 import PageMediaBanner from '@/components/PageMediaBanner';
 import AgentIdentityBand from '@/components/AgentIdentityBand';
+import GbpLocalProof from '@/components/GbpLocalProof';
+import StickyContactBar from '@/components/StickyContactBar';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 interface PageLayoutProps {
   children: React.ReactNode;
@@ -48,6 +51,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
               <h2 id='office-listings-heading' className='text-3xl font-bold text-[#0A2540] mb-2'>
                 North Las Vegas Family Homes: Listings from Dr. Jan Duffy
               </h2>
+              <SectionHeadingMedia heading='North Las Vegas Family Homes: Listings from Dr. Jan Duffy' />
               <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
                 Browse current office listings. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada.
               </p>
@@ -63,9 +67,11 @@ export default function PageLayout({ children }: PageLayoutProps) {
             </div>
           </div>
         </section>
+        <GbpLocalProof />
         <PageFAQSection />
       </main>
       <Footer />
+      <StickyContactBar />
     </div>
   );
 }

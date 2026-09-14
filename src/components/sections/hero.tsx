@@ -23,7 +23,7 @@ export default function Hero() {
             fill
             priority
             fetchPriority='high'
-            className='object-contain'
+            className='object-cover'
             sizes='100vw'
             quality={60}
             aria-hidden='true'

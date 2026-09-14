@@ -26,7 +26,7 @@ const PAGES: Record<string, PageMedia> = {
         alt: 'Jasmine Ranch condos and shared courtyard in Maravilla, North Las Vegas',
       },
       'Centennial Crossing': {
-        src: '/images/pages/homes-hero.jpg',
+        src: '/images/pages/centennial-crossing-hero.jpg',
         alt: 'Centennial Crossing townhomes and larger floor plans in Maravilla, North Las Vegas',
       },
       Seabreeze: {
@@ -49,8 +49,8 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/neighborhoods/centennial-crossing': {
     hero: {
-      src: '/images/pages/homes-hero.jpg',
-      alt: 'Homes for Sale in Centennial Crossing, Maravilla — larger townhome elevations',
+      src: '/images/pages/centennial-crossing-hero.jpg',
+      alt: 'Homes for Sale in Centennial Crossing, Maravilla — attached townhome elevations',
     },
   },
   '/neighborhoods/seabreeze': {
@@ -61,14 +61,14 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/neighborhoods/eldorado': {
     hero: {
-      src: '/images/pages/neighborhoods-hero.jpg',
-      alt: 'Homes for Sale in Eldorado, North Las Vegas — residential street with tile roofs',
+      src: '/images/pages/eldorado-hero.jpg',
+      alt: 'Homes for Sale in Eldorado, North Las Vegas — mature desert street with tile-roof homes',
     },
   },
   '/neighborhood': {
     hero: {
-      src: '/images/pages/neighborhoods-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Welcome to Maravilla — community streetscape in North Las Vegas',
+      src: '/images/pages/neighborhood-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Welcome to Maravilla — boulevard and desert landscaping in North Las Vegas',
     },
   },
   '/homes': {
@@ -79,14 +79,14 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/sell': {
     hero: {
-      src: '/images/pages/homes-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Sell Your Home — Maravilla-style house prepared for listing photos',
+      src: '/images/pages/sell-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Sell Your Home — listing-ready Maravilla-style house at golden hour',
     },
   },
   '/home-valuation': {
     hero: {
-      src: '/images/pages/services-contact-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Home Valuation — market charts and floor plan review desk',
+      src: '/images/pages/home-valuation-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Home Valuation — comparable-sales review desk overlooking desert rooftops',
     },
   },
   '/buyers-guide': {
@@ -97,14 +97,14 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/first-time-buyers': {
     hero: {
-      src: '/images/pages/buyers-guide-hero.jpg',
+      src: '/images/pages/first-time-buyers-hero.jpg',
       alt: 'North Las Vegas Family Homes: First-Time Home Buyers — keys at a Maravilla entry door',
     },
   },
   '/guides': {
     hero: {
-      src: '/images/pages/buyers-guide-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Guides for Clients — buyer checklist and home keys',
+      src: '/images/pages/guides-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Guides for Clients — buyer checklist, map, and home keys',
     },
   },
   '/amenities': {
@@ -115,8 +115,8 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/community': {
     hero: {
-      src: '/images/pages/amenities-community-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Community Guide — recreation ramada and desert landscaping',
+      src: '/images/pages/community-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Community Guide — park ramada, walking path, and Maravilla homes',
     },
   },
   '/schools': {
@@ -127,19 +127,19 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/real-estate-services': {
     hero: {
-      src: '/images/pages/services-contact-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Real Estate Services — consultation desk with market materials',
+      src: '/images/pages/services-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Real Estate Services — consultation table with listing photos',
     },
   },
   '/contact': {
     hero: {
-      src: '/images/pages/services-contact-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Contact — Dr. Jan Duffy office consultation setting',
+      src: '/images/pages/contact-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Contact — Dr. Jan Duffy office reception in North Las Vegas',
     },
   },
   '/about': {
     hero: {
-      src: '/images/pages/services-contact-hero.jpg',
+      src: '/images/pages/about-hero.jpg',
       alt: 'About Dr. Jan Duffy — REALTOR® office in North Las Vegas',
     },
   },
@@ -151,14 +151,14 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/market-insights': {
     hero: {
-      src: '/images/pages/market-data-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Market Insights — North Las Vegas valley rooftops',
+      src: '/images/pages/market-insights-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Market Insights — North Las Vegas valley rooftops at late afternoon',
     },
   },
   '/map-and-nearby-places': {
     hero: {
-      src: '/images/pages/neighborhoods-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Map & Nearby Places — streets near Maravilla and I-215',
+      src: '/images/pages/map-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Map & Nearby Places — streets and highway access near Maravilla',
     },
   },
   '/55-plus-communities': {
@@ -181,21 +181,84 @@ const PAGES: Record<string, PageMedia> = {
   },
   '/blog': {
     hero: {
-      src: '/images/pages/market-data-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Blog & Market Updates — North Las Vegas housing overview',
+      src: '/images/pages/blog-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Blog & Market Updates — market report desk overlooking desert homes',
     },
   },
   '/resources': {
     hero: {
-      src: '/images/pages/buyers-guide-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Resources — buyer tools and Maravilla home keys',
+      src: '/images/pages/resources-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Resources — buyer tools, floor plans, and Maravilla home keys',
     },
   },
   '/search': {
     hero: {
-      src: '/images/pages/homes-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Search Homes — Maravilla listing-style home exterior',
+      src: '/images/pages/search-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Search Homes — listing-style home exterior in North Las Vegas',
     },
+  },
+};
+
+const SECTION_IMAGES: Record<string, PageImage> = {
+  'North Las Vegas Family Homes: Market Overview': {
+    src: '/images/pages/section-market.jpg',
+    alt: 'North Las Vegas Family Homes: Market Overview — rooftops and market charts for ZIP 89031',
+  },
+  'North Las Vegas Family Homes: Market Snapshot': {
+    src: '/images/pages/section-market.jpg',
+    alt: 'North Las Vegas Family Homes: Market Snapshot — North Las Vegas housing grid from a market desk',
+  },
+  'Current North Las Vegas Real Estate Trends': {
+    src: '/images/pages/section-market.jpg',
+    alt: 'Current North Las Vegas real estate trends — desert suburban rooftops',
+  },
+  'North Las Vegas Family Homes: Property Categories': {
+    src: '/images/pages/homes-hero.jpg',
+    alt: 'North Las Vegas Family Homes: Property Categories — Maravilla-style two-story home',
+  },
+  'North Las Vegas Family Homes: Listings from Dr. Jan Duffy': {
+    src: '/images/pages/section-listings.jpg',
+    alt: 'Listings from Dr. Jan Duffy — printed listing photos and keys on a review table',
+  },
+  'North Las Vegas Family Homes: Schedule a Consultation': {
+    src: '/images/pages/section-office.jpg',
+    alt: 'Schedule a consultation — North Las Vegas real estate office at dusk',
+  },
+  'Find Us on the Map': {
+    src: '/images/pages/map-hero.jpg',
+    alt: 'Find us on the map — North Las Vegas streets near I-215',
+  },
+  'North Las Vegas Family Homes: Top-Rated Schools': {
+    src: '/images/pages/section-schools.jpg',
+    alt: 'Clark County School District campus near Maravilla in North Las Vegas',
+  },
+  'Clark County School District Campuses Near Maravilla': {
+    src: '/images/pages/section-schools.jpg',
+    alt: 'Clark County School District campus exterior in North Las Vegas',
+  },
+  'Parks, Trails & Recreation': {
+    src: '/images/pages/section-parks-trails.jpg',
+    alt: 'Maravilla parks and walking trails with desert landscaping in North Las Vegas',
+  },
+  'Community Pool & Clubhouse': {
+    src: '/images/pages/section-pool-clubhouse.jpg',
+    alt: 'Maravilla community pool and clubhouse in North Las Vegas',
+  },
+  'Open Kitchen & Great Room': {
+    src: '/images/pages/section-kitchen.jpg',
+    alt: 'Open kitchen and great room in a North Las Vegas home',
+  },
+  'I-15 and I-215 Access': {
+    src: '/images/pages/section-highway.jpg',
+    alt: 'Highway access from North Las Vegas toward the Las Vegas Valley',
+  },
+  'Closing & Keys': {
+    src: '/images/pages/section-keys.jpg',
+    alt: 'House keys on a closing table with a North Las Vegas home in the window',
+  },
+  'Single-Story Ranch Homes': {
+    src: '/images/pages/section-ranch.jpg',
+    alt: 'Single-story ranch home with desert yard in North Las Vegas',
   },
 };
 
@@ -206,8 +269,11 @@ const FALLBACK: PageMedia = {
   },
 };
 
-function withCloudflareSrc(image: PageImage): PageImage {
-  return { ...image, src: resolveSiteImage(image.src, 'hero') };
+function withCloudflareSrc(
+  image: PageImage,
+  variant: 'hero' | 'og' = 'hero'
+): PageImage {
+  return { ...image, src: resolveSiteImage(image.src, variant) };
 }
 
 export function getPageMedia(pathname: string): PageMedia {
@@ -236,4 +302,15 @@ export function getPageMedia(pathname: string): PageMedia {
 
 export function getPageHeroImage(pathname: string): PageImage {
   return getPageMedia(pathname).hero;
+}
+
+export function getSectionImage(heading: string): PageImage | undefined {
+  const exact = SECTION_IMAGES[heading];
+  if (exact) return withCloudflareSrc(exact);
+
+  for (const media of Object.values(PAGES)) {
+    const match = media.sections?.[heading];
+    if (match) return withCloudflareSrc(match);
+  }
+  return undefined;
 }

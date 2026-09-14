@@ -223,8 +223,7 @@ export default function Footer() {
           <div>
             <h4 className='text-lg font-semibold mb-4 text-white'>Follow Us</h4>
             <p className='text-sm text-gray-300 mb-4'>
-              Follow us on social media for the latest updates on Las Vegas 55+
-              communities:
+              Follow listing updates, market videos, and Maravilla news:
             </p>
             <div className='flex flex-wrap gap-4'>
               <Link

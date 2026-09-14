@@ -94,7 +94,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     description:
-      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Family-friendly community, top schools. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
+      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Parks, trails, and 1,519–2,947 sq ft homes. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
     url: siteUrl,
     siteName: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     locale: 'en_US',
@@ -162,7 +162,7 @@ export const metadata: Metadata = {
     'DC.description': 'Luxury homes in Maravilla, North Las Vegas',
     'DC.publisher': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     'DC.contributor': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    'DC.date': '2024',
+    'DC.date': '2026',
     'DC.type': 'Text',
     'DC.format': 'text/html',
     'DC.identifier': siteUrl,

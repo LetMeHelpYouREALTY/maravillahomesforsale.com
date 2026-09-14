@@ -392,10 +392,10 @@ export default function HomeDescriptionsPage() {
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                  Top-Rated Schools
+                  Clark County School District Campuses
                 </h3>
                 <p className='text-gray-700 leading-relaxed'>
-                  Maravilla is served by excellent schools in the Clark County School District, including highly-rated elementary, middle, and high schools. These schools offer comprehensive academic programs, extracurricular activities, and support services that help students succeed. The proximity to quality education is a major draw for families, and the strong school system contributes to property values and community desirability.
+                  Maravilla is served by Clark County School District campuses. Elementary, middle, and high assignments depend on the exact address and current CCSD maps. Confirm the zone before you write an offer.
                 </p>
               </div>
               <div>
@@ -403,7 +403,7 @@ export default function HomeDescriptionsPage() {
                   Quick Access to Strip and Downtown
                 </h3>
                 <p className='text-gray-700 leading-relaxed'>
-                  While Maravilla offers a peaceful residential environment, the excitement of the Las Vegas Strip and Downtown is just a short drive away. This proximity allows residents to enjoy world-class entertainment, dining, and nightlife whenever desired, while returning home to a quiet, family-friendly neighborhood. The best of both worlds—suburban tranquility and urban excitement—is available to Maravilla homeowners.
+                  While Maravilla is a residential street grid with parks and trails, the Las Vegas Strip and Downtown are a short drive. Tour entertainment districts and return to a quieter North Las Vegas block the same evening.
                 </p>
               </div>
             </div>

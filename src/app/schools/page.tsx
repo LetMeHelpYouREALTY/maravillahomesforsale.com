@@ -20,7 +20,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Schools in Maravilla & North Las Vegas | Dr. Jan Duffy',
   description:
-    'Schools serving Maravilla, North Las Vegas. Clark County School District, school zones, and education options for Maravilla families. Call (702) 500-1953 for zone info.',
+    'Schools serving Maravilla, North Las Vegas. Clark County School District zones depend on address. Call (702) 500-1953 for zone info.',
   keywords:
     'Maravilla schools, North Las Vegas schools, Clark County School District, Maravilla school zones, schools near Maravilla',
   path: '/schools',
@@ -57,7 +57,7 @@ export default function SchoolsPage() {
             North Las Vegas Family Homes: Schools Serving Maravilla
           </h2>
           <p className='text-gray-700 leading-relaxed max-w-3xl mx-auto text-center mb-8'>
-            Maravilla is in <strong>North Las Vegas</strong> and falls within the <strong>Clark County School District (CCSD)</strong>. Specific schools—elementary, middle, and high—depend on your exact address and current CCSD boundary maps. Many families are drawn to Maravilla for its family-friendly atmosphere and proximity to area schools.
+            Maravilla is in <strong>North Las Vegas</strong> and falls within the <strong>Clark County School District (CCSD)</strong>. Specific schools—elementary, middle, and high—depend on your exact address and current CCSD boundary maps. Call for zone confirmation on a listing.
           </p>
           <div className='grid md:grid-cols-3 gap-6'>
             <Card className='border-0 shadow-lg'>

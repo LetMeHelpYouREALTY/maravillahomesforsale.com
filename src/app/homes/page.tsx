@@ -200,7 +200,7 @@ export default function HomesPage() {
               <CardContent>
                 <CardDescription>
                   Convenient access to shopping, dining, entertainment, and
-                  excellent schools. Explore <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline'>nearby places</Link> and the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline'>neighborhood guide</Link>.
+                parks and trails. Explore <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline'>nearby places</Link> and the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline'>neighborhood guide</Link>.
                 </CardDescription>
               </CardContent>
             </Card>

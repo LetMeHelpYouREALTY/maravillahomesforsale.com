@@ -34,7 +34,9 @@ export default function PageMediaBanner() {
           className='h-20 w-20 md:h-28 md:w-28 rounded-full bg-white object-contain shadow-xl ring-2 ring-white'
         />
       </div>
-      <figcaption className='sr-only'>{hero.alt}</figcaption>
+      <figcaption className='absolute left-4 bottom-4 md:left-10 md:bottom-5 max-w-xl text-white text-sm md:text-base font-medium drop-shadow'>
+        {hero.alt}
+      </figcaption>
     </figure>
   );
 }

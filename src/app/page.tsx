@@ -77,8 +77,8 @@ export const revalidate = 3600; // 1 hour
 
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  description:
-    'North Las Vegas Family Homes: find your dream home in Maravilla and North Las Vegas. Family-friendly community, top schools, parks, amenities. Dr. Jan Duffy, REALTOR® Berkshire Hathaway Nevada. Browse homes, get a valuation, or contact (702) 500-1953.',
+    description:
+      'North Las Vegas Family Homes: find homes in Maravilla and North Las Vegas. Parks, trails, 1,519–2,947 sq ft floor plans, and I-215 access. Dr. Jan Duffy, REALTOR® Berkshire Hathaway Nevada. Browse homes, get a valuation, or contact (702) 500-1953.',
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',
@@ -169,25 +169,25 @@ export default function Home() {
               North Las Vegas Family Homes: Market Overview
             </h2>
             <p className='text-xl text-white mb-8 max-w-3xl mx-auto'>
-              Stay informed with the latest real estate trends in Las
-              Vegas&apos; most prestigious community
+              Public ZIP 89031 figures as of September 2026 put median sold prices
+              in the mid-$400s. Maravilla floor plans differ — call for current comps.
             </p>
             <div className='grid md:grid-cols-4 gap-6 mb-8'>
               <div className='bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20'>
-                <div className='text-3xl font-bold text-white mb-1'>$525K</div>
-                <div className='text-white/90 text-sm'>Average Sale Price</div>
+                <div className='text-3xl font-bold text-white mb-1'>~$415K–$437K</div>
+                <div className='text-white/90 text-sm'>ZIP 89031 median sold range</div>
               </div>
               <div className='bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20'>
-                <div className='text-3xl font-bold text-white mb-1'>25</div>
-                <div className='text-white/90 text-sm'>Days on Market</div>
+                <div className='text-3xl font-bold text-white mb-1'>~38–44</div>
+                <div className='text-white/90 text-sm'>Days on market (ZIP)</div>
               </div>
               <div className='bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20'>
-                <div className='text-3xl font-bold text-white mb-1'>8</div>
-                <div className='text-white/90 text-sm'>Active Listings</div>
+                <div className='text-3xl font-bold text-white mb-1'>1,519–2,947</div>
+                <div className='text-white/90 text-sm'>Maravilla square footage</div>
               </div>
               <div className='bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20'>
-                <div className='text-3xl font-bold text-white mb-1'>+4.8%</div>
-                <div className='text-white/90 text-sm'>YoY Appreciation</div>
+                <div className='text-3xl font-bold text-white mb-1'>17</div>
+                <div className='text-white/90 text-sm'>Floor plans in community</div>
               </div>
             </div>
             <div className='flex flex-col sm:flex-row gap-4 justify-center items-center'>
@@ -284,7 +284,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href='/new-construction'
+                    href='/homes'
                     className='text-[#0A2540] hover:text-[#3A8DDE] hover:underline transition-colors font-medium'
                   >
                     New Construction
@@ -300,7 +300,7 @@ export default function Home() {
                 </li>
                 <li>
                   <Link
-                    href='/maravilla-hoa'
+                    href='/neighborhood'
                     className='text-[#0A2540] hover:text-[#3A8DDE] hover:underline transition-colors font-medium'
                   >
                     HOA Information

@@ -178,11 +178,9 @@ export default function MarketDataSection() {
             </CardHeader>
             <CardContent>
               <CardDescription className='text-white text-lg leading-relaxed max-w-4xl mx-auto'>
-                The Maravilla market continues to show strong growth with
-                increasing demand for luxury homes. Properties are selling
-                faster than ever, with competitive market conditions. The
-                area&apos;s excellent schools, amenities, and convenient
-                location continue to drive buyer interest.
+                The Maravilla market moves with North Las Vegas inventory and rates.
+                Ask for a dated CMA rather than a static average. Parks, trails,
+                floor-plan variety, and I-15 / I-215 access keep buyers touring.
               </CardDescription>
               <div className='mt-6'>
                 <Button

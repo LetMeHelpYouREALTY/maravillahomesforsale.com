@@ -54,12 +54,12 @@ Dr. Jan Duffy is a licensed Nevada real estate agent (${BUSINESS_INFO.license}) 
 ## Community Details
 
 **Maravilla** is a master-planned community in North Las Vegas, NV 89031. It features:
-- Family-friendly neighborhood with parks and walking trails
+- Parks, walking trails, and community recreation
 - Close proximity to schools and shopping (including Aliante)
 - Modern floor plans from top builders
 - Community amenities including pools and recreation areas
 - Easy access to I-215 and I-15 freeways
-- Competitive pricing for Las Vegas Valley families
+- Competitive pricing for Las Vegas Valley buyers
 
 ## Coverage Area
 

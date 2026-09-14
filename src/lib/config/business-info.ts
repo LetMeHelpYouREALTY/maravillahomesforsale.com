@@ -5,7 +5,7 @@
 
 /** GBP business description (About your business) */
 export const GBP_DESCRIPTION =
-  'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, family-friendly amenities, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. With nearby Aliante shopping, top-rated schools, and great neighborhoods, it\'s no wonder buyers are flocking to this area. For sellers, Dr. Duffy offers proven pricing strategies and expert marketing to help you get the best value for your property. Whether you\'re searching for your dream home or selling your house, Dr. Duffy provides personalized tours, market insights, and full support to make the process easy and stress-free.';
+  'Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in this growing community. Known for modern home designs, parks, trails, and easy access to I-215 and I-15, North Las Vegas is a top choice for homebuyers. With nearby Aliante shopping, Clark County School District campuses, and a mix of floor plans from 1,519 to 2,947 square feet, buyers keep returning to Maravilla and nearby neighborhoods. For sellers, Dr. Duffy offers proven pricing strategies and expert marketing to help you get the best value for your property. Whether you\'re searching for your next home or selling your house, Dr. Duffy provides personalized tours, market insights, and full support to make the process easy and stress-free.';
 
 export const BUSINESS_INFO = {
   // Business Name

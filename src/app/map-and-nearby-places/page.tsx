@@ -92,7 +92,7 @@ export default function MapAndNearbyPlacesPage() {
               North Las Vegas Family Homes: Nearby Schools
             </h2>
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
-              Maravilla is served by excellent schools in the Clark County School District, providing quality education from elementary through high school. These schools offer comprehensive academic programs, extracurricular activities, and support services that help students succeed.
+              Maravilla is served by Clark County School District campuses from elementary through high school. Zones depend on the exact address and current CCSD boundary maps. Call (702) 500-1953 to confirm the campus for a listing.
             </p>
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
@@ -365,7 +365,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600 mb-2'>
-                        Popular chains including Applebee&apos;s, Buffalo Wild Wings, and IHOP provide familiar dining options for families. These restaurants offer consistent quality and family-friendly atmospheres.
+                        Popular chains including Applebee&apos;s, Buffalo Wild Wings, and IHOP sit along nearby commercial corridors. Hours and menus change — confirm before you go.
                       </p>
                       <p className='text-sm text-gray-500'>
                         Options: Applebee&apos;s, Buffalo Wild Wings, IHOP, and more
@@ -787,7 +787,7 @@ export default function MapAndNearbyPlacesPage() {
                 Las Vegas Strip and Downtown
               </h3>
               <p className='text-gray-700 leading-relaxed mb-4'>
-                While Maravilla offers a peaceful residential environment, the excitement of the Las Vegas Strip and Downtown is just a short drive away. This proximity allows residents to enjoy world-class entertainment, dining, and nightlife whenever desired, while returning home to a quiet, family-friendly neighborhood.
+                While Maravilla is a residential street grid with parks and trails, the Las Vegas Strip and Downtown are a short drive. Buyers can tour entertainment districts and return to a quieter North Las Vegas block the same evening.
               </p>
               <p className='text-gray-700 leading-relaxed'>
                 The Strip is approximately 20 minutes away, providing access to world-renowned shows, restaurants, shopping, and attractions. Downtown Las Vegas, with its revitalized entertainment district, is also within easy reach. This proximity means residents can enjoy the best of both worlds—suburban tranquility and urban excitement.

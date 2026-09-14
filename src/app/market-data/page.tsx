@@ -230,12 +230,11 @@ export default function MarketDataPage() {
                 while maintaining the community&apos;s luxury standards.
               </p>
               <p>
-                Maravilla&apos;s appeal extends beyond its strategic location
-                and luxury modern homes. The community offers excellent amenities,
-                convenient access to shopping and dining, proximity to parks and
-                recreational facilities, and a tight-knit community atmosphere.
-                The area&apos;s excellent schools, amenities, and convenient
-                location continue to drive buyer interest.
+                Maravilla&apos;s appeal extends beyond its location.
+                The community offers parks, trails, shopping, dining, and
+                I-15 / I-215 access. Clark County School District zones depend
+                on address. Call for current comps instead of relying on a
+                static price band.
               </p>
             </CardContent>
           </Card>

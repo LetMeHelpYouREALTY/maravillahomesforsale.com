@@ -13,10 +13,10 @@ type Neighborhood = {
 const neighborhoods: Neighborhood[] = [
   {
     name: 'Aliante',
-    description: 'Family-friendly community with excellent schools and parks',
-    avgPrice: '$450K',
-    homesAvailable: 18,
-    amenities: ['Top Schools', 'Parks', 'Shopping Center', 'Golf Course'],
+    description: 'Parks, trails, shopping, and CCSD campuses nearby',
+    avgPrice: 'Call for comps',
+    homesAvailable: 0,
+    amenities: ['CCSD campuses nearby', 'Parks', 'Shopping Center', 'Golf Course'],
     image: '/photos/04-1 (4).jpg',
   },
   {
@@ -33,7 +33,7 @@ const neighborhoods: Neighborhood[] = [
       'Premier master-planned community with luxury homes and exceptional amenities',
     avgPrice: 'Contact for Pricing',
     homesAvailable: 0,
-    amenities: ['Parks', 'Excellent Schools', 'Convenient Location', 'Luxury Homes'],
+    amenities: ['Parks', 'CCSD campuses nearby', 'Convenient Location', 'Desert-modern homes'],
     image: '/photos/01-1 (2).jpg',
   },
   {
@@ -51,12 +51,12 @@ const neighborhoods: Neighborhood[] = [
   },
   {
     name: 'Eldorado',
-    description: 'Established neighborhood with mature landscaping and charm',
-    avgPrice: '$380K',
-    homesAvailable: 22,
+    description: 'Completed street grid with mature desert landscaping',
+    avgPrice: 'Call for comps',
+    homesAvailable: 0,
     amenities: [
       'Mature Trees',
-      'Established Community',
+      'Completed street grid',
       'Convenient Location',
       'Parks',
     ],
@@ -91,10 +91,10 @@ const neighborhoods: Neighborhood[] = [
   },
   {
     name: 'Valley Vista',
-    description: 'Affordable family community with great location',
-    avgPrice: '$420K',
-    homesAvailable: 28,
-    amenities: ['Affordable Homes', 'Family Friendly', 'Good Schools', 'Parks'],
+    description: 'Entry-level inventory with parks and highway access',
+    avgPrice: 'Call for comps',
+    homesAvailable: 0,
+    amenities: ['Entry-level homes', 'Parks nearby', 'CCSD campuses nearby', 'Highway access'],
     image: '/photos/10-1 (10).jpg',
   },
   {
@@ -136,17 +136,17 @@ const NeighborhoodCard = ({ neighborhood }: { neighborhood: Neighborhood }) => {
 
         <div className='space-y-3 mb-4'>
           <div className='flex justify-between items-center'>
-            <span className='text-gray-600'>Average Price:</span>
+            <span className='text-gray-600'>Current pricing:</span>
             <span className='text-[#16B286] font-semibold text-lg'>
               {neighborhood.avgPrice}
             </span>
           </div>
-          <div className='flex justify-between items-center'>
-            <span className='text-gray-600'>Homes Available:</span>
-            <span className='text-[#3A8DDE] font-semibold'>
-              {neighborhood.homesAvailable}
-            </span>
-          </div>
+          <Link
+            href='/homes'
+            className='block text-[#3A8DDE] font-semibold hover:underline'
+          >
+            Browse current listings
+          </Link>
         </div>
 
         <div className='mb-6'>
@@ -208,10 +208,9 @@ const NorthLasVegasNeighborhoods = () => {
               Find Your Perfect North Las Vegas Home
             </h3>
             <p className='text-gray-600 mb-6 leading-relaxed'>
-              Whether you&apos;re looking for a family-friendly community, luxury
-              living, or an active adult lifestyle, North Las Vegas has the
-              perfect neighborhood for you. Let us help you find your dream
-              home.
+              Whether you&apos;re looking for a 1,519–2,947 sq ft floor plan, a
+              single-story ranch, or a 55+ community, North Las Vegas has
+              inventory to tour. Let us help you compare listings.
             </p>
             <Link
               href='http://drjanduffy.realscout.com/onboarding'

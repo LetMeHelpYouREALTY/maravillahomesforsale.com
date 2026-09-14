@@ -25,17 +25,17 @@ export const NEIGHBORHOODS: Record<NeighborhoodSlug, NeighborhoodItem> = {
   aliante: {
     slug: 'aliante',
     name: 'Aliante',
-    shortDescription: 'Master-planned community in North Las Vegas with shopping, nature trails, and family-friendly living.',
+    shortDescription: 'Master-planned community in North Las Vegas with shopping, nature trails, and a mix of floor plans.',
     description:
-      'Aliante is a master-planned community in North Las Vegas offering a mix of single-family homes, parks, the Aliante Nature Discovery Park, and easy access to Aliante Station and I-215. Families and 55+ buyers alike find top-rated schools, trails, and retail nearby.',
+      'Aliante is a master-planned community in North Las Vegas offering a mix of single-family homes, parks, the Aliante Nature Discovery Park, and easy access to Aliante Station and I-215. Buyers compare trails, retail, and Clark County School District zones by address.',
     highlights: [
       'Aliante Nature Discovery Park',
       'Aliante Station & retail',
       'I-215 and I-15 access',
-      'Family-friendly and 55+ options',
-      'Strong resale value',
+      'Single-family and 55+ inventory nearby',
+      'Ask for current resale comps',
     ],
-    schoolsNote: 'Served by Clark County School District with several highly rated schools in the zone.',
+    schoolsNote: 'Served by Clark County School District. Zones depend on the exact address.',
     accessNote: 'Convenient access to I-215 and I-15 for commuters.',
   },
   'jasmine-ranch': {
@@ -59,7 +59,7 @@ export const NEIGHBORHOODS: Record<NeighborhoodSlug, NeighborhoodItem> = {
     name: 'Centennial Crossing',
     shortDescription: 'Upscale Maravilla area with larger condos and townhomes, up to four bedrooms.',
     description:
-      'Centennial Crossing offers more upscale options within Maravilla, including larger condos and townhomes with up to four bedrooms. Modern amenities and thoughtful design make it ideal for growing families or those wanting extra space.',
+      'Centennial Crossing offers more upscale options within Maravilla, including larger condos and townhomes with up to four bedrooms. Buyers looking for extra square footage stay inside the Maravilla amenity map.',
     highlights: [
       'Larger condos and townhomes',
       'Up to 4 bedrooms',
@@ -91,13 +91,13 @@ export const NEIGHBORHOODS: Record<NeighborhoodSlug, NeighborhoodItem> = {
     name: 'Eldorado',
     shortDescription: 'North Las Vegas area with diverse housing and convenient access to I-15 and I-215.',
     description:
-      'Eldorado is a well-established North Las Vegas area with a diverse mix of housing, from single-family homes to townhomes. Residents benefit from convenient access to I-15 and I-215, shopping, and solid school options in the Clark County School District.',
+      'Eldorado is a North Las Vegas area with a diverse mix of housing, from single-family homes to townhomes. Residents benefit from convenient access to I-15 and I-215, shopping, and Clark County School District campuses assigned by address.',
     highlights: [
       'Diverse housing options',
       'I-15 and I-215 access',
-      'Established neighborhood',
+      'Completed street grid and mature landscaping',
       'Shopping and services',
-      'Strong community',
+      'Ask for current comps',
     ],
     schoolsNote: 'Clark County School District; school zones vary by address.',
     accessNote: 'Convenient highway access for commuting.',

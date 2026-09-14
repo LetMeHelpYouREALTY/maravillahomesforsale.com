@@ -112,7 +112,7 @@ const NEIGHBORHOOD_FAQS: readonly FAQItem[] = [
   {
     question: 'What makes Maravilla a good neighborhood?',
     answer:
-      'Maravilla is a master-planned community with parks, trails, top-rated schools, and convenient access to shopping and highways. Families and professionals choose it for value, amenities, and location.',
+      'Maravilla is a master-planned community with parks, trails, 1,519–2,947 sq ft homes, and access to shopping and highways. Buyers compare amenities, commute times, and Clark County School District zones by address.',
   },
   {
     question: 'What schools serve Maravilla?',
@@ -146,9 +146,9 @@ const COMMUNITY_FAQS: readonly FAQItem[] = [
       'Maravilla features parks, walking trails, pools, and community events. Specific amenities vary by section. Explore the community and amenities pages for details.',
   },
   {
-    question: 'Is Maravilla family-friendly?',
+    question: 'Does Maravilla have parks and trails?',
     answer:
-      'Yes. Maravilla is popular with families due to schools, parks, and a strong sense of community. Dr. Jan Duffy can point you to the sections that best fit your family.',
+      'Yes. Maravilla includes parks, walking trails, and community recreation that varies by section. Dr. Jan Duffy can match you with the amenities you want.',
   },
 ];
 

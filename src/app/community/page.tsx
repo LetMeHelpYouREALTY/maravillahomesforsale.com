@@ -9,6 +9,7 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   School,
   UtensilsCrossed,
@@ -38,8 +39,8 @@ export const revalidate = 604800; // 1 week
 export const metadata = genMetadata({
   title:
     'North Las Vegas Family Homes | Maravilla Community Guide: Schools, Amenities & Lifestyle',
-  description:
-    'Discover Maravilla community: excellent schools, parks, shopping centers, and family-friendly amenities. Premier master-planned community in Las Vegas. Learn about schools, parks, and lifestyle. Call (702) 500-1953.',
+    description:
+      'Discover Maravilla: parks, trails, shopping, and Clark County School District campuses nearby. Master-planned homes in North Las Vegas. Call (702) 500-1953.',
   keywords:
     'Maravilla community, Las Vegas schools, Maravilla amenities, community guide, Las Vegas lifestyle, Las Vegas community, Maravilla parks, Maravilla shopping',
   path: '/community',
@@ -105,9 +106,9 @@ export default function CommunityPage() {
 
   const lifestyle = [
     {
-      title: 'Family-Friendly',
+      title: 'Parks & Trails Nearby',
       description:
-        'Safe, welcoming community perfect for families with children',
+        'Seven community parks, walking trails, and recreation within Maravilla and North Las Vegas',
       icon: Users,
     },
     {
@@ -132,9 +133,8 @@ export default function CommunityPage() {
             North Las Vegas Family Homes: Community Guide
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
-            A premier master-planned community in Las Vegas offering <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>luxury homes</Link>, excellent schools, beautiful parks, and convenient access to
-            shopping, dining, and major highways. Experience the perfect blend of
-            lifestyle and convenience. Explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, view <Link href='/amenities' className='text-white hover:text-gray-200 underline font-medium'>community amenities</Link>, or see our <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>interactive map</Link>.
+            A master-planned community in North Las Vegas with <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes from 1,519 to 2,947 square feet</Link>, parks, trails, and access to
+            shopping, dining, and I-15 / I-215. Explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, view <Link href='/amenities' className='text-white hover:text-gray-200 underline font-medium'>community amenities</Link>, or see our <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>interactive map</Link>.
           </p>
         </div>
       </div>
@@ -147,11 +147,11 @@ export default function CommunityPage() {
               <School className='h-8 w-8 text-[#3A8DDE]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Top-Rated Schools
+              Clark County School District Campuses Near Maravilla
             </h2>
+            <SectionHeadingMedia heading='Clark County School District Campuses Near Maravilla' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-              Maravilla is served by excellent public and private schools,
-              making it an ideal location for families with children. See our <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>map of nearby schools</Link> and explore the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>neighborhood guide</Link>.
+              Maravilla is served by Clark County School District campuses. Zones depend on the exact address. See our <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>map of nearby schools</Link> and the <Link href='/schools' className='text-[#3A8DDE] hover:underline font-medium'>schools page</Link>.
             </p>
           </div>
 
@@ -378,7 +378,7 @@ export default function CommunityPage() {
               '@type': 'Place',
               name: 'Maravilla Community',
               description:
-                'Master-planned community in North Las Vegas with excellent schools, parks, shopping, and dining',
+                'Master-planned community in North Las Vegas with parks, shopping, dining, and CCSD campuses nearby',
               address: {
                 '@type': 'PostalAddress',
                 addressLocality: 'North Las Vegas',

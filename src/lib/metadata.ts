@@ -5,6 +5,7 @@ import {
   toAbsoluteImageUrl,
   withCloudflareVariant,
 } from './config/cloudflare-images';
+import { getPageHeroImage } from '@/data/page-images';
 
 const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -58,7 +59,7 @@ export const MARAVILLA_FAQS = [
   {
     question: 'What makes Maravilla a desirable community?',
     answer:
-      'Maravilla is a premier master-planned community offering exceptional living experiences. The community features beautiful homes, excellent schools, parks, and convenient access to shopping, dining, and major highways. Residents enjoy a tight-knit community atmosphere with numerous amenities and events throughout the year.',
+      'Maravilla is a master-planned community in North Las Vegas with homes from 1,519 to 2,947 square feet, 7 parks, miles of walking trails, and access to I-15 and the 215 Beltway. Nearby Aliante shopping, dining, and Clark County School District campuses sit within a short drive. Floor plans and amenities vary by section.',
   },
   {
     question: 'What is the average price range for homes in Maravilla?',
@@ -138,9 +139,9 @@ export function generateMetadata({
   type?: 'website' | 'article';
 }): Metadata {
   const url = `${siteConfig.url}${path}`;
-  const ogImage = image
-    ? withCloudflareVariant(image, 'og')
-    : siteConfig.ogImage;
+  const pageHeroSrc =
+    path === '/' ? HOMEPAGE_OG_IMAGE.src : getPageHeroImage(path).src;
+  const ogImage = withCloudflareVariant(image ?? pageHeroSrc, 'og');
   const fullImageUrl = toAbsoluteImageUrl(ogImage, siteConfig.url);
 
   return {
@@ -234,6 +235,7 @@ export function generateLocalBusinessSchema() {
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,
+      BUSINESS_INFO.googleBusinessProfile,
     ],
     areaServed: [
       { '@type': 'Place', name: BUSINESS_INFO.serviceArea },
@@ -312,6 +314,7 @@ export function generateOrganizationSchema() {
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,
+      BUSINESS_INFO.googleBusinessProfile,
     ],
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
@@ -374,6 +377,7 @@ export function generatePersonSchema() {
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.youtube,
       BUSINESS_INFO.social.linkedin,
+      BUSINESS_INFO.googleBusinessProfile,
     ],
   };
 }
@@ -482,6 +486,7 @@ export function generateRealEstateAgentSchema() {
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
       BUSINESS_INFO.social.youtube,
+      BUSINESS_INFO.googleBusinessProfile,
     ],
   };
 }

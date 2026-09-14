@@ -61,6 +61,12 @@ export default function AgentIdentityBand() {
               <span itemProp='postalCode'>{BUSINESS_INFO.address.postalCode}</span>
             </p>
             <div className='flex flex-wrap gap-3'>
+              <a
+                href={BUSINESS_INFO.phone.href}
+                className='inline-flex items-center rounded-md bg-[#16B286] px-4 py-2 text-white font-medium hover:bg-[#15A276]'
+              >
+                Call {BUSINESS_INFO.phone.display}
+              </a>
               <Link
                 href='/about'
                 className='inline-flex items-center rounded-md bg-[#3A8DDE] px-4 py-2 text-white font-medium hover:bg-[#2A7DCE]'
@@ -74,12 +80,20 @@ export default function AgentIdentityBand() {
                 Schedule a consultation
               </Link>
               <a
-                href={BUSINESS_INFO.maps.business}
+                href={BUSINESS_INFO.maps.directions}
                 target='_blank'
                 rel='noopener noreferrer'
                 className='inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-gray-700 font-medium hover:bg-white'
               >
                 Directions
+              </a>
+              <a
+                href={BUSINESS_INFO.googleReviewUrl}
+                target='_blank'
+                rel='noopener noreferrer'
+                className='inline-flex items-center rounded-md border border-gray-300 px-4 py-2 text-gray-700 font-medium hover:bg-white'
+              >
+                Leave a Google Review
               </a>
             </div>
           </div>

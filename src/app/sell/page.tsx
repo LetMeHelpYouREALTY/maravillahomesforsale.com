@@ -24,7 +24,7 @@ export const revalidate = 604800; // weekly
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Sell a Home in Maravilla | Dr. Jan Duffy, REALTOR®',
   description:
-    'Sell your Maravilla home with expert guidance. Dr. Jan Duffy, REALTOR®, helps you price competitively, prepare for market, and negotiate to maximize proceeds. Average days on market: 25 days. Free consultation. Call (702) 500-1953.',
+    'Sell your Maravilla home with expert guidance. Dr. Jan Duffy, REALTOR®, helps you price competitively, prepare for market, and negotiate. Call (702) 500-1953 for a listing plan.',
   keywords:
     'sell my home Maravilla, Maravilla listing agent, Maravilla home value, Maravilla real estate agent, Dr. Jan Duffy REALTOR',
   path: '/sell',

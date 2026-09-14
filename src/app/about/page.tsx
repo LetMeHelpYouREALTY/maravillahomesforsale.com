@@ -75,7 +75,7 @@ export default function AboutPage() {
                 Whether you&apos;re searching for your first home, selling an existing property, or exploring <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla&apos;s neighborhoods</Link>, Dr. Duffy provides data-driven advice, clear communication, and full support from start to closing.
               </p>
               <p className='text-gray-700 leading-relaxed'>
-                She works with clients throughout Las Vegas, Henderson, and North Las Vegas—with a focus on Maravilla&apos;s family-friendly communities, top schools, and strong value. Explore <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes for sale</Link>, get a <Link href='/home-valuation' className='text-[#3A8DDE] hover:underline font-medium'>home valuation</Link>, or learn about <Link href='/real-estate-services' className='text-[#3A8DDE] hover:underline font-medium'>real estate services</Link>.
+                She works with clients throughout Las Vegas, Henderson, and North Las Vegas—with a focus on Maravilla&apos;s parks, trails, 1,519–2,947 sq ft floor plans, and commute access. Explore <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes for sale</Link>, get a <Link href='/home-valuation' className='text-[#3A8DDE] hover:underline font-medium'>home valuation</Link>, or learn about <Link href='/real-estate-services' className='text-[#3A8DDE] hover:underline font-medium'>real estate services</Link>.
               </p>
             </div>
             <div className='flex justify-center'>

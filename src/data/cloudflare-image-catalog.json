@@ -44,80 +44,46 @@
     }
   ],
   "images": [
-    {
-      "id": "maravilla/dr-jan-duffy",
-      "file": "public/images/dr-jan-duffy-800.png",
-      "role": "agent"
-    },
-    {
-      "id": "maravilla/og-home",
-      "file": "public/images/og-home.jpg",
-      "role": "og"
-    },
-    {
-      "id": "maravilla/neighborhoods-hero",
-      "file": "public/images/pages/neighborhoods-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/aliante-hero",
-      "file": "public/images/pages/aliante-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/homes-hero",
-      "file": "public/images/pages/homes-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/services-contact-hero",
-      "file": "public/images/pages/services-contact-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/market-data-hero",
-      "file": "public/images/pages/market-data-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/amenities-community-hero",
-      "file": "public/images/pages/amenities-community-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/fifty-five-plus-hero",
-      "file": "public/images/pages/fifty-five-plus-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/schools-hero",
-      "file": "public/images/pages/schools-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/buyers-guide-hero",
-      "file": "public/images/pages/buyers-guide-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/jasmine-ranch-hero",
-      "file": "public/images/pages/jasmine-ranch-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/seabreeze-hero",
-      "file": "public/images/pages/seabreeze-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/home-descriptions-hero",
-      "file": "public/images/pages/home-descriptions-hero.jpg",
-      "role": "hero"
-    },
-    {
-      "id": "maravilla/privacy-hero",
-      "file": "public/images/pages/privacy-hero.jpg",
-      "role": "hero"
-    }
+    { "id": "maravilla/dr-jan-duffy", "file": "public/images/dr-jan-duffy-800.png", "role": "agent" },
+    { "id": "maravilla/og-home", "file": "public/images/og-home.jpg", "role": "og" },
+    { "id": "maravilla/neighborhoods-hero", "file": "public/images/pages/neighborhoods-hero.jpg", "role": "hero" },
+    { "id": "maravilla/aliante-hero", "file": "public/images/pages/aliante-hero.jpg", "role": "hero" },
+    { "id": "maravilla/homes-hero", "file": "public/images/pages/homes-hero.jpg", "role": "hero" },
+    { "id": "maravilla/services-contact-hero", "file": "public/images/pages/services-contact-hero.jpg", "role": "hero" },
+    { "id": "maravilla/market-data-hero", "file": "public/images/pages/market-data-hero.jpg", "role": "hero" },
+    { "id": "maravilla/amenities-community-hero", "file": "public/images/pages/amenities-community-hero.jpg", "role": "hero" },
+    { "id": "maravilla/fifty-five-plus-hero", "file": "public/images/pages/fifty-five-plus-hero.jpg", "role": "hero" },
+    { "id": "maravilla/schools-hero", "file": "public/images/pages/schools-hero.jpg", "role": "hero" },
+    { "id": "maravilla/buyers-guide-hero", "file": "public/images/pages/buyers-guide-hero.jpg", "role": "hero" },
+    { "id": "maravilla/jasmine-ranch-hero", "file": "public/images/pages/jasmine-ranch-hero.jpg", "role": "hero" },
+    { "id": "maravilla/seabreeze-hero", "file": "public/images/pages/seabreeze-hero.jpg", "role": "hero" },
+    { "id": "maravilla/home-descriptions-hero", "file": "public/images/pages/home-descriptions-hero.jpg", "role": "hero" },
+    { "id": "maravilla/privacy-hero", "file": "public/images/pages/privacy-hero.jpg", "role": "hero" },
+    { "id": "maravilla/sell-hero", "file": "public/images/pages/sell-hero.jpg", "role": "hero" },
+    { "id": "maravilla/home-valuation-hero", "file": "public/images/pages/home-valuation-hero.jpg", "role": "hero" },
+    { "id": "maravilla/first-time-buyers-hero", "file": "public/images/pages/first-time-buyers-hero.jpg", "role": "hero" },
+    { "id": "maravilla/guides-hero", "file": "public/images/pages/guides-hero.jpg", "role": "hero" },
+    { "id": "maravilla/community-hero", "file": "public/images/pages/community-hero.jpg", "role": "hero" },
+    { "id": "maravilla/services-hero", "file": "public/images/pages/services-hero.jpg", "role": "hero" },
+    { "id": "maravilla/contact-hero", "file": "public/images/pages/contact-hero.jpg", "role": "hero" },
+    { "id": "maravilla/about-hero", "file": "public/images/pages/about-hero.jpg", "role": "hero" },
+    { "id": "maravilla/market-insights-hero", "file": "public/images/pages/market-insights-hero.jpg", "role": "hero" },
+    { "id": "maravilla/map-hero", "file": "public/images/pages/map-hero.jpg", "role": "hero" },
+    { "id": "maravilla/blog-hero", "file": "public/images/pages/blog-hero.jpg", "role": "hero" },
+    { "id": "maravilla/resources-hero", "file": "public/images/pages/resources-hero.jpg", "role": "hero" },
+    { "id": "maravilla/search-hero", "file": "public/images/pages/search-hero.jpg", "role": "hero" },
+    { "id": "maravilla/eldorado-hero", "file": "public/images/pages/eldorado-hero.jpg", "role": "hero" },
+    { "id": "maravilla/centennial-crossing-hero", "file": "public/images/pages/centennial-crossing-hero.jpg", "role": "hero" },
+    { "id": "maravilla/neighborhood-hero", "file": "public/images/pages/neighborhood-hero.jpg", "role": "hero" },
+    { "id": "maravilla/section-parks-trails", "file": "public/images/pages/section-parks-trails.jpg", "role": "section" },
+    { "id": "maravilla/section-pool-clubhouse", "file": "public/images/pages/section-pool-clubhouse.jpg", "role": "section" },
+    { "id": "maravilla/section-kitchen", "file": "public/images/pages/section-kitchen.jpg", "role": "section" },
+    { "id": "maravilla/section-listings", "file": "public/images/pages/section-listings.jpg", "role": "section" },
+    { "id": "maravilla/section-keys", "file": "public/images/pages/section-keys.jpg", "role": "section" },
+    { "id": "maravilla/section-highway", "file": "public/images/pages/section-highway.jpg", "role": "section" },
+    { "id": "maravilla/section-market", "file": "public/images/pages/section-market.jpg", "role": "section" },
+    { "id": "maravilla/section-office", "file": "public/images/pages/section-office.jpg", "role": "section" },
+    { "id": "maravilla/section-ranch", "file": "public/images/pages/section-ranch.jpg", "role": "section" },
+    { "id": "maravilla/section-schools", "file": "public/images/pages/section-schools.jpg", "role": "section" }
   ]
 }

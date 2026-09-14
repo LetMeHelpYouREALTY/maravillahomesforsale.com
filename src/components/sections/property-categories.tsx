@@ -15,7 +15,7 @@ export default function PropertyCategories() {
   const categories = [
     {
       title: 'Single Story Homes',
-      description: 'Spacious single-story homes perfect for families',
+      description: 'Single-story homes from 1,519 to 2,947 square feet',
       price: '1,519 - 2,947 sq.ft.',
       image: '/photos/01-1 (2).jpg',
       count: '17 Floor Plans',
@@ -33,7 +33,7 @@ export default function PropertyCategories() {
       title: 'Gated Community',
       description: 'Master planned community with incredible amenities',
       price: '6 Neighborhoods',
-      image: '/photos/03-1 (3).jpg',
+      image: '/photos/03-1 (3)-2.jpg',
       count: '7 Parks + Trails',
       features: ['Gated Entry', 'Regional Park', 'Miles of Trails'],
     },

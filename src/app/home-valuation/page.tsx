@@ -24,7 +24,7 @@ export const revalidate = 604800; // weekly
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Home Valuation | Maravilla & North Las Vegas',
   description:
-    'Get a free Maravilla home valuation with local pricing context. Dr. Jan Duffy, REALTOR®, provides accurate value estimates based on recent sales, active listings, and market trends. Average home value: $525K. Call (702) 500-1953 for your free estimate.',
+    'Get a free Maravilla home valuation with local pricing context. Dr. Jan Duffy, REALTOR®, uses recent sales, active listings, and current demand. Call (702) 500-1953.',
   keywords:
     'Maravilla home valuation, Maravilla home value, what is my home worth Maravilla, Maravilla CMA, Dr. Jan Duffy REALTOR',
   path: '/home-valuation',

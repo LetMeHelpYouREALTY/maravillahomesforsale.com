@@ -59,9 +59,14 @@ export function middleware(request: NextRequest) {
     return createRedirect(url);
   }
 
+  const isLocalOrPreviewHost =
+    hostname.includes('localhost') ||
+    hostname.startsWith('127.') ||
+    hostname.includes('vercel.app');
+
   // CRITICAL: Consolidate HTTP→HTTPS and non-www→www into a single redirect
   // This prevents redirect chains that Google flags as "Page with redirect"
-  const needsProtocolRedirect = protocol === 'http:';
+  const needsProtocolRedirect = protocol === 'http:' && !isLocalOrPreviewHost;
   const needsDomainRedirect = 
     isProductionDomain &&
     protocol === canonicalProtocol &&

@@ -1,5 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 type Neighborhood = {
   name: string;
@@ -188,6 +190,7 @@ const NorthLasVegasNeighborhoods = () => {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Neighborhoods
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Neighborhoods' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover the diverse communities of North Las Vegas, each offering
             unique amenities and lifestyle options
@@ -207,6 +210,7 @@ const NorthLasVegasNeighborhoods = () => {
             <h3 className='text-2xl font-bold text-[#0A2540] mb-4'>
               Find Your Perfect North Las Vegas Home
             </h3>
+            <SectionHeadingMedia heading='Find Your Perfect North Las Vegas Home' size='card' />
             <p className='text-gray-600 mb-6 leading-relaxed'>
               Whether you&apos;re looking for a 1,519–2,947 sq ft floor plan, a
               single-story ranch, or a 55+ community, North Las Vegas has

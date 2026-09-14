@@ -10,6 +10,7 @@ import {
 } from '@/lib/metadata';
 import { Suspense } from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   MapPin,
   School,
@@ -59,6 +60,7 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
               Interactive Location Map
             </h2>
+            <SectionHeadingMedia heading='Interactive Location Map' />
             <Suspense fallback={<div className='h-[500px] bg-gray-200 animate-pulse rounded-lg' />}>
               <GoogleMap
                 address='Maravilla, North Las Vegas, NV 89031'
@@ -91,6 +93,7 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Nearby Schools
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Nearby Schools' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla is served by Clark County School District campuses from elementary through high school. Zones depend on the exact address and current CCSD boundary maps. Call (702) 500-1953 to confirm the campus for a listing.
             </p>
@@ -99,6 +102,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Elementary Schools
                 </h3>
+                <SectionHeadingMedia heading='Elementary Schools' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -109,7 +113,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600'>
-                        Highly-rated elementary school serving Maravilla students with strong academic programs and supportive learning environment.
+                        CCSD elementary campus near Maravilla. Confirm the current zone for a listing address.
                       </p>
                     </CardContent>
                   </Card>
@@ -122,7 +126,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600'>
-                        Quality elementary education with focus on student achievement and character development.
+                        CCSD elementary campus. Assignment follows district boundary maps for the property address.
                       </p>
                     </CardContent>
                   </Card>
@@ -132,6 +136,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Middle and High Schools
                 </h3>
+                <SectionHeadingMedia heading='Middle and High Schools' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -142,7 +147,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600'>
-                        Comprehensive middle school program preparing students for high school success.
+                        CCSD middle school campus assigned by address. Confirm the current zone on a listing.
                       </p>
                     </CardContent>
                   </Card>
@@ -155,7 +160,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600'>
-                        Top-rated high school offering advanced placement courses, career and technical education, and comprehensive college preparation.
+                        CCSD high school with Advanced Placement courses and career and technical education programs.
                       </p>
                     </CardContent>
                   </Card>
@@ -168,7 +173,7 @@ export default function MapAndNearbyPlacesPage() {
                     </CardHeader>
                     <CardContent>
                       <p className='text-gray-600'>
-                        Excellent high school with strong academic programs and diverse extracurricular opportunities.
+                        CCSD high school with academic and extracurricular programs. Confirm the assigned campus by address.
                       </p>
                     </CardContent>
                   </Card>
@@ -184,6 +189,7 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Parks and Recreation
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Parks and Recreation' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla residents enjoy access to numerous parks and recreational facilities that provide opportunities for outdoor activities, family fun, and community gatherings. These spaces enhance quality of life and provide venues for healthy, active lifestyles.
             </p>
@@ -192,6 +198,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Community Parks
                 </h3>
+                <SectionHeadingMedia heading='Community Parks' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -231,6 +238,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Recreational Facilities
                 </h3>
+                <SectionHeadingMedia heading='Recreational Facilities' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -276,6 +284,7 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Shopping and Dining
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Shopping and Dining' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla residents enjoy convenient access to premier shopping centers and diverse dining options. From everyday essentials to specialty retailers, and from casual family restaurants to upscale dining, everything you need is within minutes of home.
             </p>
@@ -284,6 +293,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Shopping Centers
                 </h3>
+                <SectionHeadingMedia heading='Shopping Centers' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -355,6 +365,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Dining Options
                 </h3>
+                <SectionHeadingMedia heading='Dining Options' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -432,6 +443,7 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               Essential Services
             </h2>
+            <SectionHeadingMedia heading='Essential Services' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla residents have convenient access to essential services including healthcare, banking, government services, and more. These services are strategically located to provide easy access when needed.
             </p>
@@ -440,6 +452,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Healthcare Facilities
                 </h3>
+                <SectionHeadingMedia heading='Healthcare Facilities' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -495,6 +508,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Government and Public Services
                 </h3>
+                <SectionHeadingMedia heading='Government and Public Services' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -572,11 +586,13 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Additional Nearby Amenities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Additional Nearby Amenities' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Fitness and Recreation
                 </h3>
+                <SectionHeadingMedia heading='Fitness and Recreation' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -610,6 +626,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Banking and Financial Services
                 </h3>
+                <SectionHeadingMedia heading='Banking and Financial Services' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -649,11 +666,13 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               Transportation and Access
             </h2>
+            <SectionHeadingMedia heading='Transportation and Access' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Major Highways
                 </h3>
+                <SectionHeadingMedia heading='Major Highways' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -693,6 +712,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Public Transportation
                 </h3>
+                <SectionHeadingMedia heading='Public Transportation' size='card' />
                 <div className='space-y-4'>
                   <Card>
                     <CardHeader>
@@ -738,11 +758,13 @@ export default function MapAndNearbyPlacesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Entertainment and Recreation
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Entertainment and Recreation' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Golf and Recreation
                 </h3>
+                <SectionHeadingMedia heading='Golf and Recreation' size='card' />
                 <Card>
                   <CardHeader>
                     <div className='flex items-center gap-3'>
@@ -764,6 +786,7 @@ export default function MapAndNearbyPlacesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Casino and Entertainment
                 </h3>
+                <SectionHeadingMedia heading='Casino and Entertainment' size='card' />
                 <Card>
                   <CardHeader>
                     <div className='flex items-center gap-3'>
@@ -786,6 +809,7 @@ export default function MapAndNearbyPlacesPage() {
               <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                 Las Vegas Strip and Downtown
               </h3>
+              <SectionHeadingMedia heading='Las Vegas Strip and Downtown' size='card' />
               <p className='text-gray-700 leading-relaxed mb-4'>
                 While Maravilla is a residential street grid with parks and trails, the Las Vegas Strip and Downtown are a short drive. Buyers can tour entertainment districts and return to a quieter North Las Vegas block the same evening.
               </p>

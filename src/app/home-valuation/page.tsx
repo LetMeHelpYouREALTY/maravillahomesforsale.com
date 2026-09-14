@@ -14,6 +14,8 @@ import {
 } from '@/lib/metadata';
 import { MARAVILLA_LONGFORM_PARAGRAPHS } from '@/lib/maravilla-longform';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -106,6 +108,7 @@ export default function MaravillaHomeValuationPage() {
           <h2 id='valuation-context-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
             Maravilla real estate context (valuation lens)
           </h2>
+          <SectionHeadingMedia heading='Maravilla real estate context (valuation lens)' />
           <div className='space-y-4'>
             {MARAVILLA_LONGFORM_PARAGRAPHS.map((p, idx) => (
               <p key={idx} className='text-gray-700 leading-relaxed'>
@@ -121,6 +124,7 @@ export default function MaravillaHomeValuationPage() {
           <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
             North Las Vegas Family Homes: What Affects Home Values?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: What Affects Home Values?' />
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Comparable sales (the foundation)
           </h3>
@@ -172,6 +176,7 @@ export default function MaravillaHomeValuationPage() {
           <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
             Why a local Maravilla valuation matters
           </h2>
+          <SectionHeadingMedia heading='Why a local Maravilla valuation matters' />
           <div className='space-y-4'>
             <p className='text-gray-700 leading-relaxed'>
               Automated valuation models (AVMs) can provide a starting point, but
@@ -201,6 +206,7 @@ export default function MaravillaHomeValuationPage() {
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Get Your Home Valuation
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get Your Home Valuation' />
           <p className='text-lg text-gray-600 mb-8'>
             Contact Dr. Jan Duffy for a comprehensive valuation that considers all
             factors affecting your home&apos;s value in the Maravilla market.
@@ -225,6 +231,7 @@ export default function MaravillaHomeValuationPage() {
           <h2 id='location-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Maravilla Location
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
           <Suspense fallback={<MapSkeleton />}>
             <GoogleMap
               address='Maravilla, North Las Vegas, NV 89031'

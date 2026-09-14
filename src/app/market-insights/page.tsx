@@ -22,6 +22,7 @@ import { KCM_VIDEO_ENTRIES } from '@/data/kcm-videos';
 import KcmVideosSection from '@/components/sections/kcm-videos-section';
 import SiteImage from '@/components/ui/site-image';
 import { getMarketInsightPosts } from '@/data/market-insight-posts';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -49,6 +50,7 @@ export default function MarketInsightsPage() {
             <h1 className='text-4xl md:text-5xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Market Insights
             </h1>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Insights' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Buyer and seller guides for Maravilla and North Las Vegas from Dr. Jan Duffy.
               Also see our{' '}

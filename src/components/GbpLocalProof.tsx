@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { Clock, MapPin, Navigation, Phone, Star } from 'lucide-react';
 import GoogleMap from '@/components/sections/google-map';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 /**
  * Visible NAP, hours, map pin, and GBP actions on every page.
@@ -27,6 +29,7 @@ export default function GbpLocalProof() {
           >
             Visit, Call, or Review North Las Vegas Family Homes
           </h2>
+          <SectionHeadingMedia heading='Visit, Call, or Review North Las Vegas Family Homes' size='card' />
           <p className='text-gray-600 max-w-3xl mx-auto'>
             The name, address, phone, and hours below match this office on Google Maps.
             Use them to call, get directions, or leave a Google review after your tour.

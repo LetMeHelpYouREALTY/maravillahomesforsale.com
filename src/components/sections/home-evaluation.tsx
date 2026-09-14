@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from 'react';
 import Script from 'next/script';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 // Extend Window interface for Homebot
 declare global {
@@ -103,6 +105,7 @@ export default function HomeEvaluationSection() {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Get Your Home&apos;s Value
           </h2>
+          <SectionHeadingMedia heading={"North Las Vegas Family Homes: Get Your Home's Value"} />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover what your Maravilla property is worth with our advanced
             evaluation tools

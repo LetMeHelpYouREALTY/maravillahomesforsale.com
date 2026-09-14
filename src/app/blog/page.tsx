@@ -18,6 +18,7 @@ import {
 } from '@/lib/metadata';
 import SiteImage from '@/components/ui/site-image';
 import { getMarketInsightPosts } from '@/data/market-insight-posts';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -52,6 +53,10 @@ export default function BlogPage() {
 
       <section className='py-16 bg-white'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
+          <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
+            North Las Vegas Family Homes: Guides & Market Updates
+          </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Guides & Market Updates' />
           <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8'>
             <p className='text-gray-600'>
               On-site guides and tools. For the full set, visit Market Insights.

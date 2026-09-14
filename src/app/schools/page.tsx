@@ -12,6 +12,8 @@ import {
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import OnThisPage from '@/components/OnThisPage';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -56,6 +58,7 @@ export default function SchoolsPage() {
           <h2 id='school-info-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Schools Serving Maravilla
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Schools Serving Maravilla' />
           <p className='text-gray-700 leading-relaxed max-w-3xl mx-auto text-center mb-8'>
             Maravilla is in <strong>North Las Vegas</strong> and falls within the <strong>Clark County School District (CCSD)</strong>. Specific schools—elementary, middle, and high—depend on your exact address and current CCSD boundary maps. Call for zone confirmation on a listing.
           </p>
@@ -102,6 +105,7 @@ export default function SchoolsPage() {
           <h2 id='zones-heading' className='text-3xl font-bold text-[#0A2540] mb-6 text-center'>
             School Zones & Boundaries
           </h2>
+          <SectionHeadingMedia heading='School Zones & Boundaries' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             Clark County School District updates boundary maps periodically. The schools that serve a specific Maravilla address can be confirmed through CCSD&apos;s official tools or by contacting the district. When you&apos;re considering a particular home, Dr. Jan Duffy can help you verify the assigned schools for that address.
           </p>
@@ -116,6 +120,7 @@ export default function SchoolsPage() {
           <h2 id='cta-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Get School Info for a Property
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get School Info for a Property' />
           <p className='text-lg text-gray-600 mb-8'>
             When you&apos;re interested in a specific Maravilla home, we can help you confirm the assigned schools. Call or schedule a consultation to get started.
           </p>

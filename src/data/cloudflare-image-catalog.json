@@ -84,6 +84,16 @@
     { "id": "maravilla/section-market", "file": "public/images/pages/section-market.jpg", "role": "section" },
     { "id": "maravilla/section-office", "file": "public/images/pages/section-office.jpg", "role": "section" },
     { "id": "maravilla/section-ranch", "file": "public/images/pages/section-ranch.jpg", "role": "section" },
-    { "id": "maravilla/section-schools", "file": "public/images/pages/section-schools.jpg", "role": "section" }
+    { "id": "maravilla/section-schools", "file": "public/images/pages/section-schools.jpg", "role": "section" },
+    { "id": "maravilla/section-shopping", "file": "public/images/pages/section-shopping.jpg", "role": "section" },
+    { "id": "maravilla/section-dining", "file": "public/images/pages/section-dining.jpg", "role": "section" },
+    { "id": "maravilla/section-backyard", "file": "public/images/pages/section-backyard.jpg", "role": "section" },
+    { "id": "maravilla/section-garage", "file": "public/images/pages/section-garage.jpg", "role": "section" },
+    { "id": "maravilla/section-healthcare", "file": "public/images/pages/section-healthcare.jpg", "role": "section" },
+    { "id": "maravilla/section-photography", "file": "public/images/pages/section-photography.jpg", "role": "section" },
+    { "id": "maravilla/section-bath", "file": "public/images/pages/section-bath.jpg", "role": "section" },
+    { "id": "maravilla/section-laundry", "file": "public/images/pages/section-laundry.jpg", "role": "section" },
+    { "id": "maravilla/section-smart-home", "file": "public/images/pages/section-smart-home.jpg", "role": "section" },
+    { "id": "maravilla/section-flooring", "file": "public/images/pages/section-flooring.jpg", "role": "section" }
   ]
 }

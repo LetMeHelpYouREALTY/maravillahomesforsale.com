@@ -29,6 +29,7 @@ import OnThisPage from '@/components/OnThisPage';
 
 import Script from 'next/script';
 import type { Metadata } from 'next';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   generateMetadata as genMetadata,
   generateCollectionPageSchema,
@@ -97,6 +98,7 @@ export default function HomesPage() {
               <h2 id='working-with-agent-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
                 Working with Dr. Jan Duffy for Maravilla Homes
               </h2>
+              <SectionHeadingMedia heading='Working with Dr. Jan Duffy for Maravilla Homes' />
               <p className='text-lg text-gray-600 mb-6'>
                 Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices®
                 Nevada, specializing in various communities across Las Vegas and
@@ -174,6 +176,7 @@ export default function HomesPage() {
           <h2 id='why-buy-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Why Buy in Maravilla?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why Buy in Maravilla?' />
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             <Card className='border-0 shadow-lg'>
               <CardHeader>
@@ -250,6 +253,7 @@ export default function HomesPage() {
               <h2 id='community-info-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
                 North Las Vegas Family Homes: Homes for Sale in Maravilla
               </h2>
+              <SectionHeadingMedia heading='North Las Vegas Family Homes: Homes for Sale in Maravilla' />
               <div className='space-y-4 text-gray-700'>
                 <p>
                   <strong>Community Information:</strong> Maravilla is a
@@ -281,6 +285,7 @@ export default function HomesPage() {
               <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
                 Maravilla Community Amenities
               </h2>
+              <SectionHeadingMedia heading='Maravilla Community Amenities' />
               <div className='space-y-4'>
                 <p className='text-gray-700'>
                   The community features multiple neighborhoods, several parks, and
@@ -320,6 +325,7 @@ export default function HomesPage() {
           <h2 id='ready-to-find-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Ready to Find Your Dream Home?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Find Your Dream Home?' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy can provide you with the most current and specific
             listings within the Maravilla community that match your

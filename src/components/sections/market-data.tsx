@@ -11,6 +11,8 @@ import {
 } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 export default function MarketDataSection() {
   const currentStats = [
@@ -63,6 +65,7 @@ export default function MarketDataSection() {
           <h2 className='text-4xl font-bold text-white mb-4'>
             North Las Vegas Family Homes: Market Data
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Data' />
           <p className='text-xl text-white max-w-3xl mx-auto leading-relaxed'>
             Stay informed with the latest real estate market trends and
             statistics

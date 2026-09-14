@@ -9,6 +9,7 @@ import {
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   Home,
   DollarSign,
@@ -67,6 +68,7 @@ export default function RealEstateServicesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               Maravilla Property Services
             </h2>
+            <SectionHeadingMedia heading='Maravilla Property Services' />
             <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8'>
               <Card className='border-2 border-[#F7F9FC] hover:border-[#3A8DDE] transition-colors'>
                 <CardHeader>
@@ -118,6 +120,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Commercial Real Estate
                 </h3>
+                <SectionHeadingMedia heading='Commercial Real Estate' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Dr. Jan Duffy provides commercial real estate services for businesses looking to buy, sell, or lease commercial properties in North Las Vegas. This includes retail spaces, office buildings, warehouses, and mixed-use developments. Commercial transactions require specialized knowledge of zoning, leasing structures, and market analysis that differs from residential real estate.
                 </p>
@@ -129,6 +132,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Luxury Properties
                 </h3>
+                <SectionHeadingMedia heading='Luxury Properties' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Luxury property services are tailored to high-end buyers and sellers who expect exceptional service, discretion, and expertise. These services include access to exclusive listings, private showings, and specialized marketing strategies that target affluent buyers. Luxury properties in Maravilla and surrounding areas require a different approach to pricing, marketing, and negotiation.
                 </p>
@@ -140,6 +144,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   New Construction
                 </h3>
+                <SectionHeadingMedia heading='New Construction' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   New construction services help buyers navigate the process of purchasing newly built homes, including working with builders, selecting options and upgrades, and managing the construction timeline. This service is particularly valuable in North Las Vegas, where new construction continues to expand the housing inventory and provide modern, energy-efficient homes with the latest features and technology.
                 </p>
@@ -151,6 +156,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Land and Lots
                 </h3>
+                <SectionHeadingMedia heading='Land and Lots' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Land and lot services assist buyers and sellers of undeveloped property, including residential lots, commercial parcels, and investment land. These transactions require specialized knowledge of zoning regulations, development potential, utility availability, and environmental considerations. Land purchases can be complex, requiring due diligence that goes beyond typical residential property transactions.
                 </p>
@@ -168,11 +174,13 @@ export default function RealEstateServicesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Transaction Services
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Transaction Services' />
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Listing Services
                 </h3>
+                <SectionHeadingMedia heading='Listing Services' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Comprehensive listing services include professional photography, virtual tours, detailed property descriptions, and strategic pricing based on current market conditions. Dr. Duffy uses multiple listing services, online platforms, and marketing channels to ensure maximum exposure for your property. The listing process includes preparing the home for sale, staging recommendations, and creating marketing materials that highlight the property&apos;s best features.
                 </p>
@@ -184,6 +192,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Price Negotiations
                 </h3>
+                <SectionHeadingMedia heading='Price Negotiations' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Expert negotiation services help buyers and sellers achieve their goals while protecting their interests. Dr. Duffy brings extensive experience in the Maravilla market, understanding what buyers are willing to pay and what sellers can reasonably expect. This market knowledge informs negotiation strategies that balance achieving the best price with completing successful transactions.
                 </p>
@@ -195,6 +204,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Contract Review
                 </h3>
+                <SectionHeadingMedia heading='Contract Review' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Real estate contracts are complex legal documents that require careful review to ensure they protect your interests. Dr. Duffy reviews all contract terms, explains implications, and recommends modifications when necessary. This service is essential for both buyers and sellers, as contract terms can significantly impact the transaction&apos;s outcome and your financial obligations.
                 </p>
@@ -206,6 +216,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Closing Coordination
                 </h3>
+                <SectionHeadingMedia heading='Closing Coordination' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Closing coordination involves managing all aspects of the transaction from contract acceptance through final closing. This includes coordinating with lenders, title companies, inspectors, appraisers, and other professionals involved in the process. Dr. Duffy ensures that all deadlines are met, documents are properly prepared, and the closing process proceeds smoothly.
                 </p>
@@ -217,6 +228,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Property Valuation
                 </h3>
+                <SectionHeadingMedia heading='Property Valuation' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Accurate property valuation is essential for making informed decisions about buying or selling. Dr. Duffy provides comprehensive market analysis that considers comparable sales, current market conditions, property condition, and unique features that affect value. This analysis helps sellers price their homes competitively and helps buyers make informed offers.
                 </p>
@@ -228,6 +240,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Market Analysis
                 </h3>
+                <SectionHeadingMedia heading='Market Analysis' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Market analysis services provide detailed information about current market conditions, trends, and forecasts for the Maravilla area and North Las Vegas. This analysis helps buyers and sellers understand market dynamics, pricing trends, and what to expect in the coming months. The analysis includes data on inventory levels, days on market, price trends, and buyer activity.
                 </p>
@@ -239,6 +252,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Title Services
                 </h3>
+                <SectionHeadingMedia heading='Title Services' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Title services coordination ensures that property titles are clear and transferable, protecting buyers from future ownership disputes. Dr. Duffy works with reputable title companies to conduct title searches, resolve any issues that arise, and ensure that titles are properly transferred at closing. This service is essential for protecting buyers&apos; interests and ensuring smooth transactions.
                 </p>
@@ -250,6 +264,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Escrow Handling
                 </h3>
+                <SectionHeadingMedia heading='Escrow Handling' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Escrow services ensure that funds and documents are properly held and distributed according to contract terms. Dr. Duffy coordinates with escrow companies to ensure that all requirements are met, funds are properly deposited, and distributions occur as specified in the contract. This coordination helps ensure that transactions close smoothly and all parties receive what they&apos;re entitled to.
                 </p>
@@ -267,11 +282,13 @@ export default function RealEstateServicesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               Maravilla Specialty Services
             </h2>
+            <SectionHeadingMedia heading='Maravilla Specialty Services' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   First-Time Buyers
                 </h3>
+                <SectionHeadingMedia heading='First-Time Buyers' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   First-time buyer services provide comprehensive guidance for those purchasing their first home. This includes education about the buying process, financing options, down payment assistance programs, and what to expect throughout the transaction. First-time buyers often have unique needs and concerns that require extra attention and explanation.
                 </p>
@@ -283,6 +300,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Short Sales
                 </h3>
+                <SectionHeadingMedia heading='Short Sales' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Short sale services help homeowners who owe more on their mortgage than their home is worth. This complex process requires negotiation with lenders, extensive documentation, and specialized knowledge of short sale procedures. Dr. Duffy has experience navigating short sales, helping homeowners avoid foreclosure while achieving the best possible outcome.
                 </p>
@@ -294,6 +312,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Foreclosures
                 </h3>
+                <SectionHeadingMedia heading='Foreclosures' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Foreclosure services help buyers purchase bank-owned properties and help homeowners navigate the foreclosure process. Buying foreclosed properties requires understanding of the foreclosure process, bank requirements, and potential risks. Dr. Duffy provides guidance that helps buyers make informed decisions about foreclosure opportunities.
                 </p>
@@ -305,6 +324,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Relocation Services
                 </h3>
+                <SectionHeadingMedia heading='Relocation Services' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Relocation services assist individuals and families moving to or from the North Las Vegas area. This includes area orientation, school information, neighborhood research, and coordination with employers&apos; relocation programs. Relocating can be stressful, and having expert guidance helps make the transition smoother.
                 </p>
@@ -316,6 +336,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Short-Term Rentals
                 </h3>
+                <SectionHeadingMedia heading='Short-Term Rentals' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Short-term rental services help property owners navigate the growing short-term rental market, including Airbnb and VRBO. This includes understanding regulations, maximizing rental income, and managing properties for short-term rental success. The short-term rental market offers opportunities for property owners but requires specialized knowledge and management.
                 </p>
@@ -327,6 +348,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Property Staging
                 </h3>
+                <SectionHeadingMedia heading='Property Staging' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Property staging services help sellers prepare their homes for sale, maximizing appeal and value. This includes recommendations for decluttering, depersonalizing, and arranging furniture to showcase the home&apos;s best features. Professional staging can significantly impact how quickly a home sells and the price it commands.
                 </p>
@@ -338,6 +360,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Virtual Tours
                 </h3>
+                <SectionHeadingMedia heading='Virtual Tours' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Virtual tour services provide immersive online experiences that allow buyers to explore properties remotely. This technology has become essential in modern real estate marketing, allowing buyers to preview properties before scheduling in-person showings. Virtual tours increase property exposure and help buyers make more informed decisions about which properties to visit.
                 </p>
@@ -366,11 +389,13 @@ export default function RealEstateServicesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Consulting Services
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Consulting Services' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Investment Strategy
                 </h3>
+                <SectionHeadingMedia heading='Investment Strategy' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Investment strategy consulting helps investors develop comprehensive plans for building real estate portfolios. This includes analyzing market opportunities, evaluating different investment strategies, and identifying properties that align with investment goals. Dr. Duffy provides market insights that help investors make informed decisions about where and how to invest.
                 </p>
@@ -382,6 +407,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Portfolio Management
                 </h3>
+                <SectionHeadingMedia heading='Portfolio Management' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Portfolio management services help investors optimize their existing real estate holdings, including evaluating performance, identifying improvement opportunities, and making decisions about buying, selling, or refinancing properties. This ongoing service helps investors maximize returns and manage their portfolios effectively.
                 </p>
@@ -393,6 +419,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Market Trends Analysis
                 </h3>
+                <SectionHeadingMedia heading='Market Trends Analysis' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Market trends analysis provides detailed insights into current and emerging trends in the North Las Vegas real estate market. This includes analysis of pricing trends, inventory levels, buyer behavior, and economic factors that affect the market. Understanding these trends helps buyers, sellers, and investors make informed decisions.
                 </p>
@@ -404,6 +431,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   ROI Assessment
                 </h3>
+                <SectionHeadingMedia heading='ROI Assessment' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Return on investment (ROI) assessment helps investors evaluate the potential returns of real estate investments. This includes analyzing cash flow, appreciation potential, tax benefits, and overall investment performance. Accurate ROI assessment is essential for making informed investment decisions and comparing different opportunities.
                 </p>
@@ -415,6 +443,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Property Development
                 </h3>
+                <SectionHeadingMedia heading='Property Development' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Property development consulting helps investors and developers evaluate development opportunities, including land acquisition, zoning analysis, and project feasibility. This service requires specialized knowledge of development processes, regulations, and market conditions that affect development success.
                 </p>
@@ -426,6 +455,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Zoning Guidance
                 </h3>
+                <SectionHeadingMedia heading='Zoning Guidance' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Zoning guidance helps property owners and investors understand zoning regulations and how they affect property use and value. This includes analysis of current zoning, potential zoning changes, and how zoning affects development potential. Understanding zoning is essential for making informed decisions about property purchases and development projects.
                 </p>
@@ -437,6 +467,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Tax Planning
                 </h3>
+                <SectionHeadingMedia heading='Tax Planning' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Tax planning services help property owners and investors understand tax implications of real estate transactions and ownership. This includes analysis of capital gains, depreciation, 1031 exchanges, and other tax strategies that can optimize tax outcomes. Understanding tax implications is essential for maximizing investment returns and minimizing tax liability.
                 </p>
@@ -448,6 +479,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Property Insurance
                 </h3>
+                <SectionHeadingMedia heading='Property Insurance' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Property insurance guidance helps property owners understand insurance requirements, options, and how to obtain appropriate coverage. This includes analysis of different types of insurance, coverage levels, and how insurance affects property ownership costs. Adequate insurance is essential for protecting property investments.
                 </p>
@@ -465,6 +497,7 @@ export default function RealEstateServicesPage() {
             <h2 className='text-3xl font-bold mb-8 text-center'>
               North Las Vegas Family Homes: Contact Information
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Contact Information' />
             <div className='grid md:grid-cols-3 gap-8 max-w-4xl mx-auto'>
               <div className='text-center'>
                 <Phone className='h-8 w-8 mx-auto mb-4' />

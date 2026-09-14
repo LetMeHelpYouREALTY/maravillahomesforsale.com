@@ -12,6 +12,8 @@ import {
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 export default function FeaturedCommunities() {
   const communities = [
@@ -54,6 +56,7 @@ export default function FeaturedCommunities() {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Featured Communities
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Featured Communities' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover the unique character of Maravilla and surrounding areas
           </p>

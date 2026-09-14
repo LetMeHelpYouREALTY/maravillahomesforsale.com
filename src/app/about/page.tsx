@@ -14,6 +14,8 @@ import {
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { AGENT_PHOTO } from '@/lib/config/agent';
 import OnThisPage from '@/components/OnThisPage';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -68,6 +70,7 @@ export default function AboutPage() {
               <h2 id='bio-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
                 Your Maravilla & North Las Vegas Expert
               </h2>
+              <SectionHeadingMedia heading='Your Maravilla & North Las Vegas Expert' />
               <p className='text-gray-700 leading-relaxed mb-4'>
                 Dr. Jan Duffy is a REALTOR® with <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>, specializing in Maravilla and the greater North Las Vegas area. She holds license <strong>S.0197614.LLC</strong> and is committed to helping buyers and sellers navigate the market with confidence.
               </p>
@@ -95,6 +98,7 @@ export default function AboutPage() {
           <h2 id='why-work-with-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Why Work with Dr. Jan Duffy
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why Work with Dr. Jan Duffy' />
           {BUSINESS_INFO.attributes && (
             <p className='text-center text-gray-600 mb-8 max-w-2xl mx-auto'>
               Identifies as women-owned • LGBTQ+ friendly • Offers online appointments
@@ -116,6 +120,7 @@ export default function AboutPage() {
           <h2 id='contact-cta-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Get in Touch
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get in Touch' />
           <div className='grid md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
             <Card className='border-0 shadow-lg'>
               <CardHeader>

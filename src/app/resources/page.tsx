@@ -19,6 +19,8 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import OnThisPage from '@/components/OnThisPage';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -107,6 +109,7 @@ export default function ResourcesPage() {
           <h2 id='buying-selling-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             North Las Vegas Family Homes: Buying & Selling
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Buying & Selling' />
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {resourceGroups[0].items.map((item, i) => {
               const Icon = item.icon;
@@ -133,6 +136,7 @@ export default function ResourcesPage() {
           <h2 id='value-market-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             North Las Vegas Family Homes: Value & Market
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Value & Market' />
           <div className='grid md:grid-cols-3 gap-6'>
             {resourceGroups[1].items.map((item, i) => {
               const Icon = item.icon;
@@ -159,6 +163,7 @@ export default function ResourcesPage() {
           <h2 id='neighborhood-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             Neighborhood & Area
           </h2>
+          <SectionHeadingMedia heading='Neighborhood & Area' />
           <div className='grid md:grid-cols-2 lg:grid-cols-3 gap-6'>
             {resourceGroups[2].items.map((item, i) => {
               const Icon = item.icon;
@@ -185,6 +190,7 @@ export default function ResourcesPage() {
           <h2 id='services-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             North Las Vegas Family Homes: Services & Contact
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Services & Contact' />
           <div className='grid md:grid-cols-3 gap-6'>
             {resourceGroups[3].items.map((item, i) => {
               const Icon = item.icon;

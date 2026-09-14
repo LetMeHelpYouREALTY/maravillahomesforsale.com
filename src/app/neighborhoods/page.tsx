@@ -30,6 +30,8 @@ import {
 } from '@/lib/metadata';
 import { NEIGHBORHOODS, NEIGHBORHOOD_SLUGS } from '@/data/neighborhoods';
 import { getPageMedia } from '@/data/page-images';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -128,6 +130,7 @@ export default function NeighborhoodsPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Key Neighborhoods & Communities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Key Neighborhoods & Communities' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Maravilla and surrounding areas feature a mix of luxury single-family
               homes and condos across several distinct neighborhoods, each with its
@@ -241,6 +244,7 @@ export default function NeighborhoodsPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Luxury Home Collections
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Luxury Home Collections' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Maravilla features luxury home collections with distinctive floor
               plans, each designed for modern living with premium finishes and
@@ -276,6 +280,7 @@ export default function NeighborhoodsPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Housing Styles & Amenities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Housing Styles & Amenities' />
           </div>
 
           <div className='grid lg:grid-cols-2 gap-12'>
@@ -283,6 +288,7 @@ export default function NeighborhoodsPage() {
               <h3 className='text-2xl font-bold text-[#0A2540] mb-6'>
                 Maravilla Housing Styles
               </h3>
+              <SectionHeadingMedia heading='Maravilla Housing Styles' size='card' />
               <div className='space-y-4 text-gray-700'>
                 <p>
                   Across these neighborhoods, residents find diverse housing
@@ -315,6 +321,7 @@ export default function NeighborhoodsPage() {
               <h3 className='text-2xl font-bold text-[#0A2540] mb-6'>
                 Maravilla Community Amenities
               </h3>
+              <SectionHeadingMedia heading='Maravilla Community Amenities' size='card' />
               <div className='space-y-4 text-gray-700'>
                 <p>
                   Maravilla is connected by a network of parks, walking trails, and
@@ -364,6 +371,7 @@ export default function NeighborhoodsPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Price Range
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Price Range' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Home prices in Maravilla vary, with luxury new construction and resale
               options available across different square footage ranges.
@@ -427,6 +435,7 @@ export default function NeighborhoodsPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Maravilla Location
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Explore the location of Maravilla and its distinct neighborhoods in
               North Las Vegas. The community is conveniently located near major
@@ -466,6 +475,7 @@ export default function NeighborhoodsPage() {
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Find Your Perfect Neighborhood
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Find Your Perfect Neighborhood' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy can provide you with the most current and specific
             listings within the Maravilla community that match your

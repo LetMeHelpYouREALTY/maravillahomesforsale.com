@@ -2,6 +2,8 @@
 
 import { useIsMobile, useInView } from '@/hooks';
 import { useEffect, useRef, useState } from 'react';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 export default function RecentSales() {
   const isMobile = useIsMobile();
@@ -73,6 +75,7 @@ export default function RecentSales() {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Recent Sales
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Recent Sales' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
             View recently sold properties in Maravilla and surrounding areas
           </p>

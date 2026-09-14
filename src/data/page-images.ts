@@ -304,13 +304,162 @@ export function getPageHeroImage(pathname: string): PageImage {
   return getPageMedia(pathname).hero;
 }
 
+const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
+  {
+    test: /bath|tub|jetted/i,
+    src: '/images/pages/section-bath.jpg',
+    alt: 'Primary bathroom with jetted tub in a North Las Vegas home',
+  },
+  {
+    test: /laundry|washer|dryer/i,
+    src: '/images/pages/section-laundry.jpg',
+    alt: 'Dedicated laundry room in a North Las Vegas home',
+  },
+  {
+    test: /flooring|laminate|hardwood/i,
+    src: '/images/pages/section-flooring.jpg',
+    alt: 'Laminate flooring in an open North Las Vegas living area',
+  },
+  {
+    test: /cable|smart home|technolog|wifi|air condition|hvac|thermostat/i,
+    src: '/images/pages/section-smart-home.jpg',
+    alt: 'Smart thermostat and cable-ready wiring in a North Las Vegas home',
+  },
+  {
+    test: /school|ccsd|campus|education|elementary|middle school|high school/i,
+    src: '/images/pages/section-schools.jpg',
+    alt: 'Clark County School District campus near Maravilla, North Las Vegas',
+  },
+  {
+    test: /park|trail|ramada|playground|recreation/i,
+    src: '/images/pages/section-parks-trails.jpg',
+    alt: 'Walking trail and ramada in a North Las Vegas community park',
+  },
+  {
+    test: /pool|clubhouse|spa|fitness|gym/i,
+    src: '/images/pages/section-pool-clubhouse.jpg',
+    alt: 'Community pool and clubhouse in North Las Vegas',
+  },
+  {
+    test: /kitchen|interior|bedroom|great room|floor plan|description|open concept/i,
+    src: '/images/pages/section-kitchen.jpg',
+    alt: 'Open kitchen and great room in a North Las Vegas home',
+  },
+  {
+    test: /backyard|patio|yard|courtyard|outdoor/i,
+    src: '/images/pages/section-backyard.jpg',
+    alt: 'Covered patio and desert backyard in North Las Vegas',
+  },
+  {
+    test: /garage|parking/i,
+    src: '/images/pages/section-garage.jpg',
+    alt: 'Attached garage in a North Las Vegas home',
+  },
+  {
+    test: /shop|retail|aliante station/i,
+    src: '/images/pages/section-shopping.jpg',
+    alt: 'Shopping plaza near Maravilla in North Las Vegas',
+  },
+  {
+    test: /dining|restaurant|food/i,
+    src: '/images/pages/section-dining.jpg',
+    alt: 'Patio dining near Maravilla in North Las Vegas',
+  },
+  {
+    test: /photo|staging|marketing|list your/i,
+    src: '/images/pages/section-photography.jpg',
+    alt: 'Listing photography setup in a North Las Vegas living room',
+  },
+  {
+    test: /market|trend|price|valuation|cma|data|insight|snapshot|overview/i,
+    src: '/images/pages/section-market.jpg',
+    alt: 'North Las Vegas housing market overview across desert rooftops',
+  },
+  {
+    test: /map|nearby|location|highway|i-15|i-215|direction|place|commute/i,
+    src: '/images/pages/section-highway.jpg',
+    alt: 'Highway access from North Las Vegas toward the Las Vegas Valley',
+  },
+  {
+    test: /sell|listing from|office listing/i,
+    src: '/images/pages/section-listings.jpg',
+    alt: 'Printed listing photos and keys on a review table',
+  },
+  {
+    test: /buy|buyer|key|clos|guide|first-time|pre-approv/i,
+    src: '/images/pages/section-keys.jpg',
+    alt: 'House keys on a closing table in North Las Vegas',
+  },
+  {
+    test: /essential service|healthcare|hospital|health|medical|va /i,
+    src: '/images/pages/section-healthcare.jpg',
+    alt: 'Medical campus in North Las Vegas near Maravilla',
+  },
+  {
+    test: /visit|google review|google business|call, or review/i,
+    src: '/images/pages/section-office.jpg',
+    alt: 'North Las Vegas Family Homes office for Google Maps visits and reviews',
+  },
+  {
+    test: /contact|consult|schedule|office|hour|about dr|ready to|experience amenities/i,
+    src: '/images/pages/section-office.jpg',
+    alt: 'North Las Vegas real estate office at dusk',
+  },
+  {
+    test: /55|ranch|single-story|active.?adult/i,
+    src: '/images/pages/section-ranch.jpg',
+    alt: 'Single-story ranch home with desert yard in North Las Vegas',
+  },
+  {
+    test: /amenit|lifestyle|community guide/i,
+    src: '/images/pages/community-hero.jpg',
+    alt: 'Maravilla community park ramada and homes in North Las Vegas',
+  },
+  {
+    test: /neighborhood|aliante|eldorado|seabreeze|jasmine|centennial/i,
+    src: '/images/pages/neighborhoods-hero.jpg',
+    alt: 'North Las Vegas neighborhood street with tile-roof homes',
+  },
+  {
+    test: /home|propert|search|category/i,
+    src: '/images/pages/homes-hero.jpg',
+    alt: 'Maravilla-style home for sale in North Las Vegas',
+  },
+];
+
+function isStatHeading(heading: string): boolean {
+  const trimmed = heading.trim();
+  return /^\$?\d/.test(trimmed) || trimmed.length < 8;
+}
+
+function isNonVisualHeading(heading: string): boolean {
+  return /frequently asked|privacy policy|information we collect|how we use|your rights|cookies|third.party|site navigation|page not found|^menu$|popular pages/i.test(
+    heading
+  );
+}
+
 export function getSectionImage(heading: string): PageImage | undefined {
-  const exact = SECTION_IMAGES[heading];
+  const normalized = heading.replace(/\s+/g, ' ').trim();
+  if (!normalized || isStatHeading(normalized) || isNonVisualHeading(normalized)) {
+    return undefined;
+  }
+
+  const exact = SECTION_IMAGES[normalized];
   if (exact) return withCloudflareSrc(exact);
 
   for (const media of Object.values(PAGES)) {
-    const match = media.sections?.[heading];
+    const match = media.sections?.[normalized];
     if (match) return withCloudflareSrc(match);
   }
-  return undefined;
+
+  for (const rule of KEYWORD_IMAGES) {
+    if (rule.test.test(normalized)) {
+      return withCloudflareSrc({ src: rule.src, alt: `${normalized} — ${rule.alt}` });
+    }
+  }
+
+  return withCloudflareSrc({
+    src: '/images/pages/neighborhoods-hero.jpg',
+    alt: `${normalized} — North Las Vegas Family Homes in Maravilla`,
+  });
 }

@@ -8,6 +8,7 @@ import {
   generateWebPageSchema,
   generateBreadcrumbSchema,
 } from '@/lib/metadata';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 export const metadata: Metadata = {
   ...genMetadata({
@@ -46,6 +47,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
           <h1 className='text-4xl md:text-5xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Search Homes
           </h1>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Search Homes' />
           <p className='text-lg text-gray-600 mb-8'>
             {query
               ? `You searched for "${query}". Use the links below to browse listings and market insights in Maravilla, Las Vegas.`

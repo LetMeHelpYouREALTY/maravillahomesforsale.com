@@ -13,6 +13,8 @@ import {
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import OnThisPage from '@/components/OnThisPage';
 import PageFAQSection from '@/components/PageFAQSection';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -85,6 +87,7 @@ export default function FiftyFivePlusCommunitiesPage() {
           <h2 id='why-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
             North Las Vegas Family Homes: Why 55+ and Active-Adult Communities?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why 55+ and Active-Adult Communities?' />
           <p className='text-gray-700 leading-relaxed mb-6 max-w-3xl'>
             Age-qualified communities in North Las Vegas and the Maravilla area offer low-maintenance living, clubhouses, pools, fitness, and social activities designed for active adults. Many buyers choose 55+ or active-adult options for lifestyle, amenities, and resale value.
           </p>
@@ -104,6 +107,7 @@ export default function FiftyFivePlusCommunitiesPage() {
           <h2 id='areas-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             North Las Vegas Family Homes: 55+ Areas
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: 55+ Areas' />
           <p className='text-gray-600 mb-6 max-w-3xl'>
             Maravilla and nearby North Las Vegas neighborhoods offer a mix of age-qualified and all-ages communities. Dr. Jan Duffy can help you compare 55+ and active-adult options, HOA rules, and amenities.
           </p>
@@ -145,6 +149,7 @@ export default function FiftyFivePlusCommunitiesPage() {
           <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Find Your 55+ or Active-Adult Home
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Find Your 55+ or Active-Adult Home' />
           <p className='text-gray-600 mb-6'>
             Dr. Jan Duffy specializes in North Las Vegas and Maravilla. Get personalized help with 55+ communities, financing, and tours.
           </p>

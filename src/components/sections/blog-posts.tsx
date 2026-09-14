@@ -14,6 +14,8 @@ import {
 import { Badge } from '@/components/ui/badge';
 import SiteImage from '@/components/ui/site-image';
 import { getMarketInsightPosts } from '@/data/market-insight-posts';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const BlogPosts = () => {
   const latestPosts = getMarketInsightPosts(3);
@@ -31,6 +33,7 @@ const BlogPosts = () => {
           >
             Maravilla Las Vegas Homes Market Insights
           </h2>
+          <SectionHeadingMedia heading='Maravilla Las Vegas Homes Market Insights' />
           <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
             Buyer and seller guides for Maravilla and North Las Vegas from Dr. Jan Duffy
           </p>

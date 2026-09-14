@@ -10,6 +10,8 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { GUIDES, GUIDE_SLUGS } from '@/data/guides';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -81,6 +83,7 @@ export default function GuidesIndexPage() {
           <h2 id='guides-heading' className='text-2xl font-bold text-[#0A2540] mb-6'>
             North Las Vegas Family Homes: Buying and Selling Guides
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Buying and Selling Guides' />
           <p className='text-gray-600 mb-8 max-w-2xl'>
             Practical guides for home buyers and sellers: winter 2026 considerations and a first-time homebuyer guide. Each guide has a unique page with detailed, SEO-friendly content.
           </p>

@@ -15,6 +15,8 @@ import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { KCM_BUYER_GUIDE_URL } from '@/data/guides';
 import OnThisPage from '@/components/OnThisPage';
 import { FileText } from 'lucide-react';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -101,6 +103,7 @@ export default function BuyersGuidePage() {
           <h2 id='steps-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
             North Las Vegas Family Homes: Steps to Buy a Home
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Steps to Buy a Home' />
           <div className='grid md:grid-cols-2 gap-8'>
             {steps.map((step, i) => {
               const Icon = step.icon;
@@ -127,6 +130,7 @@ export default function BuyersGuidePage() {
           <h2 id='financing-heading' className='text-3xl font-bold text-[#0A2540] mb-6 text-center'>
             Financing & Pre-Approval
           </h2>
+          <SectionHeadingMedia heading='Financing & Pre-Approval' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             Getting pre-approved before you search helps you know your budget and shows sellers you&apos;re a serious buyer. Dr. Jan Duffy works with trusted lending partners who specialize in the North Las Vegas and Maravilla market. Options include conventional loans, FHA, VA (popular near Nellis AFB and the VA Hospital), and other programs.
           </p>
@@ -141,6 +145,7 @@ export default function BuyersGuidePage() {
           <h2 id='cta-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Ready to Find Your Home?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Find Your Home?' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy helps buyers find and close on the right Maravilla property. Call, schedule a consultation, or browse current listings to get started.
           </p>

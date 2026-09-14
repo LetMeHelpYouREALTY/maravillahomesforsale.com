@@ -19,6 +19,8 @@ import {
 } from '@/data/neighborhoods';
 import { getPageHeroImage } from '@/data/page-images';
 import PageFAQSection from '@/components/PageFAQSection';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -112,6 +114,9 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
               <h2 id='about-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
                 North Las Vegas Family Homes: About {neighborhood.name}
               </h2>
+              <SectionHeadingMedia
+                heading={`North Las Vegas Family Homes: About ${neighborhood.name}`}
+              />
               <p className='speakable text-gray-700 leading-relaxed mb-6'>
                 {neighborhood.description}
               </p>
@@ -142,6 +147,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
           <h2 id='highlights-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
             Why {neighborhood.name}?
           </h2>
+          <SectionHeadingMedia heading={`Why ${neighborhood.name}?`} />
           <ul className='grid sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl'>
             {neighborhood.highlights.map((item, i) => (
               <li key={i} className='flex items-start gap-3 text-gray-700'>
@@ -161,6 +167,9 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
           <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Ready to Find Your Home in {neighborhood.name}?
           </h2>
+          <SectionHeadingMedia
+            heading={`North Las Vegas Family Homes: Ready to Find Your Home in ${neighborhood.name}?`}
+          />
           <p className='text-gray-600 mb-6'>
             Browse listings, get a home valuation, or schedule a consultation with Dr. Jan Duffy.
           </p>

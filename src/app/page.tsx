@@ -22,6 +22,8 @@ import {
 } from '@/lib/metadata';
 import { HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
 import { KCM_VIDEO_ENTRIES } from '@/data/kcm-videos';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -168,6 +170,7 @@ export default function Home() {
             <h2 className='text-3xl font-bold text-white mb-4'>
               North Las Vegas Family Homes: Market Overview
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Overview' />
             <p className='text-xl text-white mb-8 max-w-3xl mx-auto'>
               Public ZIP 89031 figures as of September 2026 put median sold prices
               in the mid-$400s. Maravilla floor plans differ — call for current comps.

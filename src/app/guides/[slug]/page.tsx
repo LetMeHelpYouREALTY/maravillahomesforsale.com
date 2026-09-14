@@ -16,6 +16,8 @@ import { GUIDE_SLUGS, getGuideBySlug } from '@/data/guides';
 import OnThisPage from '@/components/OnThisPage';
 import PageFAQSection from '@/components/PageFAQSection';
 import GuideShareActions from '@/components/GuideShareActions';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -157,6 +159,7 @@ export default async function GuidePage({ params }: Props) {
               >
                 {section.title}
               </h2>
+              <SectionHeadingMedia heading={section.title} />
               {typeof section.content === 'string' ? (
                 <p className='text-gray-700 leading-relaxed'>{section.content}</p>
               ) : (
@@ -176,6 +179,7 @@ export default async function GuidePage({ params }: Props) {
           <h2 id='related-guides-heading' className='text-2xl font-bold text-[#0A2540] mb-6'>
             North Las Vegas Family Homes: More Guides
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: More Guides' />
           <p className='text-gray-600 mb-6 max-w-2xl'>
             Explore other client guides for North Las Vegas and Maravilla real estate.
           </p>
@@ -208,6 +212,7 @@ export default async function GuidePage({ params }: Props) {
           <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>
             Ready to Get Started?
           </h2>
+          <SectionHeadingMedia heading='Ready to Get Started?' />
           <p className='text-gray-600 mb-6'>
             Dr. Jan Duffy helps buyers and sellers in North Las Vegas and Maravilla. Schedule a consultation or browse current listings.
           </p>

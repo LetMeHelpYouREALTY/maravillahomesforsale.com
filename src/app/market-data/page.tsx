@@ -20,6 +20,7 @@ import {
 
 import Script from 'next/script';
 import type { Metadata } from 'next';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   generateMetadata as genMetadata,
   generateBreadcrumbSchema,
@@ -117,6 +118,7 @@ export default function MarketDataPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               Maravilla Market Trends Over Time
             </h2>
+            <SectionHeadingMedia heading='Maravilla Market Trends Over Time' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Track how the Maravilla market has evolved
             </p>
@@ -173,6 +175,7 @@ export default function MarketDataPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Market Insights
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Insights' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Key factors driving the Maravilla real estate market
             </p>

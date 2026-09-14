@@ -2,6 +2,8 @@
 
 import { useIsMobile } from '@/hooks';
 import { useEffect, useRef } from 'react';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 export default function RealEstateListings() {
   const isMobile = useIsMobile();
@@ -39,6 +41,7 @@ export default function RealEstateListings() {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Available Properties
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Available Properties' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover the latest luxury homes available in Maravilla
           </p>
@@ -50,6 +53,7 @@ export default function RealEstateListings() {
             <h3 className='text-2xl font-semibold text-[#0A2540] mb-2'>
               North Las Vegas Family Homes: Current Listings
             </h3>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Current Listings' size='card' />
             <p className='text-gray-600'>
               Browse our curated selection of premium properties in the $600K -
               $1.2M range
@@ -83,6 +87,7 @@ export default function RealEstateListings() {
           <h3 className='text-2xl font-bold text-[#0A2540] mb-8 text-center'>
             Why Choose Maravilla Properties
           </h3>
+          <SectionHeadingMedia heading='Why Choose Maravilla Properties' size='card' />
           <div className='grid md:grid-cols-3 gap-8'>
             <div className='text-center'>
               <div className='bg-[#3A8DDE] text-white w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4'>

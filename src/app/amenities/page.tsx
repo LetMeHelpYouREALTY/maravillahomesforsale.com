@@ -10,6 +10,8 @@ import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { CheckCircle2, Home, Car, Droplets, Wifi, UtensilsCrossed, TreePine, Shield } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -62,6 +64,7 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Interior Amenities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Interior Amenities' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla homes are designed with thoughtful amenities that enhance daily living, provide comfort, and support modern lifestyles. These features are carefully selected to offer both immediate enjoyment and long-term value, making each home a true sanctuary for its residents.
             </p>
@@ -90,11 +93,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Open Floor Plan Design
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Open Floor Plan Design' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Spacious and Connected Living
                 </h3>
+                <SectionHeadingMedia heading='Spacious and Connected Living' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Open floor plans are a signature feature of Maravilla homes, creating seamless flow between the kitchen, dining, and living areas. This design philosophy eliminates unnecessary walls and barriers, allowing natural light to flood the main living space and creating an airy, expansive feeling even in homes of moderate size.
                 </p>
@@ -109,6 +114,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Flexible Space Utilization
                 </h3>
+                <SectionHeadingMedia heading='Flexible Space Utilization' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The open floor plan allows homeowners to define spaces through furniture placement and area rugs rather than fixed walls. This flexibility means the same home can adapt to different needs over time—a play area for young children can become a formal dining space as the family grows, or a home office can be created in a corner of the living area.
                 </p>
@@ -129,11 +135,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Attached Garage Features
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Attached Garage Features' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Convenience and Security
                 </h3>
+                <SectionHeadingMedia heading='Convenience and Security' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Attached garages in Maravilla homes provide direct access to the home interior, eliminating the need to walk outside in inclement weather or during extreme temperatures. This convenience is especially valuable in Las Vegas, where summer temperatures can be extreme. The attached design also provides an additional layer of security, as you can enter your home without being exposed to the exterior environment.
                 </p>
@@ -148,6 +156,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Storage and Organization
                 </h3>
+                <SectionHeadingMedia heading='Storage and Organization' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The attached garages in Maravilla homes offer extensive storage opportunities beyond vehicle parking. Homeowners often install wall-mounted storage systems, ceiling-mounted racks for seasonal items, and workbenches for tools and projects. This additional storage space helps keep the main living areas uncluttered while providing easy access to items that are used regularly.
                 </p>
@@ -168,11 +177,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Jetted Bathtub Luxury
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Jetted Bathtub Luxury' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Therapeutic Relaxation
                 </h3>
+                <SectionHeadingMedia heading='Therapeutic Relaxation' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Jetted bathtubs are a premium amenity found in many Maravilla homes, particularly in the primary bathroom suites. These bathtubs feature strategically placed jets that create a therapeutic massage effect, helping to relieve muscle tension, reduce stress, and promote relaxation. The jets can be adjusted for intensity and direction, allowing users to customize their bathing experience.
                 </p>
@@ -187,6 +198,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Design and Aesthetics
                 </h3>
+                <SectionHeadingMedia heading='Design and Aesthetics' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Jetted bathtubs in Maravilla homes are designed to complement the overall bathroom aesthetic, often featuring elegant finishes, comfortable contours, and spacious designs that accommodate full-body relaxation. The bathtubs are typically positioned to take advantage of natural light or provide privacy, creating a serene environment for unwinding after a long day.
                 </p>
@@ -207,11 +219,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Laminate Flooring Benefits
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Laminate Flooring Benefits' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Durability and Easy Maintenance
                 </h3>
+                <SectionHeadingMedia heading='Durability and Easy Maintenance' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Laminate flooring in Maravilla homes provides the beauty of hardwood with superior durability and easier maintenance. This flooring option is resistant to scratches, dents, and stains, making it ideal for high-traffic areas and homes with children or pets. The protective wear layer ensures that the floor maintains its appearance even under heavy use.
                 </p>
@@ -226,6 +240,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Cost-Effective and Versatile
                 </h3>
+                <SectionHeadingMedia heading='Cost-Effective and Versatile' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Laminate flooring offers excellent value, providing the look of premium hardwood at a fraction of the cost. This cost-effectiveness makes it possible to install high-quality flooring throughout the home without exceeding budget constraints. The installation process is also typically faster and less disruptive than hardwood installation.
                 </p>
@@ -246,11 +261,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               Cable-Ready and Technology Features
             </h2>
+            <SectionHeadingMedia heading='Cable-Ready and Technology Features' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Pre-Wired for Modern Connectivity
                 </h3>
+                <SectionHeadingMedia heading='Pre-Wired for Modern Connectivity' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Cable-ready homes in Maravilla are pre-wired with coaxial cable and Ethernet connections, making it easy to connect cable television, internet services, and home networking systems. This pre-wiring eliminates the need for unsightly cables running along baseboards or through walls, providing a clean, professional installation that enhances the home&apos;s appearance.
                 </p>
@@ -265,6 +282,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Smart Home Compatibility
                 </h3>
+                <SectionHeadingMedia heading='Smart Home Compatibility' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The cable-ready infrastructure in Maravilla homes provides the foundation for smart home technology integration. Homeowners can easily add smart thermostats, security cameras, lighting controls, and other connected devices that enhance convenience, security, and energy efficiency. The existing wiring supports these systems and makes installation straightforward.
                 </p>
@@ -285,11 +303,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Community Walking Paths
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Community Walking Paths' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Health and Wellness Opportunities
                 </h3>
+                <SectionHeadingMedia heading='Health and Wellness Opportunities' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Maravilla features an extensive network of walking paths that provide safe, scenic routes for exercise, recreation, and socializing. These paths wind through the community, connecting neighborhoods, parks, and natural areas while providing opportunities for residents to maintain active, healthy lifestyles. The paths are designed to accommodate walkers, joggers, and cyclists of all ages and fitness levels.
                 </p>
@@ -304,6 +324,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Safety and Accessibility
                 </h3>
+                <SectionHeadingMedia heading='Safety and Accessibility' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The walking paths in Maravilla are designed with safety in mind, featuring adequate lighting, clear signage, and well-maintained surfaces that reduce the risk of accidents. The paths are separated from vehicle traffic where possible, providing a safe environment for pedestrians and cyclists. Regular maintenance ensures that the paths remain in good condition and free of hazards.
                 </p>
@@ -324,11 +345,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Dedicated Laundry Room
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Dedicated Laundry Room' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Functional and Organized Space
                 </h3>
+                <SectionHeadingMedia heading='Functional and Organized Space' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Dedicated laundry rooms in Maravilla homes provide a functional, organized space for washing, drying, and folding clothes. These rooms are designed with efficiency in mind, featuring adequate space for full-size washers and dryers, storage for laundry supplies, and counter space for folding. The dedicated room keeps laundry activities out of the main living areas, maintaining a cleaner, more organized home environment.
                 </p>
@@ -343,6 +366,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Convenience and Efficiency
                 </h3>
+                <SectionHeadingMedia heading='Convenience and Efficiency' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Having a dedicated laundry room means that laundry activities don&apos;t interfere with other household activities. The separate space allows for multiple loads of laundry to be processed simultaneously, and provides a place to store clean laundry until it can be put away. This organization reduces clutter in other areas of the home and makes laundry management more efficient.
                 </p>
@@ -363,11 +387,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Central Air Conditioning
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Central Air Conditioning' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Essential Comfort in Desert Climate
                 </h3>
+                <SectionHeadingMedia heading='Essential Comfort in Desert Climate' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Central air conditioning is an essential amenity in Maravilla homes, providing consistent, comfortable temperatures throughout the home during Las Vegas&apos;s hot summers. The central system ensures that every room maintains a comfortable temperature, eliminating hot spots and providing relief from the intense desert heat. This feature is not just a luxury but a necessity for comfortable living in North Las Vegas.
                 </p>
@@ -382,6 +408,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Energy Efficiency and Cost Savings
                 </h3>
+                <SectionHeadingMedia heading='Energy Efficiency and Cost Savings' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Energy-efficient central air conditioning systems help reduce monthly utility costs while maintaining comfort. Modern systems use advanced technology such as variable-speed compressors and smart thermostats that optimize energy usage based on occupancy and preferences. These features can result in significant savings on electricity bills, especially during the peak summer months.
                 </p>
@@ -402,11 +429,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Dedicated Dining Area
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Dedicated Dining Area' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Formal and Casual Dining Options
                 </h3>
+                <SectionHeadingMedia heading='Formal and Casual Dining Options' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Maravilla homes feature dedicated dining areas that accommodate both formal and casual dining experiences. These spaces are designed to be flexible, allowing homeowners to use them for everyday family meals, formal dinner parties, or casual gatherings. The dining area often connects to the kitchen for easy serving and cleanup, while maintaining its own distinct identity within the home.
                 </p>
@@ -421,6 +450,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Versatility and Functionality
                 </h3>
+                <SectionHeadingMedia heading='Versatility and Functionality' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The dining area can serve multiple functions beyond just eating. Many homeowners use this space for homework, crafts, or as an extension of the home office. The table provides a large, flat surface that&apos;s perfect for various activities, while the dedicated space ensures that these activities don&apos;t interfere with other household functions.
                 </p>
@@ -441,11 +471,13 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
               North Las Vegas Family Homes: Additional Premium Amenities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Additional Premium Amenities' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Walk-In Pantry
                 </h3>
+                <SectionHeadingMedia heading='Walk-In Pantry' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Walk-in pantries in Maravilla homes provide extensive storage for dry goods, canned foods, small appliances, and bulk purchases. These spacious pantries feature adjustable shelving that can be customized to accommodate different storage needs, making it easy to organize and access food items. The walk-in design means you can see everything at a glance, reducing food waste and making meal planning more efficient.
                 </p>
@@ -457,6 +489,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Large Windows
                 </h3>
+                <SectionHeadingMedia heading='Large Windows' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Large windows throughout Maravilla homes provide abundant natural light, creating bright, airy interiors that feel spacious and welcoming. These windows offer views of the surrounding landscape, whether it&apos;s the desert scenery, mountain vistas, or well-maintained community areas. The natural light reduces the need for artificial lighting during the day, saving energy and creating a more pleasant living environment.
                 </p>
@@ -468,6 +501,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Courtyard
                 </h3>
+                <SectionHeadingMedia heading='Courtyard' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Courtyards in Maravilla homes provide private outdoor spaces that extend the living area beyond the home&apos;s interior. These enclosed spaces offer privacy and security while providing a place for outdoor dining, relaxation, and entertaining. Courtyards are often designed with desert landscaping, seating areas, and features such as fire pits or water features that enhance the outdoor living experience.
                 </p>
@@ -479,6 +513,7 @@ export default function AmenitiesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   Swimming Pool
                 </h3>
+                <SectionHeadingMedia heading='Swimming Pool' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Swimming pools are a premium amenity found in select Maravilla homes, providing a private oasis for relaxation, exercise, and entertainment. These pools are designed to complement the home&apos;s architecture and landscaping, creating a cohesive outdoor living environment. Pool features may include built-in spas, water features, and energy-efficient equipment that reduces operating costs.
                 </p>
@@ -496,6 +531,7 @@ export default function AmenitiesPage() {
             <h2 className='text-3xl font-bold mb-4'>
               North Las Vegas Family Homes: Experience Amenities Firsthand
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Experience Amenities Firsthand' />
             <p className='text-xl text-gray-200 mb-8 max-w-2xl mx-auto'>
               Schedule a private tour to see these exceptional amenities in person. Dr. Jan Duffy can help you find the perfect Maravilla home with the features that matter most to you.
             </p>

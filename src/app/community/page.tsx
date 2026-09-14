@@ -51,23 +51,20 @@ export default function CommunityPage() {
     {
       name: 'Eva G. Simmons Elementary School',
       type: 'Public Elementary',
-      rating: 'B (Niche)',
       distance: 'Nearby',
-      features: 'Family picnics, book bus',
+      features: 'CCSD campus • Book bus program',
     },
     {
       name: 'Clifford O. Pete Findlay Middle School',
       type: 'Public Middle School',
-      rating: 'C (Niche)',
       distance: 'Nearby',
-      features: 'Loved by alumni',
+      features: 'CCSD campus',
     },
     {
       name: 'Mojave High School',
       type: 'Public High School',
-      rating: 'C (Niche)',
       distance: 'Nearby',
-      features: 'Guitar club, bowling team, boys basketball state champions (2022, 2023)',
+      features: 'Guitar club, bowling team, boys basketball state championships (2022, 2023)',
     },
   ];
 
@@ -167,12 +164,6 @@ export default function CommunityPage() {
                 <CardContent>
                   <div className='space-y-2'>
                     <div className='flex justify-between'>
-                      <span className='text-gray-600'>Rating:</span>
-                      <span className='font-semibold text-[#16B286]'>
-                        {school.rating}
-                      </span>
-                    </div>
-                    <div className='flex justify-between'>
                       <span className='text-gray-600'>Distance:</span>
                       <span className='font-semibold'>{school.distance}</span>
                     </div>
@@ -198,6 +189,7 @@ export default function CommunityPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Community Amenities
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Community Amenities' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Everything you need is just minutes away in Maravilla. View <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>detailed amenities</Link> and <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>home features</Link>.
             </p>
@@ -234,6 +226,7 @@ export default function CommunityPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               Shopping & Dining in Maravilla
             </h2>
+            <SectionHeadingMedia heading='Shopping & Dining in Maravilla' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Most shopping and dining options are along West Craig Road, now
               with a variety of dining options and shopping centers conveniently
@@ -299,6 +292,7 @@ export default function CommunityPage() {
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Lifestyle & Community
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Lifestyle & Community' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Experience the lifestyle that makes Maravilla special
             </p>
@@ -332,6 +326,7 @@ export default function CommunityPage() {
           <h2 className='text-3xl font-bold mb-4'>
             North Las Vegas Family Homes: Ready to Join the Community?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Join the Community?' />
           <p className='text-xl text-gray-200 mb-8'>
             Discover why so many families choose to call Maravilla home.
             Browse available properties or contact us for a personalized

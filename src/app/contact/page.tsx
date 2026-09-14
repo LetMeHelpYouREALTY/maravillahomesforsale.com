@@ -25,6 +25,8 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 const baseUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
@@ -76,6 +78,7 @@ export default function ContactPage() {
             <h2 className='text-3xl md:text-4xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Schedule a Consultation
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Schedule a Consultation' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Book a strategy meeting to discuss your real estate goals, get personalized guidance,
               and explore homes in Maravilla and throughout Las Vegas. Choose a time that works for you.
@@ -250,6 +253,7 @@ export default function ContactPage() {
             <h2 id='map-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
               Find Us on the Map
             </h2>
+            <SectionHeadingMedia heading='Find Us on the Map' />
             <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
               Visit us at {BUSINESS_INFO.address.full}. We
               serve clients throughout Las Vegas, Henderson, and surrounding
@@ -318,6 +322,7 @@ export default function ContactPage() {
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Ready to Get Started?
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Get Started?' />
           <p className='text-lg text-gray-600 mb-8'>
             Browse our available properties or schedule a consultation to
             discuss your real estate needs in Maravilla.

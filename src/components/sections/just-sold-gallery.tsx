@@ -2,6 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import Image from 'next/image';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+
 
 // Local photos from public/photos directory
 // Using the primary versions (without -2 or -3 suffixes) and ordering them numerically
@@ -93,6 +95,7 @@ export default function JustSoldGallery() {
             <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
               North Las Vegas Family Homes: Just Sold
             </h2>
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Just Sold' />
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
               Browse through {PHOTO_PATHS.length} stunning photos of recently sold Maravilla properties
             </p>

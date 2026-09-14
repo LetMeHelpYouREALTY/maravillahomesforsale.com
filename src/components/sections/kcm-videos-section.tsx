@@ -6,6 +6,7 @@
 import { Card, CardHeader } from '@/components/ui/card';
 import { Play } from 'lucide-react';
 import { KCM_VIDEO_ENTRIES } from '@/data/kcm-videos';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 type KcmVideosSectionProps = {
   /** Max number of video cards to show (default 4). */
@@ -30,6 +31,7 @@ export default function KcmVideosSection({
           <h2 id='kcm-videos-heading' className='text-3xl font-bold text-[#0A2540] mb-3'>
             {heading}
           </h2>
+          <SectionHeadingMedia heading={heading} />
           {description && (
             <p className='text-gray-600 max-w-2xl mx-auto'>{description}</p>
           )}

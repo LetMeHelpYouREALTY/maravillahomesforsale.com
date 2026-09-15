@@ -43,8 +43,8 @@ export default function FeaturedCommunities() {
       avgPrice: 'Easy Access',
       homesAvailable: 'I-15 & 215',
       amenities: ['Nellis AFB', 'VA Hospital', 'Shopping'],
-      image: '/images/pages/market-data-hero.jpg',
-      imageAlt: 'North Las Vegas Family Homes: Prime Location — valley access near I-15 and I-215',
+      image: '/images/pages/map-hero.jpg',
+      imageAlt: 'North Las Vegas Family Homes: Prime Location — I-15 and I-215 access from North Las Vegas',
     },
   ];
 

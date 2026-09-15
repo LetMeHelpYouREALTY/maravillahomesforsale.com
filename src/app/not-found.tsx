@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Home, Search, ArrowLeft } from 'lucide-react';
+import SiteImage from '@/components/ui/site-image';
 
 export default function NotFound() {
   return (
@@ -9,6 +10,15 @@ export default function NotFound() {
         <div className='mb-8'>
           <h1 className='text-9xl font-bold mb-4'>404</h1>
           <h2 className='text-4xl font-semibold mb-4'>North Las Vegas Family Homes: Page Not Found</h2>
+          <figure className='relative h-40 md:h-56 w-full overflow-hidden rounded-xl mb-6'>
+            <SiteImage
+              src='/images/pages/homes-hero.jpg'
+              alt='Maravilla-style home for sale in North Las Vegas'
+              fill
+              className='object-cover'
+              sizes='(max-width: 768px) 100vw, 672px'
+            />
+          </figure>
           <p className='text-xl text-gray-200 mb-8'>
             Sorry, we couldn&apos;t find the page you&apos;re looking for. The page may have been moved, deleted, or the URL may be incorrect.
           </p>

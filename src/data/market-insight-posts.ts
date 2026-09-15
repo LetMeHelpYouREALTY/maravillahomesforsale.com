@@ -26,11 +26,11 @@ const GUIDE_CARD_META: Record<
   },
   'selling-house-winter-2026': {
     category: 'Seller Guide',
-    imageUrl: '/images/pages/homes-hero.jpg',
+    imageUrl: '/images/pages/sell-hero.jpg',
   },
   'first-time-homebuyer': {
     category: 'Buyer Guide',
-    imageUrl: '/images/pages/neighborhoods-hero.jpg',
+    imageUrl: '/images/pages/first-time-buyers-hero.jpg',
   },
 };
 

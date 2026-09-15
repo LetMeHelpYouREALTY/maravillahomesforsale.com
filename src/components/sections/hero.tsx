@@ -58,7 +58,8 @@ export default function Hero() {
         </h1>
 
         <p className='speakable text-xl md:text-2xl mb-8 text-gray-100 max-w-3xl mx-auto leading-relaxed animate-fade-in-delay-2 drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]'>
-          Find exceptional value and quality family homes in North Las Vegas and Maravilla
+          Homes from 1,519 to 2,947 square feet, parks, trails, and I-215 access.
+          Call (702) 500-1953.
         </p>
 
         <div className='flex justify-center mb-8 animate-fade-in-delay-2'>
@@ -78,20 +79,14 @@ export default function Hero() {
         {/* Hero CTA Buttons */}
         <div className='flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-delay-2'>
           <Link
-            href='http://drjanduffy.realscout.com/onboarding'
-            target='_blank'
-            rel='noopener noreferrer'
-            prefetch={false}
+            href='/homes'
             className='bg-[#16B286] text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-[#15A276] transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-1 hover:scale-105'
             aria-label='View available homes in Maravilla'
           >
             View Available Homes
           </Link>
           <Link
-            href='http://drjanduffy.realscout.com/onboarding'
-            target='_blank'
-            rel='noopener noreferrer'
-            prefetch={false}
+            href='/contact'
             className='bg-white/20 backdrop-blur-sm text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white/30 transition-all duration-200 border border-white/30 hover:border-white/50 hover:scale-105'
             aria-label='Schedule a property tour with Dr. Jan Duffy'
           >

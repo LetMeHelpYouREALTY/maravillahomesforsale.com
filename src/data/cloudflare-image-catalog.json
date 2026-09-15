@@ -94,6 +94,11 @@
     { "id": "maravilla/section-bath", "file": "public/images/pages/section-bath.jpg", "role": "section" },
     { "id": "maravilla/section-laundry", "file": "public/images/pages/section-laundry.jpg", "role": "section" },
     { "id": "maravilla/section-smart-home", "file": "public/images/pages/section-smart-home.jpg", "role": "section" },
-    { "id": "maravilla/section-flooring", "file": "public/images/pages/section-flooring.jpg", "role": "section" }
+    { "id": "maravilla/section-flooring", "file": "public/images/pages/section-flooring.jpg", "role": "section" },
+    { "id": "maravilla/section-golf", "file": "public/images/pages/section-golf.jpg", "role": "section" },
+    { "id": "maravilla/section-entertainment", "file": "public/images/pages/section-entertainment.jpg", "role": "section" },
+    { "id": "maravilla/section-new-construction", "file": "public/images/pages/section-new-construction.jpg", "role": "section" },
+    { "id": "maravilla/section-desert-landscaping", "file": "public/images/pages/section-desert-landscaping.jpg", "role": "section" },
+    { "id": "maravilla/section-mountain-views", "file": "public/images/pages/section-mountain-views.jpg", "role": "section" }
   ]
 }

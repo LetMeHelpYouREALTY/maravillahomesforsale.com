@@ -306,6 +306,31 @@ export function getPageHeroImage(pathname: string): PageImage {
 
 const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
   {
+    test: /golf/i,
+    src: '/images/pages/section-golf.jpg',
+    alt: 'Desert golf course near North Las Vegas homes',
+  },
+  {
+    test: /casino|aliante|strip|downtown|entertainment|venue/i,
+    src: '/images/pages/section-entertainment.jpg',
+    alt: 'Entertainment and dining plaza near Maravilla in North Las Vegas',
+  },
+  {
+    test: /new construction|builder|century/i,
+    src: '/images/pages/section-new-construction.jpg',
+    alt: 'New-construction stucco home in North Las Vegas',
+  },
+  {
+    test: /landscap|xeriscape|irrigation|mature tree/i,
+    src: '/images/pages/section-desert-landscaping.jpg',
+    alt: 'Desert landscaping and drip irrigation in North Las Vegas',
+  },
+  {
+    test: /mountain view|mountain/i,
+    src: '/images/pages/section-mountain-views.jpg',
+    alt: 'Desert mountain views from a North Las Vegas backyard',
+  },
+  {
     test: /bath|tub|jetted/i,
     src: '/images/pages/section-bath.jpg',
     alt: 'Primary bathroom with jetted tub in a North Las Vegas home',

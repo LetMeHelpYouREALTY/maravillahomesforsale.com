@@ -69,17 +69,17 @@ export const MARAVILLA_FAQS = [
   {
     question: 'How long do properties typically stay on the market?',
     answer:
-      'Properties in Maravilla typically sell within a competitive timeframe, reflecting the area&apos;s strong demand and desirable location. Market conditions can vary, and we can provide current market data specific to the community.',
+      'Days on market change with price, condition, and floor plan. Public ZIP 89031 figures as of September 2026 sit around 38–44 days; individual Maravilla listings can move faster or slower. Call (702) 500-1953 for current comps.',
   },
   {
     question: 'What types of properties are available?',
     answer:
-      'We offer a diverse selection including single-family homes, luxury estates, and new construction properties. Each category features different amenities and price points to suit various buyer needs and preferences.',
+      'Maravilla inventory is mostly single-family homes, including single-story and two-story floor plans from 1,519 to 2,947 square feet. Nearby North Las Vegas neighborhoods also include attached homes and 55+ ranch plans. Call for current MLS listings.',
   },
   {
     question: 'Do you help with financing and mortgage options?',
     answer:
-      'Yes, we work with trusted mortgage partners to help you find the best financing options. We can connect you with lenders who specialize in luxury home financing and offer competitive rates.',
+      'Yes. We can introduce lenders who work with North Las Vegas purchase loans, including first-time buyer programs. Rates and qualifications depend on the lender and the buyer — we do not quote rates on this site.',
   },
   {
     question: 'Can I schedule a property tour?',
@@ -220,7 +220,12 @@ export function generateLocalBusinessSchema() {
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
-    image: agentImageUrl(),
+    image: [
+      agentImageUrl(),
+      toAbsoluteImageUrl('/images/pages/contact-hero.jpg', siteUrl),
+      toAbsoluteImageUrl('/images/pages/neighborhoods-hero.jpg', siteUrl),
+      toAbsoluteImageUrl('/photos/01-1 (2).jpg', siteUrl),
+    ],
     logo: agentImageUrl(),
     address: {
       '@type': 'PostalAddress',
@@ -275,7 +280,11 @@ export function generateOrganizationSchema() {
       width: 512,
       height: 512,
     },
-    image: agentImageUrl(),
+    image: [
+      agentImageUrl(),
+      toAbsoluteImageUrl('/images/pages/contact-hero.jpg', siteUrl),
+      toAbsoluteImageUrl('/images/pages/neighborhoods-hero.jpg', siteUrl),
+    ],
     description: GBP_DESCRIPTION,
     address: {
       '@type': 'PostalAddress',

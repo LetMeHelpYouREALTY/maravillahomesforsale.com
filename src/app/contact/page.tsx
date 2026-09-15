@@ -229,12 +229,7 @@ export default function ContactPage() {
                       asChild
                       className='bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
                     >
-                      <Link
-                        href='http://drjanduffy.realscout.com/'
-                        target='_blank'
-                        rel='noopener noreferrer'
-                        prefetch={false}
-                      >
+                      <Link href='/homes'>
                         View All Listings
                       </Link>
                     </Button>
@@ -336,12 +331,7 @@ export default function ContactPage() {
               <Link href='/homes'>View Available Homes</Link>
             </Button>
             <Button asChild size='lg' variant='outline'>
-              <Link
-                href='http://drjanduffy.realscout.com/onboarding'
-                target='_blank'
-                rel='noopener noreferrer'
-                prefetch={false}
-              >
+              <Link href='/contact'>
                 Schedule Consultation
               </Link>
             </Button>

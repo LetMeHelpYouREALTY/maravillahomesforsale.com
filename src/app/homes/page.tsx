@@ -142,12 +142,7 @@ export default function HomesPage() {
                     asChild
                     className='w-full bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
                   >
-                    <Link
-                      href='http://drjanduffy.realscout.com/'
-                      target='_blank'
-                      rel='noopener noreferrer'
-                      prefetch={false}
-                    >
+                    <Link href='#office-listings-heading'>
                       View All Listings
                     </Link>
                   </Button>
@@ -337,12 +332,7 @@ export default function HomesPage() {
               size='lg'
               className='bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
             >
-              <Link
-                href='http://drjanduffy.realscout.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                prefetch={false}
-              >
+              <Link href='#office-listings-heading'>
                 View All Listings
               </Link>
             </Button>

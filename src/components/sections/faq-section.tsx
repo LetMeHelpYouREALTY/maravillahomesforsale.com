@@ -7,6 +7,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import { MARAVILLA_FAQS } from '@/lib/metadata';
+import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 export default function FAQSection() {
   const faqs = MARAVILLA_FAQS;
@@ -19,6 +20,7 @@ export default function FAQSection() {
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
             North Las Vegas Family Homes: Frequently Asked Questions
           </h2>
+          <SectionHeadingMedia heading='North Las Vegas Family Homes: Frequently Asked Questions' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Find answers to common questions about buying and selling in Maravilla
           </p>

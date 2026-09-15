@@ -215,6 +215,7 @@ export default function NeighborhoodsPage() {
           </div>
           <div className='mt-12 pt-8 border-t border-gray-200'>
             <h3 className='text-xl font-bold text-[#0A2540] mb-4'>Explore more areas</h3>
+            <SectionHeadingMedia heading='Explore more areas' size='card' />
             <p className='text-gray-600 mb-4'>
               Browse dedicated pages for North Las Vegas and Maravilla subareas:
             </p>
@@ -260,6 +261,7 @@ export default function NeighborhoodsPage() {
               >
                 <CardHeader>
                   <CardTitle className='text-lg'>{collection.name}</CardTitle>
+                  <SectionHeadingMedia heading={collection.name} size='card' />
                 </CardHeader>
                 <CardContent>
                   <CardDescription>{collection.description}</CardDescription>
@@ -487,12 +489,7 @@ export default function NeighborhoodsPage() {
               size='lg'
               className='bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
             >
-              <Link
-                href='http://drjanduffy.realscout.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                prefetch={false}
-              >
+              <Link href='/homes'>
                 View All Listings
               </Link>
             </Button>

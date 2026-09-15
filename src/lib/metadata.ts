@@ -223,7 +223,9 @@ export function generateLocalBusinessSchema() {
     image: [
       agentImageUrl(),
       toAbsoluteImageUrl('/images/pages/contact-hero.jpg', siteUrl),
+      toAbsoluteImageUrl('/images/pages/section-office.jpg', siteUrl),
       toAbsoluteImageUrl('/images/pages/neighborhoods-hero.jpg', siteUrl),
+      toAbsoluteImageUrl('/images/pages/homes-hero.jpg', siteUrl),
       toAbsoluteImageUrl('/photos/01-1 (2).jpg', siteUrl),
     ],
     logo: agentImageUrl(),

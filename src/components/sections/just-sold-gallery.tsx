@@ -113,7 +113,7 @@ export default function JustSoldGallery() {
                   src={photoPath}
                   alt={`Maravilla Homes, North Las Vegas, NV - Just Sold Property Photo ${index + 1}`}
                   fill
-                  className='object-contain group-hover:scale-105 transition-transform duration-300'
+                  className='object-cover group-hover:scale-105 transition-transform duration-300'
                   sizes='(max-width: 1024px) 50vw, (max-width: 1280px) 25vw, 20vw'
                   loading={index < 8 ? 'eager' : 'lazy'}
                 />
@@ -134,7 +134,7 @@ export default function JustSoldGallery() {
                   src={photoPath}
                   alt={`Maravilla Homes, North Las Vegas, NV - Just Sold Property Photo ${index + 1}`}
                   fill
-                  className='object-contain'
+                  className='object-cover'
                   sizes='50vw'
                   loading={index < 4 ? 'eager' : 'lazy'}
                 />

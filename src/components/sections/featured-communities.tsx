@@ -26,6 +26,7 @@ export default function FeaturedCommunities() {
       amenities: ['Single Story', 'Two Story', 'Up to 5 Bedrooms'],
       image: '/images/pages/neighborhoods-hero.jpg',
       imageAlt: 'North Las Vegas Family Homes: Featured Communities — six Maravilla neighborhood streetscapes',
+      href: '/neighborhoods',
     },
     {
       name: 'Parks & Recreation',
@@ -36,6 +37,7 @@ export default function FeaturedCommunities() {
       amenities: ['Walking Trails', 'Playgrounds', 'Open Spaces'],
       image: '/images/pages/amenities-community-hero.jpg',
       imageAlt: 'North Las Vegas Family Homes: Parks & Recreation — community pool and ramada',
+      href: '/amenities',
     },
     {
       name: 'Prime Location',
@@ -45,6 +47,7 @@ export default function FeaturedCommunities() {
       amenities: ['Nellis AFB', 'VA Hospital', 'Shopping'],
       image: '/images/pages/map-hero.jpg',
       imageAlt: 'North Las Vegas Family Homes: Prime Location — I-15 and I-215 access from North Las Vegas',
+      href: '/map-and-nearby-places',
     },
   ];
 
@@ -132,13 +135,8 @@ export default function FeaturedCommunities() {
                   asChild
                   className='w-full bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
                 >
-                  <Link
-                    href='http://drjanduffy.realscout.com/onboarding'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    prefetch={false}
-                  >
-                    Explore {community.name}
+                  <Link href={community.href}>
+                    Explore {community.name === '6 Neighborhoods' ? 'Neighborhoods' : community.name}
                   </Link>
                 </Button>
               </CardFooter>

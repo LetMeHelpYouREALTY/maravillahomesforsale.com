@@ -99,6 +99,18 @@
     { "id": "maravilla/section-entertainment", "file": "public/images/pages/section-entertainment.jpg", "role": "section" },
     { "id": "maravilla/section-new-construction", "file": "public/images/pages/section-new-construction.jpg", "role": "section" },
     { "id": "maravilla/section-desert-landscaping", "file": "public/images/pages/section-desert-landscaping.jpg", "role": "section" },
-    { "id": "maravilla/section-mountain-views", "file": "public/images/pages/section-mountain-views.jpg", "role": "section" }
+    { "id": "maravilla/section-mountain-views", "file": "public/images/pages/section-mountain-views.jpg", "role": "section" },
+    { "id": "maravilla/section-gated", "file": "public/images/pages/section-gated.jpg", "role": "section" },
+    { "id": "maravilla/section-driveway", "file": "public/images/pages/section-driveway.jpg", "role": "section" },
+    { "id": "maravilla/section-commercial", "file": "public/images/pages/section-commercial.jpg", "role": "section" },
+    { "id": "maravilla/section-land", "file": "public/images/pages/section-land.jpg", "role": "section" },
+    { "id": "maravilla/section-luxury", "file": "public/images/pages/section-luxury.jpg", "role": "section" },
+    { "id": "maravilla/section-documents", "file": "public/images/pages/section-documents.jpg", "role": "section" },
+    { "id": "maravilla/section-relocation", "file": "public/images/pages/section-relocation.jpg", "role": "section" },
+    { "id": "maravilla/section-virtual-tour", "file": "public/images/pages/section-virtual-tour.jpg", "role": "section" },
+    { "id": "maravilla/section-investment", "file": "public/images/pages/section-investment.jpg", "role": "section" },
+    { "id": "maravilla/section-why-work", "file": "public/images/pages/section-why-work.jpg", "role": "section" },
+    { "id": "maravilla/section-collections", "file": "public/images/pages/section-collections.jpg", "role": "section" },
+    { "id": "maravilla/section-seller-prep", "file": "public/images/pages/section-seller-prep.jpg", "role": "section" }
   ]
 }

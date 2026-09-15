@@ -115,10 +115,7 @@ export default function AboutContent() {
 
             <div className='flex flex-col sm:flex-row gap-4'>
               <Link
-                href='http://drjanduffy.realscout.com/'
-                target='_blank'
-                rel='noopener noreferrer'
-                prefetch={false}
+                href='/homes'
                 className='bg-[#3A8DDE] text-white px-8 py-4 rounded-lg font-semibold hover:bg-[#2A7DCE] transition-colors duration-200 inline-block text-center'
               >
                 View All Listings

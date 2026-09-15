@@ -306,6 +306,66 @@ export function getPageHeroImage(pathname: string): PageImage {
 
 const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
   {
+    test: /gated|security|community gate/i,
+    src: '/images/pages/section-gated.jpg',
+    alt: 'Gated community entry in North Las Vegas',
+  },
+  {
+    test: /driveway|paver/i,
+    src: '/images/pages/section-driveway.jpg',
+    alt: 'Paver driveway and garage in a North Las Vegas home',
+  },
+  {
+    test: /why work|working with dr/i,
+    src: '/images/pages/section-why-work.jpg',
+    alt: 'Listing consultation table in a North Las Vegas real estate office',
+  },
+  {
+    test: /why buy|housing style|home collection|mohave collection|essence collection|serenity collection|olympic collection|monarch collection/i,
+    src: '/images/pages/section-collections.jpg',
+    alt: 'New-construction home street in Maravilla, North Las Vegas',
+  },
+  {
+    test: /commercial/i,
+    src: '/images/pages/section-commercial.jpg',
+    alt: 'Commercial plaza near Maravilla in North Las Vegas',
+  },
+  {
+    test: /land and lots|vacant lot/i,
+    src: '/images/pages/section-land.jpg',
+    alt: 'Vacant desert lot in North Las Vegas ready for a custom home',
+  },
+  {
+    test: /luxury propert|luxury home/i,
+    src: '/images/pages/section-luxury.jpg',
+    alt: 'Luxury two-story stucco home in North Las Vegas',
+  },
+  {
+    test: /contract|title service|escrow|insurance|tax planning|zoning/i,
+    src: '/images/pages/section-documents.jpg',
+    alt: 'Purchase contract and keys on a North Las Vegas closing table',
+  },
+  {
+    test: /relocation/i,
+    src: '/images/pages/section-relocation.jpg',
+    alt: 'Moving truck at a North Las Vegas home during relocation',
+  },
+  {
+    test: /virtual tour|3d home|3d tour/i,
+    src: '/images/pages/section-virtual-tour.jpg',
+    alt: 'Tablet showing a 3D virtual tour of a North Las Vegas home',
+  },
+  {
+    test: /investment|portfolio|roi assessment/i,
+    src: '/images/pages/section-investment.jpg',
+    alt: 'Investment comps desk overlooking North Las Vegas rooftops',
+  },
+  {
+    test: /seller strategy|preparing your home|buyer objection|feature highlighting|short.?term rental|foreclosure|days matter|maravilla offer|buyers compare|preparation beats/i,
+    src: '/images/pages/section-seller-prep.jpg',
+    alt: 'Staged living room prepared for listing photos in North Las Vegas',
+  },
+  {
     test: /golf/i,
     src: '/images/pages/section-golf.jpg',
     alt: 'Desert golf course near North Las Vegas homes',
@@ -346,7 +406,7 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     alt: 'Laminate flooring in an open North Las Vegas living area',
   },
   {
-    test: /cable|smart home|technolog|wifi|air condition|hvac|thermostat/i,
+    test: /cable|smart home|technolog|wifi|air condition|hvac|thermostat|energy.?efficient|solar/i,
     src: '/images/pages/section-smart-home.jpg',
     alt: 'Smart thermostat and cable-ready wiring in a North Las Vegas home',
   },
@@ -436,12 +496,17 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     alt: 'Single-story ranch home with desert yard in North Las Vegas',
   },
   {
+    test: /frequently asked|common questions/i,
+    src: '/images/pages/community-hero.jpg',
+    alt: 'Maravilla community in North Las Vegas — parks, trails, and homes',
+  },
+  {
     test: /amenit|lifestyle|community guide/i,
     src: '/images/pages/community-hero.jpg',
     alt: 'Maravilla community park ramada and homes in North Las Vegas',
   },
   {
-    test: /neighborhood|aliante|eldorado|seabreeze|jasmine|centennial/i,
+    test: /explore more|neighborhood|aliante|eldorado|seabreeze|jasmine|centennial/i,
     src: '/images/pages/neighborhoods-hero.jpg',
     alt: 'North Las Vegas neighborhood street with tile-roof homes',
   },
@@ -458,7 +523,7 @@ function isStatHeading(heading: string): boolean {
 }
 
 function isNonVisualHeading(heading: string): boolean {
-  return /frequently asked|privacy policy|information we collect|how we use|your rights|cookies|third.party|site navigation|page not found|^menu$|popular pages/i.test(
+  return /privacy policy|information we collect|how we use|your rights|cookies|third.party|site navigation|^menu$|popular pages|key features/i.test(
     heading
   );
 }

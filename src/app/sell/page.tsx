@@ -138,6 +138,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Buyers compare &quot;Maravilla vs. everything else&quot;
           </h3>
+          <SectionHeadingMedia heading='Buyers compare Maravilla vs. everything else' size='card' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             Your Maravilla home isn&apos;t only competing against other Maravilla
             listings—it&apos;s competing against nearby neighborhoods, new construction
@@ -148,6 +149,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             The first 7–14 days matter most
           </h3>
+          <SectionHeadingMedia heading='The first 7–14 days matter most' size='card' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             In Maravilla, the first couple of weeks typically bring your most
             qualified buyers. That&apos;s why &quot;launch quality&quot; matters: photos,
@@ -157,6 +159,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             The best Maravilla offer is the one that closes
           </h3>
+          <SectionHeadingMedia heading='The best Maravilla offer is the one that closes' size='card' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             The best Maravilla offer is the one that closes smoothly and protects
             your net proceeds. That means evaluating not just price, but financing
@@ -166,6 +169,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Preparation beats price reductions
           </h3>
+          <SectionHeadingMedia heading='Preparation beats price reductions' size='card' />
           <p className='text-gray-700 leading-relaxed'>
             Well-prepared Maravilla homes often sell faster and for better prices
             than similar homes that need work. Investing in preparation—repairs,
@@ -190,6 +194,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Common buyer objections in Maravilla showings
           </h3>
+          <SectionHeadingMedia heading='Common buyer objections in Maravilla showings' size='card' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             The most common reasons buyers hesitate in Maravilla showings: flooring
             condition, odors, clutter, lighting, and curb appeal. Addressing these
@@ -199,6 +204,7 @@ export default function SellMaravillaPage() {
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Feature highlighting and marketing
           </h3>
+          <SectionHeadingMedia heading='Feature highlighting and marketing' size='card' />
           <p className='text-gray-700 leading-relaxed'>
             Maravilla buyers are research-heavy. We highlight features, upgrades,
             and unique selling points in listing descriptions, photos, and marketing

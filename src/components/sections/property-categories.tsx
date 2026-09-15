@@ -68,7 +68,7 @@ export default function PropertyCategories() {
                   src={category.image}
                   alt={category.title}
                   fill
-                  className='object-contain'
+                  className='object-cover'
                   sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
                   priority={index === 0}
                 />
@@ -110,12 +110,7 @@ export default function PropertyCategories() {
                   asChild
                   className='w-full bg-[#3A8DDE] hover:bg-[#2A7DCE] text-white'
                 >
-                  <Link
-                    href='http://drjanduffy.realscout.com/onboarding'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    prefetch={false}
-                  >
+                  <Link href='/homes'>
                     View Properties
                   </Link>
                 </Button>

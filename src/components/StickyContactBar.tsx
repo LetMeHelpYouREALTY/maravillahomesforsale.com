@@ -31,7 +31,7 @@ export default function StickyContactBar() {
           💬 Text
         </a>
         <a
-          href="http://drjanduffy.realscout.com/onboarding"
+          href='/homes'
           className="flex-1 bg-white text-blue-900 text-center py-2.5 px-3 rounded-lg font-semibold text-sm transition-colors hover:bg-gray-100"
         >
           🏠 Homes

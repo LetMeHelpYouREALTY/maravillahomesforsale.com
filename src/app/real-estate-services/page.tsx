@@ -372,6 +372,7 @@ export default function RealEstateServicesPage() {
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
                   3D Home Tours
                 </h3>
+                <SectionHeadingMedia heading='3D Home Tours' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   3D home tours provide advanced virtual reality experiences that allow buyers to explore properties in immersive detail. This cutting-edge technology creates realistic 3D models of properties that buyers can navigate as if they were physically present. 3D tours are the next evolution in virtual property viewing, providing unprecedented detail and interactivity.
                 </p>

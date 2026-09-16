@@ -1,7 +1,7 @@
 /**
  * Canonical Dr. Jan Duffy photo assets for on-page E-E-A-T, schema, and favicons.
- * Live files are served from Cloudflare Images when NEXT_PUBLIC_CF_IMAGES_HASH is set.
- * Git copies under /public/images remain the backup.
+ * Live files are served from Cloudflare Images (`imagedelivery.net/<hash>/<id>/<variant>`).
+ * Git copies under /public/images remain the backup if a hosted URL fails.
  */
 import {
   AGENT_CLOUDFLARE_IMAGE_ID,

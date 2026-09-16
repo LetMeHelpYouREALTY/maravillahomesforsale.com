@@ -11,6 +11,7 @@ import {
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import { AGENT_PHOTO, HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
 import {
+  gitBackupFromCloudflareSrc,
   isCloudflareImagesEnabled,
   toAbsoluteImageUrl,
 } from '@/lib/config/cloudflare-images';
@@ -201,7 +202,7 @@ export default function RootLayout({
         {/* Preload critical hero image for LCP optimization */}
         <link
           rel='preload'
-          href={AGENT_PHOTO.src}
+          href={gitBackupFromCloudflareSrc(AGENT_PHOTO.src) ?? AGENT_PHOTO.src}
           as='image'
           fetchPriority='high'
         />

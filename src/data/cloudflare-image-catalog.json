@@ -41,6 +41,13 @@
       "width": 1200,
       "height": 630,
       "metadata": "none"
+    },
+    {
+      "id": "public",
+      "fit": "scale-down",
+      "width": 1920,
+      "height": 1920,
+      "metadata": "none"
     }
   ],
   "images": [

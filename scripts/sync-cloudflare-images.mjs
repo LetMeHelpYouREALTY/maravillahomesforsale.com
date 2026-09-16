@@ -7,11 +7,11 @@
  *   2. Create an API token with Account → Cloudflare Images → Edit.
  *
  * Then:
- *   CLOUDFLARE_ACCOUNT_ID=... CLOUDFLARE_API_TOKEN=... npm run cf:images
+ *   CLOUDFLARE_ACCOUNT_ID=2cc579c1ec9e426ed585e933ebf4753b \
+ *   CLOUDFLARE_API_TOKEN=... npm run cf:images
  *
- * The script prints NEXT_PUBLIC_CF_IMAGES_HASH. Set that in Vercel so the site
- * serves https://imagedelivery.net/<hash>/<id>/<variant>. Git copies stay in
- * public/images/ as the backup.
+ * Delivery: https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<id>/<variant>
+ * Git copies stay in public/images/ as the backup.
  *
  * Flags: --force (replace existing custom IDs)  --dry-run
  */

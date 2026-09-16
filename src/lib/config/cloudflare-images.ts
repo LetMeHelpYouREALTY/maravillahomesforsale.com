@@ -1,11 +1,15 @@
 /**
  * Cloudflare Images (hosted vault) with Git as the backup copy.
  *
- * Live delivery: https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
+ * Hosted delivery (2026 docs):
+ *   https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>
  * Git backup: files under public/images/ (committed to the repo).
  *
- * Set NEXT_PUBLIC_CF_IMAGES_HASH after enabling Cloudflare Images and uploading.
- * Until that env var is set, the site serves the Git copies.
+ * The Vercel hostname stays DNS-only. Do not orange-cloud this app.
+ * Images are stored in Cloudflare Images and delivered from imagedelivery.net.
+ *
+ * NEXT_PUBLIC_CF_IMAGES_HASH overrides the known public account hash.
+ * SiteImage falls back to the Git file if a hosted URL 403s/404s before upload.
  */
 import catalog from '@/data/cloudflare-image-catalog.json';
 
@@ -20,8 +24,13 @@ export type CloudflareImageVariantId =
 
 export const CLOUDFLARE_IMAGES_HOST = 'imagedelivery.net';
 
+/** Public Images account hash from Developer Resources. Safe to expose in URLs. */
+export const CLOUDFLARE_IMAGES_ACCOUNT_HASH = 'byE6BTe9lNqo21V57n4aPQ';
+
 export function getCloudflareImagesHash(): string | undefined {
-  const hash = process.env.NEXT_PUBLIC_CF_IMAGES_HASH?.trim();
+  const hash =
+    process.env.NEXT_PUBLIC_CF_IMAGES_HASH?.trim() ||
+    CLOUDFLARE_IMAGES_ACCOUNT_HASH;
   return hash ? hash : undefined;
 }
 
@@ -92,6 +101,28 @@ export function gitPathToCloudflareId(gitPath: string): string {
   const match = catalog.images.find((image) => image.file.endsWith(`/${fileName}`));
   if (match) return match.id;
   return `maravilla/${stem}`;
+}
+
+/** Map a hosted Images URL back to the committed Git backup path. */
+export function gitBackupFromCloudflareSrc(src: string): string | undefined {
+  if (!isCloudflareDeliveryUrl(src)) return undefined;
+  try {
+    const url = new URL(src);
+    const segments = url.pathname.split('/').filter(Boolean);
+    if (segments.length < 3) return undefined;
+    const imageId = segments
+      .slice(1, -1)
+      .map((segment) => decodeURIComponent(segment))
+      .join('/');
+    const match = catalog.images.find((image) => image.id === imageId);
+    if (match) {
+      return `/${match.file.replace(/^public\//, '')}`;
+    }
+    const stem = imageId.split('/').pop();
+    return stem ? `/images/pages/${stem}.jpg` : undefined;
+  } catch {
+    return undefined;
+  }
 }
 
 export function resolveSiteImage(

@@ -4,22 +4,37 @@ Maravilla / North Las Vegas Family Homes site for Dr. Jan Duffy.
 
 ## Cloudflare Images (live vault)
 
-Git copies under `public/images/` are the backup. Cloudflare Images is the live store and delivery layer (`imagedelivery.net`). The Vercel hostname stays DNS-only — do not orange-cloud this site.
+Git copies under `public/images/` are the backup. Cloudflare [hosted Images](https://developers.cloudflare.com/images/optimization/hosted-images/serve-uploaded-images/) is the live store. Delivery URLs:
 
-Until `NEXT_PUBLIC_CF_IMAGES_HASH` is set, pages keep serving the Git files.
+`https://imagedelivery.net/byE6BTe9lNqo21V57n4aPQ/<IMAGE_ID>/<VARIANT>`
 
-### 1. Enable Cloudflare Images
+The Vercel hostname stays DNS-only — do not orange-cloud this site. `imagedelivery.net` is separate from site DNS.
 
-1. Log in to the [Cloudflare Dashboard](https://dash.cloudflare.com/).
-2. Open **Images**.
-3. Subscribe to the Images plan (storage + delivery; Cloudflare publishes current pricing on the Images page).
+`SiteImage` uses the hosted URL first and swaps to the Git file if Cloudflare returns 403/404 (image not uploaded yet).
 
-### 2. Create predefined variants
+### 1. Hosted originals
 
-Use the dashboard (**Hosted images** → **Delivery** → **Create variant**) or run the sync script below. This repo expects these names:
+Upload Git backups with custom IDs from `src/data/cloudflare-image-catalog.json` (for example `maravilla/dr-jan-duffy`).
+
+**Dashboard:** Images → Hosted images → Quick Upload, then set the custom ID.
+
+**API:** token with Account → Cloudflare Images → Edit:
+
+```bash
+CLOUDFLARE_ACCOUNT_ID=2cc579c1ec9e426ed585e933ebf4753b \
+CLOUDFLARE_API_TOKEN=your_token \
+npm run cf:images
+```
+
+Pass `--force` to replace existing custom IDs, or `--dry-run` to print the plan.
+
+### 2. Predefined variants
+
+Dashboard: **Hosted images** → **Delivery** → **Create variant**, or run the sync script. This repo expects:
 
 | Variant | Size | Fit | Use |
 | --- | --- | --- | --- |
+| `public` | 1920×1920 | scale-down | Cloudflare default / flexible fallback |
 | `thumbnail` | 128×128 | cover | Nav avatars |
 | `nav` | 256×256 | contain | Header / footer |
 | `portrait` | 800×800 | contain | On-page agent photo |
@@ -27,33 +42,11 @@ Use the dashboard (**Hosted images** → **Delivery** → **Create variant**) or
 | `hero` | 1920×1080 | cover | Page banners |
 | `og` | 1200×630 | cover | Open Graph |
 
-Delivery URL:
+Cloudflare transcodes to AVIF/WebP from the variant when the browser supports it.
 
-`https://imagedelivery.net/<ACCOUNT_HASH>/<IMAGE_ID>/<VARIANT>`
+### 3. Public hash
 
-Cloudflare serves WebP or AVIF from that variant based on the browser.
-
-### 3. Upload originals
-
-**Dashboard:** Hosted images → Quick Upload. Set the custom ID to match `src/data/cloudflare-image-catalog.json` (for example `maravilla/dr-jan-duffy`).
-
-**API:** create a token with Account → Cloudflare Images → Edit, then:
-
-```bash
-CLOUDFLARE_ACCOUNT_ID=your_account_id \
-CLOUDFLARE_API_TOKEN=your_token \
-npm run cf:images
-```
-
-Pass `--force` to replace existing custom IDs, or `--dry-run` to print the plan.
-
-The script prints `NEXT_PUBLIC_CF_IMAGES_HASH`. Set that in Vercel (Production + Preview).
-
-### 4. Site integration
-
-`<img>` / `next/image` srcs use the variant name in the delivery URL when the hash is present. Git paths remain the fallback.
-
-Do not proxy this Vercel app through Cloudflare’s orange cloud. Images are stored in Cloudflare Images and delivered from `imagedelivery.net`, which is separate from the site DNS.
+The account hash `byE6BTe9lNqo21V57n4aPQ` is compiled in as the default. Override with `NEXT_PUBLIC_CF_IMAGES_HASH` on Vercel if the Images account changes.
 
 ## Optional: Star ratings in search (Google Business Profile)
 

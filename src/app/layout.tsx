@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import Script from 'next/script';
 import { Source_Sans_3, Open_Sans } from 'next/font/google';
+import { Analytics } from '@vercel/analytics/next';
 import {
   generateOrganizationSchema,
   generateLocalBusinessSchema,
@@ -412,6 +413,7 @@ export default function RootLayout({
           strategy='lazyOnload'
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );

@@ -118,6 +118,20 @@
     { "id": "maravilla/section-investment", "file": "public/images/pages/section-investment.jpg", "role": "section" },
     { "id": "maravilla/section-why-work", "file": "public/images/pages/section-why-work.jpg", "role": "section" },
     { "id": "maravilla/section-collections", "file": "public/images/pages/section-collections.jpg", "role": "section" },
-    { "id": "maravilla/section-seller-prep", "file": "public/images/pages/section-seller-prep.jpg", "role": "section" }
+    { "id": "maravilla/section-seller-prep", "file": "public/images/pages/section-seller-prep.jpg", "role": "section" },
+    { "id": "maravilla/section-climate", "file": "public/images/pages/section-climate.jpg", "role": "section" },
+    { "id": "maravilla/section-transit", "file": "public/images/pages/section-transit.jpg", "role": "section" },
+    { "id": "maravilla/section-government", "file": "public/images/pages/section-government.jpg", "role": "section" },
+    { "id": "maravilla/section-banking", "file": "public/images/pages/section-banking.jpg", "role": "section" },
+    { "id": "maravilla/section-pantry", "file": "public/images/pages/section-pantry.jpg", "role": "section" },
+    { "id": "maravilla/section-windows", "file": "public/images/pages/section-windows.jpg", "role": "section" },
+    { "id": "maravilla/section-closet", "file": "public/images/pages/section-closet.jpg", "role": "section" },
+    { "id": "maravilla/section-home-office", "file": "public/images/pages/section-home-office.jpg", "role": "section" },
+    { "id": "maravilla/section-pets", "file": "public/images/pages/section-pets.jpg", "role": "section" },
+    { "id": "maravilla/section-paseo", "file": "public/images/pages/section-paseo.jpg", "role": "section" },
+    { "id": "maravilla/section-tours", "file": "public/images/pages/section-tours.jpg", "role": "section" },
+    { "id": "maravilla/section-architecture", "file": "public/images/pages/section-architecture.jpg", "role": "section" },
+    { "id": "maravilla/section-about-community", "file": "public/images/pages/section-about-community.jpg", "role": "section" },
+    { "id": "maravilla/section-video", "file": "public/images/pages/section-video.jpg", "role": "section" }
   ]
 }

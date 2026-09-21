@@ -316,7 +316,7 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     alt: 'Paver driveway and garage in a North Las Vegas home',
   },
   {
-    test: /why work|working with dr/i,
+    test: /why work|working with dr|north las vegas expert|get in touch/i,
     src: '/images/pages/section-why-work.jpg',
     alt: 'Listing consultation table in a North Las Vegas real estate office',
   },
@@ -341,7 +341,7 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     alt: 'Luxury two-story stucco home in North Las Vegas',
   },
   {
-    test: /contract|title service|escrow|insurance|tax planning|zoning/i,
+    test: /contract|title service|escrow|insurance|tax planning|zoning|transaction service/i,
     src: '/images/pages/section-documents.jpg',
     alt: 'Purchase contract and keys on a North Las Vegas closing table',
   },
@@ -364,6 +364,76 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     test: /seller strategy|preparing your home|buyer objection|feature highlighting|short.?term rental|foreclosure|days matter|maravilla offer|buyers compare|preparation beats/i,
     src: '/images/pages/section-seller-prep.jpg',
     alt: 'Staged living room prepared for listing photos in North Las Vegas',
+  },
+  {
+    test: /climate|weather/i,
+    src: '/images/pages/section-climate.jpg',
+    alt: 'Desert climate and sunlight on North Las Vegas homes',
+  },
+  {
+    test: /public transportation|transit|bus stop|bus shelter/i,
+    src: '/images/pages/section-transit.jpg',
+    alt: 'Street and transit stop in North Las Vegas near Maravilla',
+  },
+  {
+    test: /government|public safety|civic/i,
+    src: '/images/pages/section-government.jpg',
+    alt: 'Civic services building in North Las Vegas',
+  },
+  {
+    test: /bank|financial service/i,
+    src: '/images/pages/section-banking.jpg',
+    alt: 'Neighborhood bank branch in a North Las Vegas plaza',
+  },
+  {
+    test: /pantry/i,
+    src: '/images/pages/section-pantry.jpg',
+    alt: 'Walk-in pantry in a North Las Vegas kitchen',
+  },
+  {
+    test: /window/i,
+    src: '/images/pages/section-windows.jpg',
+    alt: 'Large windows and desert light in a North Las Vegas great room',
+  },
+  {
+    test: /closet|primary suite/i,
+    src: '/images/pages/section-closet.jpg',
+    alt: 'Primary-suite walk-in closet in a North Las Vegas home',
+  },
+  {
+    test: /home office|bonus room/i,
+    src: '/images/pages/section-home-office.jpg',
+    alt: 'Dedicated home office in a North Las Vegas house',
+  },
+  {
+    test: /pet/i,
+    src: '/images/pages/section-pets.jpg',
+    alt: 'Fenced desert backyard with patio and pet door in North Las Vegas',
+  },
+  {
+    test: /paseo/i,
+    src: '/images/pages/section-paseo.jpg',
+    alt: 'Nearby North Las Vegas neighborhood street near Maravilla',
+  },
+  {
+    test: /private tour|open.?house|showing/i,
+    src: '/images/pages/section-tours.jpg',
+    alt: 'Open-house interior of a North Las Vegas home ready for a tour',
+  },
+  {
+    test: /architectural style/i,
+    src: '/images/pages/section-architecture.jpg',
+    alt: 'Mixed single-story and two-story home elevations in North Las Vegas',
+  },
+  {
+    test: /about maravilla|what makes maravilla|community stats|community features/i,
+    src: '/images/pages/section-about-community.jpg',
+    alt: 'Maravilla community boulevard with parks and homes in North Las Vegas',
+  },
+  {
+    test: /video|kcm|simplifying the market/i,
+    src: '/images/pages/section-video.jpg',
+    alt: 'Market video playing on a North Las Vegas real estate desk',
   },
   {
     test: /golf/i,
@@ -523,7 +593,7 @@ function isStatHeading(heading: string): boolean {
 }
 
 function isNonVisualHeading(heading: string): boolean {
-  return /privacy policy|information we collect|how we use|your rights|cookies|third.party|site navigation|^menu$|popular pages|key features/i.test(
+  return /privacy policy|information we collect|how we use|your rights|cookies|third.party|site navigation|^menu$|popular pages|key features|pro forma|calculator|income statement|information sharing|data security|updates to this policy/i.test(
     heading
   );
 }

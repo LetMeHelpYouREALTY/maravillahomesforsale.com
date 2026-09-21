@@ -200,12 +200,11 @@ export default function NeighborhoodPage() {
                   an ideal place to live.
                 </p>
                 <p>
-                  Maravilla&apos;s appeal extends beyond its strategic location and
-                  luxury modern homes. The community features beautiful parks,
-                  recreational facilities, and a tight-knit atmosphere that
-                  brings residents together. Whether you&apos;re looking for a
-                  a 1,519–2,947 sq ft floor plan or a quieter street, Maravilla
-                  offers the perfect balance of convenience and lifestyle.
+                  Maravilla&apos;s appeal extends beyond its location and
+                  modern homes. The community includes parks, walking trails,
+                  and recreation amenities. Floor plans run 1,519–2,947 square
+                  feet, with I-215 and I-15 access for commuting across the
+                  valley.
                 </p>
                 <p>
                   The community offers a diverse selection of homes including

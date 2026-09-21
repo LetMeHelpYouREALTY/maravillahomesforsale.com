@@ -12,8 +12,8 @@ export default function NotFound() {
           <h2 className='text-4xl font-semibold mb-4'>North Las Vegas Family Homes: Page Not Found</h2>
           <figure className='relative h-40 md:h-56 w-full overflow-hidden rounded-xl mb-6'>
             <SiteImage
-              src='/images/pages/homes-hero.jpg'
-              alt='Maravilla-style home for sale in North Las Vegas'
+              src='/images/pages/section-about-community.jpg'
+              alt='Maravilla community boulevard in North Las Vegas'
               fill
               className='object-cover'
               sizes='(max-width: 768px) 100vw, 672px'

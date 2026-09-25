@@ -132,6 +132,10 @@
     { "id": "maravilla/section-tours", "file": "public/images/pages/section-tours.jpg", "role": "section" },
     { "id": "maravilla/section-architecture", "file": "public/images/pages/section-architecture.jpg", "role": "section" },
     { "id": "maravilla/section-about-community", "file": "public/images/pages/section-about-community.jpg", "role": "section" },
-    { "id": "maravilla/section-video", "file": "public/images/pages/section-video.jpg", "role": "section" }
+    { "id": "maravilla/section-video", "file": "public/images/pages/section-video.jpg", "role": "section" },
+    { "id": "maravilla/section-appliances", "file": "public/images/pages/section-appliances.jpg", "role": "section" },
+    { "id": "maravilla/section-construction", "file": "public/images/pages/section-construction.jpg", "role": "section" },
+    { "id": "maravilla/section-financing", "file": "public/images/pages/section-financing.jpg", "role": "section" },
+    { "id": "maravilla/section-storage", "file": "public/images/pages/section-storage.jpg", "role": "section" }
   ]
 }

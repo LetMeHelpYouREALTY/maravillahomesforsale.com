@@ -228,7 +228,7 @@ const SECTION_IMAGES: Record<string, PageImage> = {
     src: '/images/pages/map-hero.jpg',
     alt: 'Find us on the map — North Las Vegas streets near I-215',
   },
-  'North Las Vegas Family Homes: Top-Rated Schools': {
+  'North Las Vegas Family Homes: Nearby Schools': {
     src: '/images/pages/section-schools.jpg',
     alt: 'Clark County School District campus near Maravilla in North Las Vegas',
   },
@@ -305,6 +305,26 @@ export function getPageHeroImage(pathname: string): PageImage {
 }
 
 const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
+  {
+    test: /appliance/i,
+    src: '/images/pages/section-appliances.jpg',
+    alt: 'Stainless-steel kitchen appliances in a North Las Vegas home',
+  },
+  {
+    test: /financing|mortgage|lender|pre-approv/i,
+    src: '/images/pages/section-financing.jpg',
+    alt: 'Mortgage pre-approval papers and keys on a North Las Vegas desk',
+  },
+  {
+    test: /construction timeline|construction quality|under construction/i,
+    src: '/images/pages/section-construction.jpg',
+    alt: 'Home under construction on a North Las Vegas desert lot',
+  },
+  {
+    test: /storage solution|built-in storage|overhead storage|garage and storage/i,
+    src: '/images/pages/section-storage.jpg',
+    alt: 'Organized garage storage in a North Las Vegas home',
+  },
   {
     test: /gated|security|community gate/i,
     src: '/images/pages/section-gated.jpg',
@@ -541,7 +561,7 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
     alt: 'Printed listing photos and keys on a review table',
   },
   {
-    test: /buy|buyer|key|clos|guide|first-time|pre-approv/i,
+    test: /buy|buyer|key|clos|guide|first-time/i,
     src: '/images/pages/section-keys.jpg',
     alt: 'House keys on a closing table in North Las Vegas',
   },

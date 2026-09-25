@@ -17,44 +17,44 @@ import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 export default function MarketDataSection() {
   const currentStats = [
     {
-      label: 'Average Home Price',
-      value: '$875,000',
-      change: '+5.2%',
-      changeType: 'positive',
-      description: 'vs last year',
-    },
-    {
-      label: 'Days on Market',
-      value: '23',
-      change: '-12%',
-      changeType: 'positive',
-      description: 'vs last year',
-    },
-    {
-      label: 'Active Listings',
-      value: '156',
-      change: '+8.5%',
+      label: 'ZIP 89031 median sold',
+      value: 'Mid-$400s',
+      change: 'Sep 2026 public range',
       changeType: 'neutral',
-      description: 'vs last month',
+      description: '~$415K–$437K — call for Maravilla comps',
     },
     {
-      label: 'Price per Sq Ft',
-      value: '$285',
-      change: '+3.1%',
-      changeType: 'positive',
-      description: 'vs last year',
+      label: 'Days on market',
+      value: '38–44',
+      change: 'ZIP 89031, Sep 2026',
+      changeType: 'neutral',
+      description: 'Individual listings can move faster or slower',
+    },
+    {
+      label: 'Maravilla floor plans',
+      value: '1,519–2,947',
+      change: 'Square feet',
+      changeType: 'neutral',
+      description: 'Single-story and two-story homes',
+    },
+    {
+      label: 'Current listings',
+      value: 'Live MLS',
+      change: 'Call (702) 500-1953',
+      changeType: 'neutral',
+      description: 'Inventory changes daily',
     },
   ];
 
   const trends = [
-    { period: 'Last 30 Days', price: '+2.1%', sales: '+15%', inventory: '+8%' },
+    { period: 'ZIP 89031 (Sep 2026)', price: 'Mid-$400s', sales: 'Ask for volume', inventory: 'Live MLS' },
     {
-      period: 'Last 90 Days',
-      price: '+4.3%',
-      sales: '+22%',
-      inventory: '+12%',
+      period: 'Days on market',
+      price: '38–44 days',
+      sales: 'Varies by plan',
+      inventory: 'Condition-driven',
     },
-    { period: 'Last Year', price: '+5.2%', sales: '+18%', inventory: '+5%' },
+    { period: 'Maravilla comps', price: 'Call for CMA', sales: 'Floor-plan specific', inventory: '(702) 500-1953' },
   ];
 
   return (

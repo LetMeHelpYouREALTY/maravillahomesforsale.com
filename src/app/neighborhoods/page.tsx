@@ -387,10 +387,10 @@ export default function NeighborhoodsPage() {
               </CardHeader>
               <CardContent>
                 <div className='text-3xl font-bold text-[#16B286] mb-2'>
-                  $415,000+
+                  Mid-$400s
                 </div>
                 <CardDescription>
-                  3-bedroom homes, perfect for first-time buyers and families
+                  ZIP 89031 public median sold range as of September 2026
                 </CardDescription>
               </CardContent>
             </Card>
@@ -401,10 +401,10 @@ export default function NeighborhoodsPage() {
               </CardHeader>
               <CardContent>
                 <div className='text-3xl font-bold text-[#3A8DDE] mb-2'>
-                  $500,000 - $650,000
+                  Call for comps
                 </div>
                 <CardDescription>
-                  Spacious homes with modern amenities and premium finishes
+                  Larger floor plans, updates, and lot features move the number
                 </CardDescription>
               </CardContent>
             </Card>
@@ -415,11 +415,10 @@ export default function NeighborhoodsPage() {
               </CardHeader>
               <CardContent>
                 <div className='text-3xl font-bold text-[#0A2540] mb-2'>
-                  $738,700+
+                  Live MLS
                 </div>
                 <CardDescription>
-                  4+ bedroom homes with larger lots, guesthouses, and premium
-                  features
+                  4+ bedroom homes, larger lots, and guesthouses — ask for today&apos;s list
                 </CardDescription>
               </CardContent>
             </Card>

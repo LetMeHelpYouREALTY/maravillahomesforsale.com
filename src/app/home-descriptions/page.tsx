@@ -11,7 +11,7 @@ import {
 } from '@/lib/metadata';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import { Home, MapPin, DollarSign, TrendingUp, CheckCircle2 } from 'lucide-react';
+import { Home, DollarSign, TrendingUp, CheckCircle2 } from 'lucide-react';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 
@@ -20,9 +20,9 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Home Descriptions | Maravilla $380k-$600k',
+  title: 'North Las Vegas Family Homes | Home Descriptions | Maravilla',
   description:
-    'Explore detailed descriptions of Maravilla luxury homes in North Las Vegas. Features include 3-5 bedrooms, gourmet kitchens, smart home technology, and resort-style amenities. Price range $380,000-$600,000.',
+    'Explore detailed descriptions of Maravilla homes in North Las Vegas. Features include 3-5 bedrooms, gourmet kitchens, smart home technology, and community amenities. Call (702) 500-1953 for current comps.',
   keywords:
     'Maravilla home descriptions, luxury homes North Las Vegas, Maravilla property features, home specifications, Maravilla amenities, North Las Vegas real estate',
   path: '/home-descriptions',
@@ -48,14 +48,14 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-              North Las Vegas Family Homes: Price Range $380K–$600K
+              North Las Vegas Family Homes: Current Pricing Context
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Price Range $380K–$600K' />
+            <SectionHeadingMedia heading='North Las Vegas Family Homes: Current Pricing Context' />
             <div className='grid md:grid-cols-3 gap-6 mb-12'>
               <div className='bg-[#F7F9FC] rounded-lg p-6 text-center'>
                 <DollarSign className='h-12 w-12 text-[#3A8DDE] mx-auto mb-4' />
-                <h3 className='text-2xl font-bold text-[#0A2540] mb-2'>$380K - $600K</h3>
-                <p className='text-gray-600'>Price Range</p>
+                <h3 className='text-2xl font-bold text-[#0A2540] mb-2'>Mid-$400s</h3>
+                <p className='text-gray-600'>ZIP 89031 median sold (Sep 2026)</p>
               </div>
               <div className='bg-[#F7F9FC] rounded-lg p-6 text-center'>
                 <Home className='h-12 w-12 text-[#3A8DDE] mx-auto mb-4' />
@@ -64,8 +64,8 @@ export default function HomeDescriptionsPage() {
               </div>
               <div className='bg-[#F7F9FC] rounded-lg p-6 text-center'>
                 <TrendingUp className='h-12 w-12 text-[#3A8DDE] mx-auto mb-4' />
-                <h3 className='text-2xl font-bold text-[#0A2540] mb-2'>4.8% YoY</h3>
-                <p className='text-gray-600'>Appreciation Rate</p>
+                <h3 className='text-2xl font-bold text-[#0A2540] mb-2'>38–44</h3>
+                <p className='text-gray-600'>ZIP 89031 days on market (Sep 2026)</p>
               </div>
             </div>
             <p className='text-lg text-gray-700 text-center max-w-3xl mx-auto'>
@@ -88,7 +88,7 @@ export default function HomeDescriptionsPage() {
                 </h3>
                 <SectionHeadingMedia heading='Architectural Styles' size='card' />
                 <p className='text-gray-700 mb-4 leading-relaxed'>
-                  Maravilla homes feature both single-story and two-story designs, providing options for every lifestyle preference. Single-story homes offer convenience and accessibility, perfect for families with young children or those planning for long-term living. Two-story designs maximize living space while maintaining a compact footprint, ideal for growing families who want separation between living and sleeping areas.
+                  Maravilla homes feature both single-story and two-story designs. Single-story plans reduce stairs and keep living areas on one level. Two-story designs add square footage on a compact lot and separate living space from upstairs bedrooms.
                 </p>
                 <ul className='space-y-2 text-gray-700'>
                   <li className='flex items-start'>
@@ -456,40 +456,40 @@ export default function HomeDescriptionsPage() {
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                  Average Days on Market: 25
+                  Days on Market in ZIP 89031
                 </h3>
-                <SectionHeadingMedia heading='Average Days on Market: 25' size='card' />
+                <SectionHeadingMedia heading='Days on Market in ZIP 89031' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  Maravilla homes sell quickly, with an average of just 25 days on the market. This fast turnover indicates strong buyer demand and competitive pricing. The quick sales cycle benefits both buyers and sellers—buyers can move into their new homes promptly, while sellers can complete transactions efficiently. This market velocity reflects the desirability of the Maravilla community and the quality of homes available.
+                  Public ZIP 89031 reports as of September 2026 put days on market around 38–44 days. Individual Maravilla listings can move faster or slower depending on price, condition, and floor plan. Call (702) 500-1953 for current DOM on the section you are buying or selling.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
-                  The short time on market also suggests that properties are priced appropriately and presented well, attracting serious buyers who recognize value. Well-maintained homes with desirable features tend to sell even faster, sometimes receiving multiple offers within the first week of listing.
+                  Presentation still matters. Well-priced, well-photographed homes tend to draw more showings. Ask for a dated CMA rather than relying on a static average.
                 </p>
               </div>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                  Price Per Square Foot: $215-$275
+                  Price Per Square Foot — Call for Comps
                 </h3>
-                <SectionHeadingMedia heading='Price Per Square Foot: $215-$275' size='card' />
+                <SectionHeadingMedia heading='Price Per Square Foot — Call for Comps' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  The price per square foot range of $215-$275 reflects the quality and desirability of Maravilla homes. This pricing is competitive within the North Las Vegas market and represents excellent value for the features and amenities included. The variation in price per square foot accounts for factors such as lot location, upgrades, condition, and specific home features.
+                  Price per square foot in Maravilla moves with lot, upgrades, condition, and floor plan. A ZIP-wide average is not a substitute for address-level comps. Dr. Jan Duffy will pull live MLS numbers for the home you care about.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
-                  Homes with premium features, recent updates, or desirable lot locations typically command prices at the higher end of this range. Properties that need cosmetic updates or are located on standard lots may fall in the lower range, offering opportunities for buyers to add value through improvements.
+                  Recent updates, usable outdoor space, and a clean condition story often change the result. Call (702) 500-1953 before you price an offer or a listing.
                 </p>
               </div>
             </div>
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                  Year-Over-Year Appreciation: 4.8%
+                  Appreciation — Ask for a Dated CMA
                 </h3>
-                <SectionHeadingMedia heading='Year-Over-Year Appreciation: 4.8%' size='card' />
+                <SectionHeadingMedia heading='Appreciation — Ask for a Dated CMA' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  Maravilla has experienced consistent appreciation of 4.8% year-over-year, demonstrating strong and stable property value growth. This appreciation rate outpaces inflation and provides solid returns for homeowners. The steady growth indicates a healthy real estate market with sustainable demand, making Maravilla an attractive investment opportunity as well as a great place to live.
+                  Year-over-year change in Maravilla is not a single published number on this page. Public ZIP 89031 medians as of September 2026 sit in the mid-$400s; Maravilla floor plans, condition, and lot features move that figure. Ask for a current CMA instead of a static percentage.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
-                  The appreciation rate reflects the community&apos;s desirability, quality of construction, and the overall strength of the North Las Vegas real estate market. Homeowners can feel confident that their investment is growing over time, building equity that can be used for future purchases, home improvements, or retirement planning.
+                  Equity depends on what comparable homes actually closed for, not a site-wide average. Call (702) 500-1953 for comps tied to the address you are buying or selling.
                 </p>
               </div>
               <div>
@@ -498,10 +498,10 @@ export default function HomeDescriptionsPage() {
                 </h3>
                 <SectionHeadingMedia heading='Active Listings and Strong Resale Values' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  With 8 active listings currently available, Maravilla offers a healthy selection of homes for buyers to choose from. This inventory level provides options without creating an oversupply that would depress prices. The balance between supply and demand supports strong resale values, ensuring that homeowners can sell their properties for fair market prices when the time comes.
+                  Active Maravilla inventory changes daily. Browse <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>current listings</Link> on this site or call (702) 500-1953 for what is live in MLS today. A static listing count on a webpage is not a substitute for today&apos;s search.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
-                  The strong resale values are supported by the community&apos;s ongoing desirability, quality schools, convenient location, and well-maintained properties. These factors combine to create a stable real estate market where homeowners can confidently invest in their properties, knowing that their improvements and maintenance will be reflected in future sale prices.
+                  Resale results track condition, presentation, and commute access to I-15 / I-215. Clark County School District campuses near Maravilla include Eva G. Simmons Elementary, Findlay Middle School, and Mojave High School — zones depend on address. Call for comps before you price a listing.
                 </p>
               </div>
             </div>

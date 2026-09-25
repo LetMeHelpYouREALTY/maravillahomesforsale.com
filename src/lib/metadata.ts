@@ -64,7 +64,7 @@ export const MARAVILLA_FAQS = [
   {
     question: 'What is the average price range for homes in Maravilla?',
     answer:
-      'Home prices in Maravilla vary depending on property type, size, and location. We offer a range of homes to suit different budgets and lifestyles. Contact us for current market information and pricing details specific to your preferences.',
+      'Ask for current Maravilla comps. Public ZIP 89031 medians as of September 2026 sit in the mid-$400s; floor plan, condition, and lot features move that number. Call (702) 500-1953 for live MLS data.',
   },
   {
     question: 'How long do properties typically stay on the market?',

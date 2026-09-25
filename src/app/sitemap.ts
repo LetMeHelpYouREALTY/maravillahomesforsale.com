@@ -17,7 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // 2025 Best Practice: Use consistent timestamp for better caching
   // Google prefers stable sitemaps that don't change unnecessarily
   // 2025 Best Practice: Use a stable lastmod so Google does not recrawl unchanged URLs
-  const lastModified = new Date('2026-09-15T00:00:00.000Z');
+  const lastModified = new Date('2026-09-25T00:00:00.000Z');
 
   const neighborhoodUrls: MetadataRoute.Sitemap = NEIGHBORHOOD_SLUGS.map((slug) => ({
     url: `${baseUrl}/neighborhoods/${slug}`,

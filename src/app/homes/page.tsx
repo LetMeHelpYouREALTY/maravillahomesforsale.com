@@ -64,9 +64,9 @@ export default function HomesPage() {
           <p className='text-xl text-gray-200 max-w-3xl'>
             Discover <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale in the Maravilla community</Link> in Las
             Vegas. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway
-            HomeServices® Nevada, to find your perfect property. Prices range
-            from $370,000 to $1.8 million, with 206 homes currently available.
-            Average home value: $427,967. Jump to <a href='#listings' className='text-white hover:text-gray-200 underline font-medium'>current listings</a>, <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>, or explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, <Link href='/market-data' className='text-white hover:text-gray-200 underline font-medium'>market data</Link>, or <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
+            HomeServices® Nevada, to find the right property. Public ZIP 89031
+            medians as of September 2026 sit in the mid-$400s (~$415K–$437K);
+            Maravilla comps depend on floor plan and condition. Jump to <a href='#listings' className='text-white hover:text-gray-200 underline font-medium'>current listings</a>, <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>, or explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, <Link href='/market-data' className='text-white hover:text-gray-200 underline font-medium'>market data</Link>, or <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
           </p>
         </div>
       </div>
@@ -257,11 +257,11 @@ export default function HomesPage() {
                   I-15.
                 </p>
                 <p>
-                  <strong>Price Range:</strong> Home prices range from $370,000
-                  to $1.8 million, with new construction and resale options
-                  available. The average home value is $427,967, with an average
-                  price per square foot of $242. The median sale price is
-                  $415,000.
+                  <strong>Price Range:</strong> Ask for current Maravilla comps.
+                  Public ZIP 89031 median sold prices as of September 2026 sit
+                  around $415K–$437K, with days on market near 38–44. Individual
+                  floor plans, condition, and lot features move those numbers.
+                  Call (702) 500-1953.
                 </p>
                 <p>
                   <strong>Builders:</strong> Builders in the community have

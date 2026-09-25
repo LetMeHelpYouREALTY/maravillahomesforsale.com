@@ -115,10 +115,10 @@ export default function NeighborhoodPage() {
   ];
 
   const realEstateStats = [
-    { label: 'Homes For Sale', value: '206', icon: Home },
-    { label: 'Average Value', value: '$427,967', icon: DollarSign },
-    { label: 'Price per Sq Ft', value: '$242', icon: TrendingUp },
-    { label: 'Median Sale Price', value: '$415,000', icon: DollarSign },
+    { label: 'Homes For Sale', value: 'Live MLS', icon: Home },
+    { label: 'ZIP 89031 median', value: 'Mid-$400s', icon: DollarSign },
+    { label: 'Days on market', value: '38–44', icon: TrendingUp },
+    { label: 'Home size', value: '1,519–2,947', icon: DollarSign },
   ];
 
   return (
@@ -161,8 +161,6 @@ export default function NeighborhoodPage() {
           <div className='bg-white rounded-xl p-8 shadow-lg'>
             <Suspense fallback={<ListingsSkeleton />}>
               <MaravillaListings
-                priceMin='400000'
-                priceMax='500000'
                 showMap={false}
                 listingsPerPage='6'
               />
@@ -335,7 +333,7 @@ export default function NeighborhoodPage() {
           </h2>
           <SectionHeadingMedia heading='North Las Vegas Family Homes: Property Overview' />
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Nestled in the heart of North Las Vegas&apos;s 89031 zip code, Maravilla offers the perfect blend of suburban serenity and urban convenience. Celebrated for its pristine upkeep and desert-friendly landscaping, this residence is part of a well-established neighborhood that has matured beautifully over the years. The community features a diverse selection of <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes ranging from $380,000 to $600,000</Link>, providing options for various budgets and preferences. Explore <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>detailed home descriptions</Link> and <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
+            Nestled in the heart of North Las Vegas&apos;s 89031 zip code, Maravilla offers the perfect blend of suburban serenity and urban convenience. Celebrated for its pristine upkeep and desert-friendly landscaping, this residence is part of a well-established neighborhood that has matured beautifully over the years. The community features a diverse selection of <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes — call for current comps</Link>; public ZIP 89031 medians as of September 2026 sit in the mid-$400s. Explore <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>detailed home descriptions</Link> and <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
           </p>
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
             Maravilla homes are known for their quality construction, modern amenities, and thoughtful design. Properties feature 3-5 bedrooms, 2-4 bathrooms, and range from 1,800 to 3,500 square feet. The homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from established neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. View <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
@@ -936,27 +934,27 @@ export default function NeighborhoodPage() {
           <div className='mb-8 bg-gradient-to-r from-[#F7F9FC] to-white rounded-xl p-6 border border-gray-200'>
             <div className='flex flex-wrap items-center justify-center gap-6'>
               <div className='text-center'>
-                <div className='text-2xl font-bold text-[#0A2540]'>206</div>
+                <div className='text-2xl font-bold text-[#0A2540]'>Live MLS</div>
                 <div className='text-sm text-gray-600'>Homes For Sale</div>
               </div>
               <div className='text-center'>
-                <div className='text-2xl font-bold text-[#3A8DDE]'>$427,967</div>
-                <div className='text-sm text-gray-600'>Average Value</div>
+                <div className='text-2xl font-bold text-[#3A8DDE]'>Mid-$400s</div>
+                <div className='text-sm text-gray-600'>ZIP 89031 median (Sep 2026)</div>
               </div>
               <div className='text-center'>
-                <div className='text-2xl font-bold text-[#16B286]'>$242</div>
-                <div className='text-sm text-gray-600'>Price per Sq Ft</div>
+                <div className='text-2xl font-bold text-[#16B286]'>38–44</div>
+                <div className='text-sm text-gray-600'>Days on market (ZIP)</div>
               </div>
               <div className='text-center'>
-                <div className='text-2xl font-bold text-[#0A2540]'>$415,000</div>
-                <div className='text-sm text-gray-600'>Median Sale Price</div>
+                <div className='text-2xl font-bold text-[#0A2540]'>Call</div>
+                <div className='text-sm text-gray-600'>For current comps</div>
               </div>
               <div className='flex flex-wrap gap-2 justify-center w-full mt-4'>
                 <Badge variant='outline' className='text-sm'>
-                  Price Range: $370K - $1.8M
+                  Ask for live Maravilla comps
                 </Badge>
                 <Badge variant='outline' className='text-sm'>
-                  46 Days on Market
+                  ZIP 89031 DOM ~38–44 (Sep 2026)
                 </Badge>
               </div>
             </div>
@@ -977,8 +975,6 @@ export default function NeighborhoodPage() {
 
             <Suspense fallback={<ListingsSkeleton />}>
               <MaravillaListings
-                priceMin='370000'
-                priceMax='1800000'
                 showMap={true}
                 listingsPerPage='12'
               />

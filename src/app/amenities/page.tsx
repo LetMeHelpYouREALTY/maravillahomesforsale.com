@@ -104,7 +104,7 @@ export default function AmenitiesPage() {
                   Open floor plans are a signature feature of Maravilla homes, creating seamless flow between the kitchen, dining, and living areas. This design philosophy eliminates unnecessary walls and barriers, allowing natural light to flood the main living space and creating an airy, expansive feeling even in homes of moderate size.
                 </p>
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  The open design facilitates better communication and interaction among family members, whether they&apos;re cooking, dining, or relaxing. Parents can easily supervise children playing in the living area while preparing meals in the kitchen, and the entire family can gather comfortably for meals, games, or conversation without feeling separated by walls.
+                  The open design keeps the kitchen in view of the living area, so cooks can stay connected with guests. People can gather for meals or conversation without being separated by walls.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
                   This layout is particularly popular for entertaining, as hosts can interact with guests throughout the main living space rather than being isolated in the kitchen. The open design also makes homes feel larger than their square footage suggests, providing excellent value and a modern aesthetic that appeals to contemporary buyers.
@@ -116,7 +116,7 @@ export default function AmenitiesPage() {
                 </h3>
                 <SectionHeadingMedia heading='Flexible Space Utilization' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  The open floor plan allows homeowners to define spaces through furniture placement and area rugs rather than fixed walls. This flexibility means the same home can adapt to different needs over time—a play area for young children can become a formal dining space as the family grows, or a home office can be created in a corner of the living area.
+                  The open floor plan allows homeowners to define spaces through furniture placement and area rugs rather than fixed walls. This flexibility means the same home can adapt over time—a sitting area can become a dining space, or a desk can be set up in a corner of the living area.
                 </p>
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   The lack of walls also means that heating and cooling systems work more efficiently, as air can circulate freely throughout the main living space. This can result in lower utility costs and more consistent temperatures throughout the home. The open design also makes it easier to install and enjoy features like whole-home audio systems or integrated lighting that enhances the entire living area.

@@ -76,7 +76,7 @@ const HOMES_FAQS: readonly FAQItem[] = [
   {
     question: 'What price range can I expect in Maravilla?',
     answer:
-      'Maravilla homes typically range from the mid-$300s to over $1M depending on size, condition, and location. We can filter by price, beds, baths, and features to match your criteria.',
+      'Ask for current Maravilla comps. Public ZIP 89031 medians as of September 2026 sit in the mid-$400s; floor plan, condition, and lot features move that number. Call (702) 500-1953 for live MLS data.',
   },
   {
     question: 'Can I tour Maravilla homes in person?',

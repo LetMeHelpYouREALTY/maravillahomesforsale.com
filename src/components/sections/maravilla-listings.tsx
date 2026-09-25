@@ -11,8 +11,8 @@ type MaravillaListingsProps = {
 };
 
 export default function MaravillaListings({
-  priceMin = '400000',
-  priceMax = '500000',
+  priceMin,
+  priceMax,
   showMap = true,
   listingsPerPage = '12',
 }: MaravillaListingsProps) {
@@ -30,8 +30,8 @@ export default function MaravillaListings({
           widget.setAttribute('sort-order', 'STATUS_AND_SIGNIFICANT_CHANGE');
           widget.setAttribute('listing-status', 'For Sale');
           widget.setAttribute('property-types', 'SFR,MF,TC');
-          widget.setAttribute('price-min', priceMin);
-          widget.setAttribute('price-max', priceMax);
+          if (priceMin) widget.setAttribute('price-min', priceMin);
+          if (priceMax) widget.setAttribute('price-max', priceMax);
           widget.setAttribute('layout', isMobile ? 'mobile' : 'desktop');
           widget.setAttribute('show-filters', 'true');
           widget.setAttribute('show-sort', 'true');

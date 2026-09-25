@@ -17,8 +17,6 @@ export default function RealEstateListings() {
       widget.setAttribute('sort-order', 'STATUS_AND_SIGNIFICANT_CHANGE');
       widget.setAttribute('listing-status', 'For Sale');
       widget.setAttribute('property-types', 'SFR,MF,TC');
-      widget.setAttribute('price-min', '600000');
-      widget.setAttribute('price-max', '1200000');
       widget.setAttribute('layout', isMobile ? 'mobile' : 'desktop');
       widget.setAttribute('show-filters', 'true');
       widget.setAttribute('show-sort', 'true');
@@ -55,8 +53,9 @@ export default function RealEstateListings() {
             </h3>
             <SectionHeadingMedia heading='North Las Vegas Family Homes: Current Listings' size='card' />
             <p className='text-gray-600'>
-              Browse our curated selection of premium properties in the $600K -
-              $1.2M range
+              Browse current Maravilla and North Las Vegas listings. ZIP 89031
+              public medians as of September 2026 sit in the mid-$400s — call
+              (702) 500-1953 for live comps.
             </p>
           </div>
 
@@ -68,7 +67,7 @@ export default function RealEstateListings() {
             <div className='text-center'>
               <div className='animate-spin rounded-full h-12 w-12 border-b-2 border-[#3A8DDE] mx-auto mb-4'></div>
               <p className='text-gray-500 text-sm'>
-                Loading luxury properties in Maravilla...
+                Loading Maravilla listings...
               </p>
             </div>
           </div>

@@ -47,47 +47,47 @@ export const metadata = genMetadata({
 export default function MarketDataPage() {
   const trends = [
     {
-      period: 'Last 12 Months',
-      priceChange: '+1%',
-      salesVolume: '849 Sales',
-      inventory: '206 Homes',
-      avgDaysOnMarket: 46,
+      period: 'ZIP 89031 (Sep 2026)',
+      priceChange: 'Mid-$400s median sold',
+      salesVolume: 'Call for volume',
+      inventory: 'Live MLS inventory',
+      avgDaysOnMarket: '38–44',
       trend: 'up' as const,
     },
     {
       period: 'Current Market',
-      priceChange: 'Median: $415K',
-      salesVolume: 'List Price: $425K',
-      inventory: '2.90 Months Supply',
-      avgDaysOnMarket: 46,
+      priceChange: 'Ask for a dated CMA',
+      salesVolume: 'List price varies by plan',
+      inventory: 'Call (702) 500-1953',
+      avgDaysOnMarket: 'Varies',
       trend: 'up' as const,
     },
     {
-      period: 'Price Range',
-      priceChange: '$370K - $1.8M',
-      salesVolume: 'Avg: $242/sqft',
-      inventory: '21,469 Total Homes',
-      avgDaysOnMarket: 46,
+      period: 'Maravilla context',
+      priceChange: 'Floor-plan specific',
+      salesVolume: '1,519–2,947 sq ft',
+      inventory: 'Resale + nearby inventory',
+      avgDaysOnMarket: '38–44 ZIP',
       trend: 'up' as const,
     },
   ];
 
   const insights = [
     {
-      title: "Strong Seller's Market",
-      description: 'Properties are selling quickly with multiple offers common',
+      title: 'Comps beat averages',
+      description: 'Ask for a dated CMA. ZIP 89031 medians as of September 2026 sit in the mid-$400s.',
       icon: TrendingUp,
       color: 'text-[#16B286]',
     },
     {
-      title: 'Price Appreciation',
-      description: 'Consistent year-over-year growth in home values',
+      title: 'Days on market',
+      description: 'Public ZIP figures recently ran about 38–44 days. Individual listings can move faster or slower.',
       icon: DollarSign,
       color: 'text-[#3A8DDE]',
     },
     {
-      title: 'High Demand',
-      description: 'Growing interest from buyers seeking luxury homes',
+      title: 'Tour what is live',
+      description: 'Inventory changes daily. Browse current listings or call (702) 500-1953 for MLS numbers.',
       icon: Home,
       color: 'text-[#0A2540]',
     },
@@ -218,19 +218,17 @@ export default function MarketDataPage() {
             </CardHeader>
             <CardContent className='space-y-4 text-gray-600 leading-relaxed'>
               <p>
-                On average, homes in Maravilla, North Las Vegas sell after 25
-                days on the market compared to the national average of 53 days.
-                The median sale price for homes in Maravilla over the last 12
-                months is $525,000, reflecting the luxury nature of the community.
-                The average price per square foot varies by property type, making
-                it an attractive market for both buyers and sellers.
+                Public ZIP 89031 figures as of September 2026 put days on market
+                around 38–44 days and median sold prices in the mid-$400s
+                (~$415K–$437K). Maravilla floor plans, condition, and lot
+                features move those numbers. Call (702) 500-1953 for current
+                comps instead of relying on a static average.
               </p>
               <p>
-                Maravilla features luxury homes with premium amenities and
-                distinctive floor plans. The market shows strong demand for
-                well-maintained properties with modern features. Homes range from
-                $380,000 to $600,000+, offering options for various budgets
-                while maintaining the community&apos;s luxury standards.
+                Maravilla homes typically run 1,519–2,947 square feet with
+                single-story and two-story plans. Inventory changes daily — browse
+                live listings on this site. Do not treat a webpage price band as
+                today&apos;s asking price.
               </p>
               <p>
                 Maravilla&apos;s appeal extends beyond its location.

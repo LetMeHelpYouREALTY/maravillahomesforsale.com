@@ -599,6 +599,79 @@ export function generateFAQPageSchema(
   };
 }
 
+function parseVerifiedNevadaAddress(full: string): {
+  '@type': 'PostalAddress';
+  streetAddress: string;
+  addressLocality: string;
+  addressRegion: string;
+  postalCode: string;
+  addressCountry: 'US';
+} | null {
+  const match = full.match(/^(.+),\s*([^,]+),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
+  if (!match) return null;
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: match[1].trim(),
+    addressLocality: match[2].trim(),
+    addressRegion: match[3],
+    postalCode: match[4],
+    addressCountry: 'US',
+  };
+}
+
+export function generateNearbyPlacesItemListSchema(
+  places: ReadonlyArray<{
+    name: string;
+    address?: string;
+    schemaType: string;
+  }>,
+  listName: string
+) {
+  const withAddress = places.filter((place) => place.address);
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: listName,
+    itemListElement: withAddress.map((place, index) => {
+      const address = parseVerifiedNevadaAddress(place.address!);
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': place.schemaType,
+          name: place.name,
+          ...(address ? { address } : {}),
+        },
+      };
+    }),
+  };
+}
+
+/** Merge RealEstateAgent @id with Maravilla as areaServed (no duplicate agent entity). */
+export function generateAgentAreaServedMaravillaSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    '@id': `${siteUrl}#realestateagent`,
+    areaServed: {
+      '@type': 'Place',
+      name: BUSINESS_INFO.community.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: BUSINESS_INFO.community.locality,
+        addressRegion: BUSINESS_INFO.community.region,
+        postalCode: BUSINESS_INFO.community.postalCode,
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: BUSINESS_INFO.communityGeo.latitude,
+        longitude: BUSINESS_INFO.communityGeo.longitude,
+      },
+    },
+  };
+}
+
 /**
  * Generate HowTo schema for step-by-step guides (e.g. buyer's guide)
  * 2025 Best Practice: HowTo can show rich results in search

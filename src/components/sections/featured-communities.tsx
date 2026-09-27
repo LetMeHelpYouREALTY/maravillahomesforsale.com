@@ -47,7 +47,7 @@ export default function FeaturedCommunities() {
       amenities: ['Nellis AFB', 'VA Hospital', 'Shopping'],
       image: '/images/pages/map-hero.jpg',
       imageAlt: 'North Las Vegas Family Homes: Prime Location — I-15 and I-215 access from North Las Vegas',
-      href: '/map-and-nearby-places',
+      href: '/nearby-amenities',
     },
   ];
 

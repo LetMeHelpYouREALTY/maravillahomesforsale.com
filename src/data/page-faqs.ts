@@ -1,4 +1,5 @@
 import { MARAVILLA_FAQS } from '@/lib/metadata';
+import { NEARBY_AMENITIES_FAQS } from '@/data/maravilla-nearby-amenities';
 
 export interface FAQItem {
   question: string;
@@ -409,6 +410,11 @@ const PAGE_FAQ_MAP: Record<string, PageFAQConfig> = {
     title: 'Map & Location FAQs',
     subtitle: 'Where is Maravilla and what is nearby?',
     faqs: MAP_FAQS,
+  },
+  '/nearby-amenities': {
+    title: 'Nearby Amenities FAQs',
+    subtitle: 'Grocery, parks, schools, and commute from Maravilla',
+    faqs: NEARBY_AMENITIES_FAQS,
   },
   '/market-data': {
     title: 'Market Data FAQs',

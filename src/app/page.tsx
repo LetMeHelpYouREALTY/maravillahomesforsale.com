@@ -22,6 +22,7 @@ import {
 import { HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
 import { KCM_VIDEO_ENTRIES } from '@/data/kcm-videos';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+import NearbyAmenitiesSection from '@/components/sections/nearby-amenities-section';
 
 
 const baseUrl = (
@@ -215,6 +216,7 @@ export default function Home() {
         </section>
 
         <MarketSnapshot />
+        <NearbyAmenitiesSection title="What's Nearby in Maravilla" />
         <Suspense fallback={<PropertyCategoriesSkeleton />}>
           <DynamicPropertyCategories />
         </Suspense>
@@ -306,6 +308,14 @@ export default function Home() {
                     className='text-[#0A2540] hover:text-[#3A8DDE] hover:underline transition-colors font-medium'
                   >
                     HOA Information
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href='/nearby-amenities'
+                    className='text-[#0A2540] hover:text-[#3A8DDE] hover:underline transition-colors font-medium'
+                  >
+                    Nearby Amenities
                   </Link>
                 </li>
                 <li>

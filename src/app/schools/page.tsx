@@ -37,7 +37,7 @@ export default function SchoolsPage() {
             North Las Vegas Family Homes: Schools
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
-            Maravilla is served by the <strong>Clark County School District</strong>. Families choose Maravilla for its community feel and access to area schools. Jump to <a href='#school-info' className='text-white hover:text-gray-200 underline font-medium'>school info</a>, <a href='#zones' className='text-white hover:text-gray-200 underline font-medium'>school zones</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>nearby places & map</Link>, the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</Link>.
+            Maravilla is served by the <strong>Clark County School District</strong>. Buyers choose Maravilla for its community feel and access to area schools. Jump to <a href='#school-info' className='text-white hover:text-gray-200 underline font-medium'>school info</a>, <a href='#zones' className='text-white hover:text-gray-200 underline font-medium'>school zones</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/nearby-amenities' className='text-white hover:text-gray-200 underline font-medium'>nearby places & map</Link>, the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</Link>.
           </p>
         </div>
       </div>
@@ -110,7 +110,7 @@ export default function SchoolsPage() {
             Clark County School District updates boundary maps periodically. The schools that serve a specific Maravilla address can be confirmed through CCSD&apos;s official tools or by contacting the district. When you&apos;re considering a particular home, Dr. Jan Duffy can help you verify the assigned schools for that address.
           </p>
           <p className='text-gray-700 leading-relaxed'>
-            Use our <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>map and nearby places</Link> page to explore the area, and <Link href='/contact' className='text-[#3A8DDE] hover:underline font-medium'>contact Dr. Duffy</Link> for school information tied to specific listings.
+            Use our <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline font-medium'>map and nearby places</Link> page to explore the area, and <Link href='/contact' className='text-[#3A8DDE] hover:underline font-medium'>contact Dr. Duffy</Link> for school information tied to specific listings.
           </p>
         </div>
       </section>
@@ -135,7 +135,7 @@ export default function SchoolsPage() {
               <Link href='/contact'>Contact Dr. Duffy</Link>
             </Button>
             <Button asChild size='lg' variant='outline'>
-              <Link href='/map-and-nearby-places'>Map & Nearby Places</Link>
+              <Link href='/nearby-amenities'>Map & Nearby Places</Link>
             </Button>
           </div>
         </div>

@@ -210,13 +210,22 @@ function generateSpecialOpeningHoursSchema() {
   }));
 }
 
+/** Canonical @id for Dr. Jan Duffy — reference from other JSON-LD blocks instead of duplicating. */
+export const REAL_ESTATE_AGENT_ID = `${siteUrl}#realestateagent`;
+
 export function generateLocalBusinessSchema() {
+  return generateRealEstateAgentReference();
+}
+
+function generateRealEstateAgentSchemaFull() {
   return {
     '@context': 'https://schema.org',
-    '@type': ['LocalBusiness', 'RealEstateAgent'],
-    '@id': `${siteUrl}#localbusiness`,
-    name: businessName,
-    description: `${GBP_DESCRIPTION} ${schemaAttributeNote}.`,
+    '@type': ['RealEstateAgent', 'LocalBusiness'],
+    '@id': REAL_ESTATE_AGENT_ID,
+    name: 'Dr. Jan Duffy',
+    alternateName: [businessName, 'Jan Duffy', 'Dr. Duffy'],
+    description: `REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla and ${BUSINESS_INFO.serviceArea}. ${schemaAttributeNote}.`,
+    jobTitle: 'REALTOR®',
     url: siteUrl,
     telephone: businessPhone,
     email: businessEmail,
@@ -228,7 +237,12 @@ export function generateLocalBusinessSchema() {
       toAbsoluteImageUrl('/images/pages/homes-hero.jpg', siteUrl),
       toAbsoluteImageUrl('/photos/01-1 (2).jpg', siteUrl),
     ],
-    logo: agentImageUrl(),
+    logo: {
+      '@type': 'ImageObject',
+      url: agentImageUrl(),
+      width: 512,
+      height: 512,
+    },
     address: {
       '@type': 'PostalAddress',
       ...businessAddress,
@@ -238,6 +252,73 @@ export function generateLocalBusinessSchema() {
       ...businessGeo,
     },
     hasMap: BUSINESS_INFO.maps.business,
+    worksFor: {
+      '@type': 'Organization',
+      name: 'Berkshire Hathaway HomeServices Nevada Properties',
+      url: 'https://www.berkshirehathawayhs.com',
+    },
+    memberOf: {
+      '@type': 'Organization',
+      name: 'Berkshire Hathaway HomeServices Nevada Properties',
+    },
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Real Estate License',
+      recognizedBy: {
+        '@type': 'Organization',
+        name: 'Nevada Real Estate Division',
+      },
+      identifier: BUSINESS_INFO.license,
+    },
+    knowsAbout: [
+      'North Las Vegas Family Homes',
+      'North Las Vegas Real Estate',
+      'Maravilla Homes',
+      'First-time Homebuyers',
+      'Home Selling',
+      'Property Valuation',
+      'VA Loans',
+      'FHA Loans',
+      'Real Estate Market Analysis',
+    ],
+    serviceArea: {
+      '@type': 'Place',
+      name: 'Maravilla',
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: 'Las Vegas',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
+    },
+    contactPoint: [
+      {
+        '@type': 'ContactPoint',
+        telephone: businessPhone,
+        contactType: 'customer service',
+        areaServed: 'US',
+        availableLanguage: ['English'],
+        hoursAvailable: {
+          '@type': 'OpeningHoursSpecification',
+          dayOfWeek: BUSINESS_INFO.hours.schema.dayOfWeek,
+          opens: BUSINESS_INFO.hours.schema.opens,
+          closes: BUSINESS_INFO.hours.schema.closes,
+        },
+      },
+      {
+        '@type': 'ContactPoint',
+        telephone: businessPhone,
+        contactType: 'sms',
+        areaServed: 'US',
+        availableLanguage: ['English'],
+      },
+      {
+        '@type': 'ContactPoint',
+        email: businessEmail,
+        contactType: 'customer service',
+        areaServed: 'US',
+      },
+    ],
     sameAs: [
       BUSINESS_INFO.social.facebook,
       BUSINESS_INFO.social.linkedin,
@@ -245,8 +326,25 @@ export function generateLocalBusinessSchema() {
       BUSINESS_INFO.googleBusinessProfile,
     ],
     areaServed: [
+      {
+        '@type': 'City',
+        name: 'North Las Vegas',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
+      {
+        '@type': 'City',
+        name: 'Las Vegas',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
+      {
+        '@type': 'City',
+        name: 'Henderson',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
       { '@type': 'Place', name: BUSINESS_INFO.serviceArea },
-      { '@type': 'City', name: 'North Las Vegas', addressRegion: 'NV' },
     ],
     openingHoursSpecification: [
       {
@@ -258,7 +356,7 @@ export function generateLocalBusinessSchema() {
     ],
     specialOpeningHoursSpecification: generateSpecialOpeningHoursSchema(),
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
-    priceRange: '$$$',
+    priceRange: '$$',
     currenciesAccepted: 'USD',
     ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
   };
@@ -329,176 +427,28 @@ export function generateOrganizationSchema() {
     ],
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
+    founder: { '@id': REAL_ESTATE_AGENT_ID },
   };
 }
 
-/**
- * Generate Person schema for E-E-A-T (2025 Best Practice)
- * Showcases expertise, experience, authoritativeness, and trustworthiness
- */
+/** @deprecated Person entity merged into canonical RealEstateAgent — returns an @id reference only. */
 export function generatePersonSchema() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'Person',
-    '@id': `${siteUrl}#person`,
-    name: 'Dr. Jan Duffy',
-    alternateName: ['Jan Duffy', 'Dr. Duffy'],
-    jobTitle: 'REALTOR®',
-    description:
-      'Dr. Jan Duffy is a highly experienced REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla, Las Vegas, North Las Vegas, and Henderson. Expert, data-driven advice and personalized consultations.',
-    image: agentImageUrl(),
-    url: siteUrl,
-    email: businessEmail,
-    telephone: businessPhone,
-    address: {
-      '@type': 'PostalAddress',
-      ...businessAddress,
-    },
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Berkshire Hathaway HomeServices Nevada Properties',
-      url: 'https://www.berkshirehathawayhs.com',
-    },
-    hasCredential: {
-      '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'Real Estate License',
-      recognizedBy: {
-        '@type': 'Organization',
-        name: 'Nevada Real Estate Division',
-      },
-      identifier: 'S.0197614',
-    },
-    knowsAbout: [
-      'North Las Vegas Family Homes',
-      'North Las Vegas Real Estate',
-      'Maravilla Homes',
-      'Luxury Real Estate',
-      'First-time Homebuyers',
-      'Home Selling',
-      'Property Valuation',
-      'VA Loans',
-      'FHA Loans',
-      'Real Estate Market Analysis',
-    ],
-    alumniOf: {
-      '@type': 'EducationalOrganization',
-      name: 'Real Estate Education',
-    },
-    sameAs: [
-      BUSINESS_INFO.social.facebook,
-      BUSINESS_INFO.social.youtube,
-      BUSINESS_INFO.social.linkedin,
-      BUSINESS_INFO.googleBusinessProfile,
-    ],
+    '@id': REAL_ESTATE_AGENT_ID,
   };
 }
 
-/**
- * Generate RealEstateAgent schema (Enhanced for 2025)
- */
+/** Canonical RealEstateAgent JSON-LD (single agent entity for the site). */
 export function generateRealEstateAgentSchema() {
+  return generateRealEstateAgentSchemaFull();
+}
+
+/** Lightweight reference when a page should link to the agent without re-emitting the full node. */
+export function generateRealEstateAgentReference() {
   return {
     '@context': 'https://schema.org',
-    '@type': 'RealEstateAgent',
-    '@id': `${siteUrl}#realestateagent`,
-    name: 'Dr. Jan Duffy',
-    description: `REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla and ${BUSINESS_INFO.serviceArea}. ${schemaAttributeNote}.`,
-    jobTitle: 'REALTOR®',
-    ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
-    worksFor: {
-      '@type': 'Organization',
-      name: 'Berkshire Hathaway HomeServices Nevada Properties',
-      url: 'https://www.berkshirehathawayhs.com',
-    },
-    url: siteUrl,
-    logo: {
-      '@type': 'ImageObject',
-      url: agentImageUrl(),
-      width: 512,
-      height: 512,
-    },
-    image: agentImageUrl(),
-    address: {
-      '@type': 'PostalAddress',
-      ...businessAddress,
-    },
-    areaServed: [
-      {
-        '@type': 'City',
-        name: 'North Las Vegas',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-      {
-        '@type': 'City',
-        name: 'Las Vegas',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-      {
-        '@type': 'City',
-        name: 'Henderson',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-    ],
-    serviceArea: {
-      '@type': 'Place',
-      name: 'Maravilla',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Las Vegas',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-    },
-    contactPoint: [
-      {
-        '@type': 'ContactPoint',
-        telephone: businessPhone,
-        contactType: 'customer service',
-        areaServed: 'US',
-        availableLanguage: ['English'],
-        hoursAvailable: {
-          '@type': 'OpeningHoursSpecification',
-          dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
-          opens: '06:00',
-          closes: '21:00',
-        },
-      },
-      {
-        '@type': 'ContactPoint',
-        telephone: businessPhone,
-        contactType: 'sms',
-        areaServed: 'US',
-        availableLanguage: ['English'],
-      },
-      {
-        '@type': 'ContactPoint',
-        email: businessEmail,
-        contactType: 'customer service',
-        areaServed: 'US',
-      },
-    ],
-    memberOf: {
-      '@type': 'Organization',
-      name: 'Berkshire Hathaway HomeServices Nevada Properties',
-    },
-    hasCredential: {
-      '@type': 'EducationalOccupationalCredential',
-      credentialCategory: 'Real Estate License',
-      recognizedBy: {
-        '@type': 'Organization',
-        name: 'Nevada Real Estate Division',
-      },
-      identifier: 'S.0197614',
-    },
-    sameAs: [
-      BUSINESS_INFO.social.facebook,
-      BUSINESS_INFO.social.linkedin,
-      BUSINESS_INFO.social.youtube,
-      BUSINESS_INFO.googleBusinessProfile,
-    ],
+    '@id': REAL_ESTATE_AGENT_ID,
   };
 }
 
@@ -572,8 +522,8 @@ export function generateWebPageSchema({
     url,
     inLanguage: 'en-US',
     isPartOf: { '@id': `${siteUrl}#website` },
-    about: { '@id': `${siteUrl}#person` },
-    author: { '@id': `${siteUrl}#person` },
+    about: { '@id': REAL_ESTATE_AGENT_ID },
+    author: { '@id': REAL_ESTATE_AGENT_ID },
     publisher: { '@id': `${siteUrl}#organization` },
     primaryImageOfPage: {
       '@type': 'ImageObject',
@@ -872,12 +822,7 @@ export function generateServiceSchema({
     name,
     description,
     serviceType,
-    provider: provider || {
-      '@type': 'LocalBusiness',
-      name: businessName,
-      url: siteUrl,
-      telephone: businessPhone,
-    },
+    provider: provider || { '@id': REAL_ESTATE_AGENT_ID },
     areaServed: areaServed || {
       '@type': 'City',
       name: 'North Las Vegas',

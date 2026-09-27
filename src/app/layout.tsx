@@ -3,10 +3,9 @@ import Script from 'next/script';
 import { Source_Sans_3, Open_Sans } from 'next/font/google';
 import {
   generateOrganizationSchema,
-  generateLocalBusinessSchema,
   generateWebSiteSchema,
-  generatePersonSchema,
   generateRealEstateAgentSchema,
+  REAL_ESTATE_AGENT_ID,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import { AGENT_PHOTO, HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
@@ -269,27 +268,11 @@ export default function RootLayout({
           </Script>
         ) : null}
 
-        {/* Structured Data for E-E-A-T: Person Schema (2025 Best Practice) */}
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generatePersonSchema()),
-          }}
-        />
-
-        {/* Structured Data for Real Estate Agent */}
+        {/* Structured Data: single canonical RealEstateAgent (Dr. Jan Duffy) */}
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(generateRealEstateAgentSchema()),
-          }}
-        />
-
-        {/* Structured Data for Local Business */}
-        <script
-          type='application/ld+json'
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(generateLocalBusinessSchema()),
           }}
         />
 
@@ -320,12 +303,7 @@ export default function RootLayout({
               description:
                 'Professional real estate services including home buying, selling, property valuation, and market analysis in North Las Vegas and Maravilla communities.',
               serviceType: 'Real Estate Services',
-              provider: {
-                '@type': 'LocalBusiness',
-                name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-                url: siteUrl,
-                telephone: '+1-702-500-1953',
-              },
+              provider: { '@id': REAL_ESTATE_AGENT_ID },
               areaServed: [
                 {
                   '@type': 'City',

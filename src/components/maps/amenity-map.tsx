@@ -4,7 +4,6 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import {
   AMENITY_CATEGORIES,
-  AMENITY_SEARCH_RADIUS_METERS,
   getDirectionsUrl,
   getGoogleMapsEmbedUrl,
   MARAVILLA_COMMUNITY,
@@ -15,6 +14,8 @@ import {
   CURATED_NEARBY_PLACES,
   curatedPlacesForCategory,
 } from '@/data/maravilla-nearby-amenities';
+import { loadGoogleMaps, mapsAuthFailed } from '@/lib/google-maps-loader';
+import { searchCategory } from '@/lib/places-search-category';
 import { useInView } from '@/hooks/use-in-view';
 import { cn } from '@/lib/utils';
 
@@ -24,56 +25,67 @@ const MAP_ID = process.env.NEXT_PUBLIC_GOOGLE_MAPS_MAP_ID;
 type AmenityMapProps = {
   height?: string;
   className?: string;
-  /** Shorter chip row on embedded sections */
   compact?: boolean;
   showStaticList?: boolean;
 };
 
 type MapLoadState = 'idle' | 'loading' | 'ready' | 'fallback';
 
-let mapsScriptPromise: Promise<void> | null = null;
-
-function loadGoogleMapsScript(): Promise<void> {
-  if (typeof window === 'undefined') {
-    return Promise.reject(new Error('Maps unavailable during SSR'));
+function placeLatLng(location: google.maps.places.Place['location']): google.maps.LatLngLiteral | null {
+  if (!location) return null;
+  if (typeof location.lat === 'function' && typeof location.lng === 'function') {
+    return { lat: location.lat(), lng: location.lng() };
   }
-  if (window.google?.maps) {
-    return Promise.resolve();
+  if (typeof (location as google.maps.LatLng).toJSON === 'function') {
+    return (location as google.maps.LatLng).toJSON();
   }
-  if (mapsScriptPromise) {
-    return mapsScriptPromise;
-  }
-  mapsScriptPromise = new Promise((resolve, reject) => {
-    const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=${MAPS_API_KEY}&loading=async`;
-    script.async = true;
-    script.defer = true;
-    script.onerror = () => reject(new Error('Google Maps script failed to load'));
-    script.onload = () => resolve();
-    document.head.appendChild(script);
-  });
-  return mapsScriptPromise;
+  return null;
 }
 
-function buildInfoWindowHtml(place: {
-  name: string;
-  address?: string;
-  rating?: number;
-  directionsUrl: string;
-}): string {
-  const ratingLine =
-    place.rating !== undefined
-      ? `<p style="margin:4px 0;font-size:13px;">Rating: ${place.rating.toFixed(1)}</p>`
-      : '';
-  const addressLine = place.address
-    ? `<p style="margin:4px 0;font-size:13px;color:#444;">${place.address}</p>`
-    : '';
-  return `<div style="max-width:240px;padding:4px 2px;">
-    <strong>${place.name}</strong>
-    ${ratingLine}
-    ${addressLine}
-    <a href="${place.directionsUrl}" target="_blank" rel="noopener noreferrer" style="color:#3A8DDE;font-size:13px;">Directions</a>
-  </div>`;
+function displayNameText(displayName: unknown): string {
+  if (!displayName) return 'Place';
+  if (typeof displayName === 'string') return displayName;
+  if (
+    typeof displayName === 'object' &&
+    displayName !== null &&
+    'text' in displayName &&
+    typeof (displayName as { text?: string }).text === 'string'
+  ) {
+    return (displayName as { text: string }).text;
+  }
+  return 'Place';
+}
+
+function openPlaceInfoWindow(
+  infoWindow: google.maps.InfoWindow,
+  map: google.maps.Map,
+  marker: google.maps.Marker,
+  place: { name: string; address?: string; directionsUrl: string }
+): void {
+  const div = document.createElement('div');
+  div.style.maxWidth = '240px';
+  div.style.padding = '4px 2px';
+  const strong = document.createElement('strong');
+  strong.textContent = place.name;
+  div.appendChild(strong);
+  if (place.address) {
+    const p = document.createElement('p');
+    p.style.margin = '4px 0';
+    p.style.fontSize = '13px';
+    p.style.color = '#444';
+    p.textContent = place.address;
+    div.appendChild(p);
+  }
+  const a = document.createElement('a');
+  a.href = place.directionsUrl;
+  a.target = '_blank';
+  a.rel = 'noopener noreferrer';
+  a.style.color = '#3A8DDE';
+  a.style.fontSize = '13px';
+  a.textContent = 'Directions';
+  div.appendChild(a);
+  infoWindow.setContent(div);
+  infoWindow.open({ map, anchor: marker });
 }
 
 function CuratedPlaceList({ category }: { category: AmenityCategoryId }) {
@@ -88,9 +100,9 @@ function CuratedPlaceList({ category }: { category: AmenityCategoryId }) {
   return (
     <ul className='mt-4 space-y-2' aria-label={`${category} near Maravilla`}>
       {places.map((place) => (
-        <li key={`${place.name}-${place.address}`} className='text-sm text-gray-700'>
+        <li key={`${place.name}-${place.address ?? 'no-address'}`} className='text-sm text-gray-700'>
           <span className='font-medium text-[#0A2540]'>{place.name}</span>
-          <span className='text-gray-500'> — {place.address}</span>
+          {place.address ? <span className='text-gray-500'> — {place.address}</span> : null}
         </li>
       ))}
     </ul>
@@ -116,11 +128,6 @@ function EmbedFallback({ height, category }: { height: string; category: Amenity
         />
       </div>
       <CuratedPlaceList category={category} />
-      <p className='text-xs text-gray-500 mt-3'>
-        Interactive amenity search appears when{' '}
-        <code className='text-[11px]'>NEXT_PUBLIC_GOOGLE_MAPS_API_KEY</code> is configured in
-        Vercel.
-      </p>
     </div>
   );
 }
@@ -138,15 +145,26 @@ export default function AmenityMap({
   const placeMarkersRef = useRef<google.maps.Marker[]>([]);
   const infoWindowRef = useRef<google.maps.InfoWindow | null>(null);
   const [activeCategory, setActiveCategory] = useState<AmenityCategoryId>('grocery');
-  const [loadState, setLoadState] = useState<MapLoadState>(
-    MAPS_API_KEY ? 'idle' : 'fallback'
-  );
+  const [loadState, setLoadState] = useState<MapLoadState>(() => {
+    if (!MAPS_API_KEY || mapsAuthFailed) return 'fallback';
+    return 'idle';
+  });
+  const [searchUseCurated, setSearchUseCurated] = useState(false);
   const [ariaMessage, setAriaMessage] = useState('');
 
   const clearPlaceMarkers = useCallback(() => {
     placeMarkersRef.current.forEach((m) => m.setMap(null));
     placeMarkersRef.current = [];
   }, []);
+
+  const enterFallback = useCallback(() => {
+    clearPlaceMarkers();
+    communityMarkerRef.current?.setMap(null);
+    communityMarkerRef.current = null;
+    mapRef.current = null;
+    infoWindowRef.current = null;
+    setLoadState('fallback');
+  }, [clearPlaceMarkers]);
 
   const ensureCommunityMarker = useCallback(() => {
     if (!mapRef.current || communityMarkerRef.current) return;
@@ -159,22 +177,24 @@ export default function AmenityMap({
       },
     });
     marker.addListener('click', () => {
-      infoWindowRef.current?.setContent(
-        buildInfoWindowHtml({
-          name: MARAVILLA_COMMUNITY.name,
-          address: MARAVILLA_COMMUNITY.fullAddress,
-          directionsUrl: MARAVILLA_COMMUNITY.mapsUrl,
-        })
-      );
-      infoWindowRef.current?.open({ map: mapRef.current!, anchor: marker });
+      if (!mapRef.current || !infoWindowRef.current) return;
+      openPlaceInfoWindow(infoWindowRef.current, mapRef.current, marker, {
+        name: MARAVILLA_COMMUNITY.name,
+        address: MARAVILLA_COMMUNITY.fullAddress,
+        directionsUrl: MARAVILLA_COMMUNITY.mapsUrl,
+      });
     });
     communityMarkerRef.current = marker;
   }, []);
 
   const initMap = useCallback(async () => {
-    if (!mapContainerRef.current || mapRef.current) return;
+    if (!mapContainerRef.current || mapRef.current || !MAPS_API_KEY) return;
+    if (mapsAuthFailed) {
+      enterFallback();
+      return;
+    }
     try {
-      await loadGoogleMapsScript();
+      await loadGoogleMaps(MAPS_API_KEY);
       await google.maps.importLibrary('maps');
       mapRef.current = new google.maps.Map(mapContainerRef.current, {
         center: MARAVILLA_MAP_CENTER,
@@ -189,77 +209,68 @@ export default function AmenityMap({
       ensureCommunityMarker();
       setLoadState('ready');
     } catch {
-      setLoadState('fallback');
+      enterFallback();
     }
-  }, [ensureCommunityMarker]);
+  }, [ensureCommunityMarker, enterFallback]);
 
-  const searchCategory = useCallback(
+  const runCategorySearch = useCallback(
     async (categoryId: AmenityCategoryId) => {
       if (!mapRef.current || loadState !== 'ready') return;
       const category = AMENITY_CATEGORIES.find((c) => c.id === categoryId);
       if (!category) return;
 
       clearPlaceMarkers();
+      setSearchUseCurated(false);
       setAriaMessage(`Loading ${category.label} near ${MARAVILLA_COMMUNITY.name}…`);
 
       try {
-        const placesLib = (await google.maps.importLibrary('places')) as {
-          Place: PlaceClass;
-        };
-        const { Place } = placesLib;
-        const { places } = await Place.searchNearby({
-          fields: ['displayName', 'formattedAddress', 'location', 'rating', 'id', 'googleMapsURI'],
-          locationRestriction: {
-            center: MARAVILLA_MAP_CENTER,
-            radius: AMENITY_SEARCH_RADIUS_METERS,
-          },
-          includedPrimaryTypes: category.placeTypes,
-          maxResultCount: 12,
-        });
+        const places = await searchCategory(
+          MARAVILLA_MAP_CENTER,
+          categoryId,
+          category.placeTypes
+        );
 
         const bounds = new google.maps.LatLngBounds();
         bounds.extend(MARAVILLA_MAP_CENTER);
 
         places.forEach((place) => {
-          const loc = place.location;
-          if (!loc) return;
-          const name =
-            typeof place.displayName === 'string'
-              ? place.displayName
-              : place.displayName?.text ?? 'Place';
+          const position = placeLatLng(place.location);
+          if (!position) return;
+          const name = displayNameText(place.displayName);
           const directionsUrl =
-            place.googleMapsURI ??
-            getDirectionsUrl(loc.lat, loc.lng, place.id);
+            place.googleMapsURI ?? getDirectionsUrl(position.lat, position.lng, place.id);
           const marker = new google.maps.Marker({
             map: mapRef.current!,
-            position: loc,
+            position,
             title: name,
           });
           marker.addListener('click', () => {
-            infoWindowRef.current?.setContent(
-              buildInfoWindowHtml({
-                name,
-                address: place.formattedAddress,
-                rating: place.rating,
-                directionsUrl,
-              })
-            );
-            infoWindowRef.current?.open({ map: mapRef.current!, anchor: marker });
+            if (!mapRef.current || !infoWindowRef.current) return;
+            openPlaceInfoWindow(infoWindowRef.current, mapRef.current, marker, {
+              name,
+              address: place.formattedAddress ?? undefined,
+              directionsUrl,
+            });
           });
           placeMarkersRef.current.push(marker);
-          bounds.extend(loc);
+          bounds.extend(position);
         });
 
         if (places.length > 0) {
-          mapRef.current.fitBounds(bounds);
+          mapRef.current!.fitBounds(bounds);
+          setAriaMessage(
+            `${places.length} ${category.label.toLowerCase()} locations shown near ${MARAVILLA_COMMUNITY.name}.`
+          );
         } else {
-          mapRef.current.setCenter(MARAVILLA_MAP_CENTER);
-          mapRef.current.setZoom(13);
+          mapRef.current!.setCenter(MARAVILLA_MAP_CENTER);
+          mapRef.current!.setZoom(13);
+          setSearchUseCurated(true);
+          setAriaMessage(
+            `Showing curated ${category.label.toLowerCase()} list — no live results for this filter.`
+          );
         }
-        setAriaMessage(
-          `${places.length} ${category.label.toLowerCase()} locations shown near ${MARAVILLA_COMMUNITY.name}.`
-        );
       } catch {
+        setSearchUseCurated(true);
         setAriaMessage(
           `Showing curated ${category.label.toLowerCase()} list — live search unavailable.`
         );
@@ -267,6 +278,13 @@ export default function AmenityMap({
     },
     [clearPlaceMarkers, loadState]
   );
+
+  useEffect(() => {
+    const onAuthFail = () => enterFallback();
+    if (mapsAuthFailed) enterFallback();
+    window.addEventListener('gmaps:auth-failure', onAuthFail);
+    return () => window.removeEventListener('gmaps:auth-failure', onAuthFail);
+  }, [enterFallback]);
 
   useEffect(() => {
     if (!isInView || !MAPS_API_KEY || loadState === 'fallback') return;
@@ -278,9 +296,9 @@ export default function AmenityMap({
 
   useEffect(() => {
     if (loadState === 'ready') {
-      void searchCategory(activeCategory);
+      void runCategorySearch(activeCategory);
     }
-  }, [activeCategory, loadState, searchCategory]);
+  }, [activeCategory, loadState, runCategorySearch]);
 
   const useFallback = !MAPS_API_KEY || loadState === 'fallback';
 
@@ -289,10 +307,7 @@ export default function AmenityMap({
       <div
         role='tablist'
         aria-label='Filter nearby amenities by category'
-        className={cn(
-          'flex flex-wrap gap-2 mb-4',
-          compact ? 'max-h-24 overflow-y-auto' : ''
-        )}
+        className={cn('flex flex-wrap gap-2 mb-4', compact ? 'max-h-24 overflow-y-auto' : '')}
       >
         {AMENITY_CATEGORIES.map((cat) => {
           const selected = activeCategory === cat.id;
@@ -320,7 +335,11 @@ export default function AmenityMap({
 
       <p className='sr-only' aria-live='polite'>{ariaMessage}</p>
 
-      <div id='maravilla-amenity-map-panel' role='tabpanel' aria-labelledby={`amenity-tab-${activeCategory}`}>
+      <div
+        id='maravilla-amenity-map-panel'
+        role='tabpanel'
+        aria-labelledby={`amenity-tab-${activeCategory}`}
+      >
         {useFallback ? (
           <EmbedFallback height={height} category={activeCategory} />
         ) : (
@@ -339,7 +358,10 @@ export default function AmenityMap({
                 <p className='text-sm text-gray-600'>Loading map…</p>
               </div>
             )}
-            {showStaticList && loadState === 'ready' && (
+            {searchUseCurated && loadState === 'ready' && (
+              <CuratedPlaceList category={activeCategory} />
+            )}
+            {showStaticList && loadState === 'ready' && !searchUseCurated && (
               <div className='mt-4'>
                 <p className='text-sm font-medium text-[#0A2540] mb-1'>
                   Also nearby (verified addresses)

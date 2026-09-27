@@ -599,34 +599,51 @@ export function generateFAQPageSchema(
   };
 }
 
+function parseVerifiedNevadaAddress(full: string): {
+  '@type': 'PostalAddress';
+  streetAddress: string;
+  addressLocality: string;
+  addressRegion: string;
+  postalCode: string;
+  addressCountry: 'US';
+} | null {
+  const match = full.match(/^(.+),\s*([^,]+),\s*([A-Z]{2})\s+(\d{5}(?:-\d{4})?)$/);
+  if (!match) return null;
+  return {
+    '@type': 'PostalAddress',
+    streetAddress: match[1].trim(),
+    addressLocality: match[2].trim(),
+    addressRegion: match[3],
+    postalCode: match[4],
+    addressCountry: 'US',
+  };
+}
+
 export function generateNearbyPlacesItemListSchema(
   places: ReadonlyArray<{
     name: string;
-    address: string;
+    address?: string;
     schemaType: string;
   }>,
   listName: string
 ) {
+  const withAddress = places.filter((place) => place.address);
   return {
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: listName,
-    itemListElement: places.map((place, index) => ({
-      '@type': 'ListItem',
-      position: index + 1,
-      item: {
-        '@type': place.schemaType,
-        name: place.name,
-        address: {
-          '@type': 'PostalAddress',
-          streetAddress: place.address,
-          addressLocality: BUSINESS_INFO.community.locality,
-          addressRegion: BUSINESS_INFO.community.region,
-          postalCode: BUSINESS_INFO.community.postalCode,
-          addressCountry: 'US',
+    itemListElement: withAddress.map((place, index) => {
+      const address = parseVerifiedNevadaAddress(place.address!);
+      return {
+        '@type': 'ListItem',
+        position: index + 1,
+        item: {
+          '@type': place.schemaType,
+          name: place.name,
+          ...(address ? { address } : {}),
         },
-      },
-    })),
+      };
+    }),
   };
 }
 

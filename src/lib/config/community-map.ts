@@ -39,7 +39,7 @@ export type AmenityCategory = {
   placeTypes: string[];
 };
 
-/** Family master-planned community — full category set per site spec default order. */
+/** Master-planned community — full category set per site spec default order. */
 export const AMENITY_CATEGORIES: AmenityCategory[] = [
   { id: 'restaurants', label: 'Restaurants', placeTypes: ['restaurant'] },
   { id: 'cafes', label: 'Cafes', placeTypes: ['cafe', 'coffee_shop'] },

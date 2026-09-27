@@ -1,7 +1,6 @@
 import PageLayout from '@/components/layout/page-layout';
 import AgentIdentityBand from '@/components/AgentIdentityBand';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
-import Script from 'next/script';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import {
@@ -49,7 +48,7 @@ const writtenSections = [
   {
     id: 'golf',
     title: 'Golf',
-    body: `Aliante Golf Club at 9600 Sovereign St is the closest championship course to Maravilla — roughly a 10-minute drive when Craig and Aliante Parkway are clear.`,
+    body: `Aliante Golf Club at 3100 W Elkhorn Rd is the closest championship course to Maravilla — roughly a 10-minute drive when Craig and Aliante Parkway are clear.`,
   },
   {
     id: 'healthcare',
@@ -59,12 +58,12 @@ const writtenSections = [
   {
     id: 'shopping',
     title: 'Shopping',
-    body: `Smith's Marketplace on Decatur, Walmart Supercenter on West Craig Rd, Target at Decatur Commons, and Aliante Casino + Hotel retail give Maravilla residents everyday shopping without crossing the valley.`,
+    body: `Smith's on West Craig Rd, Walmart Supercenter at 1807 W Craig Rd, Target at Decatur Commons, and Aliante Casino + Hotel retail give Maravilla residents everyday shopping without crossing the valley.`,
   },
   {
     id: 'schools',
     title: 'Schools (CCSD)',
-    body: `Clark County School District assigns campuses by address. Nearby schools include Triggs Elementary (5415 W Craig Rd), Findlay Middle School (333 W Tropical Pkwy), and Legacy High School (150 W Deer Springs Way). Always verify the zone for a specific listing before you buy.`,
+    body: `Clark County School District assigns campuses by address. Nearby schools include Triggs Elementary (5415 W Craig Rd), Findlay Middle School (333 W Tropical Pkwy), and Legacy High School (150 W Deer Springs Way). Always verify the zone for a specific listing with the CCSD Zoning Search before you buy.`,
   },
   {
     id: 'commute',
@@ -72,6 +71,39 @@ const writtenSections = [
     body: `I-215 (Northern Beltway) and I-15 are typically 5–10 minutes from Maravilla. Approximate drives: Las Vegas Strip 20–30 minutes; Harry Reid International Airport 25–35 minutes; Downtown Summerlin 25–35 minutes — all traffic-dependent.`,
   },
 ];
+
+const nearbyAmenitiesStructuredData = [
+  generateWebPageSchema({
+    name: `Nearby Amenities in ${MARAVILLA_COMMUNITY.name}, North Las Vegas`,
+    description:
+      'Interactive map and hyperlocal guide to dining, parks, schools, healthcare, and shopping near Maravilla in North Las Vegas.',
+    url: `${baseUrl}/nearby-amenities`,
+    breadcrumb: [
+      { name: 'Home', url: baseUrl },
+      { name: 'Nearby Amenities', url: `${baseUrl}/nearby-amenities` },
+    ],
+  }),
+  generateBreadcrumbSchema([
+    { name: 'Home', url: baseUrl },
+    { name: 'Nearby Amenities', url: `${baseUrl}/nearby-amenities` },
+  ]),
+  generateFAQPageSchema(NEARBY_AMENITIES_FAQS),
+  generateNearbyPlacesItemListSchema(
+    CURATED_NEARBY_PLACES,
+    `Featured places near ${MARAVILLA_COMMUNITY.name}`
+  ),
+  generatePlaceSchema({
+    name: MARAVILLA_COMMUNITY.name,
+    description: 'Master-planned residential community in North Las Vegas, Nevada.',
+    url: `${baseUrl}/nearby-amenities`,
+  }),
+  generateAgentAreaServedMaravillaSchema(),
+];
+
+const nearbyAmenitiesJsonLd = JSON.stringify(nearbyAmenitiesStructuredData).replace(
+  /</g,
+  '\\u003c'
+);
 
 export default function NearbyAmenitiesPage() {
   return (
@@ -172,39 +204,9 @@ export default function NearbyAmenitiesPage() {
 
       <AgentIdentityBand />
 
-      <Script
-        id='nearby-amenities-schema'
+      <script
         type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            generateWebPageSchema({
-              name: `Nearby Amenities in ${MARAVILLA_COMMUNITY.name}, North Las Vegas`,
-              description:
-                'Interactive map and hyperlocal guide to dining, parks, schools, healthcare, and shopping near Maravilla in North Las Vegas.',
-              url: `${baseUrl}/nearby-amenities`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Nearby Amenities', url: `${baseUrl}/nearby-amenities` },
-              ],
-            }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Nearby Amenities', url: `${baseUrl}/nearby-amenities` },
-            ]),
-            generateFAQPageSchema(NEARBY_AMENITIES_FAQS),
-            generateNearbyPlacesItemListSchema(
-              CURATED_NEARBY_PLACES,
-              `Featured places near ${MARAVILLA_COMMUNITY.name}`
-            ),
-            generatePlaceSchema({
-              name: MARAVILLA_COMMUNITY.name,
-              description:
-                'Master-planned residential community in North Las Vegas, Nevada.',
-              url: `${baseUrl}/nearby-amenities`,
-            }),
-            generateAgentAreaServedMaravillaSchema(),
-          ]),
-        }}
+        dangerouslySetInnerHTML={{ __html: nearbyAmenitiesJsonLd }}
       />
     </PageLayout>
   );

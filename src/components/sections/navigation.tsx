@@ -18,7 +18,7 @@ export default function Navigation() {
     { href: '/buyers-guide', label: 'Buyer\'s Guide' },
     { href: '/neighborhood', label: 'Neighborhood' },
     { href: '/schools', label: 'Schools' },
-    { href: '/map-and-nearby-places', label: 'Map & Nearby' },
+    { href: '/nearby-amenities', label: 'Nearby Amenities' },
     { href: '/real-estate-services', label: 'Services' },
     { href: '/resources', label: 'Resources' },
     { href: '/contact', label: 'Contact' },

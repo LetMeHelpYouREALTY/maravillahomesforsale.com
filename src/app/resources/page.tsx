@@ -64,7 +64,7 @@ const resourceGroups = [
       { href: '/55-plus-communities', label: '55+ Communities', icon: Home },
       { href: '/community', label: 'Community Life', icon: Home },
       { href: '/amenities', label: 'Amenities', icon: Home },
-      { href: '/map-and-nearby-places', label: 'Map & Nearby Places', icon: MapPin },
+      { href: '/nearby-amenities', label: 'Nearby Amenities', icon: MapPin },
       { href: '/schools', label: 'Schools in Maravilla', icon: BookOpen },
     ],
   },

@@ -30,6 +30,7 @@ import OnThisPage from '@/components/OnThisPage';
 import Script from 'next/script';
 import type { Metadata } from 'next';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+import NearbyAmenitiesSection from '@/components/sections/nearby-amenities-section';
 import {
   generateMetadata as genMetadata,
   generateCollectionPageSchema,
@@ -198,7 +199,7 @@ export default function HomesPage() {
               <CardContent>
                 <CardDescription>
                   Convenient access to shopping, dining, entertainment, and
-                parks and trails. Explore <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline'>nearby places</Link> and the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline'>neighborhood guide</Link>.
+                parks and trails. Explore <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline'>nearby amenities</Link> and the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline'>neighborhood guide</Link>.
                 </CardDescription>
               </CardContent>
             </Card>
@@ -342,6 +343,8 @@ export default function HomesPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesSection />
 
       {/* Structured Data */}
       <Script

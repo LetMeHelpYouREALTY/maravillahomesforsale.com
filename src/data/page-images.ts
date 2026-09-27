@@ -161,6 +161,12 @@ const PAGES: Record<string, PageMedia> = {
       alt: 'North Las Vegas Family Homes: Map & Nearby Places — streets and highway access near Maravilla',
     },
   },
+  '/nearby-amenities': {
+    hero: {
+      src: '/images/pages/map-hero.jpg',
+      alt: 'North Las Vegas Family Homes: Nearby Amenities — map and local destinations near Maravilla',
+    },
+  },
   '/55-plus-communities': {
     hero: {
       src: '/images/pages/fifty-five-plus-hero.jpg',

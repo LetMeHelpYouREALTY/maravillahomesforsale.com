@@ -10,6 +10,7 @@ import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+import NearbyAmenitiesSection from '@/components/sections/nearby-amenities-section';
 import {
   School,
   UtensilsCrossed,
@@ -131,7 +132,7 @@ export default function CommunityPage() {
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             A master-planned community in North Las Vegas with <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes from 1,519 to 2,947 square feet</Link>, parks, trails, and access to
-            shopping, dining, and I-15 / I-215. Explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, view <Link href='/amenities' className='text-white hover:text-gray-200 underline font-medium'>community amenities</Link>, or see our <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>interactive map</Link>.
+            shopping, dining, and I-15 / I-215. Explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, view <Link href='/amenities' className='text-white hover:text-gray-200 underline font-medium'>community amenities</Link>, or see our <Link href='/nearby-amenities' className='text-white hover:text-gray-200 underline font-medium'>interactive map</Link>.
           </p>
         </div>
       </div>
@@ -148,7 +149,7 @@ export default function CommunityPage() {
             </h2>
             <SectionHeadingMedia heading='Clark County School District Campuses Near Maravilla' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
-              Maravilla is served by Clark County School District campuses. Zones depend on the exact address. See our <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>map of nearby schools</Link> and the <Link href='/schools' className='text-[#3A8DDE] hover:underline font-medium'>schools page</Link>.
+              Maravilla is served by Clark County School District campuses. Zones depend on the exact address. See our <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline font-medium'>map of nearby schools</Link> and the <Link href='/schools' className='text-[#3A8DDE] hover:underline font-medium'>schools page</Link>.
             </p>
           </div>
 
@@ -351,6 +352,8 @@ export default function CommunityPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesSection title='Life Near Maravilla' />
 
       {/* Structured Data */}
       <Script

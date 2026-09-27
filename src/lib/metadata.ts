@@ -649,6 +649,62 @@ export function generateFAQPageSchema(
   };
 }
 
+export function generateNearbyPlacesItemListSchema(
+  places: ReadonlyArray<{
+    name: string;
+    address: string;
+    schemaType: string;
+  }>,
+  listName: string
+) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: listName,
+    itemListElement: places.map((place, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': place.schemaType,
+        name: place.name,
+        address: {
+          '@type': 'PostalAddress',
+          streetAddress: place.address,
+          addressLocality: BUSINESS_INFO.community.locality,
+          addressRegion: BUSINESS_INFO.community.region,
+          postalCode: BUSINESS_INFO.community.postalCode,
+          addressCountry: 'US',
+        },
+      },
+    })),
+  };
+}
+
+/** Merge RealEstateAgent @id with Maravilla as areaServed (no duplicate agent entity). */
+export function generateAgentAreaServedMaravillaSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'RealEstateAgent',
+    '@id': `${siteUrl}#realestateagent`,
+    areaServed: {
+      '@type': 'Place',
+      name: BUSINESS_INFO.community.name,
+      address: {
+        '@type': 'PostalAddress',
+        addressLocality: BUSINESS_INFO.community.locality,
+        addressRegion: BUSINESS_INFO.community.region,
+        postalCode: BUSINESS_INFO.community.postalCode,
+        addressCountry: 'US',
+      },
+      geo: {
+        '@type': 'GeoCoordinates',
+        latitude: BUSINESS_INFO.communityGeo.latitude,
+        longitude: BUSINESS_INFO.communityGeo.longitude,
+      },
+    },
+  };
+}
+
 /**
  * Generate HowTo schema for step-by-step guides (e.g. buyer's guide)
  * 2025 Best Practice: HowTo can show rich results in search

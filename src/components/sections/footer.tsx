@@ -79,10 +79,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href='/map-and-nearby-places'
+                  href='/nearby-amenities'
                   className='hover:text-white transition-colors duration-200 hover:underline'
                 >
-                  Map & Nearby Places
+                  Nearby Amenities
                 </Link>
               </li>
               <li>

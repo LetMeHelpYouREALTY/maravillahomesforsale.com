@@ -49,6 +49,7 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import OnThisPage from '@/components/OnThisPage';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
+import NearbyAmenitiesSection from '@/components/sections/nearby-amenities-section';
 import {
   generateMetadata as genMetadata,
   generateBreadcrumbSchema,
@@ -336,7 +337,7 @@ export default function NeighborhoodPage() {
             Nestled in the heart of North Las Vegas&apos;s 89031 zip code, Maravilla offers the perfect blend of suburban serenity and urban convenience. Celebrated for its pristine upkeep and desert-friendly landscaping, this residence is part of a well-established neighborhood that has matured beautifully over the years. The community features a diverse selection of <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes — call for current comps</Link>; public ZIP 89031 medians as of September 2026 sit in the mid-$400s. Explore <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>detailed home descriptions</Link> and <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
           </p>
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Maravilla homes are known for their quality construction, modern amenities, and thoughtful design. Properties feature 3-5 bedrooms, 2-4 bathrooms, and range from 1,800 to 3,500 square feet. The homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from established neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. View <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
+            Maravilla homes are known for their quality construction, modern amenities, and thoughtful design. Properties feature 3-5 bedrooms, 2-4 bathrooms, and range from 1,800 to 3,500 square feet. The homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from established neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. View <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
           </p>
         </div>
       </section>
@@ -349,7 +350,7 @@ export default function NeighborhoodPage() {
           </h2>
           <SectionHeadingMedia heading='North Las Vegas Family Homes: Location & Transportation' />
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Maravilla is conveniently connected to major routes, making it easy to access the entire Las Vegas Valley and beyond. The strategic location provides excellent connectivity while maintaining a peaceful residential atmosphere. See our <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>interactive map</Link> and explore <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
+            Maravilla is conveniently connected to major routes, making it easy to access the entire Las Vegas Valley and beyond. The strategic location provides excellent connectivity while maintaining a peaceful residential atmosphere. See our <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline font-medium'>interactive map</Link> and explore <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
           </p>
           <div className='grid md:grid-cols-2 gap-8'>
             <div>
@@ -400,7 +401,7 @@ export default function NeighborhoodPage() {
           </h2>
           <SectionHeadingMedia heading='North Las Vegas Family Homes: Shopping & Dining' />
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Within a 1-2 mile radius, you&apos;ll find a variety of shopping and dining options that make daily errands convenient and dining out enjoyable. The area offers everything from everyday essentials to specialty retailers, and from casual family restaurants to upscale dining establishments. Discover more <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
+            Within a 1-2 mile radius, you&apos;ll find a variety of shopping and dining options that make daily errands convenient and dining out enjoyable. The area offers everything from everyday essentials to specialty retailers, and from casual family restaurants to upscale dining establishments. Discover more <Link href='/nearby-amenities' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
           </p>
           <div className='grid md:grid-cols-2 gap-8'>
             <div>
@@ -1059,6 +1060,8 @@ export default function NeighborhoodPage() {
           </div>
         </div>
       </section>
+
+      <NearbyAmenitiesSection title={`What's Nearby in Maravilla`} />
 
       {/* Structured Data for Neighborhood/Community */}
       <Script

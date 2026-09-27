@@ -17,7 +17,6 @@ import { KCM_VIDEOS_URL } from '@/data/guides';
 import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
-  generateRealEstateAgentSchema,
   generateVideoGallerySchema,
 } from '@/lib/metadata';
 import { HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
@@ -81,7 +80,7 @@ export const revalidate = 3600; // 1 hour
 export const metadata = genMetadata({
   title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
     description:
-      'North Las Vegas Family Homes: find homes in Maravilla and North Las Vegas. Parks, trails, 1,519–2,947 sq ft floor plans, and I-215 access. Dr. Jan Duffy, REALTOR® Berkshire Hathaway Nevada. Browse homes, get a valuation, or contact (702) 500-1953.',
+      'Maravilla & North Las Vegas homes for sale. Parks, trails, and 1,519–2,947 sq ft floor plans near I-215. Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.',
   keywords:
     'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',
@@ -348,7 +347,6 @@ export default function Home() {
                 { name: 'Home', url: baseUrl },
               ],
             }),
-            generateRealEstateAgentSchema(),
             generateVideoGallerySchema(
               KCM_VIDEO_ENTRIES.map((v) => ({
                 id: v.id,

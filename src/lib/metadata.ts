@@ -224,7 +224,7 @@ function generateRealEstateAgentSchemaFull() {
     '@id': REAL_ESTATE_AGENT_ID,
     name: 'Dr. Jan Duffy',
     alternateName: [businessName, 'Jan Duffy', 'Dr. Duffy'],
-    description: `REALTOR® with Berkshire Hathaway HomeServices® Nevada. North Las Vegas Family Homes specialist—Maravilla and ${BUSINESS_INFO.serviceArea}. ${schemaAttributeNote}.`,
+    description: `REALTOR® with Berkshire Hathaway HomeServices® Nevada. Maravilla and ${BUSINESS_INFO.serviceArea} specialist. ${schemaAttributeNote}.`,
     jobTitle: 'REALTOR®',
     url: siteUrl,
     telephone: businessPhone,
@@ -271,7 +271,6 @@ function generateRealEstateAgentSchemaFull() {
       identifier: BUSINESS_INFO.license,
     },
     knowsAbout: [
-      'North Las Vegas Family Homes',
       'North Las Vegas Real Estate',
       'Maravilla Homes',
       'First-time Homebuyers',
@@ -284,9 +283,9 @@ function generateRealEstateAgentSchemaFull() {
     serviceArea: {
       '@type': 'Place',
       name: 'Maravilla',
-      address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Las Vegas',
+      containedInPlace: {
+        '@type': 'City',
+        name: 'North Las Vegas',
         addressRegion: 'NV',
         addressCountry: 'US',
       },
@@ -325,27 +324,16 @@ function generateRealEstateAgentSchemaFull() {
       BUSINESS_INFO.social.youtube,
       BUSINESS_INFO.googleBusinessProfile,
     ],
-    areaServed: [
-      {
+    areaServed: {
+      '@type': 'Place',
+      name: 'Maravilla',
+      containedInPlace: {
         '@type': 'City',
         name: 'North Las Vegas',
         addressRegion: 'NV',
         addressCountry: 'US',
       },
-      {
-        '@type': 'City',
-        name: 'Las Vegas',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-      {
-        '@type': 'City',
-        name: 'Henderson',
-        addressRegion: 'NV',
-        addressCountry: 'US',
-      },
-      { '@type': 'Place', name: BUSINESS_INFO.serviceArea },
-    ],
+    },
     openingHoursSpecification: [
       {
         '@type': 'OpeningHoursSpecification',
@@ -358,7 +346,6 @@ function generateRealEstateAgentSchemaFull() {
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
     priceRange: '$$',
     currenciesAccepted: 'USD',
-    ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
   };
 }
 
@@ -641,9 +628,9 @@ export function generateWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'North Las Vegas Family Homes',
+    name: 'Maravilla Homes for Sale | North Las Vegas | Dr. Jan Duffy',
     alternateName: [
-      'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+      'Maravilla Homes for Sale',
       'Maravilla Homes',
       'www.maravillahomesforsale.com',
       'maravillahomesforsale.com',

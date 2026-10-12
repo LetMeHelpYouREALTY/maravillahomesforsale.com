@@ -1,6 +1,5 @@
 import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
-import Script from 'next/script';
 import PageLayout from '@/components/layout/page-layout';
 import Hero from '@/components/sections/hero';
 import KcmVideosSection from '@/components/sections/kcm-videos-section';
@@ -76,12 +75,15 @@ const DynamicBlogPosts = dynamic(
 // Incremental Static Regeneration - revalidate every hour for fresh market data
 export const revalidate = 3600; // 1 hour
 
+const homepageTitle = 'Maravilla Homes for Sale | North Las Vegas | Dr. Jan Duffy';
+const homepageDescription =
+  'Maravilla homes for sale in North Las Vegas. Parks, trails, and 1,519–2,947 sq ft floor plans near I-215. Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.';
+
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    description:
-      'Maravilla & North Las Vegas homes for sale. Parks, trails, and 1,519–2,947 sq ft floor plans near I-215. Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.',
+  title: homepageTitle,
+  description: homepageDescription,
   keywords:
-    'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
+    'Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',
   image: HOMEPAGE_OG_IMAGE.src,
 });
@@ -323,19 +325,15 @@ export default function Home() {
       </article>
 
       {/* Structured Data - FAQ schema is output by PageFAQSection in layout */}
-      <Script
-        id='homepage-schema'
+      <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-              description:
-                'Find your dream home in Maravilla, Las Vegas. Browse quality homes with exceptional value, explore the neighborhood, and discover why Maravilla offers one of the best values in Las Vegas.',
+              name: homepageTitle,
+              description: homepageDescription,
               url: baseUrl,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-              ],
+              breadcrumb: [{ name: 'Home', url: baseUrl }],
             }),
             generateVideoGallerySchema(
               KCM_VIDEO_ENTRIES.map((v) => ({
@@ -344,7 +342,7 @@ export default function Home() {
                 description: v.description,
                 url: v.url,
               })),
-              'North Las Vegas Family Homes: Latest Market Videos'
+              'Maravilla Homes for Sale: Latest Market Videos'
             ),
           ]),
         }}

@@ -27,7 +27,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Resources, Guides & Tools | Dr. Jan Duffy',
+  title: 'Resources, Guides & Tools | Dr. Jan Duffy',
   description:
     'Resources for Maravilla home buyers and sellers: buyer\'s guide, home valuation, market data, neighborhood info, and contact. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
   keywords:

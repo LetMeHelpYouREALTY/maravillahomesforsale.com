@@ -45,7 +45,7 @@ const baseUrl = (
 export const revalidate = 1800; // 30 minutes
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Homes for Sale in Maravilla | Dr. Jan Duffy',
+  title: 'Homes for Sale in Maravilla | Dr. Jan Duffy',
   description:
     'Browse luxury homes for sale in Maravilla, Las Vegas. View current listings with detailed photos, virtual tours, and market data. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Call (702) 500-1953.',
   keywords:

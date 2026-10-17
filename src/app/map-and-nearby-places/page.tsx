@@ -30,7 +30,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Maravilla Map & Nearby Places | Schools, Parks, Shopping',
+  title: 'Maravilla Map & Nearby Places | Schools, Parks, Shopping',
   description:
     'Explore Maravilla, North Las Vegas location with interactive map. Discover nearby schools, parks, restaurants, shopping, gyms, and essential services. Find everything you need within minutes of Maravilla homes.',
   keywords:

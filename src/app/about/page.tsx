@@ -22,7 +22,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | About Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada',
+  title: 'About Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada',
   description:
     'Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Expert in Maravilla and North Las Vegas real estate. License S.0197614.LLC. Call (702) 500-1953.',
   keywords:

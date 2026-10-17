@@ -29,7 +29,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Real Estate Services | Dr. Jan Duffy',
+  title: 'Real Estate Services | Dr. Jan Duffy',
   description:
     'Comprehensive real estate services for buyers, sellers, and investors in Maravilla, North Las Vegas. Property management, investment consulting, transaction services, and specialty services from Dr. Jan Duffy.',
   keywords:

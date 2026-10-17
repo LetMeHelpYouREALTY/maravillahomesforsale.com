@@ -5,7 +5,9 @@ import {
   generateOrganizationSchema,
   generateWebSiteSchema,
   generateRealEstateAgentSchema,
-  REAL_ESTATE_AGENT_ID,
+  generateSiteServiceSchema,
+  SITE_AUTHOR_NAME,
+  SITE_SEO_TITLE,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
 import { AGENT_PHOTO, HOMEPAGE_OG_IMAGE } from '@/lib/config/agent';
@@ -72,16 +74,17 @@ const openSans = Open_Sans({
   variable: '--font-open-sans',
 });
 
+const defaultDescription =
+  'Maravilla homes for sale in North Las Vegas. Parks, trails, and floor plans near I-215. Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.';
+
 export const metadata: Metadata = {
-  title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  description: `Looking to buy or sell a home in North Las Vegas? Homes by Dr. Jan Duffy is your trusted real estate expert in Maravilla and North Las Vegas. Call ${BUSINESS_INFO.phone.display}.`,
+  title: SITE_SEO_TITLE,
+  description: defaultDescription,
   keywords:
-    'North Las Vegas family homes, Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, Maravilla community, North Las Vegas neighborhoods, homes for sale Maravilla, Nevada real estate',
-  authors: [
-    { name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy', url: siteUrl },
-  ],
-  creator: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  publisher: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+    'Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, Maravilla community, North Las Vegas neighborhoods, homes for sale Maravilla, Nevada real estate',
+  authors: [{ name: SITE_AUTHOR_NAME, url: siteUrl }],
+  creator: SITE_AUTHOR_NAME,
+  publisher: SITE_AUTHOR_NAME,
   formatDetection: {
     email: false,
     address: false,
@@ -92,11 +95,10 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    description:
-      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Parks, trails, and 1,519–2,947 sq ft homes. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
+    title: SITE_SEO_TITLE,
+    description: defaultDescription,
     url: siteUrl,
-    siteName: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+    siteName: SITE_SEO_TITLE,
     locale: 'en_US',
     type: 'website',
       images: [
@@ -111,9 +113,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    description:
-      "North Las Vegas Family Homes: Maravilla & North Las Vegas real estate. Dr. Jan Duffy, REALTOR®. (702) 500-1953.",
+    title: SITE_SEO_TITLE,
+    description: defaultDescription,
     images: [ogImageUrl],
     // 2025 Best Practice: Add Twitter site handle if available
     creator: '@maravillahomes',
@@ -150,25 +151,25 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   category: 'Real Estate',
-  classification: 'Luxury Real Estate',
+  classification: 'Real Estate',
   other: {
     'geo.region': 'US-NV',
     'geo.placename': 'North Las Vegas, Las Vegas',
     'geo.position': `${BUSINESS_INFO.geo.latitude};${BUSINESS_INFO.geo.longitude}`,
     ICBM: `${BUSINESS_INFO.geo.latitude}, ${BUSINESS_INFO.geo.longitude}`,
-    'DC.title': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    'DC.creator': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    'DC.subject': 'Luxury Real Estate, North Las Vegas, Maravilla',
-    'DC.description': 'Luxury homes in Maravilla, North Las Vegas',
-    'DC.publisher': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-    'DC.contributor': 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+    'DC.title': SITE_SEO_TITLE,
+    'DC.creator': SITE_AUTHOR_NAME,
+    'DC.subject': 'Maravilla homes for sale, North Las Vegas real estate',
+    'DC.description': 'Maravilla homes for sale in North Las Vegas, Nevada',
+    'DC.publisher': SITE_AUTHOR_NAME,
+    'DC.contributor': SITE_AUTHOR_NAME,
     'DC.date': '2026',
     'DC.type': 'Text',
     'DC.format': 'text/html',
     'DC.identifier': siteUrl,
     'DC.language': 'en',
     'DC.coverage': 'North Las Vegas, Nevada',
-    'DC.rights': 'Copyright 2007-2025 North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+    'DC.rights': `Copyright 2009-2026 ${BUSINESS_INFO.name}`,
   },
 };
 
@@ -296,73 +297,7 @@ export default function RootLayout({
         <script
           type='application/ld+json'
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              '@context': 'https://schema.org',
-              '@type': 'Service',
-              name: 'Real Estate Services',
-              description:
-                'Professional real estate services including home buying, selling, property valuation, and market analysis in North Las Vegas and Maravilla communities.',
-              serviceType: 'Real Estate Services',
-              provider: { '@id': REAL_ESTATE_AGENT_ID },
-              areaServed: [
-                {
-                  '@type': 'City',
-                  name: 'North Las Vegas',
-                  addressRegion: 'NV',
-                  addressCountry: 'US',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Las Vegas',
-                  addressRegion: 'NV',
-                  addressCountry: 'US',
-                },
-                {
-                  '@type': 'City',
-                  name: 'Henderson',
-                  addressRegion: 'NV',
-                  addressCountry: 'US',
-                },
-              ],
-              hasOfferCatalog: {
-                '@type': 'OfferCatalog',
-                name: 'Real Estate Services',
-                itemListElement: [
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Home Buying Services',
-                      description: 'North Las Vegas Family Homes: expert assistance finding your dream home in North Las Vegas and Maravilla',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Home Selling Services',
-                      description: 'Professional marketing and sales services to maximize your property value',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Property Valuation',
-                      description: 'North Las Vegas Family Homes: accurate home valuations and market analysis for North Las Vegas and Maravilla',
-                    },
-                  },
-                  {
-                    '@type': 'Offer',
-                    itemOffered: {
-                      '@type': 'Service',
-                      name: 'Market Analysis',
-                      description: 'Comprehensive market insights and trends for North Las Vegas real estate',
-                    },
-                  },
-                ],
-              },
-            }),
+            __html: JSON.stringify(generateSiteServiceSchema()),
           }}
         />
       </head>

@@ -24,7 +24,7 @@ const baseUrl = (
 export const revalidate = 604800; // weekly
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Sell a Home in Maravilla | Dr. Jan Duffy, REALTOR®',
+  title: 'Sell a Home in Maravilla | Dr. Jan Duffy, REALTOR®',
   description:
     'Sell your Maravilla home with expert guidance. Dr. Jan Duffy, REALTOR®, helps you price competitively, prepare for market, and negotiate. Call (702) 500-1953 for a listing plan.',
   keywords:

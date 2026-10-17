@@ -14,7 +14,6 @@ import {
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { GUIDE_SLUGS, getGuideBySlug } from '@/data/guides';
 import OnThisPage from '@/components/OnThisPage';
-import PageFAQSection from '@/components/PageFAQSection';
 import GuideShareActions from '@/components/GuideShareActions';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
@@ -233,7 +232,6 @@ export default async function GuidePage({ params }: Props) {
         </div>
       </section>
 
-      <PageFAQSection />
     </PageLayout>
   );
 }

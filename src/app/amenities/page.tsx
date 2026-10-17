@@ -18,7 +18,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Maravilla Amenities | Parks, Pools & Features',
+  title: 'Maravilla Amenities | Parks, Pools & Features',
   description:
     'Discover the extensive amenities available in Maravilla homes, including open floor plans, attached garages, jetted bathtubs, swimming pools, smart home technology, and community features in North Las Vegas.',
   keywords:

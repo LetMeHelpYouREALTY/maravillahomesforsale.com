@@ -12,7 +12,6 @@ import {
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import OnThisPage from '@/components/OnThisPage';
-import PageFAQSection from '@/components/PageFAQSection';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 
@@ -21,7 +20,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | 55+ Communities in North Las Vegas & Maravilla | Dr. Jan Duffy',
+  title: '55+ Communities in North Las Vegas & Maravilla | Dr. Jan Duffy',
   description:
     'Explore 55+ and active-adult communities in North Las Vegas and Maravilla. Find age-qualified homes, amenities, and lifestyle options. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
   keywords:
@@ -170,7 +169,6 @@ export default function FiftyFivePlusCommunitiesPage() {
         </div>
       </section>
 
-      <PageFAQSection />
     </PageLayout>
   );
 }

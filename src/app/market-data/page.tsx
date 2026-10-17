@@ -36,7 +36,7 @@ const baseUrl = (
 export const revalidate = 900; // 15 minutes
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Market Data & Trends | Maravilla & North Las Vegas',
+  title: 'Market Data & Trends | Maravilla & North Las Vegas',
   description:
     'Latest Maravilla real estate market data: Track pricing trends, sales volume, and market conditions. Updated regularly. Call (702) 500-1953 for market insights.',
   keywords:

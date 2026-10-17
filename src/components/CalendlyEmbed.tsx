@@ -1,11 +1,11 @@
 'use client';
 
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import Script from 'next/script';
 
 interface CalendlyEmbedProps {
   /**
-   * Calendly event URL (e.g., 'https://calendly.com/drjanduffy/realtor_strategy_meeting')
+   * Calendly event URL (e.g., 'https://calendly.com/drjanduffy/listing-consultation')
    */
   url: string;
   /**
@@ -16,28 +16,52 @@ interface CalendlyEmbedProps {
    * Additional CSS classes
    */
   className?: string;
+  /** utm_content value for attribution (e.g. contact-page) */
+  utmContent?: string;
+  /** utm_source override (defaults to maravillahomesforsale.com) */
+  utmSource?: string;
+}
+
+function withUtmParams(
+  rawUrl: string,
+  utmSource: string,
+  utmContent: string
+): string {
+  try {
+    const parsed = new URL(rawUrl);
+    if (!parsed.searchParams.has('utm_source')) {
+      parsed.searchParams.set('utm_source', utmSource);
+    }
+    if (!parsed.searchParams.has('utm_medium')) {
+      parsed.searchParams.set('utm_medium', 'website');
+    }
+    if (!parsed.searchParams.has('utm_content') && utmContent) {
+      parsed.searchParams.set('utm_content', utmContent);
+    }
+    return parsed.toString();
+  } catch {
+    return rawUrl;
+  }
 }
 
 /**
  * CalendlyEmbed component - Embeds a Calendly scheduling widget
- * 
- * Uses Calendly's inline embed for better performance and integration.
- * The Calendly script is loaded once and reused across all embeds.
- * 
- * @example
- * ```tsx
- * <CalendlyEmbed url="https://calendly.com/drjanduffy/realtor_strategy_meeting" />
- * ```
  */
 export default function CalendlyEmbed({
   url,
   height = '900px',
   className = '',
+  utmContent = 'embed',
+  utmSource = 'maravillahomesforsale.com',
 }: CalendlyEmbedProps) {
   const calendlyRef = useRef<HTMLDivElement>(null);
   const [isScriptReady, setIsScriptReady] = useState(false);
 
-  // Initialize widget once script is loaded
+  const bookingUrl = useMemo(
+    () => withUtmParams(url, utmSource, utmContent),
+    [url, utmSource, utmContent]
+  );
+
   useEffect(() => {
     if (!isScriptReady || !calendlyRef.current) return;
 
@@ -45,8 +69,15 @@ export default function CalendlyEmbed({
     const maxRetries = 10;
 
     const initWidget = () => {
-      const w = window as any;
-      
+      const w = window as Window & {
+        Calendly?: {
+          initInlineWidget: (options: {
+            url: string;
+            parentElement: HTMLElement;
+          }) => void;
+        };
+      };
+
       if (!calendlyRef.current) {
         console.error('Calendly container not found');
         return;
@@ -55,7 +86,7 @@ export default function CalendlyEmbed({
       if (w.Calendly && typeof w.Calendly.initInlineWidget === 'function') {
         try {
           w.Calendly.initInlineWidget({
-            url: url,
+            url: bookingUrl,
             parentElement: calendlyRef.current,
           });
         } catch (error) {
@@ -64,7 +95,6 @@ export default function CalendlyEmbed({
       } else {
         retryCount++;
         if (retryCount < maxRetries) {
-          // Retry after a short delay if Calendly isn't ready yet
           setTimeout(initWidget, 300);
         } else {
           console.error('Calendly widget failed to load after multiple retries');
@@ -72,17 +102,15 @@ export default function CalendlyEmbed({
       }
     };
 
-    // Small delay to ensure script is fully loaded
     const timer = setTimeout(initWidget, 200);
     return () => clearTimeout(timer);
-  }, [isScriptReady, url]);
+  }, [isScriptReady, bookingUrl]);
 
   return (
     <>
-      {/* Load Calendly script */}
       <Script
-        src="https://assets.calendly.com/assets/external/widget.js"
-        strategy="afterInteractive"
+        src='https://assets.calendly.com/assets/external/widget.js'
+        strategy='afterInteractive'
         onLoad={() => {
           setIsScriptReady(true);
         }}
@@ -90,8 +118,7 @@ export default function CalendlyEmbed({
           console.error('Failed to load Calendly script:', e);
         }}
       />
-      
-      {/* Calendly embed container */}
+
       <div
         ref={calendlyRef}
         className={`calendly-inline-widget ${className}`}
@@ -100,7 +127,7 @@ export default function CalendlyEmbed({
           height: height,
           width: '100%',
         }}
-        data-auto-load="false"
+        data-auto-load='false'
       />
     </>
   );

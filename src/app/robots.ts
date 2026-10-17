@@ -70,6 +70,41 @@ export default function robots(): MetadataRoute.Robots {
         allow: '/',
         disallow: ['/_next/static/', '/cdn-cgi/'],
       },
+      {
+        userAgent: 'meta-externalfetcher',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'anthropic-ai',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'Claude-User',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'Claude-SearchBot',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'Amazonbot',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'YouBot',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
+      {
+        userAgent: 'Diffbot',
+        allow: '/',
+        disallow: ['/_next/static/', '/cdn-cgi/'],
+      },
     ],
     sitemap: `${canonicalSite}/sitemap.xml`,
     host: canonicalSite,

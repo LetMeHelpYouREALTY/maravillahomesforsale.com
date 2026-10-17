@@ -23,7 +23,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | How to Buy a Home in Maravilla | Buyer\'s Guide | Dr. Jan Duffy',
+  title: 'How to Buy a Home in Maravilla | Buyer\'s Guide | Dr. Jan Duffy',
   description:
     'How to buy a home in Maravilla & North Las Vegas: pre-approval, search, offers, closing. Step-by-step buyer\'s guide with Dr. Jan Duffy, REALTOR®. Call (702) 500-1953.',
   keywords:

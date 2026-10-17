@@ -24,7 +24,7 @@ const baseUrl = (
 export const revalidate = 604800; // weekly
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Home Valuation | Maravilla & North Las Vegas',
+  title: 'Home Valuation | Maravilla & North Las Vegas',
   description:
     'Get a free Maravilla home valuation with local pricing context. Dr. Jan Duffy, REALTOR®, uses recent sales, active listings, and current demand. Call (702) 500-1953.',
   keywords:

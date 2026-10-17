@@ -11,6 +11,14 @@ const siteUrl = (
   process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'
 ).replace(/\/$/, '');
 
+/** Public SEO site name (titles, WebSite schema) — distinct from GBP legal `businessName`. */
+export const SITE_SEO_TITLE =
+  'Maravilla Homes for Sale | North Las Vegas | Dr. Jan Duffy';
+
+export const SITE_AUTHOR_NAME = 'Dr. Jan Duffy';
+
+export const WEBSITE_SCHEMA_ID = `${siteUrl}#website`;
+
 const businessAddress = {
   streetAddress: BUSINESS_INFO.address.streetAddress,
   addressLocality: BUSINESS_INFO.address.addressLocality,
@@ -111,7 +119,8 @@ function pageImageUrl(image?: string): string {
 }
 
 const siteConfig = {
-  name: businessName,
+  name: SITE_SEO_TITLE,
+  authorName: SITE_AUTHOR_NAME,
   url: siteUrl,
   description: GBP_DESCRIPTION,
   ogImage: HOMEPAGE_OG_IMAGE.src,
@@ -148,9 +157,9 @@ export function generateMetadata({
     title,
     description,
     keywords,
-    authors: [{ name: siteConfig.name, url: siteConfig.url }],
-    creator: siteConfig.name,
-    publisher: siteConfig.name,
+    authors: [{ name: siteConfig.authorName, url: siteConfig.url }],
+    creator: siteConfig.authorName,
+    publisher: siteConfig.authorName,
     metadataBase: new URL(siteConfig.url),
     alternates: {
       canonical: url,
@@ -413,7 +422,7 @@ export function generateOrganizationSchema() {
       BUSINESS_INFO.googleBusinessProfile,
     ],
     ...(BUSINESS_INFO.foundingDate && { foundingDate: BUSINESS_INFO.foundingDate }),
-    ...(getAggregateRatingForSchema() && { aggregateRating: getAggregateRatingForSchema() }),
+    member: { '@id': REAL_ESTATE_AGENT_ID },
     founder: { '@id': REAL_ESTATE_AGENT_ID },
   };
 }
@@ -508,7 +517,7 @@ export function generateWebPageSchema({
     description,
     url,
     inLanguage: 'en-US',
-    isPartOf: { '@id': `${siteUrl}#website` },
+    isPartOf: { '@id': WEBSITE_SCHEMA_ID },
     about: { '@id': REAL_ESTATE_AGENT_ID },
     author: { '@id': REAL_ESTATE_AGENT_ID },
     publisher: { '@id': `${siteUrl}#organization` },
@@ -624,11 +633,77 @@ export function generateHowToSchema({
  * This is required for Google to display your site name in search results
  * Must be placed on the homepage only
  */
+export function generateSiteServiceSchema() {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${siteUrl}#service`,
+    name: 'Maravilla Real Estate Services',
+    description:
+      'Home buying, selling, valuation, and market analysis for Maravilla and North Las Vegas by Dr. Jan Duffy, REALTOR®.',
+    serviceType: 'Real Estate Services',
+    provider: { '@id': REAL_ESTATE_AGENT_ID },
+    areaServed: {
+      '@type': 'Place',
+      name: 'Maravilla',
+      containedInPlace: {
+        '@type': 'City',
+        name: 'North Las Vegas',
+        addressRegion: 'NV',
+        addressCountry: 'US',
+      },
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Maravilla Real Estate Services',
+      itemListElement: [
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Home Buying Services',
+            description:
+              'Search, tours, and offers for Maravilla and North Las Vegas homes with Dr. Jan Duffy.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Home Selling Services',
+            description:
+              'Listing strategy, marketing, and negotiation for Maravilla sellers.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Property Valuation',
+            description:
+              'Market analysis and pricing guidance for Maravilla homeowners.',
+          },
+        },
+        {
+          '@type': 'Offer',
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Market Analysis',
+            description:
+              'North Las Vegas and Maravilla market trends and comparable sales context.',
+          },
+        },
+      ],
+    },
+  };
+}
+
 export function generateWebSiteSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
-    name: 'Maravilla Homes for Sale | North Las Vegas | Dr. Jan Duffy',
+    '@id': WEBSITE_SCHEMA_ID,
+    name: SITE_SEO_TITLE,
     alternateName: [
       'Maravilla Homes for Sale',
       'Maravilla Homes',

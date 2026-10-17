@@ -37,7 +37,7 @@ export const dynamic = 'force-static';
 export const revalidate = false; // Static page, no revalidation needed
 
 export const metadata = genMetadata({
-  title: 'Contact Dr. Jan Duffy - North Las Vegas Family Homes | Homes by Dr. Jan Duffy | Las Vegas Real Estate',
+  title: 'Contact Dr. Jan Duffy | Maravilla, North Las Vegas',
   description:
     `Contact Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Get expert guidance for buying, selling, or investing in Maravilla, Las Vegas. Office: ${BUSINESS_INFO.address.full}. Call ${BUSINESS_INFO.phone.display} or email ${BUSINESS_INFO.email}.`,
   keywords:
@@ -85,10 +85,11 @@ export default function ContactPage() {
             </p>
           </div>
           <div className='rounded-lg border-2 border-gray-200 shadow-lg overflow-hidden bg-white'>
-            <CalendlyEmbed 
-              url="https://calendly.com/drjanduffy"
-              height="900px"
-              className="w-full"
+            <CalendlyEmbed
+              url='https://calendly.com/drjanduffy/buyer-consultation-30-min'
+              utmContent='contact-schedule'
+              height='900px'
+              className='w-full'
             />
           </div>
         </div>

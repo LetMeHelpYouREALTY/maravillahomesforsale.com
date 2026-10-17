@@ -63,7 +63,7 @@ const baseUrl = (
 export const revalidate = 604800; // 1 week
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Maravilla Community Guide',
+  title: 'Maravilla Community Guide',
   description:
     'Maravilla is a master-planned community in North Las Vegas with 1,519–2,947 sq ft homes, parks, trails, and I-15 / I-215 access. Call (702) 500-1953.',
   keywords:

@@ -20,7 +20,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | Home Descriptions | Maravilla',
+  title: 'Home Descriptions | Maravilla',
   description:
     'Explore detailed descriptions of Maravilla homes in North Las Vegas. Features include 3-5 bedrooms, gourmet kitchens, smart home technology, and community amenities. Call (702) 500-1953 for current comps.',
   keywords:

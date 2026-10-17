@@ -18,7 +18,6 @@ import {
   getNeighborhoodBySlug,
 } from '@/data/neighborhoods';
 import { getPageHeroImage } from '@/data/page-images';
-import PageFAQSection from '@/components/PageFAQSection';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 
@@ -190,7 +189,6 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
         </div>
       </section>
 
-      <PageFAQSection />
     </PageLayout>
   );
 }

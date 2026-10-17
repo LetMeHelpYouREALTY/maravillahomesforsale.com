@@ -12,7 +12,6 @@ import {
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import OnThisPage from '@/components/OnThisPage';
-import PageFAQSection from '@/components/PageFAQSection';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 
@@ -21,7 +20,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'North Las Vegas Family Homes | First-Time Home Buyers | North Las Vegas & Maravilla | Dr. Jan Duffy',
+  title: 'First-Time Home Buyers | North Las Vegas & Maravilla | Dr. Jan Duffy',
   description:
     'First-time home buyer guide for North Las Vegas and Maravilla. Pre-approval, down payment, and step-by-step help. Dr. Jan Duffy, REALTOR® (702) 500-1953.',
   keywords:
@@ -181,7 +180,6 @@ export default function FirstTimeBuyersPage() {
         </div>
       </section>
 
-      <PageFAQSection />
     </PageLayout>
   );
 }

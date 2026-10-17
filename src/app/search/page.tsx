@@ -12,7 +12,7 @@ import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
 export const metadata: Metadata = {
   ...genMetadata({
-    title: 'North Las Vegas Family Homes | Search Homes in Maravilla | Dr. Jan Duffy',
+    title: 'Search Homes in Maravilla | Dr. Jan Duffy',
     description:
       'Search Maravilla homes and explore real estate listings, market data, and neighborhood information in Maravilla, Las Vegas, Nevada.',
     keywords:

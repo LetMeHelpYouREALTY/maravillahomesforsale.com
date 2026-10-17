@@ -5,7 +5,6 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { Suspense } from 'react';
@@ -46,7 +45,7 @@ export default function MapAndNearbyPlacesPage() {
         <section className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-              North Las Vegas Family Homes: Map & Nearby Places
+              Maravilla: Map & Nearby Places
             </h1>
             <p className='text-xl text-gray-200 max-w-3xl'>
               Discover everything Maravilla, North Las Vegas has to offer. Explore schools, parks, restaurants, shopping, and essential services all within minutes of your new home. Browse <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>available homes</Link>, explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood guide</Link>, or see <Link href='/community' className='text-white hover:text-gray-200 underline font-medium'>community features</Link>.
@@ -91,9 +90,9 @@ export default function MapAndNearbyPlacesPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Nearby Schools
+              Maravilla: Nearby Schools
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Nearby Schools' />
+            <SectionHeadingMedia heading='Maravilla: Nearby Schools' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla is served by Clark County School District campuses from elementary through high school. Zones depend on the exact address and current CCSD boundary maps. Call (702) 500-1953 to confirm the campus for a listing.
             </p>
@@ -187,9 +186,9 @@ export default function MapAndNearbyPlacesPage() {
         <section className='py-16 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Parks and Recreation
+              Maravilla: Parks and Recreation
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Parks and Recreation' />
+            <SectionHeadingMedia heading='Maravilla: Parks and Recreation' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla residents enjoy access to numerous parks and recreational facilities that provide opportunities for outdoor activities, family fun, and community gatherings. These spaces enhance quality of life and provide venues for healthy, active lifestyles.
             </p>
@@ -282,9 +281,9 @@ export default function MapAndNearbyPlacesPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Shopping and Dining
+              Maravilla: Shopping and Dining
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Shopping and Dining' />
+            <SectionHeadingMedia heading='Maravilla: Shopping and Dining' />
             <p className='text-lg text-gray-700 mb-8 leading-relaxed max-w-3xl'>
               Maravilla residents enjoy convenient access to premier shopping centers and diverse dining options. From everyday essentials to specialty retailers, and from casual family restaurants to upscale dining, everything you need is within minutes of home.
             </p>
@@ -584,9 +583,9 @@ export default function MapAndNearbyPlacesPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Additional Nearby Amenities
+              Maravilla: Additional Nearby Amenities
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Additional Nearby Amenities' />
+            <SectionHeadingMedia heading='Maravilla: Additional Nearby Amenities' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -756,9 +755,9 @@ export default function MapAndNearbyPlacesPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Entertainment and Recreation
+              Maravilla: Entertainment and Recreation
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Entertainment and Recreation' />
+            <SectionHeadingMedia heading='Maravilla: Entertainment and Recreation' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -828,19 +827,11 @@ export default function MapAndNearbyPlacesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Maravilla Map & Nearby Places',
+              name: 'Maravilla | Maravilla Map & Nearby Places',
               description:
                 'Explore Maravilla, North Las Vegas location with interactive map. Discover nearby schools, parks, restaurants, shopping, gyms, and essential services.',
               url: `${baseUrl}/map-and-nearby-places`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Map & Nearby Places', url: `${baseUrl}/map-and-nearby-places` },
-              ],
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Map & Nearby Places', url: `${baseUrl}/map-and-nearby-places` },
-            ]),
           ]),
         }}
       />

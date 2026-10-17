@@ -7,7 +7,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
   generateHowToSchema,
 } from '@/lib/metadata';
@@ -60,9 +59,9 @@ export default function BuyersGuidePage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Buyer&apos;s Guide
+            Maravilla: Buyer&apos;s Guide
           </h1>
-          <p className='text-xl text-gray-200 max-w-3xl'>
+          <p className='speakable text-xl text-gray-200 max-w-3xl'>
             A practical guide to buying a home in Maravilla, North Las Vegas. From pre-approval to closing, Dr. Jan Duffy helps you find the right property and navigate every step. Jump to <a href='#steps' className='text-white hover:text-gray-200 underline font-medium'>buying steps</a>, <a href='#financing' className='text-white hover:text-gray-200 underline font-medium'>financing</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Browse <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</Link>, explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or get a <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
           </p>
         </div>
@@ -101,9 +100,9 @@ export default function BuyersGuidePage() {
       <section id='steps' className='py-16 bg-white' aria-labelledby='steps-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='steps-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Steps to Buy a Home
+            Maravilla: Steps to Buy a Home
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Steps to Buy a Home' />
+          <SectionHeadingMedia heading='Maravilla: Steps to Buy a Home' />
           <div className='grid md:grid-cols-2 gap-8'>
             {steps.map((step, i) => {
               const Icon = step.icon;
@@ -143,9 +142,9 @@ export default function BuyersGuidePage() {
       <section id='cta' className='py-16 bg-white' aria-labelledby='cta-heading'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 id='cta-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Ready to Find Your Home?
+            Maravilla: Ready to Find Your Home?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Find Your Home?' />
+          <SectionHeadingMedia heading='Maravilla: Ready to Find Your Home?' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy helps buyers find and close on the right Maravilla property. Call, schedule a consultation, or browse current listings to get started.
           </p>
@@ -167,19 +166,11 @@ export default function BuyersGuidePage() {
         id='buyers-guide-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Buyer\'s Guide', url: `${baseUrl}/buyers-guide` },
-            ]),
+          __html: JSON.stringify([,
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Buyer\'s Guide',
+              name: 'Maravilla | Buyer\'s Guide',
               description: 'Step-by-step guide to buying a home in North Las Vegas and Maravilla with Dr. Jan Duffy.',
               url: `${baseUrl}/buyers-guide`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Buyer\'s Guide', url: `${baseUrl}/buyers-guide` },
-              ],
             }),
             generateHowToSchema({
               name: 'How to Buy a Home in Maravilla and North Las Vegas',

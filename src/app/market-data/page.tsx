@@ -23,7 +23,6 @@ import type { Metadata } from 'next';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
   generateDatasetSchema,
 } from '@/lib/metadata';
@@ -98,9 +97,9 @@ export default function MarketDataPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Market Data
+            Maravilla: Market Data
           </h1>
-          <p className='text-xl text-white max-w-3xl'>
+          <p className='speakable text-xl text-white max-w-3xl'>
             Stay informed with the latest real estate market trends, statistics, and data for <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>Maravilla homes</Link>. Track pricing, sales volume, and market conditions. View <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>available homes</Link>, explore <Link href='/market-insights' className='text-white hover:text-gray-200 underline font-medium'>market insights</Link>, or get a <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
           </p>
         </div>
@@ -173,9 +172,9 @@ export default function MarketDataPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Market Insights
+              Maravilla: Market Insights
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Insights' />
+            <SectionHeadingMedia heading='Maravilla: Market Insights' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Key factors driving the Maravilla real estate market
             </p>
@@ -249,25 +248,17 @@ export default function MarketDataPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Market Data',
+              name: 'Maravilla | Market Data',
               description:
                 'Stay informed with the latest real estate market data, trends, and statistics for Maravilla, Las Vegas. Average prices, days on market, and more.',
               url: `${baseUrl}/market-data`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Market Data', url: `${baseUrl}/market-data` },
-              ],
             }),
             generateDatasetSchema({
-              name: 'North Las Vegas Family Homes | Market Data',
+              name: 'Maravilla | Market Data',
               description:
                 'Comprehensive real estate market data and statistics for Maravilla and North Las Vegas including average prices, days on market, inventory levels, and market trends.',
               url: `${baseUrl}/market-data`,
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Market Data', url: `${baseUrl}/market-data` },
-            ]),
           ]),
         }}
       />

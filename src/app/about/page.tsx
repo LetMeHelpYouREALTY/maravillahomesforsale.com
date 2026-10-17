@@ -8,7 +8,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -96,9 +95,9 @@ export default function AboutPage() {
       <section id='why-work-with' className='py-16 bg-[#F7F9FC]' aria-labelledby='why-work-with-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='why-work-with-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Why Work with Dr. Jan Duffy
+            Maravilla: Why Work with Dr. Jan Duffy
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why Work with Dr. Jan Duffy' />
+          <SectionHeadingMedia heading='Maravilla: Why Work with Dr. Jan Duffy' />
           {BUSINESS_INFO.attributes && (
             <p className='text-center text-gray-600 mb-8 max-w-2xl mx-auto'>
               Identifies as women-owned • LGBTQ+ friendly • Offers online appointments
@@ -118,9 +117,9 @@ export default function AboutPage() {
       <section id='contact-cta' className='py-16 bg-white' aria-labelledby='contact-cta-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='contact-cta-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Get in Touch
+            Maravilla: Get in Touch
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get in Touch' />
+          <SectionHeadingMedia heading='Maravilla: Get in Touch' />
           <div className='grid md:grid-cols-3 gap-6 max-w-4xl mx-auto'>
             <Card className='border-0 shadow-lg'>
               <CardHeader>
@@ -166,19 +165,11 @@ export default function AboutPage() {
         id='about-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'About Dr. Jan Duffy', url: `${baseUrl}/about` },
-            ]),
+          __html: JSON.stringify([,
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | About Dr. Jan Duffy',
+              name: 'Maravilla | About Dr. Jan Duffy',
               description: 'Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. North Las Vegas Family Homes expert—Maravilla and North Las Vegas.',
               url: `${baseUrl}/about`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'About', url: `${baseUrl}/about` },
-              ],
             }),
           ]),
         }}

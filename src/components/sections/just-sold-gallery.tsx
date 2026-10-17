@@ -93,9 +93,9 @@ export default function JustSoldGallery() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Just Sold
+              Maravilla: Just Sold
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Just Sold' />
+            <SectionHeadingMedia heading='Maravilla: Just Sold' />
             <p className='text-xl text-gray-600 max-w-3xl mx-auto'>
               Browse through {PHOTO_PATHS.length} stunning photos of recently sold Maravilla properties
             </p>

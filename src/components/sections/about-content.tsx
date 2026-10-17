@@ -11,9 +11,9 @@ export default function AboutContent() {
           {/* Content */}
           <div>
             <h2 className='text-4xl font-bold text-[#0A2540] mb-6'>
-              North Las Vegas Family Homes: About Dr. Jan Duffy
+              Maravilla: About Dr. Jan Duffy
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: About Dr. Jan Duffy' />
+            <SectionHeadingMedia heading='Maravilla: About Dr. Jan Duffy' />
             <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
               Dr. Jan Duffy is a REALTOR® with{' '}
               <strong>Berkshire Hathaway HomeServices® Nevada</strong>, your

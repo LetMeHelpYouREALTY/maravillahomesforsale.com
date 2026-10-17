@@ -11,7 +11,6 @@ import {
 } from '@/components/ui/card';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
   generateBlogSchema,
   generateArticleSchema,
@@ -48,9 +47,9 @@ export default function MarketInsightsPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h1 className='text-4xl md:text-5xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Market Insights
+              Maravilla: Market Insights
             </h1>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Insights' />
+            <SectionHeadingMedia heading='Maravilla: Market Insights' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Buyer and seller guides for Maravilla and North Las Vegas from Dr. Jan Duffy.
               Also see our{' '}
@@ -128,7 +127,7 @@ export default function MarketInsightsPage() {
 
       <KcmVideosSection
         limit={5}
-        heading='North Las Vegas Family Homes: Market Videos'
+        heading='Maravilla: Market Videos'
         description='Watch short market updates and tips from Dr. Jan Duffy’s partner, Simplifying the Market.'
       />
 
@@ -138,29 +137,25 @@ export default function MarketInsightsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Market Insights',
+              name: 'Maravilla | Market Insights',
               description:
                 'Read market insights and guides for Maravilla, North Las Vegas and Las Vegas, Nevada.',
               url: `${baseUrl}/market-insights`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Market Insights', url: `${baseUrl}/market-insights` },
-              ],
             }),
             generateBlogSchema({
-              name: 'North Las Vegas Family Homes | Market Insights',
+              name: 'Maravilla | Market Insights',
               description:
                 'Real estate market insights and guides for Maravilla, North Las Vegas and Las Vegas, Nevada.',
               url: `${baseUrl}/market-insights`,
               author: 'Dr. Jan Duffy',
-              publisher: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+              publisher: 'Maravilla | Homes by Dr. Jan Duffy',
             }),
             ...posts.slice(0, 5).map((post) =>
               generateArticleSchema({
                 headline: post.title,
                 description:
                   post.description ||
-                  `North Las Vegas Family Homes: ${post.title} for North Las Vegas and Maravilla.`,
+                  `Maravilla: ${post.title} for North Las Vegas and Maravilla.`,
                 url: `${baseUrl}${post.href}`,
                 image: post.imageUrl,
                 datePublished: post.dateISO,
@@ -168,15 +163,11 @@ export default function MarketInsightsPage() {
                   name: post.author,
                 },
                 publisher: {
-                  name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+                  name: 'Maravilla | Homes by Dr. Jan Duffy',
                   logo: '/images/dr-jan-duffy-512.png',
                 },
               })
             ),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Market Insights', url: `${baseUrl}/market-insights` },
-            ]),
             generateVideoGallerySchema(
               KCM_VIDEO_ENTRIES.map((v) => ({
                 id: v.id,
@@ -184,7 +175,7 @@ export default function MarketInsightsPage() {
                 description: v.description,
                 url: v.url,
               })),
-              'North Las Vegas Family Homes: Market Videos'
+              'Maravilla: Market Videos'
             ),
           ]),
         }}

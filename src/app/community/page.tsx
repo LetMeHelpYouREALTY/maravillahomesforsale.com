@@ -25,7 +25,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 
@@ -38,7 +37,7 @@ export const revalidate = 604800; // 1 week
 
 export const metadata = genMetadata({
   title:
-    'North Las Vegas Family Homes | Maravilla Community Guide: Schools, Amenities & Lifestyle',
+    'Maravilla | Maravilla Community Guide: Schools, Amenities & Lifestyle',
     description:
       'Discover Maravilla: parks, trails, shopping, and Clark County School District campuses nearby. Master-planned homes in North Las Vegas. Call (702) 500-1953.',
   keywords:
@@ -127,7 +126,7 @@ export default function CommunityPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Community Guide
+            Maravilla: Community Guide
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             A master-planned community in North Las Vegas with <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes from 1,519 to 2,947 square feet</Link>, parks, trails, and access to
@@ -187,9 +186,9 @@ export default function CommunityPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Community Amenities
+              Maravilla: Community Amenities
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Community Amenities' />
+            <SectionHeadingMedia heading='Maravilla: Community Amenities' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Everything you need is just minutes away in Maravilla. View <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>detailed amenities</Link> and <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>home features</Link>.
             </p>
@@ -290,9 +289,9 @@ export default function CommunityPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-12'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Lifestyle & Community
+              Maravilla: Lifestyle & Community
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Lifestyle & Community' />
+            <SectionHeadingMedia heading='Maravilla: Lifestyle & Community' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Experience the lifestyle that makes Maravilla special
             </p>
@@ -324,9 +323,9 @@ export default function CommunityPage() {
       <section className='py-16 bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='text-3xl font-bold mb-4'>
-            North Las Vegas Family Homes: Ready to Join the Community?
+            Maravilla: Ready to Join the Community?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Join the Community?' />
+          <SectionHeadingMedia heading='Maravilla: Ready to Join the Community?' />
           <p className='text-xl text-gray-200 mb-8'>
             Discover why so many families choose to call Maravilla home.
             Browse available properties or contact us for a personalized
@@ -359,14 +358,10 @@ export default function CommunityPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Community Guide',
+              name: 'Maravilla | Community Guide',
               description:
                 'Discover schools, amenities, shopping, dining, and lifestyle in Maravilla, Las Vegas. Your complete guide to community living.',
               url: `${baseUrl}/community`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Community Guide', url: `${baseUrl}/community` },
-              ],
             }),
             {
               '@context': 'https://schema.org',
@@ -387,10 +382,6 @@ export default function CommunityPage() {
                 longitude: -115.17182,
               },
             },
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Community Guide', url: `${baseUrl}/community` },
-            ]),
           ]),
         }}
       />

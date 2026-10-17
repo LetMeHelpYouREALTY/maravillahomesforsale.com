@@ -39,7 +39,7 @@ export default function Navigation() {
               priority
             />
             <span className='text-xl md:text-2xl font-bold text-[#0A2540] leading-tight'>
-              North Las Vegas Family Homes
+              Maravilla Homes for Sale
               <span className='block text-xs font-medium text-[#3A8DDE]'>
                 {AGENT_NAME}, REALTOR®
               </span>
@@ -81,7 +81,7 @@ export default function Navigation() {
             </SheetTrigger>
             <SheetContent side='right' className='w-[300px] sm:w-[400px]'>
               <div className='flex flex-col space-y-4 mt-8'>
-                <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>North Las Vegas Family Homes – Menu</h2>
+                <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>Maravilla – Menu</h2>
                 {navLinks.map(link => (
                   <Link
                     key={link.href}

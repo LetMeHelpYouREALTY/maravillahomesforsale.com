@@ -3,7 +3,6 @@ import SiteImage from '@/components/ui/site-image';
 import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
-  generateBreadcrumbSchema,
 } from '@/lib/metadata';
 import Script from 'next/script';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -16,7 +15,7 @@ const baseUrl = (
 export const metadata = genMetadata({
   title: 'Privacy Policy | Maravilla, North Las Vegas | Dr. Jan Duffy',
   description:
-    'Privacy Policy for North Las Vegas Family Homes | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
+    'Privacy Policy for Maravilla | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
   keywords: 'privacy policy, data protection, personal information',
   image: '/images/pages/privacy-hero.jpg',
   path: '/privacy',
@@ -28,7 +27,7 @@ export default function PrivacyPage() {
       <article className='py-16 bg-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: Privacy Policy
+            Maravilla: Privacy Policy
           </h1>
           <div className='flex items-center gap-4 mb-8'>
             <SiteImage
@@ -51,7 +50,7 @@ export default function PrivacyPage() {
                 Information We Collect
               </h2>
               <p>
-                North Las Vegas Family Homes | Homes by Dr. Jan Duffy (&quot;we,&quot;
+                Maravilla | Homes by Dr. Jan Duffy (&quot;we,&quot;
                 &quot;our,&quot; or &quot;us&quot;) collects information that you provide
                 directly to us when you:
               </p>
@@ -65,7 +64,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                North Las Vegas Family Homes: How We Use Your Information
+                Maravilla: How We Use Your Information
               </h2>
               <p>We use the information we collect to:</p>
               <ul className='list-disc pl-6 space-y-2 mt-4'>
@@ -94,7 +93,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                North Las Vegas Family Homes: Data Security
+                Maravilla: Data Security
               </h2>
               <p>
                 We implement appropriate security measures to protect your personal
@@ -118,7 +117,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                North Las Vegas Family Homes: Cookies and Tracking
+                Maravilla: Cookies and Tracking
               </h2>
               <p>
                 We use cookies and similar tracking technologies to improve your
@@ -136,7 +135,7 @@ export default function PrivacyPage() {
               </p>
               <div className='mt-4 space-y-2'>
                 <p>
-                  <strong>North Las Vegas Family Homes | Homes by Dr. Jan Duffy</strong>
+                  <strong>Maravilla | Homes by Dr. Jan Duffy</strong>
                 </p>
                 <p>{BUSINESS_INFO.address.full}</p>
                 <p>
@@ -156,7 +155,7 @@ export default function PrivacyPage() {
 
             <section>
               <h2 className='text-2xl font-semibold text-[#0A2540] mb-4'>
-                North Las Vegas Family Homes: Updates to This Policy
+                Maravilla: Updates to This Policy
               </h2>
               <p>
                 We may update this Privacy Policy from time to time. The most recent
@@ -178,18 +177,10 @@ export default function PrivacyPage() {
             generateWebPageSchema({
               name: 'Privacy Policy | North Las Vegas Family Homes',
               description:
-                'Privacy Policy for North Las Vegas Family Homes | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
+                'Privacy Policy for Maravilla | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
               url: `${baseUrl}/privacy`,
               image: '/images/pages/privacy-hero.jpg',
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Privacy Policy', url: `${baseUrl}/privacy` },
-              ],
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Privacy Policy', url: `${baseUrl}/privacy` },
-            ]),
           ]),
         }}
       />

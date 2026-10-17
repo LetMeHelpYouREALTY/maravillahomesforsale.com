@@ -20,7 +20,7 @@ export default function Footer() {
                 className='h-16 w-16 rounded-full bg-white object-contain'
               />
               <h3 className='text-xl font-bold text-white'>
-                North Las Vegas Family Homes | Homes by {AGENT_NAME}
+                Maravilla | Homes by {AGENT_NAME}
               </h3>
             </div>
             <p className='text-gray-300 leading-relaxed'>
@@ -281,7 +281,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className='border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 space-y-2 text-sm'>
           <p>
-            &copy; 2009-2026 North Las Vegas Family Homes | Homes by Dr. Jan Duffy. All rights
+            &copy; 2009-2026 Maravilla | Homes by Dr. Jan Duffy. All rights
             reserved.
           </p>
           <p>&copy; 2025 BHH Affiliates, LLC.</p>

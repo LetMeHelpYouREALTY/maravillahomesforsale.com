@@ -12,7 +12,6 @@ import {
 import { Button } from '@/components/ui/button';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
   generateBlogSchema,
 } from '@/lib/metadata';
@@ -43,7 +42,7 @@ export default function BlogPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Blog & Market Updates
+            Maravilla: Blog & Market Updates
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Buyer and seller guides for Maravilla and North Las Vegas from Dr. Jan Duffy.
@@ -54,9 +53,9 @@ export default function BlogPage() {
       <section className='py-16 bg-white'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Guides & Market Updates
+            Maravilla: Guides & Market Updates
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Guides & Market Updates' />
+          <SectionHeadingMedia heading='Maravilla: Guides & Market Updates' />
           <div className='flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-8'>
             <p className='text-gray-600'>
               On-site guides and tools. For the full set, visit Market Insights.
@@ -131,27 +130,19 @@ export default function BlogPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Blog & Market Updates',
+              name: 'Maravilla | Blog & Market Updates',
               description:
-                'North Las Vegas Family Homes: blog and market updates for North Las Vegas and Maravilla.',
+                'Maravilla: blog and market updates for North Las Vegas and Maravilla.',
               url: `${baseUrl}/blog`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Blog', url: `${baseUrl}/blog` },
-              ],
             }),
             generateBlogSchema({
               name: 'Blog & Market Updates',
               description:
-                'North Las Vegas Family Homes: real estate guides and local insights for North Las Vegas and Maravilla.',
+                'Maravilla: real estate guides and local insights for North Las Vegas and Maravilla.',
               url: `${baseUrl}/blog`,
-              author: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-              publisher: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+              author: 'Maravilla | Homes by Dr. Jan Duffy',
+              publisher: 'Maravilla | Homes by Dr. Jan Duffy',
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Blog', url: `${baseUrl}/blog` },
-            ]),
           ]),
         }}
       />

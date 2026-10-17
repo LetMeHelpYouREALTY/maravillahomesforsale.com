@@ -529,7 +529,7 @@ export function generateWebPageSchema({
     image: imageUrl,
     speakable: {
       '@type': 'SpeakableSpecification',
-      cssSelector: ['h1', '.speakable'],
+      cssSelector: ['h1', '.speakable', '#faqs'],
     },
     ...(breadcrumb && {
       breadcrumb: {
@@ -1024,7 +1024,7 @@ export function generateVideoGallerySchema(
     thumbnailUrl?: string;
     uploadDate?: string;
   }>,
-  listName = 'North Las Vegas Family Homes: Market Videos'
+  listName = 'Maravilla: Market Videos'
 ) {
   return {
     '@context': 'https://schema.org',

@@ -7,7 +7,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -34,10 +33,10 @@ export default function SchoolsPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Schools
+            Maravilla: Schools
           </h1>
-          <p className='text-xl text-gray-200 max-w-3xl'>
-            Maravilla is served by the <strong>Clark County School District</strong>. Families choose Maravilla for its community feel and access to area schools. Jump to <a href='#school-info' className='text-white hover:text-gray-200 underline font-medium'>school info</a>, <a href='#zones' className='text-white hover:text-gray-200 underline font-medium'>school zones</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>nearby places & map</Link>, the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</Link>.
+          <p className='speakable text-xl text-gray-200 max-w-3xl'>
+            Maravilla is served by the <strong>Clark County School District</strong>. Many buyers weigh commute, campus options, and zoning when comparing Maravilla to nearby North Las Vegas neighborhoods. Jump to <a href='#school-info' className='text-white hover:text-gray-200 underline font-medium'>school info</a>, <a href='#zones' className='text-white hover:text-gray-200 underline font-medium'>school zones</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/map-and-nearby-places' className='text-white hover:text-gray-200 underline font-medium'>nearby places & map</Link>, the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale</Link>.
           </p>
         </div>
       </div>
@@ -56,9 +55,9 @@ export default function SchoolsPage() {
       <section id='school-info' className='py-16 bg-white' aria-labelledby='school-info-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='school-info-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Schools Serving Maravilla
+            Maravilla: Schools Serving Maravilla
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Schools Serving Maravilla' />
+          <SectionHeadingMedia heading='Maravilla: Schools Serving Maravilla' />
           <p className='text-gray-700 leading-relaxed max-w-3xl mx-auto text-center mb-8'>
             Maravilla is in <strong>North Las Vegas</strong> and falls within the <strong>Clark County School District (CCSD)</strong>. Specific schools—elementary, middle, and high—depend on your exact address and current CCSD boundary maps. Call for zone confirmation on a listing.
           </p>
@@ -118,9 +117,9 @@ export default function SchoolsPage() {
       <section id='cta' className='py-16 bg-white' aria-labelledby='cta-heading'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 id='cta-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Get School Info for a Property
+            Maravilla: Get School Info for a Property
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get School Info for a Property' />
+          <SectionHeadingMedia heading='Maravilla: Get School Info for a Property' />
           <p className='text-lg text-gray-600 mb-8'>
             When you&apos;re interested in a specific Maravilla home, we can help you confirm the assigned schools. Call or schedule a consultation to get started.
           </p>
@@ -145,19 +144,11 @@ export default function SchoolsPage() {
         id='schools-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Schools', url: `${baseUrl}/schools` },
-            ]),
+          __html: JSON.stringify([,
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Schools',
+              name: 'Maravilla | Schools',
               description: 'Schools serving North Las Vegas and Maravilla, Clark County School District, and school zone information.',
               url: `${baseUrl}/schools`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Schools', url: `${baseUrl}/schools` },
-              ],
             }),
           ]),
         }}

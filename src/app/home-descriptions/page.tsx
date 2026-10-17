@@ -6,7 +6,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import Link from 'next/link';
@@ -36,7 +35,7 @@ export default function HomeDescriptionsPage() {
         <section className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-              North Las Vegas Family Homes: Detailed Property Descriptions
+              Maravilla: Detailed Property Descriptions
             </h1>
             <p className='text-xl text-gray-200 max-w-3xl'>
               Discover the exceptional features and specifications of <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>luxury homes in Maravilla</Link>, North Las Vegas. From gourmet kitchens to smart home technology, explore what makes these properties truly special. View <Link href='/amenities' className='text-white hover:text-gray-200 underline font-medium'>community amenities</Link>, explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>neighborhood</Link>, or see <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home values</Link>.
@@ -48,9 +47,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-white'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-              North Las Vegas Family Homes: Current Pricing Context
+              Maravilla: Current Pricing Context
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Current Pricing Context' />
+            <SectionHeadingMedia heading='Maravilla: Current Pricing Context' />
             <div className='grid md:grid-cols-3 gap-6 mb-12'>
               <div className='bg-[#F7F9FC] rounded-lg p-6 text-center'>
                 <DollarSign className='h-12 w-12 text-[#3A8DDE] mx-auto mb-4' />
@@ -78,9 +77,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Home Specifications
+              Maravilla: Home Specifications
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Home Specifications' />
+            <SectionHeadingMedia heading='Maravilla: Home Specifications' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -259,9 +258,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Exterior Elements
+              Maravilla: Exterior Elements
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Exterior Elements' />
+            <SectionHeadingMedia heading='Maravilla: Exterior Elements' />
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -380,9 +379,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Location Benefits
+              Maravilla: Location Benefits
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Location Benefits' />
+            <SectionHeadingMedia heading='Maravilla: Location Benefits' />
             <div className='grid md:grid-cols-2 gap-8 mb-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -512,9 +511,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8'>
-              North Las Vegas Family Homes: Surrounding Neighborhoods
+              Maravilla: Surrounding Neighborhoods
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Surrounding Neighborhoods' />
+            <SectionHeadingMedia heading='Maravilla: Surrounding Neighborhoods' />
             <div className='grid md:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-2xl font-semibold text-[#0A2540] mb-4'>
@@ -608,9 +607,9 @@ export default function HomeDescriptionsPage() {
         <section className='py-16 bg-[#F7F9FC]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-              North Las Vegas Family Homes: Maravilla Location
+              Maravilla: Maravilla Location
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
+            <SectionHeadingMedia heading='Maravilla: Maravilla Location' />
             <Suspense fallback={<div className='h-[500px] bg-gray-200 animate-pulse rounded-lg' />}>
               <GoogleMap
                 address='Maravilla, North Las Vegas, NV 89031'
@@ -632,19 +631,11 @@ export default function HomeDescriptionsPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Home Descriptions',
+              name: 'Maravilla | Home Descriptions',
               description:
                 'Detailed descriptions of Maravilla luxury homes featuring 3-5 bedrooms, gourmet kitchens, smart home technology, and resort-style amenities in North Las Vegas.',
               url: `${baseUrl}/home-descriptions`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Home Descriptions', url: `${baseUrl}/home-descriptions` },
-              ],
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Home Descriptions', url: `${baseUrl}/home-descriptions` },
-            ]),
           ]),
         }}
       />

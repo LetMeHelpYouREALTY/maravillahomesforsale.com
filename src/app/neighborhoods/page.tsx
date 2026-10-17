@@ -25,7 +25,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { NEIGHBORHOODS, NEIGHBORHOOD_SLUGS } from '@/data/neighborhoods';
@@ -42,7 +41,7 @@ export const revalidate = 604800; // 1 week
 
 export const metadata = genMetadata({
   title:
-    'North Las Vegas Family Homes | Maravilla Neighborhoods & Communities',
+    'Maravilla | Maravilla Neighborhoods & Communities',
   description:
     'Explore Maravilla and surrounding neighborhoods in Las Vegas. Find your perfect community with luxury homes and excellent amenities. Call (702) 500-1953.',
   keywords:
@@ -110,7 +109,7 @@ export default function NeighborhoodsPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Neighborhoods & Communities
+            Maravilla: Neighborhoods & Communities
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Explore the distinct neighborhoods and communities within and around
@@ -128,9 +127,9 @@ export default function NeighborhoodsPage() {
               <MapPin className='h-8 w-8 text-[#3A8DDE]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Key Neighborhoods & Communities
+              Maravilla: Key Neighborhoods & Communities
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Key Neighborhoods & Communities' />
+            <SectionHeadingMedia heading='Maravilla: Key Neighborhoods & Communities' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Maravilla and surrounding areas feature a mix of luxury single-family
               homes and condos across several distinct neighborhoods, each with its
@@ -243,9 +242,9 @@ export default function NeighborhoodsPage() {
               <Building2 className='h-8 w-8 text-[#16B286]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Luxury Home Collections
+              Maravilla: Luxury Home Collections
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Luxury Home Collections' />
+            <SectionHeadingMedia heading='Maravilla: Luxury Home Collections' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Maravilla features luxury home collections with distinctive floor
               plans, each designed for modern living with premium finishes and
@@ -280,9 +279,9 @@ export default function NeighborhoodsPage() {
               <TreePine className='h-8 w-8 text-[#0A2540]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Housing Styles & Amenities
+              Maravilla: Housing Styles & Amenities
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Housing Styles & Amenities' />
+            <SectionHeadingMedia heading='Maravilla: Housing Styles & Amenities' />
           </div>
 
           <div className='grid lg:grid-cols-2 gap-12'>
@@ -371,9 +370,9 @@ export default function NeighborhoodsPage() {
               <Users className='h-8 w-8 text-[#16B286]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Price Range
+              Maravilla: Price Range
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Price Range' />
+            <SectionHeadingMedia heading='Maravilla: Price Range' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Home prices in Maravilla vary, with luxury new construction and resale
               options available across different square footage ranges.
@@ -434,9 +433,9 @@ export default function NeighborhoodsPage() {
               <MapPin className='h-8 w-8 text-[#3A8DDE]' />
             </div>
             <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Maravilla Location
+              Maravilla: Maravilla Location
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
+            <SectionHeadingMedia heading='Maravilla: Maravilla Location' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Explore the location of Maravilla and its distinct neighborhoods in
               North Las Vegas. The community is conveniently located near major
@@ -474,9 +473,9 @@ export default function NeighborhoodsPage() {
       <section className='py-16 bg-[#F7F9FC]'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Find Your Perfect Neighborhood
+            Maravilla: Find Your Perfect Neighborhood
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Find Your Perfect Neighborhood' />
+          <SectionHeadingMedia heading='Maravilla: Find Your Perfect Neighborhood' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy can provide you with the most current and specific
             listings within the Maravilla community that match your
@@ -540,20 +539,12 @@ export default function NeighborhoodsPage() {
                 },
               ],
             },
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Neighborhoods', url: `${baseUrl}/neighborhoods` },
-            ]),
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Maravilla Neighborhoods',
+              name: 'Maravilla | Maravilla Neighborhoods',
               description:
                 'Explore the distinct neighborhoods in Maravilla, North Las Vegas. Luxury homes with premium amenities and distinctive floor plans.',
               url: `${baseUrl}/neighborhoods`,
               image: '/images/pages/neighborhoods-hero.jpg',
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Neighborhoods', url: `${baseUrl}/neighborhoods` },
-              ],
             }),
           ]),
         }}

@@ -9,7 +9,6 @@ import Script from 'next/script';
 import {
   generateMetadata as genMetadata,
   generateLocalBusinessSchema,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { MARAVILLA_LONGFORM_PARAGRAPHS } from '@/lib/maravilla-longform';
@@ -48,9 +47,9 @@ export default function SellMaravillaPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Sell Your Home
+            Maravilla: Sell Your Home
           </h1>
-          <p className='text-xl text-gray-200 max-w-3xl'>
+          <p className='speakable text-xl text-gray-200 max-w-3xl'>
             Selling in <strong>Maravilla</strong> is about more than listing a
             property—it&apos;s about positioning your home so it&apos;s the clear best choice
             for buyers comparing Maravilla inventory right now. Dr. Jan Duffy,
@@ -132,9 +131,9 @@ export default function SellMaravillaPage() {
       <section className='py-16 bg-[#F7F9FC]'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: Seller Strategy
+            Maravilla: Seller Strategy
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Seller Strategy' />
+          <SectionHeadingMedia heading='Maravilla: Seller Strategy' />
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Buyers compare &quot;Maravilla vs. everything else&quot;
           </h3>
@@ -182,9 +181,9 @@ export default function SellMaravillaPage() {
       <section className='py-16 bg-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: Preparing Your Home to Sell
+            Maravilla: Preparing Your Home to Sell
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Preparing Your Home to Sell' />
+          <SectionHeadingMedia heading='Maravilla: Preparing Your Home to Sell' />
           <p className='text-gray-700 leading-relaxed mb-4'>
             Most Maravilla sellers get the best return from &quot;friction reducers&quot;:
             items that make buyers say &quot;yes&quot; faster. These include repairs,
@@ -242,9 +241,9 @@ export default function SellMaravillaPage() {
       <section id='location' className='py-16 bg-[#F7F9FC]' aria-labelledby='location-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='location-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Maravilla Location
+            Maravilla: Maravilla Location
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
+          <SectionHeadingMedia heading='Maravilla: Maravilla Location' />
           <Suspense fallback={<MapSkeleton />}>
             <GoogleMap
               address='Maravilla, North Las Vegas, NV 89031'
@@ -264,19 +263,11 @@ export default function SellMaravillaPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateLocalBusinessSchema(),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Sell in Maravilla', url: `${baseUrl}/sell` },
-            ]),
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Sell Your Home',
+              name: 'Maravilla | Sell Your Home',
               description:
                 'Sell your Maravilla home with expert guidance. Dr. Jan Duffy helps you price competitively, prepare for market, and negotiate to maximize proceeds.',
               url: `${baseUrl}/sell`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Sell in Maravilla', url: `${baseUrl}/sell` },
-              ],
             }),
           ]),
         }}

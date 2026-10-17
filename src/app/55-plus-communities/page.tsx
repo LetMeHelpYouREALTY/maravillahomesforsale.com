@@ -7,7 +7,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -42,27 +41,18 @@ export default function FiftyFivePlusCommunitiesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | 55+ Communities',
+              name: 'Maravilla | 55+ Communities',
               description:
                 'Explore 55+ and active-adult communities in North Las Vegas and Maravilla. Age-qualified homes and lifestyle options.',
-              url: `${baseUrl}/55-plus-communities`,
-              breadcrumb,
-            })
+              url: `${baseUrl}/55-plus-communities`})
           ),
-        }}
-      />
-      <Script
-        id='55-plus-breadcrumb-schema'
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumb)),
         }}
       />
 
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: 55+ Communities
+            Maravilla: 55+ Communities
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Find age-qualified and active-adult communities in North Las Vegas and the Maravilla area. Jump to <a href='#why-55-plus' className='text-white hover:text-gray-200 underline font-medium'>why 55+</a>, <a href='#areas' className='text-white hover:text-gray-200 underline font-medium'>areas</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>.
@@ -84,9 +74,9 @@ export default function FiftyFivePlusCommunitiesPage() {
       <section id='why-55-plus' className='py-16 bg-white' aria-labelledby='why-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='why-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: Why 55+ and Active-Adult Communities?
+            Maravilla: Why 55+ and Active-Adult Communities?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why 55+ and Active-Adult Communities?' />
+          <SectionHeadingMedia heading='Maravilla: Why 55+ and Active-Adult Communities?' />
           <p className='text-gray-700 leading-relaxed mb-6 max-w-3xl'>
             Age-qualified communities in North Las Vegas and the Maravilla area offer low-maintenance living, clubhouses, pools, fitness, and social activities designed for active adults. Many buyers choose 55+ or active-adult options for lifestyle, amenities, and resale value.
           </p>
@@ -104,9 +94,9 @@ export default function FiftyFivePlusCommunitiesPage() {
       <section id='areas' className='py-16 bg-[#F7F9FC]' aria-labelledby='areas-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='areas-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
-            North Las Vegas Family Homes: 55+ Areas
+            Maravilla: 55+ Areas
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: 55+ Areas' />
+          <SectionHeadingMedia heading='Maravilla: 55+ Areas' />
           <p className='text-gray-600 mb-6 max-w-3xl'>
             Maravilla and nearby North Las Vegas neighborhoods offer a mix of age-qualified and all-ages communities. Dr. Jan Duffy can help you compare 55+ and active-adult options, HOA rules, and amenities.
           </p>
@@ -146,9 +136,9 @@ export default function FiftyFivePlusCommunitiesPage() {
       <section id='cta' className='py-16 bg-white'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Find Your 55+ or Active-Adult Home
+            Maravilla: Find Your 55+ or Active-Adult Home
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Find Your 55+ or Active-Adult Home' />
+          <SectionHeadingMedia heading='Maravilla: Find Your 55+ or Active-Adult Home' />
           <p className='text-gray-600 mb-6'>
             Dr. Jan Duffy specializes in North Las Vegas and Maravilla. Get personalized help with 55+ communities, financing, and tours.
           </p>

@@ -103,9 +103,9 @@ export default function HomeEvaluationSection() {
         {/* Section Header */}
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Get Your Home&apos;s Value
+            Maravilla: Get Your Home&apos;s Value
           </h2>
-          <SectionHeadingMedia heading={"North Las Vegas Family Homes: Get Your Home's Value"} />
+          <SectionHeadingMedia heading={"Maravilla: Get Your Home's Value"} />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover what your Maravilla property is worth with our advanced
             evaluation tools

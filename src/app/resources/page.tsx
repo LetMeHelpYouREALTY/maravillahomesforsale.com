@@ -15,7 +15,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import OnThisPage from '@/components/OnThisPage';
@@ -84,7 +83,7 @@ export default function ResourcesPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Resources
+            Maravilla: Resources
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Guides, market data, neighborhood info, and tools for Maravilla home buyers and sellers. Find what you need and connect with Dr. Jan Duffy for personalized help.
@@ -107,9 +106,9 @@ export default function ResourcesPage() {
       <section id='buying-selling' className='py-16 bg-white' aria-labelledby='buying-selling-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='buying-selling-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
-            North Las Vegas Family Homes: Buying & Selling
+            Maravilla: Buying & Selling
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Buying & Selling' />
+          <SectionHeadingMedia heading='Maravilla: Buying & Selling' />
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             {resourceGroups[0].items.map((item, i) => {
               const Icon = item.icon;
@@ -134,9 +133,9 @@ export default function ResourcesPage() {
       <section id='value-market' className='py-16 bg-[#F7F9FC]' aria-labelledby='value-market-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='value-market-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
-            North Las Vegas Family Homes: Value & Market
+            Maravilla: Value & Market
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Value & Market' />
+          <SectionHeadingMedia heading='Maravilla: Value & Market' />
           <div className='grid md:grid-cols-3 gap-6'>
             {resourceGroups[1].items.map((item, i) => {
               const Icon = item.icon;
@@ -188,9 +187,9 @@ export default function ResourcesPage() {
       <section id='services' className='py-16 bg-[#F7F9FC]' aria-labelledby='services-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='services-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
-            North Las Vegas Family Homes: Services & Contact
+            Maravilla: Services & Contact
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Services & Contact' />
+          <SectionHeadingMedia heading='Maravilla: Services & Contact' />
           <div className='grid md:grid-cols-3 gap-6'>
             {resourceGroups[3].items.map((item, i) => {
               const Icon = item.icon;
@@ -216,19 +215,11 @@ export default function ResourcesPage() {
         id='resources-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify([
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Resources', url: `${baseUrl}/resources` },
-            ]),
+          __html: JSON.stringify([,
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Resources & Tools',
+              name: 'Maravilla | Resources & Tools',
               description: 'Resources for North Las Vegas and Maravilla buyers and sellers: guides, market data, neighborhood info.',
               url: `${baseUrl}/resources`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Resources', url: `${baseUrl}/resources` },
-              ],
             }),
           ]),
         }}

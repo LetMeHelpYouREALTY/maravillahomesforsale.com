@@ -7,7 +7,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
@@ -49,29 +48,20 @@ export default function FirstTimeBuyersPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify(
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | First-Time Buyers',
+              name: 'Maravilla | First-Time Buyers',
               description:
                 'First-time home buyer guide for North Las Vegas and Maravilla. Pre-approval, down payment, and step-by-step help.',
-              url: `${baseUrl}/first-time-buyers`,
-              breadcrumb,
-            })
+              url: `${baseUrl}/first-time-buyers`})
           ),
-        }}
-      />
-      <Script
-        id='first-time-breadcrumb-schema'
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumb)),
         }}
       />
 
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: First-Time Home Buyers
+            Maravilla: First-Time Home Buyers
           </h1>
-          <p className='text-xl text-gray-200 max-w-3xl'>
+          <p className='speakable text-xl text-gray-200 max-w-3xl'>
             Buying your first home? Get pre-approved, explore neighborhoods, and close with confidence. Jump to <a href='#steps' className='text-white hover:text-gray-200 underline font-medium'>steps</a>, <a href='#resources' className='text-white hover:text-gray-200 underline font-medium'>resources</a>, or <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>.
           </p>
         </div>
@@ -91,9 +81,9 @@ export default function FirstTimeBuyersPage() {
       <section id='steps' className='py-16 bg-white' aria-labelledby='steps-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='steps-heading' className='text-3xl font-bold text-[#0A2540] mb-8'>
-            North Las Vegas Family Homes: Steps to Buy Your First Home
+            Maravilla: Steps to Buy Your First Home
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Steps to Buy Your First Home' />
+          <SectionHeadingMedia heading='Maravilla: Steps to Buy Your First Home' />
           <div className='grid md:grid-cols-2 gap-8'>
             {steps.map((step, i) => {
               const Icon = step.icon;
@@ -118,9 +108,9 @@ export default function FirstTimeBuyersPage() {
       <section id='resources' className='py-16 bg-[#F7F9FC]' aria-labelledby='resources-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='resources-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: Resources for First-Time Buyers
+            Maravilla: Resources for First-Time Buyers
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Resources for First-Time Buyers' />
+          <SectionHeadingMedia heading='Maravilla: Resources for First-Time Buyers' />
           <p className='text-gray-600 mb-6 max-w-3xl'>
             FHA, VA, and conventional loans are common for first-time buyers in North Las Vegas and Maravilla. Dr. Jan Duffy can connect you with trusted lenders and walk you through the process.
           </p>
@@ -157,9 +147,9 @@ export default function FirstTimeBuyersPage() {
       <section id='cta' className='py-16 bg-white'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='text-2xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Ready to Start Your First Home Search?
+            Maravilla: Ready to Start Your First Home Search?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Start Your First Home Search?' />
+          <SectionHeadingMedia heading='Maravilla: Ready to Start Your First Home Search?' />
           <p className='text-gray-600 mb-6'>
             Dr. Jan Duffy helps first-time buyers in North Las Vegas and Maravilla with pre-approval, tours, and a smooth closing.
           </p>

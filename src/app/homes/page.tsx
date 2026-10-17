@@ -33,7 +33,6 @@ import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
   generateMetadata as genMetadata,
   generateCollectionPageSchema,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 
@@ -61,7 +60,7 @@ export default function HomesPage() {
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
             Homes for Sale in Maravilla
           </h1>
-          <p className='text-xl text-gray-200 max-w-3xl'>
+          <p className='speakable text-xl text-gray-200 max-w-3xl'>
             Discover <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale in the Maravilla community</Link> in Las
             Vegas. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway
             HomeServices® Nevada, to find the right property. Public ZIP 89031
@@ -169,9 +168,9 @@ export default function HomesPage() {
       <section id='why-buy' className='py-16 bg-[#F7F9FC]' aria-labelledby='why-buy-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='why-buy-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Why Buy in Maravilla?
+            Maravilla: Why Buy in Maravilla?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Why Buy in Maravilla?' />
+          <SectionHeadingMedia heading='Maravilla: Why Buy in Maravilla?' />
           <div className='grid md:grid-cols-2 lg:grid-cols-4 gap-6'>
             <Card className='border-0 shadow-lg'>
               <CardHeader>
@@ -246,9 +245,9 @@ export default function HomesPage() {
           <div className='grid lg:grid-cols-2 gap-12'>
             <div>
               <h2 id='community-info-heading' className='text-3xl font-bold text-[#0A2540] mb-6'>
-                North Las Vegas Family Homes: Homes for Sale in Maravilla
+                Maravilla: Homes for Sale in Maravilla
               </h2>
-              <SectionHeadingMedia heading='North Las Vegas Family Homes: Homes for Sale in Maravilla' />
+              <SectionHeadingMedia heading='Maravilla: Homes for Sale in Maravilla' />
               <div className='space-y-4 text-gray-700'>
                 <p>
                   <strong>Community Information:</strong> Maravilla is a
@@ -318,9 +317,9 @@ export default function HomesPage() {
       <section id='ready-to-find' className='py-16 bg-white' aria-labelledby='ready-to-find-heading'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 id='ready-to-find-heading' className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Ready to Find Your Dream Home?
+            Maravilla: Ready to Find Your Dream Home?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Find Your Dream Home?' />
+          <SectionHeadingMedia heading='Maravilla: Ready to Find Your Dream Home?' />
           <p className='text-lg text-gray-600 mb-8'>
             Dr. Jan Duffy can provide you with the most current and specific
             listings within the Maravilla community that match your
@@ -350,17 +349,13 @@ export default function HomesPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Homes for Sale',
+              name: 'Maravilla | Homes for Sale',
               description:
                 'Browse quality homes for sale in Maravilla, Las Vegas. Find exceptional value and your dream home in one of Las Vegas\' best value communities.',
               url: `${baseUrl}/homes`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Homes for Sale', url: `${baseUrl}/homes` },
-              ],
             }),
             generateCollectionPageSchema({
-              name: 'North Las Vegas Family Homes: Homes for Sale in Maravilla',
+              name: 'Maravilla: Homes for Sale in Maravilla',
               description:
                 'Browse quality homes for sale in Maravilla, Las Vegas. Find exceptional value and your dream home in one of Las Vegas\' best value communities.',
               url: `${baseUrl}/homes`,
@@ -369,7 +364,7 @@ export default function HomesPage() {
               '@context': 'https://schema.org',
               '@type': 'ItemList',
               name: 'North Las Vegas Family Homes',
-              description: 'North Las Vegas Family Homes: homes for sale in Maravilla and North Las Vegas',
+              description: 'Maravilla: homes for sale in Maravilla and North Las Vegas',
               url: `${baseUrl}/homes`,
               numberOfItems: 206,
               itemListElement: {
@@ -391,10 +386,6 @@ export default function HomesPage() {
                 },
               },
             },
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Homes for Sale', url: `${baseUrl}/homes` },
-            ]),
           ]),
         }}
       />

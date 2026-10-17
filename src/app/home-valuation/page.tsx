@@ -9,7 +9,6 @@ import Script from 'next/script';
 import {
   generateMetadata as genMetadata,
   generateLocalBusinessSchema,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { MARAVILLA_LONGFORM_PARAGRAPHS } from '@/lib/maravilla-longform';
@@ -48,7 +47,7 @@ export default function MaravillaHomeValuationPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Home Valuation
+            Maravilla: Home Valuation
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Wondering <strong>what your Maravilla home is worth</strong>? A
@@ -122,9 +121,9 @@ export default function MaravillaHomeValuationPage() {
       <section className='py-16 bg-[#F7F9FC]'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: What Affects Home Values?
+            Maravilla: What Affects Home Values?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: What Affects Home Values?' />
+          <SectionHeadingMedia heading='Maravilla: What Affects Home Values?' />
           <h3 className='text-xl font-semibold text-[#0A2540] mb-3'>
             Comparable sales (the foundation)
           </h3>
@@ -204,9 +203,9 @@ export default function MaravillaHomeValuationPage() {
       <section className='py-16 bg-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Get Your Home Valuation
+            Maravilla: Get Your Home Valuation
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Get Your Home Valuation' />
+          <SectionHeadingMedia heading='Maravilla: Get Your Home Valuation' />
           <p className='text-lg text-gray-600 mb-8'>
             Contact Dr. Jan Duffy for a comprehensive valuation that considers all
             factors affecting your home&apos;s value in the Maravilla market.
@@ -229,9 +228,9 @@ export default function MaravillaHomeValuationPage() {
       <section id='location' className='py-16 bg-[#F7F9FC]' aria-labelledby='location-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='location-heading' className='text-3xl font-bold text-[#0A2540] mb-8 text-center'>
-            North Las Vegas Family Homes: Maravilla Location
+            Maravilla: Maravilla Location
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Maravilla Location' />
+          <SectionHeadingMedia heading='Maravilla: Maravilla Location' />
           <Suspense fallback={<MapSkeleton />}>
             <GoogleMap
               address='Maravilla, North Las Vegas, NV 89031'
@@ -251,19 +250,11 @@ export default function MaravillaHomeValuationPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateLocalBusinessSchema(),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Maravilla Home Valuation', url: `${baseUrl}/home-valuation` },
-            ]),
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Home Valuation',
+              name: 'Maravilla | Home Valuation',
               description:
                 'Get a free Maravilla home valuation with local pricing context. Dr. Jan Duffy provides accurate value estimates based on recent sales and market trends.',
               url: `${baseUrl}/home-valuation`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Maravilla Home Valuation', url: `${baseUrl}/home-valuation` },
-              ],
             }),
           ]),
         }}

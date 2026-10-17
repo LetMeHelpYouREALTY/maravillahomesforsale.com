@@ -21,7 +21,6 @@ import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
   generateLocalBusinessSchema,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
 } from '@/lib/metadata';
 import { BUSINESS_INFO, GBP_DESCRIPTION } from '@/lib/config/business-info';
@@ -51,7 +50,7 @@ export default function ContactPage() {
       <div className='bg-gradient-to-r from-[#0A2540] to-[#3A8DDE] text-white py-16'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>
-            North Las Vegas Family Homes: Contact
+            Maravilla: Contact
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
             Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway
@@ -76,9 +75,9 @@ export default function ContactPage() {
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <div className='text-center mb-8'>
             <h2 className='text-3xl md:text-4xl font-bold text-[#0A2540] mb-4'>
-              North Las Vegas Family Homes: Schedule a Consultation
+              Maravilla: Schedule a Consultation
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Schedule a Consultation' />
+            <SectionHeadingMedia heading='Maravilla: Schedule a Consultation' />
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               Book a strategy meeting to discuss your real estate goals, get personalized guidance,
               and explore homes in Maravilla and throughout Las Vegas. Choose a time that works for you.
@@ -264,7 +263,7 @@ export default function ContactPage() {
                 longitude={BUSINESS_INFO.geo.longitude}
                 zoom={14}
                 height='500px'
-                title='North Las Vegas Family Homes | Homes by Dr. Jan Duffy Office Location'
+                title='Maravilla | Homes by Dr. Jan Duffy Office Location'
               />
             </Suspense>
           </div>
@@ -316,9 +315,9 @@ export default function ContactPage() {
             <MessageSquare className='h-8 w-8 text-[#3A8DDE]' />
           </div>
           <h2 className='text-3xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Ready to Get Started?
+            Maravilla: Ready to Get Started?
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Ready to Get Started?' />
+          <SectionHeadingMedia heading='Maravilla: Ready to Get Started?' />
           <p className='text-lg text-gray-600 mb-8'>
             Browse our available properties or schedule a consultation to
             discuss your real estate needs in Maravilla.
@@ -348,19 +347,11 @@ export default function ContactPage() {
           __html: JSON.stringify([
             generateLocalBusinessSchema(),
             generateWebPageSchema({
-              name: 'Contact Dr. Jan Duffy - North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+              name: 'Contact Dr. Jan Duffy - Maravilla | Homes by Dr. Jan Duffy',
               description:
                 'Get in touch with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Contact our expert real estate team for buying, selling, or investing in Maravilla, Las Vegas.',
               url: `${baseUrl}/contact`,
-              breadcrumb: [
-                { name: 'Home', url: baseUrl },
-                { name: 'Contact', url: `${baseUrl}/contact` },
-              ],
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: baseUrl },
-              { name: 'Contact', url: `${baseUrl}/contact` },
-            ]),
           ]),
         }}
       />

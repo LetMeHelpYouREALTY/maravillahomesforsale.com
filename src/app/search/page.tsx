@@ -6,7 +6,6 @@ import { Button } from '@/components/ui/button';
 import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
-  generateBreadcrumbSchema,
 } from '@/lib/metadata';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 
@@ -45,9 +44,9 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       <section className='py-16 bg-white'>
         <div className='max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
           <h1 className='text-4xl md:text-5xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Search Homes
+            Maravilla: Search Homes
           </h1>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Search Homes' />
+          <SectionHeadingMedia heading='Maravilla: Search Homes' />
           <p className='text-lg text-gray-600 mb-8'>
             {query
               ? `You searched for "${query}". Use the links below to browse listings and market insights in Maravilla, Las Vegas.`
@@ -72,19 +71,11 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'North Las Vegas Family Homes | Search Homes',
+              name: 'Maravilla | Search Homes',
               description:
                 'Search Maravilla homes and explore real estate listings, market data, and neighborhood information in Maravilla, Las Vegas, Nevada.',
               url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'}/search`,
-              breadcrumb: [
-                { name: 'Home', url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com' },
-                { name: 'Search', url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'}/search` },
-              ],
             }),
-            generateBreadcrumbSchema([
-              { name: 'Home', url: process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com' },
-              { name: 'Search', url: `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.maravillahomesforsale.com'}/search` },
-            ]),
           ]),
         }}
       />

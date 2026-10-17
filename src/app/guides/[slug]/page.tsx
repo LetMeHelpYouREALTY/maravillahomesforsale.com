@@ -7,7 +7,6 @@ import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
-  generateBreadcrumbSchema,
   generateWebPageSchema,
   generateArticleSchema,
 } from '@/lib/metadata';
@@ -62,17 +61,8 @@ export default async function GuidePage({ params }: Props) {
             generateWebPageSchema({
               name: guide.title,
               description: guide.metaDescription,
-              url: `${baseUrl}/guides/${slug}`,
-              breadcrumb,
-            })
+              url: `${baseUrl}/guides/${slug}`})
           ),
-        }}
-      />
-      <Script
-        id='guide-breadcrumb-schema'
-        type='application/ld+json'
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(generateBreadcrumbSchema(breadcrumb)),
         }}
       />
       <Script
@@ -88,7 +78,7 @@ export default async function GuidePage({ params }: Props) {
               dateModified: guide.datePublished,
               author: { name: 'Dr. Jan Duffy', url: baseUrl },
               publisher: {
-                name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+                name: 'Maravilla | Homes by Dr. Jan Duffy',
                 logo: '/globe.svg',
               },
             })
@@ -143,7 +133,7 @@ export default async function GuidePage({ params }: Props) {
       <section className='py-16 bg-white' aria-labelledby='guide-content'>
         <div className='max-w-3xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='guide-content' className='sr-only'>
-            North Las Vegas Family Homes: Guide content
+            Maravilla: Guide content
           </h2>
           {guide.sections.map((section) => (
             <div
@@ -176,9 +166,9 @@ export default async function GuidePage({ params }: Props) {
       <section id='related-guides' className='py-12 bg-[#F7F9FC]' aria-labelledby='related-guides-heading'>
         <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
           <h2 id='related-guides-heading' className='text-2xl font-bold text-[#0A2540] mb-6'>
-            North Las Vegas Family Homes: More Guides
+            Maravilla: More Guides
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: More Guides' />
+          <SectionHeadingMedia heading='Maravilla: More Guides' />
           <p className='text-gray-600 mb-6 max-w-2xl'>
             Explore other client guides for North Las Vegas and Maravilla real estate.
           </p>

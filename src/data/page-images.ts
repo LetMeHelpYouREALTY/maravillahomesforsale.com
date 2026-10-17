@@ -14,12 +14,12 @@ const PAGES: Record<string, PageMedia> = {
   '/neighborhoods': {
     hero: {
       src: '/images/pages/neighborhoods-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Neighborhoods & Communities — stucco homes and desert streets in North Las Vegas',
+      alt: 'Maravilla: Neighborhoods & Communities — stucco homes and desert streets in North Las Vegas',
     },
     sections: {
       'Key Neighborhoods & Communities': {
         src: '/images/pages/neighborhoods-hero.jpg',
-        alt: 'North Las Vegas Family Homes: Key Neighborhoods & Communities along a desert suburban street',
+        alt: 'Maravilla: Key Neighborhoods & Communities along a desert suburban street',
       },
       'Jasmine Ranch': {
         src: '/images/pages/jasmine-ranch-hero.jpg',
@@ -68,7 +68,7 @@ const PAGES: Record<string, PageMedia> = {
   '/neighborhood': {
     hero: {
       src: '/images/pages/neighborhood-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Welcome to Maravilla — boulevard and desert landscaping in North Las Vegas',
+      alt: 'Maravilla: Welcome to Maravilla — boulevard and desert landscaping in North Las Vegas',
     },
   },
   '/homes': {
@@ -80,61 +80,61 @@ const PAGES: Record<string, PageMedia> = {
   '/sell': {
     hero: {
       src: '/images/pages/sell-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Sell Your Home — listing-ready Maravilla-style house at golden hour',
+      alt: 'Maravilla: Sell Your Home — listing-ready Maravilla-style house at golden hour',
     },
   },
   '/home-valuation': {
     hero: {
       src: '/images/pages/home-valuation-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Home Valuation — comparable-sales review desk overlooking desert rooftops',
+      alt: 'Maravilla: Home Valuation — comparable-sales review desk overlooking desert rooftops',
     },
   },
   '/buyers-guide': {
     hero: {
       src: '/images/pages/buyers-guide-hero.jpg',
-      alt: "North Las Vegas Family Homes: Buyer's Guide — house keys and a North Las Vegas front door",
+      alt: "Maravilla: Buyer's Guide — house keys and a North Las Vegas front door",
     },
   },
   '/first-time-buyers': {
     hero: {
       src: '/images/pages/first-time-buyers-hero.jpg',
-      alt: 'North Las Vegas Family Homes: First-Time Home Buyers — keys at a Maravilla entry door',
+      alt: 'Maravilla: First-Time Home Buyers — keys at a Maravilla entry door',
     },
   },
   '/guides': {
     hero: {
       src: '/images/pages/guides-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Guides for Clients — buyer checklist, map, and home keys',
+      alt: 'Maravilla: Guides for Clients — buyer checklist, map, and home keys',
     },
   },
   '/amenities': {
     hero: {
       src: '/images/pages/amenities-community-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Amenities — community pool and clubhouse in North Las Vegas',
+      alt: 'Maravilla: Amenities — community pool and clubhouse in North Las Vegas',
     },
   },
   '/community': {
     hero: {
       src: '/images/pages/community-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Community Guide — park ramada, walking path, and Maravilla homes',
+      alt: 'Maravilla: Community Guide — park ramada, walking path, and Maravilla homes',
     },
   },
   '/schools': {
     hero: {
       src: '/images/pages/schools-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Schools — Clark County campus exterior in North Las Vegas',
+      alt: 'Maravilla: Schools — Clark County campus exterior in North Las Vegas',
     },
   },
   '/real-estate-services': {
     hero: {
       src: '/images/pages/services-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Real Estate Services — consultation table with listing photos',
+      alt: 'Maravilla: Real Estate Services — consultation table with listing photos',
     },
   },
   '/contact': {
     hero: {
       src: '/images/pages/contact-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Contact — Dr. Jan Duffy office reception in North Las Vegas',
+      alt: 'Maravilla: Contact — Dr. Jan Duffy office reception in North Las Vegas',
     },
   },
   '/about': {
@@ -146,81 +146,81 @@ const PAGES: Record<string, PageMedia> = {
   '/market-data': {
     hero: {
       src: '/images/pages/market-data-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Market Data — aerial view of North Las Vegas housing',
+      alt: 'Maravilla: Market Data — aerial view of North Las Vegas housing',
     },
   },
   '/market-insights': {
     hero: {
       src: '/images/pages/market-insights-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Market Insights — North Las Vegas valley rooftops at late afternoon',
+      alt: 'Maravilla: Market Insights — North Las Vegas valley rooftops at late afternoon',
     },
   },
   '/map-and-nearby-places': {
     hero: {
       src: '/images/pages/map-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Map & Nearby Places — streets and highway access near Maravilla',
+      alt: 'Maravilla: Map & Nearby Places — streets and highway access near Maravilla',
     },
   },
   '/55-plus-communities': {
     hero: {
       src: '/images/pages/fifty-five-plus-hero.jpg',
-      alt: 'North Las Vegas Family Homes: 55+ Communities — single-story ranch home with desert yard',
+      alt: 'Maravilla: 55+ Communities — single-story ranch home with desert yard',
     },
   },
   '/home-descriptions': {
     hero: {
       src: '/images/pages/home-descriptions-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Detailed Property Descriptions — open kitchen and great room',
+      alt: 'Maravilla: Detailed Property Descriptions — open kitchen and great room',
     },
   },
   '/privacy': {
     hero: {
       src: '/images/pages/privacy-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Privacy Policy — Dr. Jan Duffy office desk and policy folder',
+      alt: 'Maravilla: Privacy Policy — Dr. Jan Duffy office desk and policy folder',
     },
   },
   '/blog': {
     hero: {
       src: '/images/pages/blog-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Blog & Market Updates — market report desk overlooking desert homes',
+      alt: 'Maravilla: Blog & Market Updates — market report desk overlooking desert homes',
     },
   },
   '/resources': {
     hero: {
       src: '/images/pages/resources-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Resources — buyer tools, floor plans, and Maravilla home keys',
+      alt: 'Maravilla: Resources — buyer tools, floor plans, and Maravilla home keys',
     },
   },
   '/search': {
     hero: {
       src: '/images/pages/search-hero.jpg',
-      alt: 'North Las Vegas Family Homes: Search Homes — listing-style home exterior in North Las Vegas',
+      alt: 'Maravilla: Search Homes — listing-style home exterior in North Las Vegas',
     },
   },
 };
 
 const SECTION_IMAGES: Record<string, PageImage> = {
-  'North Las Vegas Family Homes: Market Overview': {
+  'Maravilla: Market Overview': {
     src: '/images/pages/section-market.jpg',
-    alt: 'North Las Vegas Family Homes: Market Overview — rooftops and market charts for ZIP 89031',
+    alt: 'Maravilla: Market Overview — rooftops and market charts for ZIP 89031',
   },
-  'North Las Vegas Family Homes: Market Snapshot': {
+  'Maravilla: Market Snapshot': {
     src: '/images/pages/section-market.jpg',
-    alt: 'North Las Vegas Family Homes: Market Snapshot — North Las Vegas housing grid from a market desk',
+    alt: 'Maravilla: Market Snapshot — North Las Vegas housing grid from a market desk',
   },
   'Current North Las Vegas Real Estate Trends': {
     src: '/images/pages/section-market.jpg',
     alt: 'Current North Las Vegas real estate trends — desert suburban rooftops',
   },
-  'North Las Vegas Family Homes: Property Categories': {
+  'Maravilla: Property Categories': {
     src: '/images/pages/homes-hero.jpg',
-    alt: 'North Las Vegas Family Homes: Property Categories — Maravilla-style two-story home',
+    alt: 'Maravilla: Property Categories — Maravilla-style two-story home',
   },
-  'North Las Vegas Family Homes: Listings from Dr. Jan Duffy': {
+  'Maravilla: Listings from Dr. Jan Duffy': {
     src: '/images/pages/section-listings.jpg',
     alt: 'Listings from Dr. Jan Duffy — printed listing photos and keys on a review table',
   },
-  'North Las Vegas Family Homes: Schedule a Consultation': {
+  'Maravilla: Schedule a Consultation': {
     src: '/images/pages/section-office.jpg',
     alt: 'Schedule a consultation — North Las Vegas real estate office at dusk',
   },
@@ -228,7 +228,7 @@ const SECTION_IMAGES: Record<string, PageImage> = {
     src: '/images/pages/map-hero.jpg',
     alt: 'Find us on the map — North Las Vegas streets near I-215',
   },
-  'North Las Vegas Family Homes: Nearby Schools': {
+  'Maravilla: Nearby Schools': {
     src: '/images/pages/section-schools.jpg',
     alt: 'Clark County School District campus near Maravilla in North Las Vegas',
   },

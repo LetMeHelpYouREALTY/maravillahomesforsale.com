@@ -169,9 +169,9 @@ export default function Home() {
         <section className='py-16 bg-linear-to-r from-[#0A2540] to-[#3A8DDE]'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center'>
             <h2 className='text-3xl font-bold text-white mb-4'>
-              North Las Vegas Family Homes: Market Overview
+              Maravilla: Market Overview
             </h2>
-            <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Overview' />
+            <SectionHeadingMedia heading='Maravilla: Market Overview' />
             <p className='text-xl text-white mb-8 max-w-3xl mx-auto'>
               Public ZIP 89031 figures as of September 2026 put median sold prices
               in the mid-$400s. Maravilla floor plans differ — call for current comps.
@@ -236,7 +236,7 @@ export default function Home() {
         <section className='py-12 bg-gray-50 border-t border-gray-200'>
           <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
             <nav aria-label='Site navigation' className='text-center'>
-              <h2 className='sr-only'>North Las Vegas Family Homes – Site Navigation</h2>
+              <h2 className='sr-only'>Maravilla – Site Navigation</h2>
               <ul className='flex flex-wrap justify-center gap-x-6 gap-y-3 text-sm'>
                 <li>
                   <Link
@@ -333,7 +333,6 @@ export default function Home() {
               name: homepageTitle,
               description: homepageDescription,
               url: baseUrl,
-              breadcrumb: [{ name: 'Home', url: baseUrl }],
             }),
             generateVideoGallerySchema(
               KCM_VIDEO_ENTRIES.map((v) => ({

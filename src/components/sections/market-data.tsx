@@ -63,9 +63,9 @@ export default function MarketDataSection() {
         {/* Section Header */}
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold text-white mb-4'>
-            North Las Vegas Family Homes: Market Data
+            Maravilla: Market Data
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Data' />
+          <SectionHeadingMedia heading='Maravilla: Market Data' />
           <p className='text-xl text-white max-w-3xl mx-auto leading-relaxed'>
             Stay informed with the latest real estate market trends and
             statistics

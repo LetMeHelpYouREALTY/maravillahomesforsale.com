@@ -25,7 +25,7 @@ export default function FeaturedCommunities() {
       homesAvailable: '1,519-2,947 sq.ft.',
       amenities: ['Single Story', 'Two Story', 'Up to 5 Bedrooms'],
       image: '/images/pages/neighborhoods-hero.jpg',
-      imageAlt: 'North Las Vegas Family Homes: Featured Communities — six Maravilla neighborhood streetscapes',
+      imageAlt: 'Maravilla: Featured Communities — six Maravilla neighborhood streetscapes',
       href: '/neighborhoods',
     },
     {
@@ -36,7 +36,7 @@ export default function FeaturedCommunities() {
       homesAvailable: 'Nearby Access',
       amenities: ['Walking Trails', 'Playgrounds', 'Open Spaces'],
       image: '/images/pages/amenities-community-hero.jpg',
-      imageAlt: 'North Las Vegas Family Homes: Parks & Recreation — community pool and ramada',
+      imageAlt: 'Maravilla: Parks & Recreation — community pool and ramada',
       href: '/amenities',
     },
     {
@@ -46,7 +46,7 @@ export default function FeaturedCommunities() {
       homesAvailable: 'I-15 & 215',
       amenities: ['Nellis AFB', 'VA Hospital', 'Shopping'],
       image: '/images/pages/map-hero.jpg',
-      imageAlt: 'North Las Vegas Family Homes: Prime Location — I-15 and I-215 access from North Las Vegas',
+      imageAlt: 'Maravilla: Prime Location — I-15 and I-215 access from North Las Vegas',
       href: '/map-and-nearby-places',
     },
   ];
@@ -57,9 +57,9 @@ export default function FeaturedCommunities() {
         {/* Section Header */}
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Featured Communities
+            Maravilla: Featured Communities
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Featured Communities' />
+          <SectionHeadingMedia heading='Maravilla: Featured Communities' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Discover the unique character of Maravilla and surrounding areas
           </p>

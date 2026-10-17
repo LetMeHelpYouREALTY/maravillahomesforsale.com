@@ -18,9 +18,9 @@ export default function FAQSection() {
         {/* Section Header */}
         <div className='text-center mb-16'>
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Frequently Asked Questions
+            Maravilla: Frequently Asked Questions
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Frequently Asked Questions' />
+          <SectionHeadingMedia heading='Maravilla: Frequently Asked Questions' />
           <p className='text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed'>
             Find answers to common questions about buying and selling in Maravilla
           </p>

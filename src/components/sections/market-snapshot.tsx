@@ -18,9 +18,9 @@ export default function MarketSnapshot() {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='text-center mb-12'>
           <h2 className='text-4xl font-bold text-[#0A2540] mb-4'>
-            North Las Vegas Family Homes: Market Snapshot
+            Maravilla: Market Snapshot
           </h2>
-          <SectionHeadingMedia heading='North Las Vegas Family Homes: Market Snapshot' />
+          <SectionHeadingMedia heading='Maravilla: Market Snapshot' />
           <h3 className='text-2xl text-gray-600 mb-8'>
             Current North Las Vegas Real Estate Trends
           </h3>

@@ -14,7 +14,7 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'Privacy Policy | North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+  title: 'Privacy Policy | Maravilla, North Las Vegas | Dr. Jan Duffy',
   description:
     'Privacy Policy for North Las Vegas Family Homes | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
   keywords: 'privacy policy, data protection, personal information',

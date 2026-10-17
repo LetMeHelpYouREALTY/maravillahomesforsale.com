@@ -16,7 +16,6 @@ import Link from 'next/link';
 import { Phone, Mail, MapPin, Clock, MessageSquare } from 'lucide-react';
 import OnThisPage from '@/components/OnThisPage';
 
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -340,7 +339,7 @@ export default function ContactPage() {
       </section>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='contact-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

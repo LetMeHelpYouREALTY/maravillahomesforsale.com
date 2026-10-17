@@ -11,7 +11,6 @@ import {
   Phone,
   Search,
 } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -211,7 +210,7 @@ export default function ResourcesPage() {
         </div>
       </section>
 
-      <Script
+      <script
         id='resources-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

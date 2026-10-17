@@ -4,7 +4,6 @@ import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import SiteImage from '@/components/ui/site-image';
 import { Phone } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -56,7 +55,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
 
   return (
     <PageLayout>
-      <Script
+      <script
         id='neighborhood-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -70,7 +69,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
           ),
         }}
       />
-      <Script
+      <script
         id='neighborhood-place-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

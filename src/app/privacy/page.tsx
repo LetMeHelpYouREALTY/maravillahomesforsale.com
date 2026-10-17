@@ -4,7 +4,6 @@ import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
 } from '@/lib/metadata';
-import Script from 'next/script';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 
@@ -169,7 +168,7 @@ export default function PrivacyPage() {
         </div>
       </article>
 
-      <Script
+      <script
         id='privacy-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

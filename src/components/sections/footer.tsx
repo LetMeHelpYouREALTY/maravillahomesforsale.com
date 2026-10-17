@@ -19,9 +19,12 @@ export default function Footer() {
                 height={72}
                 className='h-16 w-16 rounded-full bg-white object-contain'
               />
-              <h3 className='text-xl font-bold text-white'>
-                Maravilla | Homes by {AGENT_NAME}
-              </h3>
+              <div>
+                <h3 className='text-xl font-bold text-white'>
+                  Maravilla Homes for Sale
+                </h3>
+                <p className='text-sm text-gray-400 mt-1'>{BUSINESS_INFO.name}</p>
+              </div>
             </div>
             <p className='text-gray-300 leading-relaxed'>
               Your trusted partner in finding the perfect home in Maravilla and
@@ -281,8 +284,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className='border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 space-y-2 text-sm'>
           <p>
-            &copy; 2009-2026 Maravilla | Homes by Dr. Jan Duffy. All rights
-            reserved.
+            &copy; 2009-2026 {BUSINESS_INFO.name}. All rights reserved.
           </p>
           <p>&copy; 2025 BHH Affiliates, LLC.</p>
           <p className='text-xs text-gray-400 max-w-4xl mx-auto'>

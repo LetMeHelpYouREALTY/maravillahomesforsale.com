@@ -27,7 +27,6 @@ import Link from 'next/link';
 import { Home, MapPin, DollarSign, TrendingUp } from 'lucide-react';
 import OnThisPage from '@/components/OnThisPage';
 
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
@@ -342,51 +341,23 @@ export default function HomesPage() {
         </div>
       </section>
 
-      {/* Structured Data */}
-      <Script
-        id='homes-schema'
+      <script
         type='application/ld+json'
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'Maravilla | Homes for Sale',
+              name: 'Homes for Sale in Maravilla | Dr. Jan Duffy',
               description:
-                'Browse quality homes for sale in Maravilla, Las Vegas. Find exceptional value and your dream home in one of Las Vegas\' best value communities.',
+                'Browse Maravilla and North Las Vegas MLS listings with Dr. Jan Duffy, REALTOR®. Call (702) 500-1953 for current inventory.',
               url: `${baseUrl}/homes`,
             }),
             generateCollectionPageSchema({
-              name: 'Maravilla: Homes for Sale in Maravilla',
+              name: 'Homes for Sale in Maravilla',
               description:
-                'Browse quality homes for sale in Maravilla, Las Vegas. Find exceptional value and your dream home in one of Las Vegas\' best value communities.',
+                'Active Maravilla and North Las Vegas homes for sale. Updated from MLS via Dr. Jan Duffy office listings.',
               url: `${baseUrl}/homes`,
             }),
-            {
-              '@context': 'https://schema.org',
-              '@type': 'ItemList',
-              name: 'North Las Vegas Family Homes',
-              description: 'Maravilla: homes for sale in Maravilla and North Las Vegas',
-              url: `${baseUrl}/homes`,
-              numberOfItems: 206,
-              itemListElement: {
-                '@type': 'ListItem',
-                position: 1,
-                item: {
-                  '@type': 'Product',
-                  '@id': `${baseUrl}/homes`,
-                  name: 'Maravilla Homes',
-                  description: 'North Las Vegas Family Homes in Maravilla with various price ranges to suit different needs',
-                  category: 'Real Estate',
-                  offers: {
-                    '@type': 'AggregateOffer',
-                    priceCurrency: 'USD',
-                    lowPrice: '370000',
-                    highPrice: '1800000',
-                    offerCount: '206',
-                  },
-                },
-              },
-            },
-          ]),
+          ]).replace(/</g, '\\u003c'),
         }}
       />
     </PageLayout>

@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { School, MapPin, BookOpen, Phone } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -140,7 +139,7 @@ export default function SchoolsPage() {
         </div>
       </section>
 
-      <Script
+      <script
         id='schools-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

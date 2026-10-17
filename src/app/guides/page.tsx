@@ -2,7 +2,6 @@ import PageLayout from '@/components/layout/page-layout';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { BookOpen } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -33,7 +32,7 @@ export default function GuidesIndexPage() {
 
   return (
     <PageLayout>
-      <Script
+      <script
         id='guides-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

@@ -3,7 +3,6 @@ import PageLayout from '@/components/layout/page-layout';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { Phone } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -53,7 +52,7 @@ export default async function GuidePage({ params }: Props) {
 
   return (
     <PageLayout>
-      <Script
+      <script
         id='guide-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -65,7 +64,7 @@ export default async function GuidePage({ params }: Props) {
           ),
         }}
       />
-      <Script
+      <script
         id='guide-article-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -75,11 +74,11 @@ export default async function GuidePage({ params }: Props) {
               description: guide.metaDescription,
               url: `${baseUrl}/guides/${slug}`,
               datePublished: guide.datePublished,
-              dateModified: guide.datePublished,
+              dateModified: guide.dateModified,
               author: { name: 'Dr. Jan Duffy', url: baseUrl },
               publisher: {
-                name: 'Maravilla | Homes by Dr. Jan Duffy',
-                logo: '/globe.svg',
+                name: 'Dr. Jan Duffy',
+                logo: '/images/dr-jan-duffy-512.png',
               },
             })
           ),

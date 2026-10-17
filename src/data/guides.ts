@@ -26,6 +26,8 @@ export interface GuideItem {
   intro: string;
   /** ISO date for Article schema (datePublished). */
   datePublished: string;
+  /** ISO date for Article schema (dateModified). */
+  dateModified: string;
   sections: GuideSection[];
   /** Optional KCM/Simplifying the Market landing page for lead capture + PDF eGuide. */
   externalGuideUrl?: string;
@@ -53,6 +55,7 @@ export const GUIDES: Record<GuideSlug, GuideItem> = {
     intro:
       'Buying a home in North Las Vegas or Maravilla in winter 2026? This guide covers rates and budget, inventory and timing, inspections, and location so you can make confident decisions. Dr. Jan Duffy helps buyers in the greater Las Vegas area from pre-approval to closing.',
     datePublished: '2026-01-01',
+    dateModified: '2026-03-15',
     sections: [
       {
         id: 'rates-and-budget',
@@ -102,6 +105,7 @@ export const GUIDES: Record<GuideSlug, GuideItem> = {
     intro:
       'Selling your house in North Las Vegas or Maravilla in winter 2026? This guide covers pricing strategy, curb appeal and presentation, photos and marketing, and flexibility so your home stands out. Dr. Jan Duffy helps sellers in the greater Las Vegas area with listing and closing.',
     datePublished: '2026-01-01',
+    dateModified: '2026-03-15',
     sections: [
       {
         id: 'pricing-strategy',
@@ -149,6 +153,7 @@ export const GUIDES: Record<GuideSlug, GuideItem> = {
     intro:
       'Buying your first home in North Las Vegas or Maravilla? This guide walks you through pre-approval, defining your needs, searching and touring, and making an offer so you close with confidence. Dr. Jan Duffy works with first-time buyers across the greater Las Vegas area.',
     datePublished: '2026-01-01',
+    dateModified: '2026-06-01',
     sections: [
       {
         id: 'get-pre-approved',

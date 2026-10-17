@@ -45,7 +45,6 @@ import {
   Building2,
   UtensilsCrossed,
 } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import OnThisPage from '@/components/OnThisPage';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
@@ -1060,7 +1059,7 @@ export default function NeighborhoodPage() {
       </section>
 
       {/* Structured Data for Neighborhood/Community */}
-      <Script
+      <script
         id='maravilla-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

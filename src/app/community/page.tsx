@@ -21,7 +21,6 @@ import {
   Building2,
 } from 'lucide-react';
 
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -352,7 +351,7 @@ export default function CommunityPage() {
       </section>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='community-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

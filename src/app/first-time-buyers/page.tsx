@@ -3,7 +3,6 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import Link from 'next/link';
 import { Home, BookOpen, DollarSign, Key, Phone } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -42,7 +41,7 @@ export default function FirstTimeBuyersPage() {
 
   return (
     <PageLayout>
-      <Script
+      <script
         id='first-time-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

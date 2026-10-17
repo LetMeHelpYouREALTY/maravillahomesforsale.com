@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import Script from 'next/script';
 import PageLayout from '@/components/layout/page-layout';
 import { Button } from '@/components/ui/button';
 import {
@@ -65,7 +64,7 @@ export default async function SearchPage({ searchParams }: SearchPageProps) {
       </section>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='search-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

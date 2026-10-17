@@ -18,7 +18,6 @@ import {
   BarChart3,
 } from 'lucide-react';
 
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
 import {
@@ -242,7 +241,7 @@ export default function MarketDataPage() {
       </section>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='market-data-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

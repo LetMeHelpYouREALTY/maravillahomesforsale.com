@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import PageLayout from '@/components/layout/page-layout';
 import { Badge } from '@/components/ui/badge';
-import Script from 'next/script';
 import {
   Card,
   CardDescription,
@@ -131,7 +130,7 @@ export default function MarketInsightsPage() {
         description='Watch short market updates and tips from Dr. Jan Duffy’s partner, Simplifying the Market.'
       />
 
-      <Script
+      <script
         id='market-insights-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -148,9 +147,9 @@ export default function MarketInsightsPage() {
                 'Real estate market insights and guides for Maravilla, North Las Vegas and Las Vegas, Nevada.',
               url: `${baseUrl}/market-insights`,
               author: 'Dr. Jan Duffy',
-              publisher: 'Maravilla | Homes by Dr. Jan Duffy',
+              publisher: 'Dr. Jan Duffy',
             }),
-            ...posts.slice(0, 5).map((post) =>
+            ...posts.map((post) =>
               generateArticleSchema({
                 headline: post.title,
                 description:
@@ -159,11 +158,12 @@ export default function MarketInsightsPage() {
                 url: `${baseUrl}${post.href}`,
                 image: post.imageUrl,
                 datePublished: post.dateISO,
+                dateModified: post.dateModifiedISO,
                 author: {
                   name: post.author,
                 },
                 publisher: {
-                  name: 'Maravilla | Homes by Dr. Jan Duffy',
+                  name: 'Dr. Jan Duffy',
                   logo: '/images/dr-jan-duffy-512.png',
                 },
               })
@@ -177,7 +177,7 @@ export default function MarketInsightsPage() {
               })),
               'Maravilla: Market Videos'
             ),
-          ]),
+          ]).replace(/</g, '\\u003c'),
         }}
       />
     </PageLayout>

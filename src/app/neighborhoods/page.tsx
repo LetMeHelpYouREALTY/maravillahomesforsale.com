@@ -21,7 +21,6 @@ import {
   MapPin,
   Sparkles,
 } from 'lucide-react';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -499,7 +498,7 @@ export default function NeighborhoodsPage() {
       </section>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='neighborhoods-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

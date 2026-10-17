@@ -1,5 +1,4 @@
 import PageLayout from '@/components/layout/page-layout';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -529,7 +528,7 @@ export default function RealEstateServicesPage() {
       </article>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='real-estate-services-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

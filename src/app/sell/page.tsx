@@ -5,7 +5,6 @@ import MapSkeleton from '@/components/skeletons/map-skeleton';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import OnThisPage from '@/components/OnThisPage';
-import Script from 'next/script';
 import {
   generateMetadata as genMetadata,
   generateLocalBusinessSchema,
@@ -257,7 +256,7 @@ export default function SellMaravillaPage() {
         </div>
       </section>
 
-      <Script
+      <script
         id='sell-maravilla-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

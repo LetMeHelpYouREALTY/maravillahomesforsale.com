@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import PageLayout from '@/components/layout/page-layout';
 import { Badge } from '@/components/ui/badge';
-import Script from 'next/script';
 import {
   Card,
   CardDescription,
@@ -14,6 +13,7 @@ import {
   generateMetadata as genMetadata,
   generateWebPageSchema,
   generateBlogSchema,
+  generateArticleSchema,
 } from '@/lib/metadata';
 import SiteImage from '@/components/ui/site-image';
 import { getMarketInsightPosts } from '@/data/market-insight-posts';
@@ -124,7 +124,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <Script
+      <script
         id='blog-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{
@@ -140,10 +140,25 @@ export default function BlogPage() {
               description:
                 'Maravilla: real estate guides and local insights for North Las Vegas and Maravilla.',
               url: `${baseUrl}/blog`,
-              author: 'Maravilla | Homes by Dr. Jan Duffy',
-              publisher: 'Maravilla | Homes by Dr. Jan Duffy',
+              author: 'Dr. Jan Duffy',
+              publisher: 'Dr. Jan Duffy',
             }),
-          ]),
+            ...posts.map((post) =>
+              generateArticleSchema({
+                headline: post.title,
+                description: post.description,
+                url: `${baseUrl}${post.href}`,
+                image: post.imageUrl,
+                datePublished: post.dateISO,
+                dateModified: post.dateModifiedISO,
+                author: { name: post.author },
+                publisher: {
+                  name: 'Dr. Jan Duffy',
+                  logo: '/images/dr-jan-duffy-512.png',
+                },
+              })
+            ),
+          ]).replace(/</g, '\\u003c'),
         }}
       />
     </PageLayout>

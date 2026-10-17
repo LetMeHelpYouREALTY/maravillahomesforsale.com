@@ -2,7 +2,6 @@ import { Suspense } from 'react';
 import PageLayout from '@/components/layout/page-layout';
 import JustSoldGallery from '@/components/sections/just-sold-gallery';
 import GoogleMap from '@/components/sections/google-map';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import {
   generateMetadata as genMetadata,
@@ -625,7 +624,7 @@ export default function HomeDescriptionsPage() {
       </article>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='home-descriptions-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

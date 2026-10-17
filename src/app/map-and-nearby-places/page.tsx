@@ -1,6 +1,5 @@
 import PageLayout from '@/components/layout/page-layout';
 import GoogleMap from '@/components/sections/google-map';
-import Script from 'next/script';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import {
@@ -821,7 +820,7 @@ export default function MapAndNearbyPlacesPage() {
       </article>
 
       {/* Structured Data */}
-      <Script
+      <script
         id='map-nearby-places-schema'
         type='application/ld+json'
         dangerouslySetInnerHTML={{

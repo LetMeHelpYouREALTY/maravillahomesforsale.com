@@ -13,6 +13,7 @@ export type MarketInsightPost = {
   author: string;
   date: string;
   dateISO: string;
+  dateModifiedISO: string;
   imageUrl: string;
 };
 
@@ -57,6 +58,7 @@ const GUIDE_POSTS: MarketInsightPost[] = (
     author: 'Dr. Jan Duffy',
     date: formatDisplayDate(guide.datePublished),
     dateISO: `${guide.datePublished}T12:00:00.000Z`,
+    dateModifiedISO: `${guide.dateModified}T12:00:00.000Z`,
     imageUrl: meta.imageUrl,
   };
 });
@@ -72,6 +74,7 @@ const SITE_POSTS: MarketInsightPost[] = [
     author: 'Dr. Jan Duffy',
     date: 'September 2, 2026',
     dateISO: '2026-09-02T12:00:00.000Z',
+    dateModifiedISO: '2026-10-01T12:00:00.000Z',
     imageUrl: '/images/pages/market-data-hero.jpg',
   },
   {
@@ -84,6 +87,7 @@ const SITE_POSTS: MarketInsightPost[] = [
     author: 'Dr. Jan Duffy',
     date: 'September 2, 2026',
     dateISO: '2026-09-02T12:00:00.000Z',
+    dateModifiedISO: '2026-10-01T12:00:00.000Z',
     imageUrl: '/images/pages/homes-hero.jpg',
   },
 ];

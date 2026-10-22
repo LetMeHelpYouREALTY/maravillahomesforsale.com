@@ -325,6 +325,7 @@ export default function RootLayout({
           strategy='lazyOnload'
         />
         {children}
+        <Script src='/ads-conversions.js' strategy='afterInteractive' />
       </body>
     </html>
   );

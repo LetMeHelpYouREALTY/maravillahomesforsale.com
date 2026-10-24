@@ -23,9 +23,9 @@ export const siteConfig = {
   googleBusiness: BUSINESS_INFO.googleBusinessProfile,
   googleReview: BUSINESS_INFO.googleReviewUrl,
   hours: {
-    open: '6:00 AM',
-    close: '9:00 PM',
-    days: 'Sunday – Saturday',
+    open: '8:00 AM',
+    close: '8:00 PM',
+    days: 'Daily',
   },
   description: BUSINESS_INFO.description,
   serviceArea: BUSINESS_INFO.serviceArea,

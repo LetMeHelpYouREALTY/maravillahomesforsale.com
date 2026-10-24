@@ -5,6 +5,7 @@ import {
   generateWebPageSchema,
 } from '@/lib/metadata';
 import Link from 'next/link';
+import { BUSINESS_INFO } from '@/lib/config/business-info';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import SectionHeadingMedia from '@/components/SectionHeadingMedia';
@@ -507,15 +508,11 @@ export default function RealEstateServicesPage() {
                   </a>
                 </p>
               </div>
-              <div className='text-center'>
-                <FileText className='h-8 w-8 mx-auto mb-4' />
-                <h3 className='text-xl font-semibold mb-2'>License</h3>
-                <p className='text-gray-200'>NV Lic #S.0197614.LLC</p>
-              </div>
+              
               <div className='text-center'>
                 <Clock className='h-8 w-8 mx-auto mb-4' />
                 <h3 className='text-xl font-semibold mb-2'>Hours</h3>
-                <p className='text-gray-200'>6AM-9PM Daily</p>
+                <p className='text-gray-200'>{BUSINESS_INFO.hours.display}</p>
               </div>
             </div>
             <div className='text-center mt-8'>

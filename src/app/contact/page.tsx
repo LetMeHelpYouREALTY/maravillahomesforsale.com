@@ -37,9 +37,9 @@ export const revalidate = false; // Static page, no revalidation needed
 export const metadata = genMetadata({
   title: 'Contact Dr. Jan Duffy | Maravilla, North Las Vegas',
   description:
-    `Contact Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Get expert guidance for buying, selling, or investing in Maravilla, Las Vegas. Office: ${BUSINESS_INFO.address.full}. Call ${BUSINESS_INFO.phone.display} or email ${BUSINESS_INFO.email}.`,
+    `Contact Dr. Jan Duffy, REALTOR®, in real estate since 1983. Get expert guidance for buying, selling, or investing in Maravilla, Las Vegas. Office: ${BUSINESS_INFO.address.full}. Call ${BUSINESS_INFO.phone.display} or email ${BUSINESS_INFO.email}.`,
   keywords:
-    'contact real estate agent, Dr. Jan Duffy, Maravilla real estate agent, Las Vegas realtor, Berkshire Hathaway, contact form, real estate consultation',
+    'contact real estate agent, Dr. Jan Duffy, Maravilla real estate agent, Las Vegas realtor, contact form, real estate consultation',
   path: '/contact',
 });
 
@@ -52,8 +52,7 @@ export default function ContactPage() {
             Maravilla: Contact
           </h1>
           <p className='text-xl text-gray-200 max-w-3xl'>
-            Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway
-            HomeServices® Nevada. <a href='#schedule' className='text-white hover:text-gray-200 underline font-medium'>Schedule a consultation</a>, see <a href='#contact-info' className='text-white hover:text-gray-200 underline font-medium'>contact details</a>, or jump to <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes in Maravilla</Link>, <Link href='/real-estate-services' className='text-white hover:text-gray-200 underline font-medium'>real estate services</Link>, <Link href='/market-data' className='text-white hover:text-gray-200 underline font-medium'>market data</Link>, or <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
+            Work with Dr. Jan Duffy, REALTOR®, in real estate since 1983. <a href='#schedule' className='text-white hover:text-gray-200 underline font-medium'>Schedule a consultation</a>, see <a href='#contact-info' className='text-white hover:text-gray-200 underline font-medium'>contact details</a>, or jump to <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>. Explore <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes in Maravilla</Link>, <Link href='/real-estate-services' className='text-white hover:text-gray-200 underline font-medium'>real estate services</Link>, <Link href='/market-data' className='text-white hover:text-gray-200 underline font-medium'>market data</Link>, or <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
           </p>
         </div>
       </div>
@@ -164,9 +163,7 @@ export default function ContactPage() {
                   <p className='text-gray-600 text-sm mt-2'>
                     Service area: {BUSINESS_INFO.serviceArea}
                   </p>
-                  <p className='text-gray-600 text-xs mt-2'>
-                    In business since September 20, 2009
-                  </p>
+                  
                 </CardContent>
               </Card>
 
@@ -207,15 +204,13 @@ export default function ContactPage() {
               <div className='grid md:grid-cols-2 gap-6 items-center'>
                 <div>
                   <AgentPhoto
-                    alt='Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada'
+                    alt='Dr. Jan Duffy, REALTOR®'
                     sizes='(max-width: 768px) 100vw, 50vw'
                   />
                 </div>
                 <div className='space-y-4'>
                   <p className='text-gray-700 leading-relaxed'>
-                    Dr. Jan Duffy is a REALTOR® with{' '}
-                    <strong>Berkshire Hathaway HomeServices® Nevada</strong>,
-                    specializing in luxury homes and estates across Las Vegas and
+                    Dr. Jan Duffy is a REALTOR®, in real estate since 1983, specializing in luxury homes and estates across Las Vegas and
                     Henderson.
                   </p>
                   <p className='text-gray-700 leading-relaxed'>

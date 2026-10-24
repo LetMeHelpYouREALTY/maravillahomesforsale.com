@@ -1,6 +1,6 @@
 import SiteImage from '@/components/ui/site-image';
 import Link from 'next/link';
-import { AGENT_JOB_TITLE, AGENT_LICENSE, AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
+import { AGENT_JOB_TITLE, AGENT_NAME, AGENT_PHOTO } from '@/lib/config/agent';
 import { BUSINESS_INFO } from '@/lib/config/business-info';
 
 /**
@@ -36,11 +36,8 @@ export default function AgentIdentityBand() {
               {AGENT_NAME}
             </h2>
             <p className='text-[#0A2540] font-medium mb-3'>
-              <span itemProp='jobTitle'>{AGENT_JOB_TITLE}</span>
-              {' · '}
-              <span itemProp='memberOf'>{BUSINESS_INFO.brokerage}</span>
-              {' · License '}
-              {AGENT_LICENSE}
+                            <span itemProp='jobTitle'>{AGENT_JOB_TITLE}</span>
+              {' · In real estate since 1983'}
             </p>
             <p className='speakable text-gray-700 leading-relaxed max-w-3xl mb-4' itemProp='description'>
               {AGENT_NAME} helps buyers and sellers in Maravilla and North Las Vegas

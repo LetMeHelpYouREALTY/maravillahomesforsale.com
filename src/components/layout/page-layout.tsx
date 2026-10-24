@@ -53,7 +53,7 @@ export default function PageLayout({ children }: PageLayoutProps) {
               </h2>
               <SectionHeadingMedia heading='Maravilla Listings from Dr. Jan Duffy' />
               <p className='text-lg text-gray-600 max-w-2xl mx-auto'>
-                Browse current office listings. Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada.
+                Browse current office listings. Dr. Jan Duffy, REALTOR®, in real estate since 1983.
               </p>
             </div>
             <div className='bg-[#F7F9FC] rounded-xl p-6 sm:p-8 shadow-lg border border-gray-200'>

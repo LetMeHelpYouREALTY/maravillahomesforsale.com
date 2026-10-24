@@ -284,7 +284,7 @@ export default function Footer() {
         {/* Footer Bottom */}
         <div className='border-t border-gray-700 mt-8 pt-8 text-center text-gray-300 space-y-2 text-sm'>
           <p>
-            &copy; 2009-2026 {BUSINESS_INFO.name}. All rights reserved.
+            &copy; 2026 {BUSINESS_INFO.name}. All rights reserved.
           </p>
           <p>&copy; 2025 BHH Affiliates, LLC.</p>
           <p className='text-xs text-gray-400 max-w-4xl mx-auto'>
@@ -294,8 +294,8 @@ export default function Footer() {
             Hathaway HomeServices symbol are registered marks of Columbia Insurance
             Company, a Berkshire Hathaway affiliate.
           </p>
-          <p className='text-xs text-gray-400'>
-            Dr. Jan Duffy | Nevada Real Estate License #S.0197614.
+                    <p className='text-xs text-gray-400'>
+            Berkshire Hathaway HomeServices Nevada Properties since September 2008 · License S.0197614.LLC
           </p>
           <p className='text-xs text-gray-400'>Equal Housing Opportunity</p>
           <p className='text-xs text-gray-400'>

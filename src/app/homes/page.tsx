@@ -45,7 +45,7 @@ export const revalidate = 1800; // 30 minutes
 export const metadata = genMetadata({
   title: 'Homes for Sale in Maravilla | Dr. Jan Duffy',
   description:
-    'Browse luxury homes for sale in Maravilla, Las Vegas. View current listings with detailed photos, virtual tours, and market data. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada. Call (702) 500-1953.',
+    'Browse luxury homes for sale in Maravilla, Las Vegas. View current listings with detailed photos, virtual tours, and market data. Work with Dr. Jan Duffy, REALTOR®, in real estate since 1983. Call (702) 500-1953.',
   keywords:
     'homes for sale Maravilla, Las Vegas homes, luxury homes for sale, Maravilla real estate, Las Vegas homes, property listings, real estate agent Las Vegas',
   path: '/homes',
@@ -61,8 +61,7 @@ export default function HomesPage() {
           </h1>
           <p className='speakable text-xl text-gray-200 max-w-3xl'>
             Discover <Link href='/homes' className='text-white hover:text-gray-200 underline font-medium'>homes for sale in the Maravilla community</Link> in Las
-            Vegas. Work with Dr. Jan Duffy, REALTOR® with Berkshire Hathaway
-            HomeServices® Nevada, to find the right property. Public ZIP 89031
+            Vegas. Work with Dr. Jan Duffy, REALTOR®, in real estate since 1983, to find the right property. Public ZIP 89031
             medians as of September 2026 sit in the mid-$400s (~$415K–$437K);
             Maravilla comps depend on floor plan and condition. Jump to <a href='#listings' className='text-white hover:text-gray-200 underline font-medium'>current listings</a>, <a href='#faqs' className='text-white hover:text-gray-200 underline font-medium'>FAQs</a>, or explore the <Link href='/neighborhood' className='text-white hover:text-gray-200 underline font-medium'>Maravilla neighborhood</Link>, <Link href='/market-data' className='text-white hover:text-gray-200 underline font-medium'>market data</Link>, or <Link href='/home-valuation' className='text-white hover:text-gray-200 underline font-medium'>home valuation</Link>.
           </p>
@@ -98,13 +97,12 @@ export default function HomesPage() {
               </h2>
               <SectionHeadingMedia heading='Working with Dr. Jan Duffy for Maravilla Homes' />
               <p className='text-lg text-gray-600 mb-6'>
-                Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices®
-                Nevada, specializing in various communities across Las Vegas and
+                Dr. Jan Duffy is a REALTOR®, in real estate since 1983, specializing in various communities across Las Vegas and
                 Henderson. She offers expert, data-driven advice and personalized
                 consultations. Learn more about <Link href='/real-estate-services' className='text-[#3A8DDE] hover:underline font-medium'>her real estate services</Link>, explore <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla neighborhood information</Link>, or view <Link href='/market-insights' className='text-[#3A8DDE] hover:underline font-medium'>market insights</Link> for the latest trends.
               </p>
               <AgentPhoto
-                alt='Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada'
+                alt='Dr. Jan Duffy, REALTOR®'
                 sizes='(max-width: 1024px) 100vw, 50vw'
                 priority
                 className='shadow-lg'

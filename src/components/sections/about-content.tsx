@@ -15,9 +15,7 @@ export default function AboutContent() {
             </h2>
             <SectionHeadingMedia heading='Maravilla: About Dr. Jan Duffy' />
             <p className='text-lg text-gray-600 mb-6 leading-relaxed'>
-              Dr. Jan Duffy is a REALTOR® with{' '}
-              <strong>Berkshire Hathaway HomeServices® Nevada</strong>, your
-              trusted partner in finding the perfect home with exceptional value in one of Las Vegas&apos;
+              Dr. Jan Duffy is a Top 1% Las Vegas REALTOR®, in real estate since 1983, and your trusted partner in finding the perfect home with exceptional value in one of Las Vegas&apos;
               best value communities. With years of experience in the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla area</Link> and throughout Las Vegas and Henderson, she understands
               what makes each neighborhood special and how to find the best value for your investment. Browse <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>available homes in Maravilla</Link> or explore our <Link href='/real-estate-services' className='text-[#3A8DDE] hover:underline font-medium'>real estate services</Link>.
             </p>
@@ -133,7 +131,7 @@ export default function AboutContent() {
           <div className='space-y-8'>
             {/* Dr. Jan Duffy Photo */}
             <AgentPhoto
-              alt='Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices® Nevada'
+              alt='Dr. Jan Duffy, REALTOR®'
               sizes='(max-width: 1024px) 100vw, 50vw'
               className='shadow-lg'
             />
@@ -159,12 +157,7 @@ export default function AboutContent() {
                   </div>
                   <div className='text-gray-600'>Client Satisfaction</div>
                 </div>
-                <div className='text-center'>
-                  <div className='text-3xl font-bold text-[#0A2540] mb-2'>
-                    24/7
-                  </div>
-                  <div className='text-gray-600'>Support Available</div>
-                </div>
+                
               </div>
             </div>
           </div>

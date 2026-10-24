@@ -61,7 +61,7 @@ export const AGENT_PHOTO = {
       AGENT_GIT_BACKUP.srcSchema
     );
   },
-  alt: 'Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, North Las Vegas',
+  alt: 'Dr. Jan Duffy, REALTOR®, North Las Vegas',
   width: 800,
   height: 800,
 } as const;

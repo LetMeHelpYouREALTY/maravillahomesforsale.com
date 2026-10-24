@@ -43,7 +43,7 @@ Dr. Jan Duffy, REALTOR®, Berkshire Hathaway HomeServices Nevada Properties, Nev
 
 ## About
 
-Dr. Jan Duffy is a licensed Nevada real estate agent (${BUSINESS_INFO.license}) specializing in Maravilla community homes in North Las Vegas. In business since September 20, 2009.
+Dr. Jan Duffy is a licensed Nevada real estate agent (${BUSINESS_INFO.license}) specializing in Maravilla community homes in North Las Vegas. In real estate since 1983.
 
 - **Business name (GBP):** ${BUSINESS_INFO.name}
 - **Brokerage:** ${BUSINESS_INFO.brokerage}

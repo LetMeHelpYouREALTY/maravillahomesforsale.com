@@ -20,18 +20,18 @@ const baseUrl = (
 ).replace(/\/$/, '');
 
 export const metadata = genMetadata({
-  title: 'About Dr. Jan Duffy | Berkshire Hathaway HomeServices Nevada',
+  title: 'About Dr. Jan Duffy | North Las Vegas REALTOR®',
   description:
-    'Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Expert in Maravilla and North Las Vegas real estate. License S.0197614.LLC. Call (702) 500-1953.',
+    'Meet Dr. Jan Duffy, REALTOR®, in real estate since 1983. Expert in Maravilla and North Las Vegas real estate. Call (702) 500-1953.',
   keywords:
-    'Dr. Jan Duffy, Maravilla real estate agent, North Las Vegas REALTOR, Berkshire Hathaway Nevada, Las Vegas real estate expert',
+    'Dr. Jan Duffy, Maravilla real estate agent, North Las Vegas REALTOR, Las Vegas real estate expert',
   path: '/about',
 });
 
 export default function AboutPage() {
   const highlights = [
-    'REALTOR® with Berkshire Hathaway HomeServices Nevada Properties',
-    'License S.0197614.LLC',
+        'Top 1% Las Vegas REALTOR®',
+    'In real estate since 1983',
     'Specialist in Maravilla and North Las Vegas',
     'Data-driven pricing and market analysis',
     'Full support from search to closing',
@@ -70,7 +70,7 @@ export default function AboutPage() {
               </h2>
               <SectionHeadingMedia heading='Your Maravilla & North Las Vegas Expert' />
               <p className='text-gray-700 leading-relaxed mb-4'>
-                Dr. Jan Duffy is a REALTOR® with <strong>Berkshire Hathaway HomeServices Nevada Properties</strong>, specializing in Maravilla and the greater North Las Vegas area. She holds license <strong>S.0197614.LLC</strong> and is committed to helping buyers and sellers navigate the market with confidence.
+                Dr. Jan Duffy is a REALTOR®, in real estate since 1983, specializing in Maravilla and the greater North Las Vegas area. She is committed to helping buyers and sellers navigate the market with confidence.
               </p>
               <p className='text-gray-700 leading-relaxed mb-4'>
                 Whether you&apos;re searching for your first home, selling an existing property, or exploring <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla&apos;s neighborhoods</Link>, Dr. Duffy provides data-driven advice, clear communication, and full support from start to closing.
@@ -82,7 +82,7 @@ export default function AboutPage() {
             <div className='flex justify-center'>
               <AgentPhoto
                 src={AGENT_PHOTO.src}
-                alt='Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada Properties'
+                alt='Dr. Jan Duffy, REALTOR®'
                 sizes='(max-width: 1024px) 100vw, 50vw'
                 className='shadow-xl rounded-lg'
               />

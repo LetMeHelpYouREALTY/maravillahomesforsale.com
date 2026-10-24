@@ -27,7 +27,7 @@ export const maravillaFAQs = [
   {
     question: 'Can I schedule a property tour?',
     answer:
-      'Absolutely! Dr. Jan Duffy offers personalized tours of available properties in Maravilla. You can schedule a tour by calling (702) 500-1953, emailing DrDuffy@MaravillaHomesForSale.com, or texting the same number. Tours are available 7 days a week from 6:00 AM to 9:00 PM.',
+      'Absolutely! Dr. Jan Duffy offers personalized tours of available properties in Maravilla. You can schedule a tour by calling (702) 500-1953, emailing DrDuffy@MaravillaHomesForSale.com, or texting the same number. Tours are available daily 8:00 AM–8:00 PM.',
   },
   {
     question: 'What schools serve the Maravilla community?',

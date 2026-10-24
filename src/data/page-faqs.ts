@@ -99,7 +99,7 @@ const CONTACT_FAQS: readonly FAQItem[] = [
   {
     question: 'What are your office hours?',
     answer:
-      'Dr. Jan Duffy is available by appointment. Schedule a call or meeting through the contact page or Calendly. Same-day and next-day consultations are often available.',
+      'Hours are daily 8:00 AM–8:00 PM. Schedule a call or meeting through the contact page or Calendly. Same-day and next-day consultations are often available.',
   },
   {
     question: 'Do you serve buyers outside Maravilla?',
@@ -260,7 +260,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'Who is Dr. Jan Duffy?',
     answer:
-      'Dr. Jan Duffy is a REALTOR® with Berkshire Hathaway HomeServices Nevada Properties, license S.0197614.LLC. She specializes in Maravilla and North Las Vegas real estate and helps buyers and sellers with data-driven advice and full support.',
+      'Dr. Jan Duffy is a REALTOR®, in real estate since 1983. She specializes in Maravilla and North Las Vegas real estate and helps buyers and sellers with data-driven advice and full support.',
   },
   {
     question: 'What areas does Dr. Jan Duffy serve?',
@@ -270,7 +270,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'How do I contact Dr. Jan Duffy?',
     answer:
-      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031.',
+      'Call (702) 500-1953, text sms:+17025001953, email DrDuffy@MaravillaHomesForSale.com, or use the contact page to schedule a consultation. Office address: 5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031.',
   },
 ];
 

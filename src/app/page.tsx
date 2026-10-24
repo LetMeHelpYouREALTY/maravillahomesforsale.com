@@ -83,7 +83,7 @@ export const metadata = genMetadata({
   title: homepageTitle,
   description: homepageDescription,
   keywords:
-    'Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, Berkshire Hathaway Nevada, first-time home buyer North Las Vegas, homes for sale Maravilla',
+    'Maravilla homes for sale, North Las Vegas real estate, Maravilla Las Vegas, Dr. Jan Duffy REALTOR, first-time home buyer North Las Vegas, homes for sale Maravilla',
   path: '/',
   image: HOMEPAGE_OG_IMAGE.src,
 });

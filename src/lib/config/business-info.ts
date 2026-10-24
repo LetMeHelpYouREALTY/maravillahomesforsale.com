@@ -29,12 +29,12 @@ export const BUSINESS_INFO = {
 
   // Business Address (GBP office location)
   address: {
-    streetAddress: '5135 W Washburn Rd, Suite 201',
+    streetAddress: '5135 W Washburn Rd Suite 201',
     addressLocality: 'North Las Vegas',
     addressRegion: 'NV',
     postalCode: '89031',
     addressCountry: 'US',
-    full: '5135 W Washburn Rd, Suite 201, North Las Vegas, NV 89031',
+    full: '5135 W Washburn Rd Suite 201, North Las Vegas, NV 89031',
   },
 
   // Community Address (Maravilla Community)
@@ -62,10 +62,10 @@ export const BUSINESS_INFO = {
   // Email
   email: 'DrDuffy@MaravillaHomesForSale.com',
 
-  // Business Hours (GBP: 6:00 AM–9:00 PM, seven days)
+  // Business Hours (GBP: Daily 8:00 AM–8:00 PM)
   hours: {
-    display: '6:00 AM – 9:00 PM, Sunday – Saturday',
-    shortDisplay: '6AM–9PM Daily',
+    display: 'Daily 8:00 AM–8:00 PM',
+    shortDisplay: 'Daily 8:00 AM–8:00 PM',
     schema: {
       dayOfWeek: [
         'Sunday',
@@ -76,8 +76,8 @@ export const BUSINESS_INFO = {
         'Friday',
         'Saturday',
       ],
-      opens: '06:00',
-      closes: '21:00',
+      opens: '08:00',
+      closes: '20:00',
     },
   },
 

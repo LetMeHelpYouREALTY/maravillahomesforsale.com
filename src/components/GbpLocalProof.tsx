@@ -27,9 +27,9 @@ export default function GbpLocalProof() {
             className='text-3xl font-bold text-[#0A2540] mb-3'
             itemProp='name'
           >
-            Visit, Call, or Review North Las Vegas Family Homes
+            Visit, Call, or Review Maravilla Homes
           </h2>
-          <SectionHeadingMedia heading='Visit, Call, or Review North Las Vegas Family Homes' size='card' />
+          <SectionHeadingMedia heading='Visit, Call, or Review Maravilla Homes' size='card' />
           <p className='text-gray-600 max-w-3xl mx-auto'>
             The name, address, phone, and hours below match this office on Google Maps.
             Use them to call, get directions, or leave a Google review after your tour.

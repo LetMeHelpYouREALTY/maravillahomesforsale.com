@@ -69,7 +69,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/55-plus-communities', tier: 'monthly', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/first-time-buyers', tier: 'monthly', changeFrequency: 'monthly', priority: 0.7 },
     { path: '/guides', tier: 'weekly', changeFrequency: 'weekly', priority: 0.8 },
-    { path: '/search', tier: 'daily', changeFrequency: 'daily', priority: 0.8 },
     { path: '/privacy', tier: 'yearly', changeFrequency: 'yearly', priority: 0.3 },
   ];
 

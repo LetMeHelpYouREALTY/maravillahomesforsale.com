@@ -37,7 +37,7 @@ export default function AgentIdentityBand() {
             </h2>
             <p className='text-[#0A2540] font-medium mb-3'>
                             <span itemProp='jobTitle'>{AGENT_JOB_TITLE}</span>
-              {' · In real estate since 1983'}
+              {' · Licensed since 2008 · 35 years in Las Vegas'}
             </p>
             <p className='speakable text-gray-700 leading-relaxed max-w-3xl mb-4' itemProp='description'>
               {AGENT_NAME} helps buyers and sellers in Maravilla and North Las Vegas

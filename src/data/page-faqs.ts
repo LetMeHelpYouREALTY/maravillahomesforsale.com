@@ -260,7 +260,7 @@ const ABOUT_FAQS: readonly FAQItem[] = [
   {
     question: 'Who is Dr. Jan Duffy?',
     answer:
-      'Dr. Jan Duffy is a REALTOR®, in real estate since 1983. She specializes in Maravilla and North Las Vegas real estate and helps buyers and sellers with data-driven advice and full support.',
+      'Dr. Jan Duffy is a REALTOR®, licensed since 2008 · 35 years in Las Vegas. She specializes in Maravilla and North Las Vegas real estate and helps buyers and sellers with data-driven advice and full support.',
   },
   {
     question: 'What areas does Dr. Jan Duffy serve?',

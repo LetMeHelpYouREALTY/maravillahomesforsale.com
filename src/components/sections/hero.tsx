@@ -68,7 +68,7 @@ export default function Hero() {
           />
         </div>
         <p className='text-sm md:text-base text-white/90 mb-6'>
-          {AGENT_NAME}, REALTOR® · In real estate since 1983
+          {AGENT_NAME}, REALTOR® · Licensed since 2008 · 35 years in Las Vegas
         </p>
 
         {/* Hero CTA Buttons */}

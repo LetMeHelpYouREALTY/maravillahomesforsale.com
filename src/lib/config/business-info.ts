@@ -9,8 +9,8 @@ export const GBP_DESCRIPTION =
 
 export const BUSINESS_INFO = {
   // Business Name
-  name: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
-  legalName: 'North Las Vegas Family Homes | Homes by Dr. Jan Duffy',
+  name: 'Maravilla Homes | Homes by Dr. Jan Duffy',
+  legalName: 'Maravilla Homes | Homes by Dr. Jan Duffy',
 
   // GBP categories
   categories: {

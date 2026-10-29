@@ -173,7 +173,7 @@ export default function BuyersGuidePage() {
             }),
             generateHowToSchema({
               name: 'How to Buy a Home in Maravilla and North Las Vegas',
-              description: 'Step-by-step buyer\'s guide: pre-approval, search and tour homes, make an offer, and close. Dr. Jan Duffy, REALTOR®, North Las Vegas Family Homes.',
+              description: 'Step-by-step buyer\'s guide: pre-approval, search and tour homes, make an offer, and close. Dr. Jan Duffy, REALTOR®, Maravilla Homes.',
               url: `${baseUrl}/buyers-guide`,
               totalTime: 'P30D',
               steps: steps.map((s) => ({ name: s.title, text: s.body })),

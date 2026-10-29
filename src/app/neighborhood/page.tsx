@@ -91,7 +91,7 @@ export default function NeighborhoodPage() {
       icon: TreePine,
       title: 'Parks & Trails',
       description:
-        'Community parks, walking trails, and recreational facilities perfect for families',
+        'Community parks, walking trails, and recreational facilities perfect for buyers',
       color: 'text-[#0A2540]',
       bgColor: 'bg-[#0A2540]/10',
     },
@@ -331,10 +331,10 @@ export default function NeighborhoodPage() {
           </h2>
           <SectionHeadingMedia heading='Maravilla: Property Overview' />
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Nestled in the heart of North Las Vegas&apos;s 89031 zip code, Maravilla offers the perfect blend of suburban serenity and urban convenience. Celebrated for its pristine upkeep and desert-friendly landscaping, this residence is part of a well-established neighborhood that has matured beautifully over the years. The community features a diverse selection of <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes — call for current comps</Link>; public ZIP 89031 medians as of September 2026 sit in the mid-$400s. Explore <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>detailed home descriptions</Link> and <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
+            Nestled in the heart of North Las Vegas&apos;s 89031 zip code, Maravilla offers the perfect blend of suburban serenity and urban convenience. Celebrated for its pristine upkeep and desert-friendly landscaping, this residence is part of an older neighborhood that has matured beautifully over the years. The community features a diverse selection of <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>homes — call for current comps</Link>; public ZIP 89031 medians as of September 2026 sit in the mid-$400s. Explore <Link href='/home-descriptions' className='text-[#3A8DDE] hover:underline font-medium'>detailed home descriptions</Link> and <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>community amenities</Link>.
           </p>
           <p className='text-lg text-gray-700 mb-6 leading-relaxed'>
-            Maravilla homes are known for their quality construction, modern amenities, and thoughtful design. Properties feature 3-5 bedrooms, 2-4 bathrooms, and range from 1,800 to 3,500 square feet. The homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from established neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. View <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
+            Maravilla homes are known for their quality construction, modern amenities, and thoughtful design. Properties feature 3-5 bedrooms, 2-4 bathrooms, and range from 1,800 to 3,500 square feet. The homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from older neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. View <Link href='/map-and-nearby-places' className='text-[#3A8DDE] hover:underline font-medium'>nearby places</Link> and <Link href='/community' className='text-[#3A8DDE] hover:underline font-medium'>community features</Link>.
           </p>
         </div>
       </section>
@@ -697,7 +697,7 @@ export default function NeighborhoodPage() {
             <p className='text-lg text-gray-600 max-w-3xl mx-auto'>
               beautiful outdoor spaces for recreation, relaxation, and community
               events. Residents enjoy access to parks with walking trails,
-              recreational facilities, and gathering areas perfect for families
+              recreational facilities, and gathering areas perfect for buyers
               and outdoor enthusiasts.
             </p>
           </div>

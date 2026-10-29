@@ -235,7 +235,7 @@ export default function Footer() {
                 rel='noopener noreferrer'
                 prefetch={false}
                 className='text-gray-300 hover:text-white transition-colors duration-200 hover:scale-110 transform'
-                aria-label='Facebook profile for North Las Vegas Family Homes'
+                aria-label='Facebook profile for Maravilla Homes'
               >
                 <svg
                   className='w-6 h-6'

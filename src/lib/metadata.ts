@@ -1030,7 +1030,7 @@ export function generateVideoGallerySchema(
     '@context': 'https://schema.org',
     '@type': 'ItemList',
     name: listName,
-    description: 'Real estate market videos and buyer/seller tips from Dr. Jan Duffy and North Las Vegas Family Homes.',
+    description: 'Real estate market videos and buyer/seller tips from Dr. Jan Duffy and Maravilla Homes.',
     numberOfItems: videos.length,
     itemListElement: videos.map((video, index) => ({
       '@type': 'ListItem',

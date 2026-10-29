@@ -2,7 +2,7 @@ import { BUSINESS_INFO } from '@/lib/config/business-info';
 
 export const siteConfig = {
   name: BUSINESS_INFO.name,
-  shortName: 'North Las Vegas Family Homes',
+  shortName: 'Maravilla Homes',
   url: 'https://www.maravillahomesforsale.com',
   phone: BUSINESS_INFO.phone.display,
   phoneRaw: BUSINESS_INFO.phone.schema,

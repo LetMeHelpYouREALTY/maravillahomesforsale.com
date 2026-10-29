@@ -120,7 +120,7 @@ export default async function NeighborhoodSubareaPage({ params }: Props) {
                 <p className='text-gray-600 text-sm'>{neighborhood.accessNote}</p>
               )}
               <p className='text-gray-700 mt-4'>
-                Dr. Jan Duffy, REALTOR®, in real estate since 1983, helps buyers compare {neighborhood.name} listings with
+                Dr. Jan Duffy, REALTOR®, licensed since 2008 · 35 years in Las Vegas, helps buyers compare {neighborhood.name} listings with
                 other North Las Vegas inventory. Call {BUSINESS_INFO.phone.display}.
               </p>
             </div>

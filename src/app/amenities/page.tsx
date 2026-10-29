@@ -162,7 +162,7 @@ export default function AmenitiesPage() {
                   Many garages feature built-in storage solutions such as cabinets, shelving units, and tool organizers that help maintain organization. The garage space can also accommodate large items like bicycles, outdoor equipment, and bulk purchases that don&apos;t fit easily in the home interior. This flexibility makes the garage an essential part of the home&apos;s overall functionality.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
-                  The garage also serves as a buffer zone between the exterior and interior of the home, helping to maintain cleaner indoor air quality by providing a space where shoes, outerwear, and items from outside can be stored before entering the main living space. This feature is particularly valuable for families with children or pets who spend time outdoors.
+                  The garage also serves as a buffer zone between the exterior and interior of the home, helping to maintain cleaner indoor air quality by providing a space where shoes, outerwear, and items from outside can be stored before entering the main living space. This feature is particularly valuable for buyers who want more bedrooms or pets who spend time outdoors.
                 </p>
               </div>
             </div>
@@ -324,7 +324,7 @@ export default function AmenitiesPage() {
                 </h3>
                 <SectionHeadingMedia heading='Safety and Accessibility' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  The walking paths in Maravilla are designed with safety in mind, featuring adequate lighting, clear signage, and well-maintained surfaces that reduce the risk of accidents. The paths are separated from vehicle traffic where possible, providing a safe environment for pedestrians and cyclists. Regular maintenance ensures that the paths remain in good condition and free of hazards.
+                  The walking paths in Maravilla are designed with safety in mind, featuring adequate lighting, clear signage, and well-maintained surfaces that reduce the risk of accidents. The paths are separated from vehicle traffic where possible, providing an environment for pedestrians and cyclists. Regular maintenance ensures that the paths remain in good condition and free of hazards.
                 </p>
                 <p className='text-gray-700 leading-relaxed mb-4'>
                   Accessibility is a priority in the path design, with features that accommodate users with mobility challenges, strollers, and wheelchairs. The paths are wide enough to allow multiple users to pass comfortably, and the surfaces are smooth and level to prevent tripping hazards. These design considerations ensure that the paths are usable by all members of the community.

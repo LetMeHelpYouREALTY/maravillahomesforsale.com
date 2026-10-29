@@ -67,7 +67,7 @@ export default function HomeDescriptionsPage() {
               </div>
             </div>
             <p className='text-lg text-gray-700 text-center max-w-3xl mx-auto'>
-              Maravilla homes represent exceptional value in North Las Vegas&apos;s 89031 zip code, offering luxury living at competitive prices. These properties combine modern design with practical features, making them ideal for families, professionals, and investors seeking quality real estate in a thriving community. Browse <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>available homes</Link>, explore <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>amenities</Link>, or learn about the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla neighborhood</Link>.
+              Maravilla homes represent exceptional value in North Las Vegas&apos;s 89031 zip code, offering luxury living at competitive prices. These properties combine modern design with practical features, making them ideal for buyers, professionals, and investors seeking quality real estate in a thriving community. Browse <Link href='/homes' className='text-[#3A8DDE] hover:underline font-medium'>available homes</Link>, explore <Link href='/amenities' className='text-[#3A8DDE] hover:underline font-medium'>amenities</Link>, or learn about the <Link href='/neighborhood' className='text-[#3A8DDE] hover:underline font-medium'>Maravilla neighborhood</Link>.
             </p>
           </div>
         </section>
@@ -142,7 +142,7 @@ export default function HomeDescriptionsPage() {
               </h3>
               <SectionHeadingMedia heading='Construction Timeline and Quality' size='card' />
               <p className='text-gray-700 mb-4 leading-relaxed'>
-                Maravilla homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from established neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. The construction quality from this era is known for solid foundations, quality materials, and attention to detail that stands the test of time.
+                Maravilla homes were built between 2005 and 2014, representing a period of quality construction in North Las Vegas. These properties benefit from older neighborhoods with mature landscaping, proven construction methods, and well-maintained infrastructure. The construction quality from this era is known for solid foundations, quality materials, and attention to detail that stands the test of time.
               </p>
             </div>
           </div>
@@ -355,7 +355,7 @@ export default function HomeDescriptionsPage() {
                 </h3>
                 <SectionHeadingMedia heading='Picnic Areas and Playgrounds' size='card' />
                 <p className='text-gray-700 leading-relaxed mb-4'>
-                  Designated picnic areas with tables, grills, and shade structures provide perfect settings for family gatherings, birthday parties, and community events. These areas are often located near playgrounds, making them ideal for families with children. The picnic facilities are available on a first-come, first-served basis, though some larger areas may be reservable for special events.
+                  Designated picnic areas with tables, grills, and shade structures provide settings for gatherings, birthday parties, and community events. These areas are often located near playgrounds. The picnic facilities are available on a first-come, first-served basis, though some larger areas may be reservable for special events.
                 </p>
                 <p className='text-gray-700 leading-relaxed'>
                   Children&apos;s playgrounds feature age-appropriate equipment, safety surfacing, and shaded areas for parents. The playgrounds are designed to encourage physical activity, creativity, and social interaction among children. Regular maintenance and safety inspections ensure these spaces remain safe and enjoyable for years to come.

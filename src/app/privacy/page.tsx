@@ -174,7 +174,7 @@ export default function PrivacyPage() {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify([
             generateWebPageSchema({
-              name: 'Privacy Policy | North Las Vegas Family Homes',
+              name: 'Privacy Policy | Maravilla Homes',
               description:
                 'Privacy Policy for Maravilla | Homes by Dr. Jan Duffy. Learn how we collect, use, and protect your personal information.',
               url: `${baseUrl}/privacy`,

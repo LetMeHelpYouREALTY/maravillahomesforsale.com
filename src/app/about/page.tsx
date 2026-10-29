@@ -167,7 +167,7 @@ export default function AboutPage() {
           __html: JSON.stringify([,
             generateWebPageSchema({
               name: 'Maravilla | About Dr. Jan Duffy',
-              description: 'Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. North Las Vegas Family Homes expert—Maravilla and North Las Vegas.',
+              description: 'Meet Dr. Jan Duffy, REALTOR® with Berkshire Hathaway HomeServices Nevada. Maravilla Homes expert—Maravilla and North Las Vegas.',
               url: `${baseUrl}/about`,
             }),
           ]),

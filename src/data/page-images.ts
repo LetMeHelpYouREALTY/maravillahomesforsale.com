@@ -265,7 +265,7 @@ const SECTION_IMAGES: Record<string, PageImage> = {
 const FALLBACK: PageMedia = {
   hero: {
     src: '/images/pages/neighborhoods-hero.jpg',
-    alt: 'North Las Vegas Family Homes by Dr. Jan Duffy — Maravilla and North Las Vegas real estate',
+    alt: 'Maravilla Homes by Dr. Jan Duffy — Maravilla and North Las Vegas real estate',
   },
 };
 
@@ -282,7 +282,7 @@ export function getPageMedia(pathname: string): PageMedia {
     return {
       hero: {
         src: '/photos/01-1 (2).jpg',
-        alt: 'North Las Vegas Family Homes in Maravilla — community view, North Las Vegas',
+        alt: 'Maravilla community view, North Las Vegas',
       },
     };
   }
@@ -573,7 +573,7 @@ const KEYWORD_IMAGES: { test: RegExp; src: string; alt: string }[] = [
   {
     test: /visit|google review|google business|call, or review/i,
     src: '/images/pages/section-office.jpg',
-    alt: 'North Las Vegas Family Homes office for Google Maps visits and reviews',
+    alt: 'Maravilla Homes office for Google Maps visits and reviews',
   },
   {
     test: /contact|consult|schedule|office|hour|about dr|ready to|experience amenities/i,
@@ -640,6 +640,6 @@ export function getSectionImage(heading: string): PageImage | undefined {
 
   return withCloudflareSrc({
     src: '/images/pages/neighborhoods-hero.jpg',
-    alt: `${normalized} — North Las Vegas Family Homes in Maravilla`,
+    alt: `${normalized} — Maravilla, North Las Vegas`,
   });
 }

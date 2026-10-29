@@ -100,7 +100,7 @@ const nextConfig = {
     // 2025 Best Practice: Enable image optimization for better Core Web Vitals
     dangerouslyAllowSVG: true,
     contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src https://widgetbe.com https://*.widgetbe.com 'none'; sandbox;",
+    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     // Allow specific external image domains
     remotePatterns: [
       {

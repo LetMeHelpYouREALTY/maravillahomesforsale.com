@@ -17,6 +17,8 @@ import {
   toAbsoluteImageUrl,
 } from '@/lib/config/cloudflare-images';
 import './globals.css';
+import { Analytics as VercelAnalytics } from "@vercel/analytics/next";
+import { SpeedInsights as VercelSpeedInsights } from "@vercel/speed-insights/next";
 
 const googleSiteVerification =
   process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION ??
@@ -337,6 +339,8 @@ e.parentNode.insertBefore(t,e);})
 window.widgetTracker("create", "WT-XQHVYQWW");
 window.widgetTracker("send", "pageview");}
         `}</Script>
+  <VercelAnalytics />
+  <VercelSpeedInsights />
 </body>
     </html>
   );
